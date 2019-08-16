@@ -9,6 +9,10 @@
 <h1>
 	Hello world!
 </h1>
+<<<<<<< HEAD
+=======
+asdasdasdasdasdsdddd전재형 바보 돼지ddddd
+>>>>>>> branch 'master' of https://github.com/swdo2/swdo2.git
 <P>  The time on the server is ${serverTime}. </P>
 </body>
 </html>

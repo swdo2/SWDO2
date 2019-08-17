@@ -14,6 +14,6 @@
 asdasdasdasdasdsdddd전재형 바보 돼지ddddd
 >>>>>>> branch 'master' of https://github.com/swdo2/swdo2.git
 <P>  The time on the server is ${serverTime}. </P>
-<p>sex</p> seex
+<p>sex</p>
 </body>
 </html>

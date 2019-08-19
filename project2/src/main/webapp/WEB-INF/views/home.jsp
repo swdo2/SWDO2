@@ -10,18 +10,18 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>本ーE</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/icon" href="../resources/assets/images/favicon.ico"/>
+    <link rel="shortcut icon" type="image/icon" href="./resources/assets/images/favicon.ico"/>
     <!-- Font Awesome -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
     <!-- Bootstrap -->
-    <link href="../resources/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./resources/assets/css/bootstrap.min.css" rel="stylesheet">
     <!-- Slick slider -->
-    <link href="../resources/assets/css/slick.css" rel="stylesheet">
+    <link href="./resources/assets/css/slick.css" rel="stylesheet">
     <!-- Theme color -->
-    <link id="switcher" href="../resources/assets/css/theme-color/default-theme.css" rel="stylesheet">
+    <link id="switcher" href="./resources/assets/css/theme-color/default-theme.css" rel="stylesheet">
 
     <!-- Main Style -->
-    <link href="../resources/assets/css/style.css" rel="stylesheet">
+    <link href="./resources/assets/css/style.css" rel="stylesheet">
 
     <!-- Fonts -->
 
@@ -41,9 +41,7 @@
   </head>
 
   <body>
-
-   	
-  	<!-- Start Header -->
+ 	<!-- Start Header -->
 	<header id="mu-header" class="" role="banner">
 		<div class="container">
 			<nav class="navbar navbar-default mu-navbar">
@@ -61,7 +59,7 @@
 				      <a class="navbar-brand" href="index.html"><i class="fa fa-book" aria-hidden="true"></i> 本ーE</a>
 
 				      <!-- Image Logo -->
-				      <!-- <a class="navbar-brand" href="index.html"><img src="../resources/assets/images/logo.png"></a> -->
+				      <!-- <a class="navbar-brand" href="index.html"><img src="./resources/assets/images/logo.png"></a> -->
 
 
 				    </div>
@@ -91,18 +89,18 @@
 
 				<div class="col-md-6 col-sm-6 col-sm-push-6">
 					<div class="mu-hero-right">
-						<img src="../resources/assets/images/ebook.png" alt="Ebook img">
+						<img src="./resources/assets/images/ebook.png" alt="Ebook img">
 					</div>
 				</div>
 
 				<div class="col-md-6 col-sm-6 col-sm-pull-6">
 					<div class="mu-hero-left">
-						<h1 style="font-size: 30px;">  ㄴㅁㅇ </h1>
-						<h1 style="font-size: 30px;">   ㅁㄴㅇ</h1>
-						<h1 style="font-size: 60px;">   ㅇㅁㄴ</h1>
-						<p style="font-size: 70px;">ㅇㅁㄴ</p>
-						<a href="#" class="mu-primary-btn">Download Now!</a>
-						<span>ㅁㄴㅇㅇㅁ.</span>
+						<h1 style="font-size: 30px;">이동근사마의</h1>
+						<h1 style="font-size: 30px;">E-BOOK</h1>
+						<h1 style="font-size: 60px;">뷰어!!</h1>
+						<p style="font-size: 70px;">당신의 마음을 정화 시켜드립니다.</p>
+						<a href="#" class="mu-primary-btn">E-BOOK보기</a>
+						<span>(주)동근뷰어</span>
 					</div>
 				</div>	
 
@@ -346,16 +344,16 @@
 								<div class="row">
 									<div class="col-md-6">
 										<div class="mu-author-image">
-											<img src="../resources/assets/images/author.jpg" alt="Author Image">
+											<img src="./resources/assets/images/author.jpg" alt="Author Image">
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="mu-author-info">
 											<h3>완벽한 E_BOOK을 제공해드립니다.</h3>
-											<p>야메로카?</p>
+											<p>이 사이트는 E-BOOK뷰어를 제공해드립니다.</p>
 
-											<p>야메마쇼우</p>
-											<img class="mu-author-sign" src="../resources/assets/images/author-signature.png" alt="Author Signature">
+											<p></p>
+											<img class="mu-author-sign" src="./resources/assets/images/author-signature.png" alt="Author Signature">
 
 											<div class="mu-author-social">
 												<a href="http://www.naver.com"><i class="fa fa-facebook"></i></a>
@@ -504,21 +502,21 @@
 
 									<li>
 										<p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever."</p>
-										<img class="mu-rt-img" src="../resources/assets/images/reader-1.jpg" alt="img">
+										<img class="mu-rt-img" src="./resources/assets/images/reader-1.jpg" alt="img">
 										<h5 class="mu-rt-name"> - Alice Boga</h5>
 										<span class="mu-rt-title">CEO, Apple Inc.</span>
 									</li>
 
 									<li>
 										<p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever."</p>
-										<img class="mu-rt-img" src="../resources/assets/images/reader-2.jpg" alt="img">
+										<img class="mu-rt-img" src="./resources/assets/images/reader-2.jpg" alt="img">
 										<h5 class="mu-rt-name"> - Jhon Doe</h5>
 										<span class="mu-rt-title">Director, Google Inc.</span>
 									</li>
 
 									<li>
 										<p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever."</p>
-										<img class="mu-rt-img" src="../resources/assets/images/reader-3.jpg" alt="img">
+										<img class="mu-rt-img" src="./resources/assets/images/reader-3.jpg" alt="img">
 										<h5 class="mu-rt-name"> - Jessica Doe</h5>
 										<span class="mu-rt-title">Web Developer</span>
 									</li>
@@ -609,18 +607,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <!-- Bootstrap -->
-    <script src="../resources/assets/js/bootstrap.min.js"></script>
+    <script src="./resources/assets/js/bootstrap.min.js"></script>
 	<!-- Slick slider -->
-    <script type="text/javascript" src="../resources/assets/js/slick.min.js"></script>
+    <script type="text/javascript" src="./resources/assets/js/slick.min.js"></script>
     <!-- Counter js -->
-    <script type="text/javascript" src="../resources/assets/js/counter.js"></script>
+    <script type="text/javascript" src="./resources/assets/js/counter.js"></script>
     <!-- Ajax contact form  -->
-    <script type="text/javascript" src="../resources/assets/js/app.js"></script>
+    <script type="text/javascript" src="./resources/assets/js/app.js"></script>
    
  
 	
     <!-- Custom js -->
-	<script type="text/javascript" src="../resources/assets/js/custom.js"></script>
+	<script type="text/javascript" src="./resources/assets/js/custom.js"></script>
 	
     
   </body>

@@ -45,7 +45,7 @@ CREATE TABLE Board
 	-- 기본값 0
 	
 	board_hits number default 0 NOT NULL,
-	borad_like number,
+	board_like number,
 	-- 회원 아이디
 	person_id varchar2(20) NOT NULL,
 	PRIMARY KEY (board_num)
@@ -158,7 +158,7 @@ ALTER TABLE Board
 ;
 
 
-ALTER TABLE CheckBorad
+ALTER TABLE CheckBoard
 	ADD FOREIGN KEY (person_id)
 	REFERENCES Person (person_id)
 ;

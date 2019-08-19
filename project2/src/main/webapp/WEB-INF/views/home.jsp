@@ -14,7 +14,7 @@
     <!-- Font Awesome -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
     <!-- Bootstrap -->
-    <link href="./resources/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./resources/assets/css/bootstrap.min.css?after" rel="stylesheet">
     <!-- Slick slider -->
     <link href="./resources/assets/css/slick.css" rel="stylesheet">
     <!-- Theme color -->
@@ -86,7 +86,6 @@
   </head>
 
   <body>
-  	<p>qweqweqweqqwe</p>
  	<!-- Start Header -->
 	<header id="mu-header" class="" role="banner">
 		<div class="container">
@@ -135,24 +134,8 @@
 
 				<div class="col-md-6 col-sm-6 col-sm-push-6">
 					<div class="mu-hero-right">
-						<section class="main">
-								<form class="form-2">
-									<h1><span class="log-in">Log in</span> or <span class="sign-up">sign up</span></h1>
-									<p class="float">
-										<label for="login"><i class="icon-user"></i>Username</label>
-										<input type="text" name="login" placeholder="Username or email">
-									</p>
-									<p class="float">
-										<label for="password"><i class="icon-lock"></i>Password</label>
-										<input type="password" name="password" placeholder="Password" class="showpassword">
-									</p>
-									<p class="clearfix"> 
-										<a href="#" class="log-twitter">Log in with Twitter</a>    
-										<input type="submit" name="submit" value="Log in">
-									</p>
-								</form>​​
-						</section>
-						<!-- <img src="./resources/assets/images/ebook.png" alt="Ebook img"> -->
+					
+						<img src="./resources/assets/images/ebook.png" alt="Ebook img">
 					</div>
 				</div>
 

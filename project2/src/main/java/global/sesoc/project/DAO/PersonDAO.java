@@ -21,7 +21,7 @@ public class PersonDAO	{
 			catch (Exception e) {
 				e.printStackTrace();
 			}
-			return result;	d
+			return result;
 					
 		}*/
 }

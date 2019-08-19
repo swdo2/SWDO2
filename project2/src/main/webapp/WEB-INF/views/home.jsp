@@ -14,7 +14,7 @@
     <!-- Font Awesome -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
     <!-- Bootstrap -->
-    <link href="./resources/assets/css/bootstrap.min.css?after" rel="stylesheet">
+    <link href="./resources/assets/css/bootstrap.min.css" rel="stylesheet">
     <!-- Slick slider -->
     <link href="./resources/assets/css/slick.css" rel="stylesheet">
     <!-- Theme color -->
@@ -83,6 +83,16 @@
 			    });
 			});
 		</script>
+		
+		<!-- 스크롤 막는 방법  추후에 로그인을 하게 되면 허용을 해야한다. -->
+		<!-- <script>
+		$('html, body').css({'overflow': 'hidden', 'height': '100%'});
+		$('#element').on('scroll touchmove mousewheel', function(event) {
+		  event.preventDefault();
+		  event.stopPropagation();
+		  return false;
+		});
+		</script> -->
   </head>
 
   <body>
@@ -134,8 +144,24 @@
 
 				<div class="col-md-6 col-sm-6 col-sm-push-6">
 					<div class="mu-hero-right">
-					
-						<img src="./resources/assets/images/ebook.png" alt="Ebook img">
+						<section class="main">
+								<form class="form-2">
+									<h1><span class="log-in">Log in</span> or <span class="sign-up">sign up</span></h1>
+									<p class="float">
+										<label for="login"><i class="icon-user"></i>Username</label>
+										<input type="text" name="login" placeholder="Username or email">
+									</p>
+									<p class="float">
+										<label for="password"><i class="icon-lock"></i>Password</label>
+										<input type="password" name="password" placeholder="Password" class="showpassword">
+									</p>
+									<p class="clearfix"> 
+										<a href="Join" class="log-twitter">Join</a>    
+										<input type="submit" name="submit" value="Log in">
+									</p>
+								</form>​​
+						</section>
+						<!-- <img src="./resources/assets/images/ebook.png" alt="Ebook img"> -->
 					</div>
 				</div>
 

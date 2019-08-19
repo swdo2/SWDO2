@@ -2,7 +2,7 @@
 /* Drop Tables */
 
 DROP TABLE Basket CASCADE CONSTRAINTS;
-DROP TABLE CheckBorad CASCADE CONSTRAINTS;
+DROP TABLE Checkboard CASCADE CONSTRAINTS;
 DROP TABLE Reply CASCADE CONSTRAINTS;
 DROP TABLE Board CASCADE CONSTRAINTS;
 DROP TABLE Purchaseinfo CASCADE CONSTRAINTS;
@@ -63,7 +63,7 @@ CREATE TABLE Bookinfo
 );
 
 
-CREATE TABLE CheckBorad
+CREATE TABLE Checkboard
 (
 	-- 중복이면1
 	-- 중복아니면 0
@@ -121,7 +121,7 @@ CREATE TABLE Reply
 
 /* Create Foreign Keys */
 
-ALTER TABLE CheckBorad
+ALTER TABLE Checkboard
 	ADD FOREIGN KEY (board_num)
 	REFERENCES Board (board_num)
 ;
@@ -182,10 +182,10 @@ COMMENT ON COLUMN Basket.person_id IS '회원 아이디';
 COMMENT ON COLUMN Board.board_hits IS '기본값 0';
 COMMENT ON COLUMN Board.person_id IS '회원 아이디';
 COMMENT ON COLUMN Bookinfo.book_publicationdate IS '책 출간일';
-COMMENT ON COLUMN CheckBorad.check_checkhits IS '중복이면1
+COMMENT ON COLUMN Checkboard.check_checkhits IS '중복이면1
 중복아니면 0';
-COMMENT ON COLUMN CheckBorad.person_id IS '회원 아이디';
-COMMENT ON COLUMN CheckBorad.check_checklike IS '중복이면1
+COMMENT ON COLUMN Checkboard.person_id IS '회원 아이디';
+COMMENT ON COLUMN Checkboard.check_checklike IS '중복이면1
 중복아니면 0';
 COMMENT ON COLUMN Person.person_id IS '회원 아이디';
 COMMENT ON COLUMN Person.person_purchaselist IS '대여중인 책의 목록';

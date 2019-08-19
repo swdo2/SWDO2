@@ -1,6 +1,6 @@
 package global.sesoc.project.VO;
 
-public class CheckBoard
+public class Checkboard
 {
 
 }

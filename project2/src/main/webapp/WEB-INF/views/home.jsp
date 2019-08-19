@@ -83,6 +83,16 @@
 			    });
 			});
 		</script>
+		
+		<!-- 스크롤 막는 방법  추후에 로그인을 하게 되면 허용을 해야한다. -->
+		<!-- <script>
+		$('html, body').css({'overflow': 'hidden', 'height': '100%'});
+		$('#element').on('scroll touchmove mousewheel', function(event) {
+		  event.preventDefault();
+		  event.stopPropagation();
+		  return false;
+		});
+		</script> -->
   </head>
 
   <body>
@@ -146,7 +156,7 @@
 										<input type="password" name="password" placeholder="Password" class="showpassword">
 									</p>
 									<p class="clearfix"> 
-										<a href="#" class="log-twitter">Log in with Twitter</a>    
+										<a href="Join" class="log-twitter">Join</a>    
 										<input type="submit" name="submit" value="Log in">
 									</p>
 								</form>​​

@@ -40,10 +40,11 @@ CREATE TABLE Basket
 CREATE TABLE Board
 (
 	board_num number NOT NULL,
-	board_contents varchar2(3000) NOT NULL,
+	board_contents clob NOT NULL,
 	board_title varchar2(30) NOT NULL,
 	-- 기본값 0
-	board_hits number NOT NULL defalut 0,
+	
+	board_hits number default 0 NOT NULL,
 	borad_like number,
 	-- 회원 아이디
 	person_id varchar2(20) NOT NULL,
@@ -55,7 +56,7 @@ CREATE TABLE Bookinfo
 (
 	bookinfo_id varchar2(50) NOT NULL,
 	bookinfo_title varchar2(50) NOT NULL,
-	bookinfo_contents varchar2(8000) NOT NULL,
+	bookinfo_contents clob NOT NULL,
 	-- 책 출간일
 	book_publicationdate date,
 	book_writer varchar2(20),
@@ -113,7 +114,7 @@ CREATE TABLE Reply
 	reply_num  number NOT NULL,
 	reply_contents varchar2(2000) NOT NULL,
 	-- 리플 작성 일자
-	reply_date date NOT NULL default sysdate,
+	reply_date date default sysdate NOT NULL ,
 	PRIMARY KEY (reply_num )
 );
 

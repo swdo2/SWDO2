@@ -454,7 +454,7 @@
 
 
 											<div class="mu-pricing-single-head">
-												<h4>EXCLUSIVE PLAN</h4>
+												<h4>EXCLUSIVE PLANㅁ</h4>
 												<p class="mu-price-tag">
 													<span>$</span> 45
 												</p>

@@ -171,7 +171,9 @@
 						<h1 style="font-size: 30px;">E-BOOK</h1>
 						<h1 style="font-size: 30px;">뷰어!!</h1>
 						<p style="font-size: 30px;">당신의 마음을 정화 시켜드립니다.</p>
+						
 						<a href="#" class="mu-primary-btn">E-BOOK보기</a>
+						<a href="boardForm" class="mu-primary-btn">게시판 보기</a>
 						<span>(주)동근뷰어</span>
 					</div>
 				</div>	

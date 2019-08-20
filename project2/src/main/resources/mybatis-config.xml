@@ -4,14 +4,13 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
-	<!-- <typeAliases>
- 		<typeAlias type="" alias="" />
-		 <typeAlias type="global.sesoc.blog.vo.BoardVO" alias="BoardVO" />
+	<typeAliases>
+ 		<typeAlias type="global.sesoc.project.VO.Person" alias="Person" />
 	</typeAliases>
 	
 	<mappers>
-	 	<mapper resource="" />
-		<mapper resource="boardMapper.xml" /> 
+	 	<mapper resource="PersonMapper.xml" />
+		
 	</mappers>
-	 -->
+	 
 </configuration>

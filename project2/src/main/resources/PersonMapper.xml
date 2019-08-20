@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 회원처리 SQL -->
+<mapper namespace="global.sesoc.project.DAO.PersonMapper">
+	 
+	<!-- 회원가입 insert -->
+	<insert id = "insertPerson" parameterType = "Person">
+	
+		insert into Person (
+			person_id
+			, person_password
+			, person_name
+			, person_email
+			, person_phone
+		)
+		values (
+			#{person_id}
+			, #{person_password}
+			, #{person_name}
+			, #{person_email}
+			, #{person_phone}
+		)
+	</insert>
+	 
+</mapper>

@@ -2,120 +2,121 @@ package global.sesoc.project.VO;
 
 public class Person	{
 	
-		String id;
-		String name;
-		String password;
-		String email;
-		String phone;
-		String purchaselist;
-		int cash;
+		String person_id;
+		String person_name;
+		String person_password;
+		String person_email;
+		String person_phone;
+		String person_purchaselist;
+		int person_cash;
 		
-		
-		public Person(String id, String name, String password, String email, String phone, String purchaselist,
-				int cash)
+		public Person(){
+			
+		}
+
+		public Person(String person_id, String person_name, String person_password, String person_email,
+				String person_phone, String person_purchaselist, int person_cash)
 		{
 			super();
-			this.id = id;
-			this.name = name;
-			this.password = password;
-			this.email = email;
-			this.phone = phone;
-			this.purchaselist = purchaselist;
-			this.cash = cash;
+			this.person_id = person_id;
+			this.person_name = person_name;
+			this.person_password = person_password;
+			this.person_email = person_email;
+			this.person_phone = person_phone;
+			this.person_purchaselist = person_purchaselist;
+			this.person_cash = person_cash;
 		}
 
-
-		public String getId()
+		
+		
+		public Person(String person_id, String person_name, String person_password, String person_email,
+				String person_phone)
 		{
-			return id;
+			super();
+			this.person_id = person_id;
+			this.person_name = person_name;
+			this.person_password = person_password;
+			this.person_email = person_email;
+			this.person_phone = person_phone;
 		}
 
-
-		public void setId(String id)
+		public String getPerson_id()
 		{
-			this.id = id;
+			return person_id;
 		}
 
-
-		public String getName()
+		public void setPerson_id(String person_id)
 		{
-			return name;
+			this.person_id = person_id;
 		}
 
-
-		public void setName(String name)
+		public String getPerson_name()
 		{
-			this.name = name;
+			return person_name;
 		}
 
-
-		public String getPassword()
+		public void setPerson_name(String person_name)
 		{
-			return password;
+			this.person_name = person_name;
 		}
 
-
-		public void setPassword(String password)
+		public String getPerson_password()
 		{
-			this.password = password;
+			return person_password;
 		}
 
-
-		public String getEmail()
+		public void setPerson_password(String person_password)
 		{
-			return email;
+			this.person_password = person_password;
 		}
 
-
-		public void setEmail(String email)
+		public String getPerson_email()
 		{
-			this.email = email;
+			return person_email;
 		}
 
-
-		public String getPhone()
+		public void setPerson_email(String person_email)
 		{
-			return phone;
+			this.person_email = person_email;
 		}
 
-
-		public void setPhone(String phone)
+		public String getPerson_phone()
 		{
-			this.phone = phone;
+			return person_phone;
 		}
 
-
-		public String getPurchaselist()
+		public void setPerson_phone(String person_phone)
 		{
-			return purchaselist;
+			this.person_phone = person_phone;
 		}
 
-
-		public void setPurchaselist(String purchaselist)
+		public String getPerson_purchaselist()
 		{
-			this.purchaselist = purchaselist;
+			return person_purchaselist;
 		}
 
-
-		public int getCash()
+		public void setPerson_purchaselist(String person_purchaselist)
 		{
-			return cash;
+			this.person_purchaselist = person_purchaselist;
 		}
 
-
-		public void setCash(int cash)
+		public int getPerson_cash()
 		{
-			this.cash = cash;
+			return person_cash;
 		}
 
+		public void setPerson_cash(int person_cash)
+		{
+			this.person_cash = person_cash;
+		}
 
 		@Override
 		public String toString()
 		{
-			return "Person [id=" + id + ", name=" + name + ", password=" + password + ", email=" + email + ", phone="
-					+ phone + ", purchaselist=" + purchaselist + ", cash=" + cash + "]";
+			return "Person [person_id=" + person_id + ", person_name=" + person_name + ", person_password="
+					+ person_password + ", person_email=" + person_email + ", person_phone=" + person_phone
+					+ ", person_purchaselist=" + person_purchaselist + ", person_cash=" + person_cash + "]";
 		}
 		
 		
-	
 }

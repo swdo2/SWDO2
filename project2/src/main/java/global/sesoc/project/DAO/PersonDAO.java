@@ -1,19 +1,23 @@
 package global.sesoc.project.DAO;
 
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import global.sesoc.project.VO.Person;
 
 @Repository
 public class PersonDAO	{
 	
 	
-	//이 밑의 주석은 porm.xml파일 및 rootcontext 파일등등이 수정 되면 풀어주세요!!!!!!! 아참 그리고 ctrl + shift + o 눌러주시는거(임폴트) 잊지 말아주시고요!
-	/*@Autowired
-	SqlSession sqlSession;*/
+	
+	@Autowired
+	SqlSession sqlSession;
 
 	
-	//이 밑의 주석은 porm.xml파일 및 rootcontext 파일등등이 수정 되면 풀어주세요!!!!!!! 아참 그리고 ctrl + shift + o 눌러주시는거(임폴트) 잊지 말아주시고요!
-		/*public int insertMember(PersonVO person){
-			PersonMapper mapper = sqlsession.getMapper(PersonMapper.class)
+		//회원정보를 넣는 DAO - insert 관련 DAO
+		public int insertPerson(Person person){
+			PersonMapper mapper = sqlSession.getMapper(PersonMapper.class);
 					int result = 0;
 			try {
 				result = mapper.insertPerson(person);
@@ -23,5 +27,5 @@ public class PersonDAO	{
 			}
 			return result;
 					
-		}*/
+		}
 }

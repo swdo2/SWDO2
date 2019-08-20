@@ -144,19 +144,25 @@
 
 				<div class="col-md-6 col-sm-6 col-sm-push-6">
 					<div class="mu-hero-right">
-						<section class="main">
-								<form class="form-2">
+						<section class="main">						
+						<!-- 로그인 폼  -->
+								<form class="form-2" action="Login">
 									<h1><span class="log-in">Log in</span> or <span class="sign-up">sign up</span></h1>
 									<p class="float">
+										<!-- 유저 아이콘  넣는곳 -->
 										<label for="login"><i class="icon-user"></i>Username</label>
+										<!-- 유저 네임을 입력하는곳 -->
 										<input type="text" name="login" placeholder="Username or email">
 									</p>
 									<p class="float">
+										<!-- 패스워드 아이콘 넣는곳 -->
 										<label for="password"><i class="icon-lock"></i>Password</label>
+										<!-- 패스 워드 이력하는곳 -->
 										<input type="password" name="password" placeholder="Password" class="showpassword">
 									</p>
 									<p class="clearfix"> 
-										<a href="Join" class="log-twitter">Join</a>    
+										<a href="Join" class="log-twitter">Join</a>   
+		
 										<input type="submit" name="submit" value="Log in">
 									</p>
 								</form>​​

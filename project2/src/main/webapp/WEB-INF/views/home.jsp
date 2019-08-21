@@ -120,16 +120,16 @@
 				    </div>
 
 				    <!-- Collect the nav links, forms, and other content for toggling -->
-				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<!--     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				      	<ul class="nav navbar-nav mu-menu navbar-right">
-					        <li><a href="#">로그인</a></li>
-					        <!-- <li><a href="#mu-book-overview">장바구니</a></li>
+					        <li><a href="#">E-BOOK</a></li>
+					        <li><a href="#mu-book-overview">장바구니</a></li>
 					        <li><a href="#mu-author">고객센터</a></li>
-				            <li><a href="#mu-pricing"></a></li>
+				            <li><a href="#mu-pricing">로그인</a></li>
 				            <li><a href="#mu-testimonials"></a></li>
-				            <li><a href="#mu-contact"></a></li> -->
+				            <li><a href="#mu-contact"></a></li>
 				      	</ul>
-				    </div>
+				    </div>/.navbar-collapse -->
 			  	</div><!-- /.container-fluid -->
 			</nav>
 		</div>
@@ -150,15 +150,17 @@
 				<div class="col-md-6 col-sm-6 col-sm-pull-6">
 					<div class="mu-hero-left">
 						<section class="main">
-							<form class="form-2">
+							<form class="form-2" action="logIn" method="post">
 								<h1><span class="log-in">Log in</span> or <span class="sign-up">sign up</span></h1>
 								<p class="float">
 									<label for="login"><i class="icon-user"></i>Username</label>
-									<input type="text" name="login" placeholder="Username or email">
+									<!-- 로그인 아이디 입력하는곳 -->
+									<input type="text" name="person_id" placeholder="Username or email">
 								</p>
 								<p class="float">
 									<label for="password"><i class="icon-lock"></i>Password</label>
-									<input type="password" name="password" placeholder="Password" class="showpassword">
+									<!-- 로그인 패스워드 입력하는곳 -->
+									<input type="password" name="person_password" placeholder="Password" class="showpassword">
 								</p>
 								<p class="clearfix"> 
 									<a href="Join" class="log-twitter">Join</a>    

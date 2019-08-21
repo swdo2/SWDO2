@@ -17,6 +17,7 @@
 	<resources mapping="/realtest/**" location="/resources/realtest/" />
 	<resources mapping="/assets/**" location="/resources/assets/" />
 	<resources mapping="/loginresources/**" location="/resources/loginresources/" />
+	<resources mapping="/viewbook/**" location="/resources/viewbook/" />
 	
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->

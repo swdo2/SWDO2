@@ -19,7 +19,7 @@
    <!--  Bootstrap -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
    <!--  Slick slider -->
-    <link href="assets/css/slick.css" rel="stylesheet">
+    <link href="assets/css/slick.css" rel="stylesheet">	
     
     <!-- Theme color -->
     <link id="switcher" href="assets/css/theme-color/default-theme.css" rel="stylesheet">
@@ -42,9 +42,9 @@
     <![endif]-->
     
         <link rel="shortcut icon" href="assets/images/favicon.ico"> 
-<!--         <link rel="stylesheet" type="text/css" href="loginresources/css/style.css" />-->
- 	<link rel="stylesheet" type="text/css" href="assets/css/logincss.css" />
-<!--          <script src="loginresources/js/modernizr.custom.63321.js"></script>-->
+        <link rel="stylesheet" type="text/css" href="loginresources/css/style.css" />
+<!--  	<link rel="stylesheet" type="text/css" href="assets/css/logincss.css" />-->
+ <!--          <script src="loginresources/js/modernizr.custom.63321.js"></script>-->
          <!--[if lte IE 7]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
 		<style>
 		
@@ -141,47 +141,47 @@
 	<section id="mu-hero">
 		<div class="container">
 			<div class="row">
-
 				<div class="col-md-6 col-sm-6 col-sm-push-6">
 					<div class="mu-hero-right">
-						<section class="main">
-								<form class="form-2">
-									<h1><span class="log-in">Log in</span> or <span class="sign-up">sign up</span></h1>
-									<p class="float">
-										<label for="login"><i class="icon-user"></i>Username</label>
-										<input type="text" name="login" placeholder="Username or email">
-									</p>
-									<p class="float">
-										<label for="password"><i class="icon-lock"></i>Password</label>
-										<input type="password" name="password" placeholder="Password" class="showpassword">
-									</p>
-									<p class="clearfix"> 
-										<a href="Join" class="log-twitter">Join</a>    
-										<input type="submit" name="submit" value="Log in">
-									</p>
-								</form>​​
-						</section>
+				
 						<!-- <img src="assets/images/ebook.png" alt="Ebook img"> -->
 					</div>
 				</div>
-
 				<div class="col-md-6 col-sm-6 col-sm-pull-6">
 					<div class="mu-hero-left">
-<!-- 					<h1 style="font-size: 30px;">이동근사마의</h1>
+						<section class="main">
+							<form class="form-2">
+								<h1><span class="log-in">Log in</span> or <span class="sign-up">sign up</span></h1>
+								<p class="float">
+									<label for="login"><i class="icon-user"></i>Username</label>
+									<input type="text" name="login" placeholder="Username or email">
+								</p>
+								<p class="float">
+									<label for="password"><i class="icon-lock"></i>Password</label>
+									<input type="password" name="password" placeholder="Password" class="showpassword">
+								</p>
+								<p class="clearfix"> 
+									<a href="Join" class="log-twitter">Join</a>    
+									<input type="submit" name="submit" value="Log in">
+								</p>
+							</form>​​
+						</section>
+					</div>
+				</div>	
+			</div>
+		</div>
+					<div style="">
+		<!-- 			<h1 style="font-size: 30px;">이동근사마의</h1>
 						<h1 style="font-size: 30px;">E-BOOK</h1>
 						<h1 style="font-size: 30px;">뷰어!!</h1>
 						<p style="font-size: 30px;">당신의 마음을 정화 시켜드립니다.</p> -->
-						<a href="#" class="mu-primary-btn">E-BOOK보기</a><br>
-						<a href="boardForm" class="mu-primary-btn">게시판 보기</a><br>
-						<a href="boardForm2" class="mu-primary-btn">게시판 보기2</a><br>
-						<a href="NewFile" class="mu-primary-btn">게시판 보기2</a><br>
-						<a href="realtestindex" class="mu-primary-btn">게시판 보기3</a><br>
+						<a href="#" class="mu-primary-btn">E-BOOK보기</a>
+						<a href="boardForm" class="mu-primary-btn">게시판 보기</a>
+						<a href="boardForm2" class="mu-primary-btn">게시판 보기2</a>
+						<a href="NewFile" class="mu-primary-btn">게시판 보기2</a>
+						<a href="realtestindex" class="mu-primary-btn">게시판 보기3</a>
 						<a href="realtestindex" class="mu-primary-btn">게시판 보기4</a>
 					</div>
-				</div>	
-
-			</div>
-		</div>
 	</section>
 	
 	<!-- Start Featured Slider -->

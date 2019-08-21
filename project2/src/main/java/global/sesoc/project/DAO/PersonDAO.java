@@ -7,25 +7,30 @@ import org.springframework.stereotype.Repository;
 import global.sesoc.project.VO.Person;
 
 @Repository
-public class PersonDAO	{
-	
-	
-	
+public class PersonDAO {
+
 	@Autowired
 	SqlSession sqlSession;
 
-	
-		//회원정보를 넣는 DAO - insert 관련 DAO
-		public int insertPerson(Person person){
-			PersonMapper mapper = sqlSession.getMapper(PersonMapper.class);
-					int result = 0;
-			try {
-				result = mapper.insertPerson(person);
-			}
-			catch (Exception e) {
-				e.printStackTrace();
-			}
-			return result;
-					
+	// 회원정보를 넣는 DAO - insert 관련 DAO
+	public int insertPerson(Person person) {
+		PersonMapper mapper = sqlSession.getMapper(PersonMapper.class);
+		int result = 0;
+		try {
+			result = mapper.insertPerson(person);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
+		return result;
+
+	}
+
+	public Person loginId(Person searchperson){
+		PersonMapper mapper = sqlSession.getMapper(PersonMapper.class);
+		System.out.println("aaaa");
+		Person person = mapper.loginId(searchperson);
+		System.out.println("bbbb");
+		
+		return person; 
+	}
 }

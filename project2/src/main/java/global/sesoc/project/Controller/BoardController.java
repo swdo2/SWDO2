@@ -1,4 +1,4 @@
-package global.sesoc.project;
+package global.sesoc.project.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -24,5 +24,8 @@
 			, #{person_phone}
 		)
 	</insert>
-	 
+	<!-- 로그인 아이디 정보받는 셀렉트 -->
+	<select id = "loginId" resultType="Person" parameterType="Person">
+		select * from person where person_id = #{person_id} and person_password = #{person_password} 
+	</select>
 </mapper>

@@ -10,6 +10,7 @@ import global.sesoc.project.DAO.BoardDAO;
 /*
  * 게시판 컨트롤러
  */
+
 @Controller
 public class BoardController {
 

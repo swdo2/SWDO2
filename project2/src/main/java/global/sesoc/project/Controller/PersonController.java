@@ -44,7 +44,7 @@ public class PersonController {
 
 		return "redirect:/";
 	}
-
+	
 	@RequestMapping(value = "logIn", method = RequestMethod.POST)
 	public String logIn(Person searchperson, HttpSession session) {
 		Person person = dao.loginId(searchperson);

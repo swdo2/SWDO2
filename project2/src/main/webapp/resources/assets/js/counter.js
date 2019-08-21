@@ -1,4 +1,4 @@
-var a = 0;
+/*var a = 0;
 $(window).scroll(function() {
 
   var oTop = $('.mu-single-counter').offset().top - window.innerHeight;
@@ -29,4 +29,4 @@ $(window).scroll(function() {
     a = 1;
   }
 
-});
+});*/

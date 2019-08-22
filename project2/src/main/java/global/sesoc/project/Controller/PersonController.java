@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import global.sesoc.project.HomeController;
 import global.sesoc.project.DAO.PersonDAO;
@@ -43,6 +44,18 @@ public class PersonController {
 		// 회원정보가 DB저장에 성공하면 홈으로 다시 redirect합니다.
 
 		return "redirect:/";
+	}
+	
+	// ID유효성 검사 0822 다시 수정 NA
+	@RequestMapping(value = "idCheck", method = RequestMethod.GET)
+	@ResponseBody
+	public int idCheck(String person_id){
+		
+		Person person = dao.idCheck(person_id);
+		if(person == null) {
+			return 1;
+		}
+		return 0;
 	}
 	
 	@RequestMapping(value = "logIn", method = RequestMethod.POST)

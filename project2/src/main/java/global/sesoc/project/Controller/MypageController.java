@@ -22,5 +22,11 @@ public class MypageController {
 		// 마이페이지 폼으로 이동
 		return "myPageForm";
 	}
+	
+	@RequestMapping(value = "write", method = RequestMethod.GET)
+	public String WriteBoard(){
+		
+		return null;
+	}
 
 }

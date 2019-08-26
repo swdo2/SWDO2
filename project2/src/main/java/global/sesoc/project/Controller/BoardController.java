@@ -1,5 +1,7 @@
 package global.sesoc.project.Controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +20,10 @@ public class BoardController {
 	
 	//보드로 이동시켜주  메서드
 	@RequestMapping(value="/boardForm", method = RequestMethod.GET)
-	public String board(){
+	public String board(HttpSession session){
+		//아이디 
+		
+		
 		
 		//이동하는 폼태그jsp 이름 		
 		return "boardForm";

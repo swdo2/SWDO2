@@ -32,7 +32,7 @@ CREATE TABLE Basket
 (
 	-- 회원 아이디
 	person_id varchar2(20) NOT NULL,
-	bookinfo_id varchar2(50) NOT NULL,
+	bookinfo_isbn varchar2(50) NOT NULL,
 	PRIMARY KEY (person_id)
 );
 
@@ -54,13 +54,13 @@ CREATE TABLE Board
 
 CREATE TABLE Bookinfo
 (
-	bookinfo_id varchar2(50) NOT NULL,
+	bookinfo_isbn varchar2(50) NOT NULL,
 	bookinfo_title varchar2(50) NOT NULL,
 	bookinfo_contents clob NOT NULL,
 	-- 책 출간일
 	book_publicationdate date,
 	book_writer varchar2(20),
-	PRIMARY KEY (bookinfo_id)
+	PRIMARY KEY (bookinfo_isbn)
 );
 
 
@@ -96,13 +96,12 @@ CREATE TABLE Person
 
 CREATE TABLE Purchaseinfo
 (
-	purchaseinfo_id varchar2(50) NOT NULL,
-	-- 회원 아이디
+	--구매한 회원 아이디
 	person_id varchar2(20) NOT NULL,
-	bookinfo_id varchar2(50) NOT NULL,
+	bookinfo_isbn varchar2(50) NOT NULL,
 	-- 대여 기간
 	purchaseinfo_rentalperiod date NOT NULL,
-	PRIMARY KEY (purchaseinfo_id)
+	PRIMARY KEY (person_id)
 );
 
 
@@ -135,14 +134,14 @@ ALTER TABLE Reply
 
 
 ALTER TABLE Basket
-	ADD FOREIGN KEY (bookinfo_id)
-	REFERENCES Bookinfo (bookinfo_id)
+	ADD FOREIGN KEY (bookinfo_isbn)
+	REFERENCES Bookinfo (bookinfo_isbn)
 ;
 
 
 ALTER TABLE Purchaseinfo
-	ADD FOREIGN KEY (bookinfo_id)
-	REFERENCES Bookinfo (bookinfo_id)
+	ADD FOREIGN KEY (bookinfo_isbn)
+	REFERENCES Bookinfo (bookinfo_isbn)
 ;
 
 

@@ -12,7 +12,7 @@
 		<meta name="description" content="Book Preview with BookBlock" />
 		<meta name="keywords" content="BookBlock, book preview, look inside, css, transforms, animations, css3, 3d, perspective, fullscreen" />
 		<meta name="author" content="Codrops" />
-		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="shortcut icon" href="assets/images/favicon.ico">
 		<link rel="stylesheet" type="text/css" href="viewbook/css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="viewbook/css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="viewbook/css/bookblock.css" />
@@ -23,8 +23,6 @@
 		<div id="scroll-wrap" class="container">
 			<header class="codrops-header">
 				<div class="codrops-top clearfix">
-					<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Tutorials/ShapeHoverEffectSVG/"><span>Previous Demo</span></a>
-					<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=18228"><span>Back to the Codrops Article</span></a></span>
 				</div>
 				<h1>Book Preview <span>with <a href="http://tympanus.net/codrops/2012/09/03/bookblock-a-content-flip-plugin/">BookBlock</a></span></h1>	
 			</header>

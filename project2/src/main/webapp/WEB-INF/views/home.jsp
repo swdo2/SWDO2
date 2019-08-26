@@ -13,19 +13,19 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>本ーE</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/icon" href="assets/images/favicon.ico"/>
+    <link rel="shortcut icon" type="image/icon" href="./assets/images/favicon.ico"/>
    <!--  Font Awesome -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
    <!--  Bootstrap -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/css/bootstrap.min.css?ver=1" rel="stylesheet">
    <!--  Slick slider -->
-    <link href="assets/css/slick.css" rel="stylesheet">	
+    <link href="./assets/css/slick.css" rel="stylesheet">	
     
     <!-- Theme color -->
-    <link id="switcher" href="assets/css/theme-color/default-theme.css" rel="stylesheet">
+    <link id="switcher" href="./assets/css/theme-color/default-theme.css" rel="stylesheet">
 
    <!--  Main Style -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="././assets/css/style.css?ver=1" rel="stylesheet">
 
   <!--   Fonts
 
@@ -41,10 +41,11 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-        <link rel="shortcut icon" href="assets/images/favicon.ico"> 
-        <link rel="stylesheet" type="text/css" href="loginresources/css/style.css" />
-<!--  	<link rel="stylesheet" type="text/css" href="assets/css/logincss.css" />-->
- <!--          <script src="loginresources/js/modernizr.custom.63321.js"></script>-->
+        <link rel="shortcut icon" href="./assets/images/favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="./loginresources/css/style.css?ver=1" />
+        <link rel="stylesheet" type="text/css" href="./loginresources/css/demo.css?ver=1" />
+<!--  		<link rel="stylesheet" type="text/css" href="./assets/css/logincss.css" /> -->
+ <!--          <script src="./loginresources/js/modernizr.custom.63321.js"></script>-->
          <!--[if lte IE 7]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
 		<style>
 		
@@ -111,18 +112,20 @@
 				      </button>
 
 				      <!-- Text Logo -->
+<!-- --------------------------------------------start 홈버튼 누르면 메인 페이지 갈수 있게 하는 겁니다.----------------------------------------------------->
 				      <a class="navbar-brand" href="index.html"><i class="fa fa-book" aria-hidden="true"></i> 本ーE</a>
-
+<!-- --------------------------------------------end 홈버튼 누르면 메인 페이지 갈수 있게 하는 겁니다.--------------------------------------------------- -->
 				      <!-- Image Logo -->
-				      <!-- <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png"></a> -->
-
-
+				      <!-- <a class="navbar-brand" href="index.html"><img src="./assets/images/logo.png"></a> -->
 				    </div>
 
+
+<!-- ------------------------------------로그인 했을경우 뜨게하는 부분  start ------------------------------------------------- -->
+				<c:if test="${sessionScope.loginId != null}">
 				    <!-- Collect the nav links, forms, and other content for toggling -->
-				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="width: 100%;">
 				      	<ul class="nav navbar-nav mu-menu navbar-right">
-					        <li><a href="#">로그인</a></li>
+					        <li><a href="#">로그아웃</a></li>
 					 <!--        <li><a href="#mu-book-overview">장바구니</a></li>
 					        <li><a href="#mu-author">고객센터</a></li>
 				            <li><a href="#mu-pricing"></a></li>
@@ -130,6 +133,9 @@
 				            <li><a href="#mu-contact"></a></li> -->
 				      	</ul>
 				    </div><!-- /.navbar-collapse -->
+    			</c:if>
+<!-- ------------------------------------로그인 했을경우 뜨게하는 부분  end ------------------------------------------------- -->
+
 			  	</div><!-- /.container-fluid -->
 			</nav>
 		</div>
@@ -139,16 +145,15 @@
 	<!-- Start Featured Slider -->
 
 	<section id="mu-hero">
+	  <c:if test="${sessionScope.loginId == null}">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-sm-6 col-sm-push-6">
 					<div class="mu-hero-right">
-				
-						<!-- <img src="assets/images/ebook.png" alt="Ebook img"> -->
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6 col-sm-pull-6">
-					<div class="mu-hero-left">
+					<div class="mu-hero-left" style="margin-left: 45%;">
 						<section class="main">
 							<form class="form-2" action="logIn" method="post">
 								<h1><span class="log-in">Log in</span> or <span class="sign-up">sign up</span></h1>
@@ -172,18 +177,25 @@
 				</div>	
 			</div>
 		</div>
-					<div style="">
-		<!-- 			<h1 style="font-size: 30px;">이동근사마의</h1>
-						<h1 style="font-size: 30px;">E-BOOK</h1>
-						<h1 style="font-size: 30px;">뷰어!!</h1>
-						<p style="font-size: 30px;">당신의 마음을 정화 시켜드립니다.</p> -->
-						<a href="#" class="mu-primary-btn">E-BOOK보기</a>
-						<a href="boardForm" class="mu-primary-btn">게시판 보기</a>
-						<a href="boardForm2" class="mu-primary-btn">게시판 보기2</a>
-						<a href="NewFile" class="mu-primary-btn">게시판 보기2</a>
-						<a href="realtestindex" class="mu-primary-btn">게시판 보기3</a>
-						<a href="realtestindex" class="mu-primary-btn">게시판 보기4</a>
-					</div>
+	</c:if>
+<!-- ------------------------------------로그인 했을경우 뜨게하는 부분  start ------------------------------------------------- -->
+<%-- 				<c:if test="${sessionScope.loginId != null}"> --%>
+				<div><img src="./assets/images/letsread.jpg" alt="Ebook img" style="width:200px; height:200px; margin-left:45%;"></div>
+				<br>
+				<div class="mu-hero-left" style="margin-left: 37%;">
+				<form>
+					<input type="text">
+				</form><br>
+					<a href="#" class="mu-primary-btn">VIEW-BOOK</a>
+					<a href="boardForm" class="mu-primary-btn">BOARD</a>
+					<a href="myPageForm" class="mu-primary-btn">MY BOOK PAGE</a>
+					<a href="product" class="mu-primary-btn">테스트용 책구매가기</a>
+				</div>
+<%-- 				</c:if> --%>
+<!-- ------------------------------------로그인 했을경우 뜨게하는 부분  end ------------------------------------------------- -->
+
+
+	
 	</section>
 	
 	<!-- Start Featured Slider -->
@@ -234,7 +246,7 @@
 								<div class="row">
 									<div class="col-md-6">
 										<div class="mu-author-image">
-											<img src="assets/images/author.jpg" alt="Author Image">
+											<img src="./assets/images/author.jpg" alt="Author Image">
 										</div>
 									</div>
 									<div class="col-md-6">
@@ -242,16 +254,14 @@
 											<h3>완벽한 E_BOOK을 제공해드립니다.</h3>
 											<p>이 사이트는 E-BOOK뷰어를 제공해드립니다.</p>
 
-											<p></p>
-											<img class="mu-author-sign" src="assets/images/author-signature.png" alt="Author Signature">
-
-											<div class="mu-author-social">
+											<!-- <p></p>	 -->
+											<!--<img class="mu-author-sign" src="./assets/images/author-signature.png" alt="Author Signature">
+ 												<div class="mu-author-social">
 												<a href="http://www.naver.com"><i class="fa fa-facebook"></i></a>
 												<a href="#"><i class="fa fa-twitter"></i></a>
 												<a href="#"><i class="fa fa-linkedin"></i></a>
 												<a href="#"><i class="fa fa-google-plus"></i></a>
-											</div>
-
+											</div> -->
 										</div>
 									</div>
 								</div>
@@ -265,8 +275,8 @@
 		</section>
 		<!-- End Author -->
 
-		<!-- Start Testimonials -->
-		<!-- <section id="mu-testimonials">
+<!-- 		Start Testimonials  -->
+		<section id="mu-testimonials">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
@@ -281,21 +291,21 @@
 
 									<li>
 										<p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever."</p>
-										<img class="mu-rt-img" src="assets/images/reader-1.jpg" alt="img">
+										<img class="mu-rt-img" src="./assets/images/reader-1.jpg" alt="img">
 										<h5 class="mu-rt-name"> - Alice Boga</h5>
 										<span class="mu-rt-title">CEO, Apple Inc.</span>
 									</li>
 
 									<li>
 										<p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever."</p>
-										<img class="mu-rt-img" src="assets/images/reader-2.jpg" alt="img">
+										<img class="mu-rt-img" src="./assets/images/reader-2.jpg" alt="img">
 										<h5 class="mu-rt-name"> - Jhon Doe</h5>
 										<span class="mu-rt-title">Director, Google Inc.</span>
 									</li>
 
 									<li>
 										<p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever."</p>
-										<img class="mu-rt-img" src="assets/images/reader-3.jpg" alt="img">
+										<img class="mu-rt-img" src="./assets/images/reader-3.jpg" alt="img">
 										<h5 class="mu-rt-name"> - Jessica Doe</h5>
 										<span class="mu-rt-title">Web Developer</span>
 									</li>
@@ -308,12 +318,13 @@
 					</div>
 				</div>
 			</div>
-		</section> -->
-		<!-- End Testimonials -->
+		</section>
+<!-- 		End Testimonials -->
 
 		<!-- Start Google Map -->
 		<section id="mu-google-map">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d589888.4396405783!2d-82.41588603632052!3d32.866951223053896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f9f727a4ed30eb%3A0xf2139b0c5c7ae1ec!2sDooley+Branch+Rd%2C+Millen%2C+GA+30442%2C+USA!5e0!3m2!1sen!2sbd!4v1497376364225" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d589888.4396405783!2d-82.41588603632052!3d32.866951223053896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f9f727a4ed30eb%3A0xf2139b0c5c7ae1ec!2sDooley+Branch+Rd%2C+Millen%2C+GA+30442%2C+USA!5e0!3m2!1sen!2sbd!4v1497376364225" 
+					width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
 		</section>
 		<!-- End Google Map -->
 
@@ -323,7 +334,7 @@
 			
 			
 	<!-- Start footer -->
-	<footer id="mu-footer" role="contentinfo">
+<!-- 	<footer id="mu-footer" role="contentinfo">
 		<div class="container">
 			<div class="mu-footer-area">
 				<div class="mu-social-media">
@@ -336,8 +347,8 @@
 			</div>
 		</div>
 
-	</footer>
-	<!-- End footer -->
+	</footer> -->
+ 	<!-- End footer -->
 
 	
 	
@@ -345,18 +356,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <!-- Bootstrap -->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
 	<!-- Slick slider -->
-    <script type="text/javascript" src="assets/js/slick.min.js"></script>
+    <script type="text/javascript" src="./assets/js/slick.min.js"></script>
     <!-- Counter js -->
-    <script type="text/javascript" src="assets/js/counter.js"></script>
+    <script type="text/javascript" src="./assets/js/counter.js"></script>
     <!-- Ajax contact form  -->
-    <script type="text/javascript" src="assets/js/app.js"></script>
+    <script type="text/javascript" src="./assets/js/app.js"></script>
    
  
 	
     <!-- Custom js -->
-	<script type="text/javascript" src="assets/js/custom.js"></script>
+	<script type="text/javascript" src="./assets/js/custom.js"></script>
 	
     
   </body>

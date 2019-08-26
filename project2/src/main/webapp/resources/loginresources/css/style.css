@@ -23,7 +23,7 @@
 
 .form-1 {
     /* Size & position */
-    width: 300px;
+    width: 	300px;
     margin: 60px auto 30px;
     padding: 10px;
     position: relative; /* For the submit button positioning */
@@ -202,11 +202,11 @@
 
 /* Demo 2 */
 
-.form-2 {
+.form-2 { 
     /* Size and position */
-    width: 340px;
+    width: 800px;
     margin: 60px auto 30px;
-    padding: 15px;
+    padding: 35px;
     position: relative;
 
     /* Styles */
@@ -220,13 +220,14 @@
 }
 
 .form-2 h1 {
-    font-size: 15px;
+    font-size: 45px;
     font-weight: bold;
     color: #bdb5aa;
     padding-bottom: 8px;
     border-bottom: 1px solid #EBE6E2;
     text-shadow: 0 2px 0 rgba(255,255,255,0.8);
     box-shadow: 0 1px 0 rgba(255,255,255,0.8);
+    text-align : center;
 }
 
 .form-2 h1 .log-in,
@@ -267,7 +268,8 @@
     text-transform: uppercase;
     font-weight: 400;
     text-shadow: 0 1px 0 rgba(255,255,255,0.8);
-    font-size: 11px;
+    font-size: 15px;
+    text-align : center;
 }
 
 .form-2 label i {
@@ -278,8 +280,10 @@
 
 .form-2 input[type=text],
 .form-2 input[type=password] {
+    height:60px; 
+    font-size:20px; 
+    text-align:center;
     font-family: 'Lato', Calibri, Arial, sans-serif;
-    font-size: 13px;
     font-weight: 400;
     display: block;
     width: 100%;
@@ -324,7 +328,7 @@
 
     /* Font styles */
     font-family: 'Lato', Calibri, Arial, sans-serif;
-    font-size: 14px;
+    font-size: 20px;
     line-height: 38px; /* Same as height */
     text-align: center;
     font-weight: bold;
@@ -392,7 +396,7 @@
 .form-2 label[for=showPassword] {
     display: inline-block;
     margin-bottom: 10px;
-    font-size: 11px;
+    font-size: 15px;
     font-weight: 400;
     text-transform: capitalize;
 }

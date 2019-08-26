@@ -33,7 +33,7 @@ public class BooklistController {
     	
     	if(keyword !=null)
     	{
-    		mav.addObject("bookList",service.searchBook(keyword,5,2));
+    		mav.addObject("bookList",service.searchBook(keyword,1,1));
     		///(키워드,몇개,몇줄부터)
     	}
     	mav.setViewName("bookList");

@@ -2,11 +2,11 @@
 /* Drop Tables */
 
 DROP TABLE Basket CASCADE CONSTRAINTS;
-DROP TABLE Checkboard CASCADE CONSTRAINTS;
+DROP TABLE CheckBorad CASCADE CONSTRAINTS;
 DROP TABLE Reply CASCADE CONSTRAINTS;
 DROP TABLE Board CASCADE CONSTRAINTS;
+DROP TABLE Book CASCADE CONSTRAINTS;
 DROP TABLE Purchaseinfo CASCADE CONSTRAINTS;
-DROP TABLE Bookinfo CASCADE CONSTRAINTS;
 DROP TABLE Person CASCADE CONSTRAINTS;
 
 
@@ -32,8 +32,8 @@ CREATE TABLE Basket
 (
 	-- 회원 아이디
 	person_id varchar2(20) NOT NULL,
-	bookinfo_isbn varchar2(50) NOT NULL,
-	PRIMARY KEY (person_id)
+	book_isbn varchar2(50) NOT NULL,
+	PRIMARY KEY (person_id, book_isbn)
 );
 
 
@@ -43,16 +43,15 @@ CREATE TABLE Board
 	board_contents clob NOT NULL,
 	board_title varchar2(30) NOT NULL,
 	-- 기본값 0
-	
 	board_hits number default 0 NOT NULL,
-	board_like number,
+	borad_like number,
 	-- 회원 아이디
 	person_id varchar2(20) NOT NULL,
 	PRIMARY KEY (board_num)
 );
 
 
-CREATE TABLE Bookinfo
+CREATE TABLE Book
 (
 	bookinfo_isbn varchar2(50) NOT NULL,
 	bookinfo_title varchar2(50) NOT NULL,
@@ -64,7 +63,7 @@ CREATE TABLE Bookinfo
 );
 
 
-CREATE TABLE Checkboard
+CREATE TABLE CheckBorad
 (
 	-- 중복이면1
 	-- 중복아니면 0
@@ -86,8 +85,6 @@ CREATE TABLE Person
 	person_password varchar2(20) NOT NULL,
 	person_email varchar2(20) NOT NULL,
 	person_phone varchar2(20) NOT NULL,
-	-- 대여중인 책의 목록
-	person_purchaselist varchar2(50),
 	-- 현재 아이디에 저장되어이는 돈의 액수
 	person_cash number,
 	PRIMARY KEY (person_id)
@@ -96,12 +93,11 @@ CREATE TABLE Person
 
 CREATE TABLE Purchaseinfo
 (
-	--구매한 회원 아이디
+	-- 회원 아이디
 	person_id varchar2(20) NOT NULL,
-	bookinfo_isbn varchar2(50) NOT NULL,
-	-- 대여 기간
-	purchaseinfo_rentalperiod date NOT NULL,
-	PRIMARY KEY (person_id)
+	purchaseinfo_rentalperiod date,
+	purchase_isbn varchar2(50) NOT NULL,
+	PRIMARY KEY (person_id, purchase_isbn)
 );
 
 
@@ -121,7 +117,7 @@ CREATE TABLE Reply
 
 /* Create Foreign Keys */
 
-ALTER TABLE Checkboard
+ALTER TABLE CheckBorad
 	ADD FOREIGN KEY (board_num)
 	REFERENCES Board (board_num)
 ;
@@ -130,18 +126,6 @@ ALTER TABLE Checkboard
 ALTER TABLE Reply
 	ADD FOREIGN KEY (board_num)
 	REFERENCES Board (board_num)
-;
-
-
-ALTER TABLE Basket
-	ADD FOREIGN KEY (bookinfo_isbn)
-	REFERENCES Bookinfo (bookinfo_isbn)
-;
-
-
-ALTER TABLE Purchaseinfo
-	ADD FOREIGN KEY (bookinfo_isbn)
-	REFERENCES Bookinfo (bookinfo_isbn)
 ;
 
 
@@ -157,7 +141,7 @@ ALTER TABLE Board
 ;
 
 
-ALTER TABLE CheckBoard
+ALTER TABLE CheckBorad
 	ADD FOREIGN KEY (person_id)
 	REFERENCES Person (person_id)
 ;
@@ -181,17 +165,15 @@ ALTER TABLE Reply
 COMMENT ON COLUMN Basket.person_id IS '회원 아이디';
 COMMENT ON COLUMN Board.board_hits IS '기본값 0';
 COMMENT ON COLUMN Board.person_id IS '회원 아이디';
-COMMENT ON COLUMN Bookinfo.book_publicationdate IS '책 출간일';
-COMMENT ON COLUMN Checkboard.check_checkhits IS '중복이면1
+COMMENT ON COLUMN Book.book_publicationdate IS '책 출간일';
+COMMENT ON COLUMN CheckBorad.check_checkhits IS '중복이면1
 중복아니면 0';
-COMMENT ON COLUMN Checkboard.person_id IS '회원 아이디';
-COMMENT ON COLUMN Checkboard.check_checklike IS '중복이면1
+COMMENT ON COLUMN CheckBorad.person_id IS '회원 아이디';
+COMMENT ON COLUMN CheckBorad.check_checklike IS '중복이면1
 중복아니면 0';
 COMMENT ON COLUMN Person.person_id IS '회원 아이디';
-COMMENT ON COLUMN Person.person_purchaselist IS '대여중인 책의 목록';
 COMMENT ON COLUMN Person.person_cash IS '현재 아이디에 저장되어이는 돈의 액수';
 COMMENT ON COLUMN Purchaseinfo.person_id IS '회원 아이디';
-COMMENT ON COLUMN Purchaseinfo.purchaseinfo_rentalperiod IS '대여 기간';
 COMMENT ON COLUMN Reply.person_id IS '회원 아이디';
 COMMENT ON COLUMN Reply.reply_date IS '리플 작성 일자';
 

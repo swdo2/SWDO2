@@ -1,8 +1,12 @@
 package global.sesoc.project.Controller;
 
+import java.util.Locale;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -39,7 +43,13 @@ public class BooklistController {
     	mav.setViewName("bookList");
     	return mav;
     }
-   
+    
+    @RequestMapping(value = "/searchBook", method = RequestMethod.GET)
+	public String searchBook() {
+    
+    	
+    	return "searchBook";
+	}
 }
 
 

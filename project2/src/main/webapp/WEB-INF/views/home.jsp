@@ -126,12 +126,9 @@
 				    <!-- Collect the nav links, forms, and other content for toggling -->
 				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="width: 100%;">
 				      	<ul class="nav navbar-nav mu-menu navbar-right">
-					        <li><a href="#">로그아웃</a></li>
-					 <!--        <li><a href="#mu-book-overview">장바구니</a></li>
+					        <li><a href="logOut">로그아웃</a></li>
+					        <li><a href="#mu-book-overview">장바구니</a></li>
 					        <li><a href="#mu-author">고객센터</a></li>
-				            <li><a href="#mu-pricing"></a></li>
-				            <li><a href="#mu-testimonials"></a></li>
-				            <li><a href="#mu-contact"></a></li> -->
 				      	</ul>
 				    </div><!-- /.navbar-collapse -->
     			</c:if>
@@ -223,8 +220,8 @@
 				<div class="w3layouts-left">							
 					<!--search-box-->
 						<div class="w3-search-box">
-							<form action="searchBook" >
-								<b><input type="text" placeholder="Search..." required="" maxlength="25"></b>	
+							<form action="searchBook" >   <!-- <<<<<<<<<<<<<<<<여기 가 검색 부분 액션 이름 단 입니다. -->
+								<b><input type="text" name="bookTitle" placeholder="Search..." required="검색어를 입력하세요...." maxlength="25"></b>	
 								<input type="submit" value="">					
 							</form>
 						</div><!--//end-search-box-->

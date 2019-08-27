@@ -6,11 +6,13 @@
 
 	<typeAliases>
  		<typeAlias type="global.sesoc.project.VO.Person" alias="Person" />
+ 		<typeAlias type="global.sesoc.project.VO.Board" alias="Board" />
  		<typeAlias type="global.sesoc.project.VO.Purchaseinfo" alias="Purchaseinfo" />
 	</typeAliases>
 	
 	<mappers>
 	 	<mapper resource="PersonMapper.xml" />
+	 	<mapper resource="BoardMapper.xml" />
 	 	<mapper resource="MypageMapper.xml" />
 		
 	</mappers>

@@ -48,7 +48,7 @@ ul {
 }
 
 ul li {
-	list-style: disc;
+	/* list-style: disc; */
 	font-size: 17px;
 	line-height: 1.59;
 }
@@ -1202,6 +1202,7 @@ button:focus {
 }
 
 
+
 @media (max-width: 480px) {
 
 	.navbar-brand img {
@@ -1260,6 +1261,49 @@ button:focus {
 	
 }
 
+/* 여기부터 테스트용 */
+.w3layouts-left {
+    width: 40%;
+    background: #ffb827;
+    padding: 1em;
+    margin-left:30%;
+}
+
+.w3-search-box {
+    width:100%;
+    margin-top: 0em;
+	position: relative;
+    z-index: 1;
+    display: inline-block;
+    border:2px solid #fff;
+}
+
+.w3-search-box input[type="text"] {
+    outline: none;
+    background: #fff;
+    width: 93%;
+    margin: 0;
+    z-index: 10;
+    font-size: 0.9em;
+    color: #7A7B78;
+    padding: 0.5em 0.5em;
+    border: none;
+    -webkit-appearance: none;
+    display: inline-block;
+    text-align:center; 
+    font-size:15px;
+}
+
+.w3-search-box input[type="submit"] {
+    background: url(../images/search.png)no-repeat;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+   vertical-align: text-top;
+    border: none;
+    outline: none;
+}
+/* 여기까지 */
 
 @media (max-width: 360px){
 

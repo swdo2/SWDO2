@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <meta name="description" content="Custom Login Form Styling with CSS3" />
     <meta name="keywords" content="css3, login, form, custom, input, submit, button, html5, placeholder" />
     <meta name="author" content="Codrops" />
@@ -25,10 +25,9 @@
     <link id="switcher" href="./assets/css/theme-color/default-theme.css" rel="stylesheet">
 
    <!--  Main Style -->
-    <link href="././assets/css/style.css?ver=1" rel="stylesheet">
-
+    <link href="./assets/css/style.css?ver=1" rel="stylesheet">
+    
   <!--   Fonts
-
     Open Sans for body font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800" rel="stylesheet">
     <!-- Lato for Title -->
@@ -36,23 +35,23 @@
  
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
     
-        <link rel="shortcut icon" href="./assets/images/favicon.ico"> 
-        <link rel="stylesheet" type="text/css" href="./loginresources/css/style.css?ver=1" />
-        <link rel="stylesheet" type="text/css" href="./loginresources/css/demo.css?ver=1" />
-<!--  		<link rel="stylesheet" type="text/css" href="./assets/css/logincss.css" /> -->
- <!--          <script src="./loginresources/js/modernizr.custom.63321.js"></script>-->
-         <!--[if lte IE 7]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
-		<style>
-		
-		</style>
+    <link rel="shortcut icon" href="./assets/images/favicon.ico"> 
+    <link rel="stylesheet" type="text/css" href="./loginresources/css/style.css?ver=1" />
+    <link rel="stylesheet" type="text/css" href="./loginresources/css/demo.css?ver=1" />
+    <!--[if lte IE 7]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
+
+<!-- -------------------------------------------------광고판 포더 Resources 링크 start ------------------------------------------------------------------------------------- -->
+	<link rel="stylesheet" href="./gwangGoPan/css/flexslider.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="./gwangGoPan/css/font-awesome.min.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="./gwangGoPan/css/menu.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="./gwangGoPan/css/popuo-box.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="./gwangGoPan/css/style.css" type="text/css" media="screen" />
+<!-- -------------------------------------------------광고판 포더 Resources 링크 end ------------------------------------------------------------------------------------- -->		
+		         
 				<!-- jQuery if needed -->
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-		<script type="text/javascript">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script type="text/javascript">
 		 	$(function(){
 			    $(".showpassword").each(function(index,input) {
 			        var $input = $(input);
@@ -134,7 +133,7 @@
 				      	</ul>
 				    </div><!-- /.navbar-collapse -->
     			</c:if>
-<!-- ------------------------------------로그인 했을경우 뜨게하는 부분  end ------------------------------------------------- -->
+<!-- ------------------------------------로그인 했을경우 뜨게하는 부분  end ------------------------------------------------------------------- -->
 
 			  	</div><!-- /.container-fluid -->
 			</nav>
@@ -142,8 +141,7 @@
 	</header>
 	<!-- End Header -->
 
-	<!-- Start Featured Slider -->
-
+	<!-- 로그인 폼 부분 start -->
 	<section id="mu-hero">
 	  <c:if test="${sessionScope.loginId == null}">
 		<div class="container">
@@ -153,7 +151,7 @@
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-6 col-sm-pull-6">
-					<div class="mu-hero-left" style="margin-left: 45%;">
+					<div class="mu-hero-left" style="margin-left: 64%;">
 						<section class="main">
 							<form class="form-2" action="logIn" method="post">
 								<h1><span class="log-in">Log in</span> or <span class="sign-up">sign up</span></h1>
@@ -178,25 +176,71 @@
 			</div>
 		</div>
 	</c:if>
-<!-- ------------------------------------로그인 했을경우 뜨게하는 부분  start ------------------------------------------------- -->
-<%-- 				<c:if test="${sessionScope.loginId != null}"> --%>
-				<div><img src="./assets/images/letsread.jpg" alt="Ebook img" style="width:200px; height:200px; margin-left:45%;"></div>
-				<br>
-				<div class="mu-hero-left" style="margin-left: 37%;">
-				<form>
-					<input type="text">
-				</form><br>
+<!-- -----------------------------------------로그인 했을경우 뜨게하는 부분  start ------------------------------------------------------- -->
+<!-- ----------------------------------------------광고판 시작 부분입니다. start--------------------------------------------------------- -->
+<%-- 	<c:if test="${sessionScope.loginId != null}"> --%>
+		 <div class="banner col-md-8">
+			<div class="slider">
+				<div class="flexslider">
+					<ul class="slides" style="list-style:none;">
+						<li>
+							<img src="./gwangGoPan/images/book1 we are bye.jpg" class="img-responsive" alt="" />
+						</li>
+						<li>
+							<img src="./gwangGoPan/images/book2 we are bye.jpg" class="img-responsive" alt="" />
+						</li>
+						<li>
+							<img src="./gwangGoPan/images/book3 we are bye.jpg" class="img-responsive" alt="" />
+						</li>
+						<li>
+							<img src="./gwangGoPan/images/book4 we are bye.jpg" class="img-responsive" alt="" />
+						</li>
+				  	</ul>
+				</div>
+			</div>
+		</div>
+						 <!-- FlexSlider -->
+	    <script defer src="./gwangGoPan/js/jquery.flexslider.js"></script>
+					<script type="text/javascript">
+						$(function(){
+						 SyntaxHighlighter.all();
+						});
+						$(window).load(function(){
+						  $('.flexslider').flexslider({
+							animation: "slide",
+							start: function(slider){
+							  $('body').removeClass('loading');
+							}
+						 });
+						});
+					 </script>
+<!-- ----------------------------------------------광고판 끝 부분입니다. end--------------------------------------------------------- -->
+
+<!-- ----------------------------------------------검색 바 시작부분 입니다. start-------------------------------------------------------- -->
+			<div class="mu-hero-left" style="text-align:center;">
+				<div class="w3layouts-left">							
+					<!--search-box-->
+						<div class="w3-search-box">
+							<form action="#" method="post">
+								<b><input type="text" placeholder="Search..." required="" maxlength="25"></b>	
+								<input type="submit" value="">					
+							</form>
+						</div><!--//end-search-box-->
+						<div class="clearfix"> </div>
+				</div>
+<!-- ----------------------------------------------검색 바 끝부분 입니다. end----------------------------------------------------------- -->
+				<div style="width:100%;">				
 					<a href="#" class="mu-primary-btn">VIEW-BOOK</a>
 					<a href="boardForm" class="mu-primary-btn">BOARD</a>
 					<a href="myPageForm" class="mu-primary-btn">MY BOOK PAGE</a>
-					<a href="product" class="mu-primary-btn">테스트용 책구매가기</a>
-				</div>
-<%-- 				</c:if> --%>
-<!-- ------------------------------------로그인 했을경우 뜨게하는 부분  end ------------------------------------------------- -->
-
-
-	
+					<a href="product" class="mu-primary-btn">테스트용 책구매가기 창</a>
+				</div>	
+			</div>
+		</div>
+<%-- 	 </c:if> --%>
+<!-- ------------------------------------로그인 했을경우 뜨게하는 부분  end ---------------------------------------------------------------- -->
 	</section>
+<!-- ------------------------------------로그인 폼 부분 start ------------------------------------------------------------------------ -->	
 	
 	<!-- Start Featured Slider -->
 	

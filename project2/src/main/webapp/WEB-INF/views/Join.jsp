@@ -90,7 +90,7 @@
 	<form id = "joinform" action="Join" method = "post" onsubmit="return formCheck();">
 		 <table>
 			<tr>
-				<td>ID</td> 
+				<td >ID</td> 
 				<td>
 					<input type = "text" name = "person_id" id= "person_id">
 					<div class = "id_check1"></div>

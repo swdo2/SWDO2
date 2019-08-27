@@ -1,6 +1,8 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
@@ -8,7 +10,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>Book Preview with BookBlock</title>
+		<title>게시판 with 작성및 삭제</title>
 		<meta name="description" content="Book Preview with BookBlock" />
 		<meta name="keywords" content="BookBlock, book preview, look inside, css, transforms, animations, css3, 3d, perspective, fullscreen" />
 		<meta name="author" content="Codrops" />
@@ -19,16 +21,44 @@
 		<link rel="stylesheet" type="text/css" href="viewbook/css/component.css" />
 		<script src="viewbook/js/modernizr.custom.js"></script>
 	</head>
+	<script>
+	
+	//나홍윤
+	
+	</script>
 	<body>
 		<div id="scroll-wrap" class="container">
 			<header class="codrops-header">
 				<div class="codrops-top clearfix">
 				</div>
-				<h1>Book Preview <span>with <a href="http://tympanus.net/codrops/2012/09/03/bookblock-a-content-flip-plugin/">BookBlock</a></span></h1>	
+				<h1> <span>with <a href="http://tympanus.net/codrops/2012/09/03/bookblock-a-content-flip-plugin/">BookBlock</a></span></h1>	
 			</header>
-			<div class="main">
+			<!-- <div class="main"> -->
 				
-			</div><!-- /main -->
+                <p>게시판</p>
+			<c:if test = "${sessionScope.loginId != null }">
+				<p>${sessionScope.loginId }님 환영</p>
+			</c:if>
+			<a href = "writeForm">글쓰러가기</a>
+			
+			<table>
+			
+				 <c:forEach var = "Board" items = "${board}">
+				
+				<tr>
+				<td>${Board.boardnum }</td>
+					<td>
+						<a href = "read?boardnum=${Board.boardnum }">${Board.title}</a>
+					</td>
+					<td>${Board.id }</td>
+					<td>${Board.hits }</td>
+					
+				</tr>
+				</c:forEach>
+			
+			</table>
+				
+			<!-- </div>/main -->
 			<div class="related">
 				<h3>If you enjoyed this demo you might also like:</h3>
 				<a href="http://tympanus.net/Development/AnimatedBooks/">

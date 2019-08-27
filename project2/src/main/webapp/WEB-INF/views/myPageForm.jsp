@@ -18,9 +18,10 @@
 		<link rel="stylesheet" type="text/css" href="viewbook/css/bookblock.css" />
 		<link rel="stylesheet" type="text/css" href="viewbook/css/component.css" />
 		<script src="viewbook/js/modernizr.custom.js"></script>
+		
 	</head>
 	<body>
-		
+
 		<div id="scroll-wrap" class="container">
 			<header class="codrops-header">
 				<div class="codrops-top clearfix">
@@ -31,6 +32,12 @@
 			</header>
 			<div class="main">
 			안녕하세여 슈가 아유미 에요
+			<c:forEach items="${blist}" var="list">
+				<c:forEach items = "${list}" var = "b">
+				<img src="${b.image}">
+				</c:forEach>
+			</c:forEach>
+			
 			<!-- 여기는 내가 로그인했을경우 내가 구매한 책들을 E-BOOK으로 볼수 있게 나타내는 부분입니다. -->
 			</div><!-- /main -->
 			<div class="related">

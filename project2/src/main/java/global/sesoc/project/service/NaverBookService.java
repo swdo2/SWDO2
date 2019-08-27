@@ -29,12 +29,15 @@ public class NaverBookService {
     public List<Book> searchBook(String keyword, int display, int start){
         List<Book> list = null;
         try {
-            URL url;
+        	URL url;
+            url =new URL("https://openapi.naver.com/v1/search/book_adv.xml?d_isbn="
+            		+ URLEncoder.encode(keyword, "UTF-8"));
+            /*URL url;
             url = new URL("https://openapi.naver.com/v1/search/"
                     + "book.xml?query="
                     + URLEncoder.encode(keyword, "UTF-8")
                     + (display !=0 ? "&display=" +display :111)
-                    + (start !=0 ? "&start=" +start :0));
+                    + (start !=0 ? "&start=" +start :0));*/
  
             URLConnection urlConn = url.openConnection();
             urlConn.setRequestProperty("X-Naver-Client-Id", clientID);
@@ -114,7 +117,7 @@ public class NaverBookService {
                         break;
                     }
                     
-                }
+                	}
                 }
                 eventType = parser.next();
             }

@@ -10,7 +10,7 @@ import global.sesoc.project.service.NaverBookService;
 
 @Controller
 public class BooklistController {
-    @Autowired
+	@Autowired
     private NaverBookService service; 
     
     //키워드가 있을때도 있고 없을때도있음 
@@ -33,7 +33,7 @@ public class BooklistController {
     	
     	if(keyword !=null)
     	{
-    		mav.addObject("bookList",service.searchBook(keyword,5,2));
+    		mav.addObject("bookList",service.searchBook(keyword,1,1));
     		///(키워드,몇개,몇줄부터)
     	}
     	mav.setViewName("bookList");

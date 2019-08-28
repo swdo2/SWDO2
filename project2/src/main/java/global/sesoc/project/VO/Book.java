@@ -11,13 +11,13 @@ public class Book {
     private String pubdate;
     private String isbn;
     private String description;
-    private int total;
+    private String total;
     
     
-    public int getTotal() {
+	public String getTotal() {
 		return total;
 	}
-	public void setTotal(int total) {
+	public void setTotal(String total) {
 		this.total = total;
 	}
 	public String getTitle() {

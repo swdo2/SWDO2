@@ -6,7 +6,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 
+import org.springframework.stereotype.Service;
+
 //토탈용
+@Service
 public class Searchbook {
 
 	public String booksearch(String title) {
@@ -15,7 +18,7 @@ public class Searchbook {
 		String result = null;
 		try {
 			String text = URLEncoder.encode(title, "UTF-8");
-			String apiURL = "https://openapi.naver.com/v1/search/blog?query=" + text; // json
+			String apiURL = "https://openapi.naver.com/v1/search/book.xml?query=" + text; // json
 																						// 결과
 			// String apiURL =
 			// "https://openapi.naver.com/v1/search/blog.xml?query="+ text; //

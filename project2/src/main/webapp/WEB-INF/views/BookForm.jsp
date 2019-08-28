@@ -18,7 +18,7 @@ ${info.price}
 <!-- 작가 -->
 ${info.author}
 <!-- 줄거리 -->
-${info.description}
+${info.description}      
 </c:forEach>
 
 </body>

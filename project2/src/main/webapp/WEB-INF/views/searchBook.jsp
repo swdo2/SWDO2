@@ -12,6 +12,8 @@
     <link rel="shortcut icon" type="image/icon" href="./assets/images/favicon.ico"/>
 </head>
 <body>
+<!-- 책 제목 검색 토탈알려줌--> 
+${total}
   <div>
 	<table border="1">
 		<tr align="center">
@@ -34,7 +36,7 @@
 						<p>출간일: ${list.pubdate}</p>
 						<p>책코드넘버: ${list.isbn}</p>
 						<p>책 소개: ${list.description}</p>
-						<p>total: ${list.total}</p>
+				
 					</td>
 					<td>
 						<!-- 가격 -->

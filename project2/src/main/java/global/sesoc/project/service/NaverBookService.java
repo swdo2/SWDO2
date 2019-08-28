@@ -115,6 +115,7 @@ public class NaverBookService {
                         if(b != null)
                             b.setDescription(parser.nextText());
                         break;
+                  
                     }
                     
                 	}

@@ -14,12 +14,12 @@
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<!-- <resources mapping="/resources/**" location="/resources/assets" /> -->		
-	<resources mapping="/realtest/**" location="/resources/realtest/" />
 	<resources mapping="/assets/**" location="/resources/assets/" />
 	<resources mapping="/loginresources/**" location="/resources/loginresources/" />
 	<resources mapping="/viewbook/**" location="/resources/viewbook/" />
 	<resources mapping="/js/**" location="/resources/js/" />
 	<resources mapping="/gwangGoPan/**" location="/resources/gwangGoPan/" />
+	<resources mapping="/BookForm/**" location="/resources/BookForm/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	

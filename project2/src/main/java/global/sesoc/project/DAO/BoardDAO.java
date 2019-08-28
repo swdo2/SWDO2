@@ -1,5 +1,7 @@
 package global.sesoc.project.DAO;
 
+import java.util.ArrayList;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -25,5 +27,22 @@ public class BoardDAO {
 		}
 		return result;
 	}
+	
+	//회원의 게시글 목록 읽기
+	
+	public ArrayList<Board> list(){
+		BoardMapper mapper = sqlsession.getMapper(BoardMapper.class);
+		ArrayList<Board> boardlist = mapper.list();
+		return boardlist;
+	}
+
+	public Board detail(int board_num)
+	{
+		BoardMapper mapper = sqlsession.getMapper(BoardMapper.class);
+		Board board = mapper.detail(board_num);
+		return board;
+	}
+	
+	
 	
 }

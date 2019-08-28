@@ -22,4 +22,23 @@
 	)
 	 	</insert>
 
+ 	<select id = "detail" parameterType = "int" resultType = "Board">
+	
+	  select 
+			board_num
+		, person_id
+		, board_title
+		, board_contents
+		, board_hits
+		, board_like
+	  from
+			Board 
+	  where board_num = #{board_num}
+	
+	</select> 
+	
+	<select id = "list" resultType = "Board" >
+		select * from Board order by board_num desc
+	</select>
+
 </mapper>

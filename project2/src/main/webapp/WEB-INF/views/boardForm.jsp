@@ -20,6 +20,7 @@
 		<link rel="stylesheet" type="text/css" href="viewbook/css/bookblock.css" />
 		<link rel="stylesheet" type="text/css" href="viewbook/css/component.css" />
 		<script src="viewbook/js/modernizr.custom.js"></script>
+		<script src="js/jquery-3.3.1.min.js"></script>
 	</head>
 	<script>
 	
@@ -31,30 +32,49 @@
 			<header class="codrops-header">
 				<div class="codrops-top clearfix">
 				</div>
-				<h1> <span>with <a href="http://tympanus.net/codrops/2012/09/03/bookblock-a-content-flip-plugin/">BookBlock</a></span></h1>	
+				<h1> <span>야임마 <a href="http://tympanus.net/codrops/2012/09/03/bookblock-a-content-flip-plugin/">BookBlock</a></span></h1>	
 			</header>
 			<!-- <div class="main"> -->
 				
                 <p>게시판</p>
-			<c:if test = "${sessionScope.loginId != null }">
-				<p>${sessionScope.loginId }님 환영</p>
-			</c:if>
-			<a href = "writeForm">글쓰러가기</a>
 			
-			<table>
 			
-				 <c:forEach var = "Board" items = "${board}">
+			
+			<table stlyle = "border: 1px solid #ccc">
+				<caption style = "background-color: #ccc">목록</caption>
+				<colgroup>
+						<col width = "30%" />
+						<col width = "40%" />
+						<col width = "30%" />
+						
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope ="col">글번호   </th>
+						<th scope ="col">내용</th>
+						<th scope ="col">글쓴이</th>
+					</tr>
+				</thead>
+			
 				
-				<tr>
-				<td>${Board.boardnum }</td>
-					<td>
-						<a href = "read?boardnum=${Board.boardnum }">${Board.title}</a>
-					</td>
-					<td>${Board.id }</td>
-					<td>${Board.hits }</td>
+				
+				 <c:forEach var = "Board" items = "${boardlist}">
+				
+					<tr>
+						<td>
+							<a href = "read?board_num=${Board.board_num }">${Board.board_num }</a>
+						</td>
+						<td>${Board.board_title }</td>
+						<td>${Board.person_id }</td> 
+					</tr>
 					
-				</tr>
+					
 				</c:forEach>
+				
+				<c:if test = "${sessionScope.loginId != null }">
+				
+				<a href = "writeForm">글쓰러가기</a><br>
+			</c:if>
 			
 			</table>
 				

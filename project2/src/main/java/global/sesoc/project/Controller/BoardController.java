@@ -1,5 +1,7 @@
 package global.sesoc.project.Controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +29,13 @@ public class BoardController {
 	
 	//보드로 이동시켜주  메서드
 	@RequestMapping(value="/boardForm", method = RequestMethod.GET)
-	public String board(HttpSession session){
+	public String board(HttpSession session, Model model){
 		//아이디 
 		
-		
+		ArrayList<Board> boardlist = dao.list();
+		//System.out.println("boardl list : " + boardlist);
+		model.addAttribute("boardlist", boardlist);
+	
 		
 		//이동하는 폼태그jsp 이름 		
 		return "boardForm";
@@ -56,8 +61,43 @@ public class BoardController {
 		
 	 
 		
-		return "boardForm";
+		return "redirect:boardForm?id=" + id;
 		
 	}
 	
+	//갯판의 해당 회원이 쓴 글 목록
+	@RequestMapping(value = "read", method=RequestMethod.GET)
+	public String list(String id, Model model,int board_num){
+/*		System.out.println("list controller");
+		
+		ArrayList<Board> boardlist = dao.list(id);
+		System.out.println("boardl list : " + boardlist);
+		model.addAttribute("boardlist", boardlist);
+		model.addAttribute("loginId", id);*/
+		
+		//글 번호에 따라 값을 넘겨줌
+		Board board =  dao.detail(board_num);
+		
+		if(board == null){
+			return "redirect:boardForm";
+		}
+		
+		model.addAttribute("board", board);
+		model.addAttribute("loginId", board.getPerson_id());
+		return "read";
+
+	}
+	
+/*	@RequestMapping(value = "boardForm", method=RequestMethod.GET)
+	public String list(String id, Model model){
+		System.out.println("list controller");
+		
+		ArrayList<Board> boardlist = dao.list(id);
+		System.out.println("boardl list : " + boardlist);
+		model.addAttribute("boardlist", boardlist);
+		model.addAttribute("loginId", id);
+		
+		return "boardForm";
+
+	}*/
 }

@@ -50,7 +50,7 @@
 	<link rel="stylesheet" href="./gwangGoPan/css/popuo-box.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="./gwangGoPan/css/style.css" type="text/css" media="screen" />
 <!-- -------------------------------------------------광고판 포더 Resources 링크 end ------------------------------------------------------------------------------------- -->		
-		         
+
 				<!-- jQuery if needed -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script type="text/javascript">
@@ -71,7 +71,6 @@
 			             })
 			        ).append($("<label for='showPassword'/>").text("Show password")).insertAfter($input.parent());
 			    });
-
 			    $('#showPassword').click(function(){
 					if($("#showPassword").is(":checked")) {
 						$('.icon-lock').addClass('icon-unlock');
@@ -84,7 +83,7 @@
 			}); 
 		</script>
 		
-		<!-- 스크롤 막는 방법  추후에 로그인을 하게 되면 허용을 해야한다. -->
+	<!-- 스크롤 막는 방법  추후에 로그인을 하게 되면 허용을 해야한다. -->
 	<!-- 	<script>
 		$('html, body').css({'overflow': 'hidden', 'height': '100%'});
 		$('#element').on('scroll touchmove mousewheel', function(event) {
@@ -100,9 +99,9 @@
   </div>
  	<!-- Start Header -->
 	<header id="mu-header" class="" role="banner">
-		<div class="container">
-			<nav class="navbar navbar-default mu-navbar">
-			  	<div class="container-fluid">
+		<div class="container" style="width:100%;">
+			<nav class="navbar navbar-default mu-navbar" style="width:100%;">
+			  	<div class="container-fluid" style="padding-right: 0px;">
 				    <!-- Brand and toggle get grouped for better mobile display -->
 				    <div class="navbar-header">
 				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -111,7 +110,6 @@
 				        <span class="icon-bar"></span>
 				        <span class="icon-bar"></span>
 				      </button>
-
 				      <!-- Text Logo -->
 <!-- --------------------------------------------start 홈버튼 누르면 메인 페이지 갈수 있게 하는 겁니다.----------------------------------------------------->
 				      <a class="navbar-brand" href="index.html"><i class="fa fa-book" aria-hidden="true"></i> 本ーE</a>
@@ -119,15 +117,13 @@
 				      <!-- Image Logo -->
 				      <!-- <a class="navbar-brand" href="index.html"><img src="./assets/images/logo.png"></a> -->
 				    </div>
-
-
 <!-- ------------------------------------로그인 했을경우 뜨게하는 부분  start ------------------------------------------------- -->
 				<c:if test="${sessionScope.loginId != null}">
 				    <!-- Collect the nav links, forms, and other content for toggling -->
-				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="width: 100%;">
+				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="width: 100%; padding-right: 0px;">
 				      	<ul class="nav navbar-nav mu-menu navbar-right">
-					        <li><a href="logOut">로그아웃</a></li>
-					        <li><a href="#mu-book-overview">장바구니</a></li>
+					        <li><a href="logOut">LogOut</a></li>
+					        <li><a href="#mu-book-overview">My Product</a></li>
 					        <li><a href="#mu-author">고객센터</a></li>
 				      	</ul>
 				    </div><!-- /.navbar-collapse -->
@@ -177,7 +173,7 @@
 	</c:if>
 <!-- -----------------------------------------로그인 했을경우 뜨게하는 부분  start ------------------------------------------------------- -->
 <!-- ----------------------------------------------광고판 시작 부분입니다. start--------------------------------------------------------- -->
-<%-- 	<c:if test="${sessionScope.loginId != null}"> --%>
+	<c:if test="${sessionScope.loginId != null}">
 		 <div class="banner col-md-8">
 			<div class="slider">
 				<div class="flexslider">
@@ -198,7 +194,7 @@
 				</div>
 			</div>
 		</div>
-						 <!-- FlexSlider -->
+								 <!-- FlexSlider -->
 	    <script defer src="./gwangGoPan/js/jquery.flexslider.js"></script>
 					<script type="text/javascript">
 						$(function(){
@@ -236,49 +232,19 @@
 				</div>	
 			</div>
 		</div>
-<%-- 	 </c:if> --%>
+	 </c:if>
 <!-- ------------------------------------로그인 했을경우 뜨게하는 부분  end ---------------------------------------------------------------- -->
 	</section>
 <!-- ------------------------------------로그인 폼 부분 start ------------------------------------------------------------------------ -->	
-	
-	<!-- Start Featured Slider -->
-	
-	<!-- Start main content -->
-		
+
+<!-- Start main content -->
 	<main role="main">	
-	<!-- <!-- 	Start Video Review
-		<section id="mu-video-review">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="mu-video-review-area">
-
-							<div class="mu-heading-area">
-								<h2 class="mu-heading-title">Check Out Our Video Review</h2>
-								<span class="mu-header-dot"></span>
-								<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever</p>
-							</div>
-
-							Start Video Review Content
-							<div class="mu-video-review-content">
-								<iframe class="mu-video-iframe" width="100%" height="480" src="https://www.youtube.com/embed/T4ySAlBt2Ug" frameborder="0" allowfullscreen></iframe>
-							</div>
-							End Video Review Content
-
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		End Video Review --> 
-
 		<!-- Start Author -->
 		<section id="mu-author">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
 						<div class="mu-author-area">
-
 							<div class="mu-heading-area">
 								<h2 class="mu-heading-title">이 사이트 대해서</h2>
 								<span class="mu-header-dot"></span>
@@ -296,21 +262,11 @@
 										<div class="mu-author-info">
 											<h3>완벽한 E_BOOK을 제공해드립니다.</h3>
 											<p>이 사이트는 E-BOOK뷰어를 제공해드립니다.</p>
-
-											<!-- <p></p>	 -->
-											<!--<img class="mu-author-sign" src="./assets/images/author-signature.png" alt="Author Signature">
- 												<div class="mu-author-social">
-												<a href="http://www.naver.com"><i class="fa fa-facebook"></i></a>
-												<a href="#"><i class="fa fa-twitter"></i></a>
-												<a href="#"><i class="fa fa-linkedin"></i></a>
-												<a href="#"><i class="fa fa-google-plus"></i></a>
-											</div> -->
 										</div>
 									</div>
 								</div>
 							</div>
 							<!-- End Author Content -->
-
 						</div>
 					</div>
 				</div>
@@ -352,11 +308,8 @@
 										<h5 class="mu-rt-name"> - Jessica Doe</h5>
 										<span class="mu-rt-title">Web Developer</span>
 									</li>
-
 								</ul>
 							</div>
-
-
 						</div>
 					</div>
 				</div>
@@ -377,7 +330,7 @@
 			
 			
 	<!-- Start footer -->
-<!-- 	<footer id="mu-footer" role="contentinfo">
+	<footer id="mu-footer" role="contentinfo">
 		<div class="container">
 			<div class="mu-footer-area">
 				<div class="mu-social-media">
@@ -389,8 +342,7 @@
 				<p class="mu-copyright">&copy; Copyright <a rel="nofollow" href="http://markups.io">markups.io</a>. All right reserved.</p>
 			</div>
 		</div>
-
-	</footer> -->
+	</footer>
  	<!-- End footer -->
 
 	

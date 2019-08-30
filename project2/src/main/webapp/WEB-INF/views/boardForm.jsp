@@ -73,7 +73,7 @@
 				
 				<c:if test = "${sessionScope.loginId != null }">
 				
-				<a href = "writeForm">글쓰러가기</a><br>
+				<a href = "writeForm" style="color: deeppink; font-size:50px;">글쓰러se</a><br>
 			</c:if>
 			
 			</table>

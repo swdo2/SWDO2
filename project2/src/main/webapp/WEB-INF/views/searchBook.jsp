@@ -11,9 +11,17 @@
 	<!-- 탭 아이콘 이미지 -->
     <link rel="shortcut icon" type="image/icon" href="./assets/images/favicon.ico"/>
 </head>
+<script>
+function pagingFormSubmit(currentPage) {
+	var form = document.getElementById('pagingForm');
+	var page = document.getElementById('page');
+	page.value = currentPage;
+	form.submit();
+}
+</script>
 <body>
 <!-- 책 제목 검색 토탈알려줌--> 
-${total}
+검색 결과 ${total}개가 검색 돼었습니다.
   <div>
 	<table border="1">
 		<tr align="center">
@@ -46,7 +54,39 @@ ${total}
 			</c:forEach>
 		</table>
 	</div>
+	//페이징 찍어보기
+	현재페이지${pagenaviga.currentPage}<br>
+	${pagenaviga.currentPage - pagenaviga.pagePerGroup}<br>
+	현재데피이지 그룹${pagenaviga.startPageGroup}<br>
+
+	//페이징용
+	<a href="javascript:pagingFormSubmit(${pagenaviga.currentPage - pagenaviga.pagePerGroup})">◁◁ </a> &nbsp;&nbsp;
+		<a href="javascript:pagingFormSubmit(${pagenaviga.currentPage - 1})">◀</a> &nbsp;&nbsp;
 	
+		<c:forEach var="counter" begin="${pagenaviga.startPageGroup}" end="${pagenaviga.endPageGroup}"> 
+			<c:if test="${counter == pagenaviga.currentPage}"><b></c:if>
+				<a href="javascript:pagingFormSubmit(${counter})">${counter}</a>&nbsp;
+			<c:if test="${counter == pagenaviga.currentPage}"></b></c:if>
+		</c:forEach>
+		&nbsp;&nbsp;
+		<a href="javascript:pagingFormSubmit(${pagenaviga.currentPage + 1})">▶</a> &nbsp;&nbsp;
+		<a href="javascript:pagingFormSubmit(${pagenaviga.currentPage + pagenaviga.pagePerGroup})">▷▷</a>
+	
+	///여기까지 페이징할 코드
+	
+	//여기서부터 검색 활용 할곳
+	<form id="pagingForm" method="get" action="searchBook">
+	<input type="hidden" id="page" name="page" />
+		<select name="searchform">
+			<option>제목</option>
+			<option>작가</option>
+			<option>출판사</option>
+		</select>
+	 <input type="text"  name="bookTitle" placeholder="검색하시오"  value="${searchText}"/>
+	<input type="button" onclick="pagingFormSubmit(1);" value="검색">
+	</form>
+	
+	//검색 활용 끝부분
 	<div>
 		<div class="ss_book_box" itemId="205390672">
  <table width="100%" border="0" cellspacing="0" cellpadding="0">

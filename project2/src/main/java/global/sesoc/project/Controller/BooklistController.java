@@ -50,8 +50,6 @@ public class BooklistController {
 	@RequestMapping(value = "BookForm", method = RequestMethod.GET)
 	public String bookInFo(String isbn, Model model) {
 		List<Book> bookInFo = nb.searchBook("d_isbn", isbn, 1, 1);
-		System.out.println("받아지냐?");
-		System.out.println(isbn);
 		model.addAttribute("bookInFo", bookInFo);
 		return "BookForm";
 	}

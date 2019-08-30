@@ -2,7 +2,7 @@
 /* Drop Tables */
 
 DROP TABLE Basket CASCADE CONSTRAINTS;
-DROP TABLE CheckBorad CASCADE CONSTRAINTS;
+DROP TABLE CheckBoard CASCADE CONSTRAINTS;
 DROP TABLE Reply CASCADE CONSTRAINTS;
 DROP TABLE Board CASCADE CONSTRAINTS;
 DROP TABLE Book CASCADE CONSTRAINTS;
@@ -44,7 +44,7 @@ CREATE TABLE Board
 	board_title varchar2(30) NOT NULL,
 	-- 기본값 0
 	board_hits number default 0 NOT NULL,
-	borad_like number,
+	board_like number,
 	-- 회원 아이디
 	person_id varchar2(20) NOT NULL,
 	PRIMARY KEY (board_num)
@@ -63,7 +63,7 @@ CREATE TABLE Book
 );
 
 
-CREATE TABLE CheckBorad
+CREATE TABLE CheckBoard
 (
 	-- 중복이면1
 	-- 중복아니면 0
@@ -117,7 +117,7 @@ CREATE TABLE Reply
 
 /* Create Foreign Keys */
 
-ALTER TABLE CheckBorad
+ALTER TABLE CheckBoard
 	ADD FOREIGN KEY (board_num)
 	REFERENCES Board (board_num)
 ;
@@ -141,7 +141,7 @@ ALTER TABLE Board
 ;
 
 
-ALTER TABLE CheckBorad
+ALTER TABLE CheckBoard
 	ADD FOREIGN KEY (person_id)
 	REFERENCES Person (person_id)
 ;
@@ -166,10 +166,10 @@ COMMENT ON COLUMN Basket.person_id IS '회원 아이디';
 COMMENT ON COLUMN Board.board_hits IS '기본값 0';
 COMMENT ON COLUMN Board.person_id IS '회원 아이디';
 COMMENT ON COLUMN Book.book_publicationdate IS '책 출간일';
-COMMENT ON COLUMN CheckBorad.check_checkhits IS '중복이면1
+COMMENT ON COLUMN CheckBoard.check_checkhits IS '중복이면1
 중복아니면 0';
-COMMENT ON COLUMN CheckBorad.person_id IS '회원 아이디';
-COMMENT ON COLUMN CheckBorad.check_checklike IS '중복이면1
+COMMENT ON COLUMN CheckBoard.person_id IS '회원 아이디';
+COMMENT ON COLUMN CheckBoard.check_checklike IS '중복이면1
 중복아니면 0';
 COMMENT ON COLUMN Person.person_id IS '회원 아이디';
 COMMENT ON COLUMN Person.person_cash IS '현재 아이디에 저장되어이는 돈의 액수';

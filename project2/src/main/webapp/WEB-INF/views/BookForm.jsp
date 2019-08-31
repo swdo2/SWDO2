@@ -12,33 +12,35 @@
 <script type="text/javascript" src="./BookForm/js/move-top.js"></script>
 <script type="text/javascript" src="./BookForm/js/easing.js"></script>
 <link rel="shortcut icon" type="image/icon" href="./assets/images/favicon.ico"/>
+<link rel="shortcut icon" type="image/icon" href="./bootstrap/css/css.css"/>
 
 <title>BookForm</title>
 </head>
 <body>
-<div class="header">
+	<div class="header">
 		 <div class="headertop_desc">
 			<div class="wrap">
 				<div class="nav_list">
 					<ul>
-						<li><a href="#">Home</a></li>
+						<li><a href="#">Home</a></li> <!-- href식별자 작성해야합니다. -->
 					</ul>
 				</div>
 				<c:if test="${sessionScope.loginId != null}">
 					<div class="account_desc">
 						<ul>
 							<li><a href="#">My Account</a></li> <!-- href식별자 작성해야합니다. -->
-					        <li><a href="logOut">LogOut</a></li>
+					        <li><a href="logOut">LogOut</a></li><!-- href식별자 작성해야합니다. -->
 						</ul>
 					</div>
 				</c:if>
 				<div class="clear"></div>
 			</div>
 	  	</div>
-  	  		<div class="wrap">
+  	  		<div class="wrap"> 
 				<div class="header_top">
-					<div class="logo">
-						<a href="index.html"><img src="./BookForm/images/HONGEEEmainImages1234.jpg" alt="" /></a>
+					<div class="logo"> 
+						<div class="titlenaranhi"><img class="titleimage" src="./assets/images/main logo.jpg"></div>
+						<div class="titlenaranhi"><h1><a href="home" class="mainTitle">本ーE</a></h1></div>
 					</div>
 						<div class="header_top_right">
 						  <div class="cart">
@@ -48,9 +50,14 @@
 								</ul></div>
 						  </div>
 							  <div class="search_box">
-					     		<form>
+							  
+							  <form action="searchBook" >   <!-- <<<<<<<<<<<<<<<<여기 가 검색 부분 액션 이름 단 입니다. -->
+								<b><input type="text" name="bookTitle" placeholder="Search..." required="검색어를 입력하세요...." maxlength="25"></b>	
+								<input type="submit" value="">					
+							</form>
+					     		<!-- <form action="searchBook">
 					     			<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
-					     		</form>
+					     		</form> -->
 					     	</div>
 						 <div class="clear"></div>
 					</div>
@@ -62,80 +69,112 @@
 								DropDown.prototype = {
 									initEvents : function() {
 										var obj = this;
-					
 										obj.dd.on('click', function(event){
 											$(this).toggleClass('active');
 											event.stopPropagation();
 										});	
 									}
 								}
-					
 								$(function() {
-					
-									var dd = new DropDown( $('#dd') );
-					
+									var dd = new DropDown( $('#dd') );					
 									$(document).click(function() {
 										// all dropdowns
 										$('.wrapper-dropdown-2').removeClass('active');
 									});
-					
 								});
 					    </script>
 			   <div class="clear"></div>
   		    </div>     				
    		</div>
-   </div>
+   	</div>
    <div class="main">
    	 <div class="wrap">
    	 	<div class="content_top">
     		<div class="back-links">
-    		<p><a href="index.html">Home</a> &gt;&gt;&gt;&gt; <a href="#" class="active">English</a></p>
     	    </div>
     		<div class="clear"></div>
     	</div>
    	 	<div class="section group">
 				<div class="cont-desc span_1_of_2">
-				  <div class="product-details">				
+				  <div class="product-details">	
+				  <div>
+				  <h2 class="headtitle">	
+							<c:forEach var="info" items="${bookInFo}">
+								${info.title}
+							</c:forEach>
+				  </h2>
+				  </div>	
+<!-- ----------------------------------상세 페이지 이미지 보여주는 부분 start------------------------------------------ -->
 					<div class="grid images_3_of_2">
-						<img src="./BookForm/images/preview.jpg" alt="" />
-				  </div>
+						<c:forEach var="info" items="${bookInFo}">
+							<img src="${info.image}" style="width:90%; height:50%;">
+						</c:forEach>
+				    </div>
+<!-- ----------------------------------상세 페이지 이미지 보여주는 부분 end------------------------------------------ -->				    
 				<div class="desc span_3_of_2">
-					<h2>Wrath of the Titans </h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>					
 					<div class="price">
-						<p>Price: <span>$500</span></p>
+						<font style="font-size:1.3em;">Price:</font><span>
+							<c:forEach var="info" items="${bookInFo}">
+							   <font class="infoPrice">&#8361; ${info.price}  </font> 
+							 <font class="infoPrice1">  → &#8361; ${info.discount} </font>
+							</c:forEach>
+						</span>
 					</div>
 					<div class="available">
 						<ul>
-						  <li><span>Model:</span> &nbsp; Model 1</li>
-						  <li><span>Shipping Weight:</span>&nbsp; 5lbs</li>
-						  <li><span>Units in Stock:</span>&nbsp; 566</li>
+						  <li>
+						  <span>AUTHOR:</span> &nbsp; 
+						  <c:forEach var="info" items="${bookInFo}">
+								${info.author}
+						  </c:forEach>
+						  </li>
+						  <li>
+						  <span>PUBLISHER:</span> &nbsp; 
+						  <c:forEach var="info" items="${bookInFo}">
+								 ${info.publisher}
+						  </c:forEach>
+						  </li>
+						  <li>
+						  <span>PUBDATE:</span> &nbsp; 
+						  <c:forEach var="info" items="${bookInFo}">
+								 ${info.pubdate}
+						  </c:forEach>
+						  </li>
+						    <li style="font-size: 0.7em;text-align: right;">
+						  <span>ISBN:</span> &nbsp; 
+						  <c:forEach var="info" items="${bookInFo}">
+								 ${info.isbn}
+						  </c:forEach>
+						  </li>
+						  
+
 					    </ul>
 					</div>
 				<div class="share-desc">
-					<div class="share">
+					<!-- <div class="share">
 						<p>Number of units :</p><input class="text_box" type="text">				
-					</div>
-					<div class="button"><span><a href="#">Add to Cart</a></span></div>					
+					</div> -->	
 					<div class="clear"></div>
 				</div>
 				 <div class="wish-list">
-				 	<ul>
-				 		<li class="wish"><a href="#">Add to Wishlist</a></li>
-				 	    <li class="compare"><a href="#">Add to Compare</a></li>
-				 	</ul>
+			 		<div class="button"><span><a href="#">Add to Cart</a></span></div>
+					<div class="button"><span><a href="#" style="margin-right: 20px;">Purchase</a></span></div>
 				 </div>
 			</div>
 			<div class="clear"></div>
 		  </div>
 		<div class="product_desc">	
 			 <h2>Details :</h2>
-			   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-	           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+			   <p>
+				   	<c:forEach var="info" items="${bookInFo}">
+					  ${info.description}
+					</c:forEach>
+			   </p>
 	   </div>
    </div>
 				<div class="rightsidebar span_3_of_1 sidebar">
-					<h2>Specials</h2>
+					<h2>最近みた商品</h2>
+					 <c:forEach var="info" items="${bookInFo}">
 					 	<div class="special_movies">
 					 	   <div class="movie_poster">
 					 		  <a href="preview.html"><img src="./BookForm/images/end-game.jpg" alt="" /></a>
@@ -147,50 +186,7 @@
 								 </div>
 								<div class="clear"></div>
 					 		</div>	
-					 		<div class="special_movies">
-					 	   <div class="movie_poster">
-					 		  <a href="preview.html"><img src="./BookForm/images/Coraline.jpg" alt="" /></a>
-					 		 </div>
-					 		   <div class="movie_desc">
-							    <h3><a href="preview.html">Coraline</a></h3>
-								   <p><span>$620.87</span> &nbsp; $500.35</p>
-								     <span><a href="#">Add to Cart</a></span>
-								 </div>
-								<div class="clear"></div>
-					 		</div>	
-					 		<div class="special_movies">
-					 	   <div class="movie_poster">
-					 		  <a href="preview.html"><img src="./BookForm/images/Eclipse.jpg" alt="" /></a>
-					 		 </div>
-					 		   <div class="movie_desc">
-							    <h3><a href="preview.html">Eclipse</a></h3>
-								   <p><span>$620.87</span> &nbsp; $500.35</p>
-								     <span><a href="#">Add to Cart</a></span>
-								 </div>
-								<div class="clear"></div>
-					 		</div>	
-					 		<div class="special_movies">
-					 	   <div class="movie_poster">
-					 		  <a href="preview.html"><img src="./BookForm/images/Priest.jpg" alt="" /></a>
-					 		 </div>
-					 		   <div class="movie_desc">
-							    <h3><a href="preview.html">Priest 3D</a></h3>
-								   <p><span>$620.87</span> &nbsp; $500.35</p>
-								     <span><a href="#">Add to Cart</a></span>
-								 </div>
-								<div class="clear"></div>
-					 		</div>	
-					 		<div class="special_movies">
-					 	    <div class="movie_poster">
-					 		  <a href="preview.html"><img src="./BookForm/images/Sorority_Wars.jpg" alt="" /></a>
-					 		 </div>
-					 		   <div class="movie_desc">
-							    <h3><a href="preview.html">Sorority Wars</a></h3>
-								   <p><span>$620.87</span> &nbsp; $500.35</p>
-								     <span><a href="#">Add to Cart</a></span>
-								 </div>
-								<div class="clear"></div>
-					 		</div>			 
+					 	</c:forEach>
  					   </div>
  		 		 </div>
    	 		</div>
@@ -203,9 +199,6 @@
 						<ul>
 						<li><a href="#">About Us</a></li>
 						<li><a href="#">Customer Service</a></li>
-						<li><a href="#">Advanced Search</a></li>
-						<li><a href="#">Orders and Returns</a></li>
-						<li><a href="contact.html">Contact Us</a></li>
 						</ul>
 					</div>
 				<div class="col_1_of_4 span_1_of_4">
@@ -213,41 +206,37 @@
 						<ul>
 						<li><a href="#">About Us</a></li>
 						<li><a href="#">Customer Service</a></li>
-						<li><a href="#">Privacy Policy</a></li>
-						<li><a href="contact.html">Site Map</a></li>
-						<li><a href="#">Search Terms</a></li>
 						</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
 					<h4>My account</h4>
 						<ul>
-							<li><a href="contact.html">Sign In</a></li>
+							<li><a href="contact.html">Sign In</a></li>    <!-- 링크 수정 해야함 -->
 							<li><a href="index.html">View Cart</a></li>
-							<li><a href="#">My Wishlist</a></li>
-							<li><a href="#">Track My Order</a></li>
-							<li><a href="contact.html">Help</a></li>
 						</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
 					<h4>Contact</h4>
 						<ul>
-							<li><span>+91-123-456789</span></li>
-							<li><span>+00-123-000000</span></li>
+							<li><span>010-4320-7840</span></li>
+							<li><span>010-8335-0698</span></li>
+							<li><span>010-8335-0698</span></li>
+							<li><span>010-8335-0698</span></li>
 						</ul>
 						<div class="social-icons">
-							<h4>Follow Us</h4>
+							<h4>SUPPORT</h4>
 					   		  <ul>
-							      <li><a href="#" target="_blank"><img src="./BookForm/images/facebook.png" alt="" /></a></li>
-							      <li><a href="#" target="_blank"><img src="./BookForm/images/twitter.png" alt="" /></a></li>
-							      <li><a href="#" target="_blank"><img src="./BookForm/images/skype.png" alt="" /> </a></li>
-							      <li><a href="#" target="_blank"> <img src="./BookForm/images/linkedin.png" alt="" /></a></li>
-							      <div class="clear"></div>
+							      <li><a href="https://www.aladin.co.kr/home/welcome.aspx" target="_blank"><img class="iconkugi" src="./BookForm/images/aladin.png" /></a></li>
+							      <li><a href="http://www.kyobobook.co.kr/index.laf?OV_REFFER" target="_blank"><img class="iconkugi" src="./BookForm/images/kyobo.jpg" /></a></li>
+							      <li><a href="https://book.naver.com" target="_blank"><img class="iconkugi" src="./BookForm/images/naver.ico" /></a></li>
+							      <li><a href="http://www.yes24.com/main/default.aspx" target="_blank"><img class="iconkugi" src="./BookForm/images/yes24.png" /></a></li>
 						     </ul>
+						     <div class="clear"></div>
    	 					</div>
 				</div>
 			</div>
 			 <div class="copy_right">
-				<p>Company Name © All rights Reseverd | Design by  <a href="http://w3layouts.com">W3Layouts</a> </p>
+				<p>Company Name © All rights Reseverd | Design by  <font style="color:#ff8600">Jeon Jae Hyoung</font></p>
 		   </div>			
         </div>
     </div>
@@ -259,17 +248,6 @@
 	</script>
     <a href="#" id="toTop"><span id="toTopHover"> </span></a>
     
-    <div>
-		<c:forEach var="info" items="${bookInFo}">
-			<!-- 제목 -->
-			${info.title}
-			<!-- 가격 -->
-			${info.price}
-			<!-- 작가 -->
-			${info.author}
-			<!-- 줄거리 -->
-			${info.description}
-		</c:forEach>		
-    </div>
+
 </body>
 </html>

@@ -1,6 +1,5 @@
 
 /* Drop Tables */
-
 DROP TABLE Basket CASCADE CONSTRAINTS;
 DROP TABLE CheckBoard CASCADE CONSTRAINTS;
 DROP TABLE Reply CASCADE CONSTRAINTS;
@@ -12,7 +11,6 @@ DROP TABLE Person CASCADE CONSTRAINTS;
 
 
 /* Drop Sequences */
-
 DROP SEQUENCE board_number_sequence;
 DROP SEQUENCE reply_number_sequence;
 
@@ -44,7 +42,7 @@ CREATE TABLE Board
 	board_title varchar2(30) NOT NULL,
 	-- 기본값 0
 	board_hits number default 0 NOT NULL,
-	board_like number,
+	board_like number default 0 NOT NULL,
 	-- 회원 아이디
 	person_id varchar2(20) NOT NULL,
 	PRIMARY KEY (board_num)

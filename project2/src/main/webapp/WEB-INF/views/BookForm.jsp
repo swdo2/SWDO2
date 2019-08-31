@@ -172,16 +172,16 @@
 			   </p>
 	   </div>
    </div>
-				<div class="rightsidebar span_3_of_1 sidebar">
+   				<div class="rightsidebar span_3_of_1 sidebar">
 					<h2>最近みた商品</h2>
-					 <c:forEach var="info" items="${bookInFo}">
+					  <c:forEach items = "${booklist}" var = "book" >
 					 	<div class="special_movies">
 					 	   <div class="movie_poster">
-					 		  <a href="preview.html"><img src="./BookForm/images/end-game.jpg" alt="" /></a>
+					 		  <a href="BookForm?isbn=${book.isbn}"><img src="${book.image}" alt="" /></a>
 					 		 </div>
 					 		   <div class="movie_desc">
-							    <h3><a href="preview.html">End Game</a></h3>
-								   <p><span>$620.87</span> &nbsp; $500.35</p>
+							    <h3><a href="BookForm?isbn=${book.isbn}">${book.title}</a></h3>
+								   <p><span>${book.price}</span> &nbsp; ${book.discount }</p>
 								     <span><a href="#">Add to Cart</a></span>
 								 </div>
 								<div class="clear"></div>

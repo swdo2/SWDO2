@@ -11,7 +11,7 @@
 <!-- <script src="resources/js/jquery-3.3.1.min.js"></script> -->
 </head>
 <body>
-	<h1>[Blog 글쓰기]</h1>
+	<h1>[board 글쓰기]</h1>
 	
 		<form id = "writeForm" action = "writeForm" method = "post">
 			<table>

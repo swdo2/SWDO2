@@ -36,13 +36,31 @@ public class BoardDAO {
 		return boardlist;
 	}
 
-	public Board detail(int board_num)
-	{
+	public Board detail(int board_num)	{
 		BoardMapper mapper = sqlsession.getMapper(BoardMapper.class);
 		Board board = mapper.detail(board_num);
 		return board;
 	}
 	
-	
+	public int delete(Board board){
+		BoardMapper mapper = sqlsession.getMapper(BoardMapper.class);
+		int result = mapper.delete(board);
+		return result;
+	}
+
+	public int update(Board board)	{
+		BoardMapper mapper = sqlsession.getMapper(BoardMapper.class);
+		int result = mapper.update(board);
+		return result;
+	}
+
+	public int like(int board_num)
+	{
+		BoardMapper mapper =sqlsession.getMapper(BoardMapper.class);
+		mapper.like(board_num);
+		Board board = mapper.detail(board_num);
+		int likenum = board.getBoard_like();
+		return likenum;
+	}
 	
 }

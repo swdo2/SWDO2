@@ -72,8 +72,9 @@
 				</c:forEach>
 				
 				<c:if test = "${sessionScope.loginId != null }">
+				${loginId }님 환영!<br>
 				
-				<a href = "writeForm" style="color: deeppink; font-size:50px;">글쓰러se</a><br>
+				<a href = "writeForm" style="color: deeppink; font-size:50px;">글쓰러가기</a><br>
 			</c:if>
 			
 			</table>

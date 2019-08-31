@@ -18,4 +18,13 @@ public interface BoardMapper {
 	
 	//글번호에 따른 글 보기
 	public Board detail(int board_num);
+
+	//글번호와 id에따른 글삭제
+	public int delete(Board board);
+
+	//글번호와 id에 따른 글 수정
+	public int update(Board board);
+	
+	//글번호 따봉
+	public int like(int board_num);
 }

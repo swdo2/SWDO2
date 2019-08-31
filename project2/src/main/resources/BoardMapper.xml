@@ -35,10 +35,41 @@
 			Board 
 	  where board_num = #{board_num}
 	
-	</select> 
+	</select>
 	
 	<select id = "list" resultType = "Board" >
 		select * from Board order by board_num desc
 	</select>
+
+	<!-- 글 삭제하는 쿼리문작성 -->
+	<delete id = "delete" parameterType="Board">
+	
+		delete
+			from 
+				Board
+		where board_num = #{board_num}
+		and person_id = #{person_id}
+	</delete>
+	
+	<!-- 글 수정하는 쿼리문작성 -->
+	<update id="update" parameterType="Board">
+		update Board
+		set 
+			board_title = #{board_title}
+			, board_contents = #{board_contents}
+		where
+			board_num = #{board_num}
+			and person_id = #{person_id}
+	</update>
+	
+	<!-- 따봉 누르는 메서드 -->
+	<update id = "like" parameterType="int">
+		update
+			Board
+		set 
+			board_like = board_like + 1
+		where
+			board_num = #{board_num}
+	</update>
 
 </mapper>

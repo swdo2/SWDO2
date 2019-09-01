@@ -28,7 +28,11 @@ public class BoardController {
 	@Autowired
 	BoardDAO dao;
 	
-	
+	@RequestMapping(value="homeButton", method = RequestMethod.GET)
+	public String homeButton(){
+		
+		return "redirect:/"; 
+	}
 	
 	
 	//보드로 이동시켜주  메서드

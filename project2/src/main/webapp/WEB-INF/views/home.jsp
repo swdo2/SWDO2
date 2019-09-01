@@ -8,10 +8,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <meta name="description" content="Custom Login Form Styling with CSS3" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="css3, login, form, custom, input, submit, button, html5, placeholder" />
-    <meta name="author" content="Codrops" />
+    <meta name="author" content="jeon jae hyoung" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>本ーE</title>
     <!-- Favicon -->
@@ -19,7 +18,7 @@
    <!--  Font Awesome -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
    <!--  Bootstrap -->
-    <link href="./assets/css/bootstrap.min.css?ver=1" rel="stylesheet">
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
    <!--  Slick slider -->
     <link href="./assets/css/slick.css" rel="stylesheet">	
     
@@ -27,7 +26,7 @@
     <link id="switcher" href="./assets/css/theme-color/default-theme.css" rel="stylesheet">
 
    <!--  Main Style -->
-    <link href="./assets/css/style.css?ver=1" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet">
     
   <!--   Fonts
     Open Sans for body font -->
@@ -38,7 +37,6 @@
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     
-    <link rel="shortcut icon" href="./assets/images/favicon.ico"> 
     <link rel="stylesheet" type="text/css" href="./loginresources/css/style.css?ver=1" />
     <link rel="stylesheet" type="text/css" href="./loginresources/css/demo.css?ver=1" />
     <!--[if lte IE 7]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
@@ -112,7 +110,7 @@
 				      </button>
 				      <!-- Text Logo -->
 <!-- --------------------------------------------start 홈버튼 누르면 메인 페이지 갈수 있게 하는 겁니다.----------------------------------------------------->
-				      <a class="navbar-brand" href="index.html"><i class="fa fa-book" aria-hidden="true"></i> 本ーE</a>
+				      <a class="navbar-brand" href="homeButton"><i class="fa fa-book" aria-hidden="true"></i> 本ーE</a>
 <!-- --------------------------------------------end 홈버튼 누르면 메인 페이지 갈수 있게 하는 겁니다.--------------------------------------------------- -->
 				      <!-- Image Logo -->
 				      <!-- <a class="navbar-brand" href="index.html"><img src="./assets/images/logo.png"></a> -->
@@ -122,8 +120,9 @@
 				    <!-- Collect the nav links, forms, and other content for toggling -->
 				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="width: 100%; padding-right: 0px;">
 				      	<ul class="nav navbar-nav mu-menu navbar-right">
-					        <li><a href="logOut">LogOut</a></li>
+					        <li><a href="myPageForm">My Page</a></li>
 					        <li><a href="#mu-book-overview">My Product</a></li>
+					        <li><a href="logOut">Log Out</a></li>
 					        <li><a href="#mu-author">고객센터</a></li>
 				      	</ul>
 				    </div><!-- /.navbar-collapse -->
@@ -217,7 +216,7 @@
 					<!--search-box-->
 						<div class="w3-search-box">
 							<form action="searchBook" >   <!-- <<<<<<<<<<<<<<<<여기 가 검색 부분 액션 이름 단 입니다. -->
-								<b><input type="text" name="bookTitle" placeholder="Search..." required="검색어를 입력하세요...." maxlength="25"></b>	
+								<b><input type="text" name="bookTitle" placeholder="Search..." required="required" maxlength="25"></b>	
 								<input type="submit" value="">					
 							</form>
 						</div><!--//end-search-box-->
@@ -231,11 +230,10 @@
 					<a href="product" class="mu-primary-btn">테스트용 책구매가기 창</a>
 				</div>	
 			</div>
-		</div>
 	 </c:if>
 <!-- ------------------------------------로그인 했을경우 뜨게하는 부분  end ---------------------------------------------------------------- -->
 	</section>
-<!-- ------------------------------------로그인 폼 부분 start ------------------------------------------------------------------------ -->	
+<!-- ------------------------------------로그인 폼 부분 end ------------------------------------------------------------------------ -->	
 
 <!-- Start main content -->
 	<main role="main">	

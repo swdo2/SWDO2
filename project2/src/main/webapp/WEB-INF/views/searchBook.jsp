@@ -146,34 +146,61 @@ html {overflow:scroll}
       <div class="content">
     	<div class="content_top">
     		<div class="heading">
-    		<h3 style="font-weight:900;">Search Result</h3>
+    		<h3 style="font-weight:600;">Search Result : <font style="font-weight:900;font-size:27px; color:#1000ff;">${total}個</font></h3>
     		</div>
     	</div>
 <!-- ------------------------------------------------------ 1번째줄 start------------------------------------------------   --->    	
 	      <div class="section group">
 <!-- --------------------------------------------한개씩 보여주는 부분 start------------------------------------- -->
-   			<c:forEach var="list" items="${blist}">
-				<div class="grid_1_of_5 images_1_of_5">
-					 <a href="BookForm?isbn=${list.isbn}"><img src="${list.image}"></a>
-					 <h2><a href="BookForm?isbn=${list.isbn}" class="searchBookLiskTitle">${list.title}</a></h2>
-					<div class="price-details">
-				       <div class="price-number">
-							<span class="rupees1" >&#8361;${list.price}</span><font style="font-size:20px; font-weight:700;"> > </font>				       
-							<font style="font-size:21px;">&#8361;</font><span class="rupees2">${list.discount}</span>
-					    </div>
-				       		<div class="add-cart1">								
-								<div class="clickku"><a href="#" style="color:aliceblue;">Add to Cart</a></div>
-								<div class="clickku1"><a href="#" style="color:aliceblue;">E-Book</a></div>
-					        </div>
-							<div class="clear"></div>
-					</div>					 
-				</div>
-			</c:forEach>
-<!--  --------------------------------------한개씩 보여주는 부분 end------------------------------------- -->
+   			<div class="listDiv">
+	   			<c:forEach var="list" items="${blist}">
+					<div class="grid_1_of_5 images_1_of_5">
+						 <a href="BookForm?isbn=${list.isbn}"><img src="${list.image}"></a>
+						 <h2><a href="BookForm?isbn=${list.isbn}" class="searchBookLiskTitle">${list.title}</a></h2>
+						<div class="price-details">
+					       <div class="price-number">
+								<span class="rupees1" >&#8361;${list.price}</span><font style="font-size:20px; font-weight:700;"> > </font>				       
+								<font style="font-size:21px;">&#8361;</font><span class="rupees2">${list.discount}</span>
+						    </div>
+					       		<div class="add-cart1">								
+									<div class="clickku"><a href="#" style="color:aliceblue;">Add to Cart</a></div>
+									<div class="clickku1"><a href="#" style="color:aliceblue;">E-Book</a></div>
+						        </div>
+								<div class="clear"></div>
+						</div>					 
+					</div>
+				</c:forEach>
 			</div>
+<!-- ----------------------------------------------------------페이징폼 start-------------------------------------------------- -->
+	<div class="pagingForm">
+		<a href="javascript:pagingFormSubmit(${pagenaviga.currentPage - pagenaviga.pagePerGroup})">◁◁ </a> &nbsp;&nbsp;
+		<a href="javascript:pagingFormSubmit(${pagenaviga.currentPage - 1})">◀</a> &nbsp;&nbsp;
+	
+		<c:forEach var="counter" begin="${pagenaviga.startPageGroup}" end="${pagenaviga.endPageGroup}"> 
+			<c:if test="${counter == pagenaviga.currentPage}"><b></c:if>
+				<a href="javascript:pagingFormSubmit(${counter})">${counter}</a>&nbsp;
+			<c:if test="${counter == pagenaviga.currentPage}"></b></c:if>
+		</c:forEach>
+		&nbsp;&nbsp;
+		<a href="javascript:pagingFormSubmit(${pagenaviga.currentPage + 1})">▶</a> &nbsp;&nbsp;
+		<a href="javascript:pagingFormSubmit(${pagenaviga.currentPage + pagenaviga.pagePerGroup})">▷▷</a>
+	</div>
+<!-- ----------------------------------------------------------검색폼 start------------------------------------------------- -->
+	<div class="pagingSearchForm">
+		<form id="pagingForm" method="get" action="searchBook">
+		<input type="hidden" id="page" name="page" />
+			<select name="searchform">
+				<option>제목</option>
+				<option>작가</option>
+				<option>출판사</option>
+			</select>
+		 <input type="text"  name="bookTitle" placeholder="검색하시오"  value="${searchText}"/>
+		<input type="button" onclick="pagingFormSubmit(1);" value="검색">
+		</form>
+	</div>	
+<!-- ----------------------------------------------------------검색폼 end-------------------------------------------------- -->
 		</div>
-<!-- ------------------------------------------------------ 1번째줄 end------------------------------------------------   --->       
-       
+		</div>
   </div>
 </div>
 <!-- ----------------------------------------------맨밑에 정보 start------------------------------------------ -->
@@ -237,70 +264,10 @@ html {overflow:scroll}
 <!-- ----------------------------------------------맨밑에 정보 end------------------------------------------ -->
 <!------------------------------------------------ 검색 결과 Form Start-------------------------------------- --> 
 검색 결과 ${total}개가 검색 되었습니다.
-  <div>
-	<table border="1">
-		<tr align="center">
-			<td>표지</td> <td>제목</td> <td>가격</td>
-		</tr>
-			<c:forEach var="list" items="${blist}">
-				<tr>
-					<td>
-						<!-- 이미지 -->
-						<a href="BookForm?isbn=${list.isbn}"><img src="${list.image}"></a>
-					</td>
-					<td>
-						<!-- 제목 -->
-						<a href="BookForm?isbn=${list.isbn}">${list.title}</a>
-						<p>제목 : ${list.title}</p> 
-						<p>네이버 링크: ${list.link}</p>
-						<p>지은이: ${list.author}</p>
-						<p>할인가격: ${list.discount}</p>
-						<p>출판사: ${list.publisher}</p>
-						<p>출간일: ${list.pubdate}</p>
-						<p>책코드넘버: ${list.isbn}</p>
-						<p>책 소개: ${list.description}</p>
-				
-					</td>
-					<td>
-						<!-- 가격 -->
-						${list.price}
-					</td>
-				</tr>
-			</c:forEach>
-		</table>
-	</div>
+ 
 <!-- 	//페이징 찍어보기 -->
 	현재페이지${pagenaviga.currentPage}<br>
 	${pagenaviga.currentPage - pagenaviga.pagePerGroup}<br>
-	현재데피이지 그룹${pagenaviga.startPageGroup}<br>
-
-<!-- 	//페이징용 -->
-	<a href="javascript:pagingFormSubmit(${pagenaviga.currentPage - pagenaviga.pagePerGroup})">◁◁ </a> &nbsp;&nbsp;
-		<a href="javascript:pagingFormSubmit(${pagenaviga.currentPage - 1})">◀</a> &nbsp;&nbsp;
-	
-		<c:forEach var="counter" begin="${pagenaviga.startPageGroup}" end="${pagenaviga.endPageGroup}"> 
-			<c:if test="${counter == pagenaviga.currentPage}"><b></c:if>
-				<a href="javascript:pagingFormSubmit(${counter})">${counter}</a>&nbsp;
-			<c:if test="${counter == pagenaviga.currentPage}"></b></c:if>
-		</c:forEach>
-		&nbsp;&nbsp;
-		<a href="javascript:pagingFormSubmit(${pagenaviga.currentPage + 1})">▶</a> &nbsp;&nbsp;
-		<a href="javascript:pagingFormSubmit(${pagenaviga.currentPage + pagenaviga.pagePerGroup})">▷▷</a>
-	
-<!-- 	///여기까지 페이징할 코드 -->
-	
-<!-- 	//여기서부터 검색 활용 할곳 -->
-	<form id="pagingForm" method="get" action="searchBook">
-	<input type="hidden" id="page" name="page" />
-		<select name="searchform">
-			<option>제목</option>
-			<option>작가</option>
-			<option>출판사</option>
-		</select>
-	 <input type="text"  name="bookTitle" placeholder="검색하시오"  value="${searchText}"/>
-	<input type="button" onclick="pagingFormSubmit(1);" value="검색">
-	</form>
-	
-<!-- 	//검색 활용 끝부분 -->	
+	현재데피이지 그룹${pagenaviga.startPageGroup}<br>	
 </body>
 </html>

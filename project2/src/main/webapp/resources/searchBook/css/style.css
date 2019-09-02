@@ -65,7 +65,7 @@ body {
 }
 .headertop_desc{
 	padding:20px 0;
-	background:#222;
+	background:#272727e8;
 	border-bottom:1px solid #EEE;
 }
 .nav_list{
@@ -246,10 +246,12 @@ body {
 	width:25%;
 }
 .categories{
-	border:1px solid #EEE;
+	border-radius: 12px;
+    border: 2px solid #EEE;
 }
 .categories h3{
 	font-size:1.2em;
+    border-radius: 13px;
 	color:#FFF;
 	padding:10px;
 	background:#FC7D01;
@@ -287,9 +289,10 @@ body {
 	background: #FFF;
 }
 .content_top{
-	padding:10px 20px;
+	border-radius: 12px;
+	padding:6px 20px;
 	border: 1px solid #d6aa5e;
-	background: url(../images/strip-bg.gif) repeat-x #ff8404bf;
+	background: url(../images/strip-bg.gif) repeat-x #ffc904bf;
 }
 .content_bottom {
 	padding:10px 20px;
@@ -317,8 +320,10 @@ body {
 }
 .grid_1_of_5:first-child {
 	margin-left: 0;
+	border-radius: 12px;
 }
 .images_1_of_5 {
+	border-radius: 12px;
 	width: 15.72%;
 	padding:1.6%; 
 	text-align: center;
@@ -400,11 +405,13 @@ body {
 }
 
 .clickku{
+	width:70px;
+	float:left;
 	font-size:0.85em;
 	border-radius: 13px;
 	padding:8px 10px;
 	font-family: 'ambleregular';
-	background:#FC7D01;
+	background:#34a5cfc4;
 	color: #FFF;
 	text-decoration: none;
 	outline: 0;
@@ -416,14 +423,16 @@ body {
 }
 .clickku:hover{
 	 text-shadow: 0px 0px 1px #000;
-	 background:#5100ff;
+	 background:#95E0C8;
 }
 .clickku1{
+	width:70px;
+	float:left;
 	font-size:0.85em;
 	border-radius: 13px;
 	padding:8px 10px;
 	font-family: 'ambleregular';
-	background:#FC7D01;
+	background:#eaae04;
 	color: #FFF;
 	text-decoration: none;
 	outline: 0;
@@ -435,7 +444,7 @@ body {
 }
 .clickku1:hover{
 	 text-shadow: 0px 0px 1px #000;
-	 background:#5100ff;
+	 background:#da350fd9;
 }
 /*** Footer ***/
 .footer {
@@ -1205,4 +1214,15 @@ body {
     width: 195px;
     height: 30px;
     display: block;
+}
+.pagingForm{
+	text-align: center;
+	padding-bottom:10px;
+	padding-top:15px;
+}
+.pagingSearchForm{
+	text-align: center;
+}
+.listDiv{
+	margin-bottom: 880px;
 }

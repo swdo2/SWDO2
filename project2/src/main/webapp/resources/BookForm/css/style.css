@@ -720,14 +720,34 @@ body {
 	float: right;
 	font-size: xx-large;
 }
-.span_3_of_2 .button a {
+/* .span_3_of_2 .button a { */
+/* 	font-weight: bold; */
+/* 	font-size:0.85em; */
+/* 	border-radius: 12px; */
+/* 	display: block; */
+/* 	padding:8px 10px; */
+/* 	font-family: 'ambleregular'; */
+/* 	background:#FC7D01; */
+/* 	color: #FFF; */
+/* 	text-decoration: none; */
+/* 	outline: 0; */
+/* 	-webkit-transition: all 0.5s ease-in-out; */
+/* 	-moz-transition: all 0.5s ease-in-out; */
+/* 	-o-transition: all 0.5s ease-in-out; */
+/* 	transition: all 0.5s ease-in-out; */
+/* } */
+/* .span_3_of_2 .button a:hover { */
+/* 	 text-shadow: 0px 0px 1px #000; */
+/* 	  background:#292929; */
+/* } */
+.button2 {
 	font-weight: bold;
 	font-size:0.85em;
 	border-radius: 12px;
 	display: block;
 	padding:8px 10px;
 	font-family: 'ambleregular';
-	background:#FC7D01;
+	background:#00dcff;
 	color: #FFF;
 	text-decoration: none;
 	outline: 0;
@@ -736,9 +756,29 @@ body {
 	-o-transition: all 0.5s ease-in-out;
 	transition: all 0.5s ease-in-out;
 }
-.span_3_of_2 .button a:hover {
+.button2:hover {
 	 text-shadow: 0px 0px 1px #000;
-	  background:#292929;
+	  background:#0043ff;
+}
+.button1 {
+	font-weight: bold;
+	font-size:0.85em;
+	border-radius: 12px;
+	display: block;
+	padding:8px 10px;
+	font-family: 'ambleregular';
+	background:#eaae04;
+	color: #FFF;
+	text-decoration: none;
+	outline: 0;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+.button1:hover {
+	 text-shadow: 0px 0px 1px #000;
+	  background:#da350f;
 }
 .sidebar h2{
 	font-weight: 900;
@@ -784,11 +824,12 @@ body {
 	color:#888;
 }
 .movie_desc span a{
+	border-radius:15px;
 	font-size:0.8em;
 	display:inline-block;
 	padding:6px 10px;
 	font-family: 'ambleregular';
-	background:#FC7D01;
+	background:#9b01fce8;
 	color: #FFF;
 	text-decoration: none;
 	outline: 0;
@@ -799,7 +840,7 @@ body {
 }
 .movie_desc span a:hover{
 	 text-shadow: 0px 0px 1px #000;
-	  background:#292929;
+	  background:#fc01a3bf;
 }
 /**** End Preview Page ******/
 /*  Contact Form  ============================================================================= */

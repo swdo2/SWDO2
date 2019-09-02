@@ -148,31 +148,33 @@
 					<div class="available">
 						<ul>
 						  <li>
-						  <span>AUTHOR:</span> &nbsp; 
+						  <!-- ----------------지은이 ------------------- -->
+						  <span>AUTHOR:</span> &nbsp;                    
 						  <c:forEach var="info" items="${bookInFo}">
 								${info.author}
 						  </c:forEach>
 						  </li>
 						  <li>
+						  <!-- ----------------출판사 ------------------- -->
 						  <span>PUBLISHER:</span> &nbsp; 
 						  <c:forEach var="info" items="${bookInFo}">
 								 ${info.publisher}
 						  </c:forEach>
 						  </li>
 						  <li>
+						  <!-- --------------- 발행일 ------------------- -->
 						  <span>PUBDATE:</span> &nbsp; 
 						  <c:forEach var="info" items="${bookInFo}">
 								 ${info.pubdate}
 						  </c:forEach>
 						  </li>
+						  <!-- --------------- ISBN ------------------- -->
 						    <li style="font-size: 0.7em;text-align: right;">
 						  <span>ISBN:</span> &nbsp; 
 						  <c:forEach var="info" items="${bookInFo}">
 								 ${info.isbn}
 						  </c:forEach>
 						  </li>
-						  
-
 					    </ul>
 					</div>
 				<div class="share-desc">
@@ -183,9 +185,9 @@
 				</div>
 				 <div class="wish-list">
 				 	<c:forEach var="info" items="${bookInFo}">
-			 		<div class="button"><span class = "addCart" id = "${info.isbn}" ><a href="#">Add to Cart</a></span></div>
+			 		<div class="button"><span class = "addCart" id = "${info.isbn}" ><a href="#" class="button1">Add to Cart</a></span></div>
 			 		</c:forEach>
-					<div class="button"><span><a href="#" style="margin-right: 20px;">Purchase</a></span></div>
+					<div class="button"><span><a href="#" class="button2" style="margin-right: 20px;">Purchase</a></span></div>
 				 </div>
 			</div>
 			<div class="clear"></div>
@@ -209,7 +211,7 @@
 					 		 </div>
 					 		   <div class="movie_desc">
 							    <h3><a href="BookForm?isbn=${book.isbn}">${book.title}</a></h3>
-								   <p><span>${book.price}</span> &nbsp; ${book.discount }</p>
+								   <p><span>&#8361;${book.price}</span> &nbsp; &#8361;${book.discount }</p>
 								      <span id = "${book.isbn}" class = "addCart" ><a href="#">Add to Cart</a></span>
 								 </div>
 								<div class="clear"></div>

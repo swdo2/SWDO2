@@ -22,13 +22,13 @@
 			<div class="wrap">
 				<div class="nav_list">
 					<ul>
-						<li><a href="#">Home</a></li> <!-- href식별자 작성해야합니다. -->
+						<li><a href="homeButton">Home</a></li> <!-- href식별자 작성해야합니다. -->
 					</ul>
 				</div>
 				<c:if test="${sessionScope.loginId != null}">
 					<div class="account_desc">
 						<ul>
-							<li><a href="#">My Account</a></li> <!-- href식별자 작성해야합니다. -->
+							<li><a href="myPageForm">My Page</a></li> <!-- href식별자 작성해야합니다. -->
 					        <li><a href="logOut">LogOut</a></li><!-- href식별자 작성해야합니다. -->
 						</ul>
 					</div>
@@ -39,8 +39,8 @@
   	  		<div class="wrap"> 
 				<div class="header_top">
 					<div class="logo"> 
-						<div class="titlenaranhi"><img class="titleimage" src="./assets/images/main logo.jpg"></div>
-						<div class="titlenaranhi"><h1><a href="home" class="mainTitle">本ーE</a></h1></div>
+						<div class="titlenaranhi"><a href="homeButton"><img class="titleimage" src="./assets/images/main logo.jpg"></a></div>
+						<div class="titlenaranhi"><h1><a href="homeButton" class="mainTitle">本ーE</a></h1></div>
 					</div>
 						<div class="header_top_right">
 						  <div class="cart">
@@ -49,16 +49,12 @@
 										<li>you have no items in your Shopping cart</li>
 								</ul></div>
 						  </div>
-							  <div class="search_box">
-							  
+					      <div class="search_box">
 							  <form action="searchBook" >   <!-- <<<<<<<<<<<<<<<<여기 가 검색 부분 액션 이름 단 입니다. -->
 								<b><input type="text" name="bookTitle" placeholder="Search..." required="검색어를 입력하세요...." maxlength="25"></b>	
 								<input type="submit" value="">					
-							</form>
-					     		<!-- <form action="searchBook">
-					     			<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
-					     		</form> -->
-					     	</div>
+							  </form>
+					      </div>
 						 <div class="clear"></div>
 					</div>
 						  <script type="text/javascript">
@@ -172,6 +168,7 @@
 			   </p>
 	   </div>
    </div>
+<!-- -----------------------------------------------내가본상품 start------------------------------------------ -->
    				<div class="rightsidebar span_3_of_1 sidebar">
 					<h2>最近みた商品</h2>
 					  <c:forEach items = "${booklist}" var = "book" >
@@ -186,11 +183,13 @@
 								 </div>
 								<div class="clear"></div>
 					 		</div>	
-					 	</c:forEach>
- 					   </div>
+				 	   </c:forEach>
+			     </div>
+<!-- -----------------------------------------------내가본상품 start------------------------------------------ -->					 	
  		 		 </div>
    	 		</div>
         </div>
+<!-- ----------------------------------------------맨밑에 정보 start------------------------------------------ -->
    <div class="footer">
    	  <div class="wrap">	
 	     <div class="section group">
@@ -248,6 +247,6 @@
 	</script>
     <a href="#" id="toTop"><span id="toTopHover"> </span></a>
     
-
+<!-- ----------------------------------------------맨밑에 정보 end------------------------------------------ -->
 </body>
 </html>

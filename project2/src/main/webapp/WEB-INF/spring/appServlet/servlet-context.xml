@@ -20,7 +20,9 @@
 	<resources mapping="/js/**" location="/resources/js/" />
 	<resources mapping="/gwangGoPan/**" location="/resources/gwangGoPan/" />
 	<resources mapping="/BookForm/**" location="/resources/BookForm/" />
-
+	<resources mapping="/searchBook/**" location="/resources/searchBook/" />
+	<resources mapping="/mp3/**" location = "file:///C:/tts/" />
+	<resources mapping="/ebook/**" location = "/resources/ebook/"/>
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	
 	

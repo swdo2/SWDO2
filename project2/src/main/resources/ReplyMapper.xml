@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="global.sesoc.project.DAO.ReplyMapper">
+	 
+	<insert id="insert" parameterType = "Reply">
+	
+		insert into reply (reply_num, board_num, person_id, reply_contents)
+			values(reply_num_seq.nextval, #{board_num}, #{person_id},#{reply contents})
+	
+	</insert>
+
+
+	<select id = "select" resultType = "Reply">
+	
+		select * from reply where board_num = #{board_num}
+	
+	</select>
+</mapper>

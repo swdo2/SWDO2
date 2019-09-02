@@ -6,12 +6,16 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import global.sesoc.project.DAO.CartDAO;
+import global.sesoc.project.VO.Book;
 import global.sesoc.project.VO.Cart;
+import global.sesoc.project.service.NaverBookService;
+import global.sesoc.project.service.NaverBookService2;
 
 @Controller
 public class CartController {
@@ -36,6 +40,26 @@ public class CartController {
 		System.out.println(msg);
 		return msg;
 
+	}
+
+
+	
+	
+	@RequestMapping(value = "cartForm", method = RequestMethod.GET)
+	public String bookCart(HttpSession session,Model model) {
+		String person_id= (String) session.getAttribute("loginId");
+		ArrayList<Cart> cartList  = dao.cartList(person_id);
+		NaverBookService nb = new NaverBookService();
+		//		ArrayList<Purchaseinfo> purChaseList = dao.purChaseList(loginId);
+
+		ArrayList<ArrayList<Book>> blist = new ArrayList<ArrayList<Book>>(); 
+		
+		for (int i = 0; i < cartList.size(); i++) {
+			blist.add((ArrayList<Book>) nb.searchBook("d_isbn", cartList.get(i).getBook_isbn(), 1, 1));
+		};
+		
+		model.addAttribute("blist", blist);
+		return "bookCart";
 	}
 
 }

@@ -11,6 +11,10 @@
 <title>장바구니 페이지 입니다.</title>
 </head>
 <body>
-
+	<c:forEach var="v" items="${blist}">
+		<c:forEach var="b" items="${v}">
+			<img src="${b.image}"><br>
+		</c:forEach>
+	</c:forEach>
 </body>
 </html>

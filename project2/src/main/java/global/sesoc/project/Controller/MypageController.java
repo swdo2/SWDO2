@@ -76,6 +76,7 @@ public class MypageController {
 							, @RequestParam(value="searchText", defaultValue="") String searchText) {
 		
 		List<Book> blist=nb2.searchBook("query", bookTitle, 10, page);
+		
 		//title을 검색해 total에전체 문자열을 담는다
 		String total = sb.booksearch(bookTitle);
 		//searchTotal을 사용해 검색한 값의 total값을 String 형으로 쪼개서 다시 total에넣어줌

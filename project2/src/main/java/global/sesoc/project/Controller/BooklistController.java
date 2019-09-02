@@ -1,5 +1,8 @@
 package global.sesoc.project.Controller;
 
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertThat;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,8 +64,19 @@ public class BooklistController {
 	@RequestMapping(value = "BookForm", method = RequestMethod.GET)
 	public String bookInFo(String isbn, Model model, HttpSession session) {
 		List<Book> bookInFo = nb.searchBook("d_isbn", isbn, 1, 1);
-
-	
+//		https://bookthumb-phinf.pstatic.net/cover/066/001/06600168.jpg?type=m1&udate=20170103
+		
+		
+		String address="type=m1";
+		
+		String cutresult =  bookInFo.get(0).getImage().replaceFirst(address, "");
+		
+		Book bbook2 = new Book();
+		bbook2 = bookInFo.get(0);
+		bbook2.setImage(cutresult);
+		bookInFo.set(0, bbook2);
+		
+		
 		if (tag_image.size() == 0) {
 			tag_image.add(isbn);
 			List<Book> searched = nb.searchBook("d_isbn",tag_image.get(0),1,1);
@@ -71,7 +85,12 @@ public class BooklistController {
 			book.setIsbn(isbn);
 			book.setTitle(searched.get(0).getTitle());
 			book.setPrice(searched.get(0).getPrice());
+			
+			
+			
 			book.setImage(searched.get(0).getImage());
+			
+			
 			book.setDiscount(searched.get(0).getDiscount());
 			booklist.add(book);
 		} else {

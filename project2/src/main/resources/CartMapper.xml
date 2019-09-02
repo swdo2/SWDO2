@@ -11,4 +11,8 @@
 	<select id = "cartCount" resultType="int" parameterType="map" >
 		SELECT COUNT(person_id) FROM cart WHERE book_isbn = #{book_isbn} and person_id = #{person_id}		
 	</select>
+
+	<select id = "cartList" resultType="Cart" parameterType="string" >
+		SELECT * FROM cart WHERE person_id = #{person_id}		
+	</select>
 </mapper>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="global.sesoc.project.DAO.CartMapper">
+	<insert id = "insertCart" parameterType = "map">
+		insert into Cart values(#{person_id},#{book_isbn})	
+	</insert>
+	
+	<select id = "cartCount" resultType="int" parameterType="map" >
+		SELECT COUNT(person_id) FROM cart WHERE book_isbn = #{book_isbn} and person_id = #{person_id}		
+	</select>
+</mapper>

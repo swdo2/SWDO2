@@ -1,6 +1,6 @@
 
 /* Drop Tables */
-DROP TABLE Basket CASCADE CONSTRAINTS;
+DROP TABLE Cart CASCADE CONSTRAINTS;
 DROP TABLE CheckBoard CASCADE CONSTRAINTS;
 DROP TABLE Reply CASCADE CONSTRAINTS;
 DROP TABLE Board CASCADE CONSTRAINTS;
@@ -26,7 +26,7 @@ CREATE SEQUENCE reply_number_sequence;
 
 /* Create Tables */
 
-CREATE TABLE Basket
+CREATE TABLE Cart
 (
 	-- 회원 아이디
 	person_id varchar2(20) NOT NULL,
@@ -127,7 +127,7 @@ ALTER TABLE Reply
 ;
 
 
-ALTER TABLE Basket
+ALTER TABLE Cart
 	ADD FOREIGN KEY (person_id)
 	REFERENCES Person (person_id)
 ;
@@ -160,7 +160,7 @@ ALTER TABLE Reply
 
 /* Comments */
 
-COMMENT ON COLUMN Basket.person_id IS '회원 아이디';
+COMMENT ON COLUMN Cart.person_id IS '회원 아이디';
 COMMENT ON COLUMN Board.board_hits IS '기본값 0';
 COMMENT ON COLUMN Board.person_id IS '회원 아이디';
 COMMENT ON COLUMN Book.book_publicationdate IS '책 출간일';

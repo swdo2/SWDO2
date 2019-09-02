@@ -49,16 +49,12 @@
 										<li>you have no items in your Shopping cart</li>
 								</ul></div>
 						  </div>
-							  <div class="search_box">
-							  
+					      <div class="search_box">
 							  <form action="searchBook" >   <!-- <<<<<<<<<<<<<<<<여기 가 검색 부분 액션 이름 단 입니다. -->
 								<b><input type="text" name="bookTitle" placeholder="Search..." required="검색어를 입력하세요...." maxlength="25"></b>	
 								<input type="submit" value="">					
-							</form>
-					     		<!-- <form action="searchBook">
-					     			<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
-					     		</form> -->
-					     	</div>
+							  </form>
+					      </div>
 						 <div class="clear"></div>
 					</div>
 						  <script type="text/javascript">
@@ -193,6 +189,7 @@
  		 		 </div>
    	 		</div>
         </div>
+<!-- ----------------------------------------------맨밑에 정보 start------------------------------------------ -->
    <div class="footer">
    	  <div class="wrap">	
 	     <div class="section group">
@@ -250,6 +247,6 @@
 	</script>
     <a href="#" id="toTop"><span id="toTopHover"> </span></a>
     
-
+<!-- ----------------------------------------------맨밑에 정보 end------------------------------------------ -->
 </body>
 </html>

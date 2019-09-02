@@ -18,6 +18,9 @@
 	<script type="text/javascript" src="./searchBook/js/move-top.js"></script>
 	<script type="text/javascript" src="./searchBook/js/easing.js"></script>
 	<script type="text/javascript" src="./searchBook/js/jquery.nivo.slider.js"></script>
+<style>
+html {overflow:scroll}
+</style>
 </head>
 <script type="text/javascript">
     $(window).load(function() {
@@ -39,17 +42,12 @@
 				<div class="nav_list">
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li><a href="contact.html">Sitemap</a></li>
-						<li><a href="contact.html">Contact</a></li>
 					</ul>
 				</div>
 					<div class="account_desc">
 						<ul>
-							<li><a href="contact.html">Register</a></li>
-							<li><a href="contact.html">Login</a></li>
-							<li><a href="preview.html">Delivery</a></li>
-							<li><a href="#">Checkout</a></li>
-							<li><a href="#">My Account</a></li>
+							<li><a href="myPageForm">My Page</a></li> <!-- href식별자 작성해야합니다. -->
+					        <li><a href="logOut">LogOut</a></li><!-- href식별자 작성해야합니다. -->
 						</ul>
 					</div>
 				<div class="clear"></div>
@@ -58,20 +56,22 @@
   	  		<div class="wrap">
 				<div class="header_top">
 					<div class="logo">
-						<a href="index.html"><img src="./searchBook/images/logo.png" alt="" /></a>
+						<div class="titlenaranhi"><a href="homeButton"><img class="titleimage" src="./assets/images/main logo.jpg"></a></div>
+						<div class="titlenaranhi"><h1><a href="homeButton" class="mainTitle">本ーE</a></h1></div>
 					</div>
 						<div class="header_top_right">
 						  <div class="cart">
 						  	   <p><span>Cart</span><div id="dd" class="wrapper-dropdown-2"> (empty)
 						  	   	<ul class="dropdown">
 										<li>you have no items in your Shopping cart</li>
-								</ul></div></p>
+								</ul></p></div>
 						  </div>
 							  <div class="search_box">
-					     		<form>
-					     			<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
-					     		</form>
-					     	</div>
+							  <form action="searchBook" >   <!-- <<<<<<<<<<<<<<<<여기 가 검색 부분 액션 이름 단 입니다. -->
+									<b><input type="text" name="bookTitle" placeholder="Search..." required="검색어를 입력하세요...." maxlength="25"></b>	
+									<input type="submit" value="">					
+							  </form>
+					      </div>
 						 <div class="clear"></div>
 					</div>
 						  <script type="text/javascript">
@@ -148,84 +148,37 @@
       <div class="content">
     	<div class="content_top">
     		<div class="heading">
-    		<h3>New Products</h3>
+    		<h3>Search Result</h3>
     		</div>
     	</div>
+<!-- ------------------------------------------------------ 1번째줄 start------------------------------------------------   --->    	
 	      <div class="section group">
+<!-- --------------------------------------------한개씩 보여주는 부분 start------------------------------------- -->
+   			<c:forEach var="list" items="${blist}">
 				<div class="grid_1_of_5 images_1_of_5">
-					 <a href="preview.html"><img src="./searchBook/images/end-game.jpg" alt="" /></a>
-					 <h2><a href="preview.html">End Game</a></h2>
+					 <a href="BookForm?isbn=${list.isbn}"><img src="${list.image}"></a>
+					 <h2><a href="#">${list.title}</a></h2>
 					<div class="price-details">
 				       <div class="price-number">
-							<p><span class="rupees">$620.87</span></p>
+							<p><span class="rupees">${list.publisher}</span></p>
 					    </div>
 					       		<div class="add-cart">								
-									<h4><a href="preview.html">Add to Cart</a></h4>
+									<h4><a href="#">Add to Cart</a></h4>
+									<h4><a href="#">E-Book</a></h4>
 							     </div>
 							 <div class="clear"></div>
 					</div>					 
 				</div>
-				<div class="grid_1_of_5 images_1_of_5">
-					 <a href="preview.html"><img src="./searchBook/images/Sorority_Wars.jpg" alt="" /></a>
-					 <h2><a href="preview.html">Sorority Wars</a></h2>
-					<div class="price-details">
-				       <div class="price-number">
-							<p><span class="rupees">$620.87</span></p>
-					    </div>
-					       		<div class="add-cart">								
-									<h4><a href="preview.html">Add to Cart</a></h4>
-							     </div>
-							 <div class="clear"></div>
-					</div>
-					 
-				</div>
-				<div class="grid_1_of_5 images_1_of_5">
-					<a href="preview.html"><img src="./searchBook/images/New-Moon-The-Score-cover-twilight.jpg" alt="" /></a>
-					 <h2><a href="preview.html">Twilight New Moon</a></h2>
-					<div class="price-details">
-				       <div class="price-number">
-							<p><span class="rupees">$899.75</span></p>
-					    </div>
-					       		<div class="add-cart">								
-									<h4><a href="preview.html">Add to Cart</a></h4>
-							     </div>
-							 <div class="clear"></div>
-					</div>
-				    
-				</div>
-				<div class="grid_1_of_5 images_1_of_5">
-					<a href="preview.html"><img src="./searchBook/images/avatar_movie.jpg" alt="" /></a>
-					 <h2><a href="preview.html">Avatar</a></h2>
-					 <div class="price-details">
-				       <div class="price-number">
-							<p><span class="rupees">$599.00</span></p>
-					    </div>
-					       		<div class="add-cart">								
-									<h4><a href="preview.html">Add to Cart</a></h4>
-							     </div>
-							 <div class="clear"></div>
-					</div>
-				</div>
-				<div class="grid_1_of_5 images_1_of_5">
-					<a href="preview.html"><img src="./searchBook/images/black-swan.jpg" alt="" /></a>
-					 <h2><a href="preview.html">Black Swan</a></h2>
-					<div class="price-details">
-				       <div class="price-number">
-							<p><span class="rupees">$679.87</span></p>
-					    </div>
-					       		<div class="add-cart">								
-									<h4><a href="preview.html">Add to Cart</a></h4>
-							     </div>
-							 <div class="clear"></div>
-					</div>				     
-				</div>
+			</c:forEach>
+<!--  --------------------------------------한개씩 보여주는 부분 end------------------------------------- -->
 			</div>
-			<div class="content_bottom">
-    		<div class="heading">
-    		<h3>Feature Products</h3>
-    		</div>
-    	  </div>
-			<div class="section group">
+		</div>
+<!-- ------------------------------------------------------ 1번째줄 end------------------------------------------------   --->       
+
+<!-- ------------------------------------------------------ 2번째줄 start------------------------------------------------   --->
+		<div class="section group">
+<!-- --------------------------------------------한개씩 보여주는 부분 start------------------------------------- -->
+			<c:forEach var="list" items="${blist}">
 				<div class="grid_1_of_5 images_1_of_5">
 					 <a href="preview.html"><img src="./searchBook/images/beauty_and_the_beast.jpg" alt="" /></a>
 					 <h2><a href="preview.html">Beauty and the beast</a></h2>
@@ -238,66 +191,14 @@
 							     </div>
 							 <div class="clear"></div>
 					</div>
-					 
 				</div>
-				<div class="grid_1_of_5 images_1_of_5">
-					 <a href="preview.html"><img src="./searchBook/images/Eclipse.jpg" alt="" /></a>
-					 <h2><a href="preview.html">Eclipse</a></h2>
-					<div class="price-details">
-				       <div class="price-number">
-							<p><span class="rupees">$620.87</span></p>
-					    </div>
-					       		<div class="add-cart">								
-									<h4><a href="preview.html">Add to Cart</a></h4>
-							     </div>
-							 <div class="clear"></div>
-					</div>
-					 
-				</div>
-				<div class="grid_1_of_5 images_1_of_5">
-					<a href="preview.html"><img src="./searchBook/images/Coraline.jpg" alt="" /></a>
-					 <h2><a href="preview.html">Coraline</a></h2>
-					<div class="price-details">
-				       <div class="price-number">
-							<p><span class="rupees">$899.75</span></p>
-					    </div>
-					       		<div class="add-cart">								
-									<h4><a href="preview.html">Add to Cart</a></h4>
-							     </div>
-							 <div class="clear"></div>
-					</div>
-				    
-				</div>
-				<div class="grid_1_of_5 images_1_of_5">
-					<a href="preview.html"><img src="./searchBook/images/Unstoppable.jpg" alt="" /></a>
-					 <h2><a href="preview.html">Unstoppable</a></h2>
-					 <div class="price-details">
-				       <div class="price-number">
-							<p><span class="rupees">$599.00</span></p>
-					    </div>
-					       		<div class="add-cart">								
-									<h4><a href="preview.html">Add to Cart</a></h4>
-							     </div>
-							 <div class="clear"></div>
-					</div>
-				</div>
-				<div class="grid_1_of_5 images_1_of_5">
-					<a href="preview.html"><img src="./searchBook/images/Priest.jpg" alt="" /></a>
-					 <h2><a href="preview.html">Priest 3D</a></h2>
-					<div class="price-details">
-				       <div class="price-number">
-							<p><span class="rupees">$679.87</span></p>
-					    </div>
-					       		<div class="add-cart">								
-									<h4><a href="preview.html">Add to Cart</a></h4>
-							     </div>
-							 <div class="clear"></div>
-					 </div>				     
-				</div>
-			</div>
+			</c:forEach>				
+<!--  --------------------------------------한개씩 보여주는 부분 end------------------------------------- -->				
        </div>
+<!-- ------------------------------------------------------ 2번째줄 end------------------------------------------------   --->       
   </div>
 </div>
+<!-- ----------------------------------------------맨밑에 정보 start------------------------------------------ -->
    <div class="footer">
    	  <div class="wrap">	
 	     <div class="section group">
@@ -306,9 +207,6 @@
 						<ul>
 						<li><a href="#">About Us</a></li>
 						<li><a href="#">Customer Service</a></li>
-						<li><a href="#">Advanced Search</a></li>
-						<li><a href="#">Orders and Returns</a></li>
-						<li><a href="contact.html">Contact Us</a></li>
 						</ul>
 					</div>
 				<div class="col_1_of_4 span_1_of_4">
@@ -316,52 +214,50 @@
 						<ul>
 						<li><a href="#">About Us</a></li>
 						<li><a href="#">Customer Service</a></li>
-						<li><a href="#">Privacy Policy</a></li>
-						<li><a href="contact.html">Site Map</a></li>
-						<li><a href="#">Search Terms</a></li>
 						</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
 					<h4>My account</h4>
 						<ul>
-							<li><a href="contact.html">Sign In</a></li>
+							<li><a href="contact.html">Sign In</a></li>    <!-- 링크 수정 해야함 -->
 							<li><a href="index.html">View Cart</a></li>
-							<li><a href="#">My Wishlist</a></li>
-							<li><a href="#">Track My Order</a></li>
-							<li><a href="contact.html">Help</a></li>
 						</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
 					<h4>Contact</h4>
 						<ul>
-							<li><span>+91-123-456789</span></li>
-							<li><span>+00-123-000000</span></li>
+							<li><span>010-4320-7840</span></li>
+							<li><span>010-8335-0698</span></li>
+							<li><span>010-8335-0698</span></li>
+							<li><span>010-8335-0698</span></li>
 						</ul>
 						<div class="social-icons">
-							<h4>Follow Us</h4>
+							<h4>SUPPORT</h4>
 					   		  <ul>
-							      <li><a href="#" target="_blank"><img src="./searchBook/images/facebook.png" alt="" /></a></li>
-							      <li><a href="#" target="_blank"><img src="./searchBook/images/twitter.png" alt="" /></a></li>
-							      <li><a href="#" target="_blank"><img src="./searchBook/images/skype.png" alt="" /> </a></li>
-							      <li><a href="#" target="_blank"> <img src="./searchBook/images/linkedin.png" alt="" /></a></li>
-							      <div class="clear"></div>
+							      <li><a href="https://www.aladin.co.kr/home/welcome.aspx" target="_blank"><img class="iconkugi" src="./BookForm/images/aladin.png" /></a></li>
+							      <li><a href="http://www.kyobobook.co.kr/index.laf?OV_REFFER" target="_blank"><img class="iconkugi" src="./BookForm/images/kyobo.jpg" /></a></li>
+							      <li><a href="https://book.naver.com" target="_blank"><img class="iconkugi" src="./BookForm/images/naver.ico" /></a></li>
+							      <li><a href="http://www.yes24.com/main/default.aspx" target="_blank"><img class="iconkugi" src="./BookForm/images/yes24.png" /></a></li>
 						     </ul>
+						     <div class="clear"></div>
    	 					</div>
 				</div>
 			</div>
 			 <div class="copy_right">
-				<p>Company Name © All rights Reseverd | Design by  <a href="http://w3layouts.com">W3Layouts</a> </p>
+				<p>Company Name © All rights Reseverd | Design by  <font style="color:#ff8600">Jeon Jae Hyoung</font></p>
 		   </div>			
         </div>
     </div>
-    <script type="text/javascript">
+   <script type="text/javascript">
 		$(document).ready(function() {			
 			$().UItoTop({ easingType: 'easeOutQuart' });
 			
 		});
 	</script>
     <a href="#" id="toTop"><span id="toTopHover"> </span></a>
-<%-- <!-- 책 제목 검색 토탈알려줌--> 
+    
+<!-- ----------------------------------------------맨밑에 정보 end------------------------------------------ -->
+<!------------------------------------------------ 검색 결과 Form Start-------------------------------------- --> 
 검색 결과 ${total}개가 검색 되었습니다.
   <div>
 	<table border="1">
@@ -473,6 +369,6 @@
 	
 	</div>
 	
-	 --%>
+<!------------------------------------------------ 검색 결과 Form end-------------------------------------- -->	
 </body>
 </html>

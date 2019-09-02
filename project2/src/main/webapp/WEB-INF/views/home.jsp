@@ -48,6 +48,9 @@
 	<link rel="stylesheet" href="./gwangGoPan/css/popuo-box.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="./gwangGoPan/css/style.css" type="text/css" media="screen" />
 <!-- -------------------------------------------------광고판 포더 Resources 링크 end ------------------------------------------------------------------------------------- -->		
+<style>
+html {overflow:scroll}
+</style>
 
 				<!-- jQuery if needed -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>

@@ -8,13 +8,16 @@
  		<typeAlias type="global.sesoc.project.VO.Person" alias="Person" />
  		<typeAlias type="global.sesoc.project.VO.Board" alias="Board" />
  		<typeAlias type="global.sesoc.project.VO.Purchaseinfo" alias="Purchaseinfo" />
+ 		<typeAlias type="global.sesoc.project.VO.Bookmarks" alias="Bookmarks" />
+		<typeAlias type="global.sesoc.project.VO.BookInfo" alias="BookInfo" />
 	</typeAliases>
 	
 	<mappers>
 	 	<mapper resource="PersonMapper.xml" />
 	 	<mapper resource="BoardMapper.xml" />
 	 	<mapper resource="MypageMapper.xml" />
-		
+		<mapper resource="BookmarksMapper.xml" />
+		<mapper resource="BookInfoMapper.xml"/>
 	</mappers>
 	 
 </configuration>

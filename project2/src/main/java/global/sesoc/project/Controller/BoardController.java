@@ -98,7 +98,7 @@ public class BoardController {
 	}
 	
 	//글 삭제 메서드
-	@RequestMapping(value = "delete", method=RequestMethod.GET)
+	@RequestMapping(value = "deleteBoard", method=RequestMethod.GET)
 	public String delete(int board_num, HttpSession session){
 		//세션에 저장된 로그인
 		String id = (String) session.getAttribute("loginId");

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="global.sesoc.project.DAO.BoardMapper">
+	 
+	 <!-- 글 저장 메서드 -->
+	 	<insert id="write" parameterType = "Board">
+	 
+	insert into Board (
+		board_num
+		, board_title
+		, board_contents
+		, person_id
+
+	) values (
+		board_number_sequence.nextval
+		, #{board_title}
+		, #{board_contents}
+		, #{person_id}
+	)
+	 	</insert>
+
+ 	<select id = "detail" parameterType = "int" resultType = "Board">
+	
+	  select 
+			board_num
+		, person_id
+		, board_title
+		, board_contents
+		, board_hits
+		, board_like
+	  from
+			Board 
+	  where board_num = #{board_num}
+	
+	</select>
+	
+	<select id = "list" resultType = "Board" >
+		select * from Board order by board_num desc
+	</select>
+
+	<!-- 글 삭제하는 쿼리문작성 -->
+	<delete id = "delete" parameterType="Board">
+	
+		delete
+			from 
+				Board
+		where board_num = #{board_num}
+		and person_id = #{person_id}
+	</delete>
+	
+	<!-- 글 수정하는 쿼리문작성 -->
+	<update id="update" parameterType="Board">
+		update Board
+		set 
+			board_title = #{board_title}
+			, board_contents = #{board_contents}
+		where
+			board_num = #{board_num}
+			and person_id = #{person_id}
+	</update>
+	
+	<!-- 따봉 누르는 메서드 -->
+	<update id = "like" parameterType="int">
+		update
+			Board
+		set 
+			board_like = board_like + 1
+		where
+			board_num = #{board_num}
+	</update>
+
+</mapper>

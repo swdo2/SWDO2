@@ -17,6 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -43,11 +44,11 @@ public class EbookController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 
-	@RequestMapping(value = "/ebookPage", method = RequestMethod.GET)
+/*	@RequestMapping(value = "/ebookPage", method = RequestMethod.GET)
 	public String Start() {
 
 		return "/ebook";
-	}
+	}*/
 
 	@ResponseBody
 	@RequestMapping(value = "/ebook", method = RequestMethod.GET)
@@ -181,6 +182,12 @@ public class EbookController {
 
 		}
 		return list;
+	}
+	
+	@RequestMapping(value = "ebookPage", method = RequestMethod.GET) 
+	public String ebookPage(String isbn, Model model) {
+		model.addAttribute("isbn", isbn);
+		return "ebook";
 	}
 
 	@ResponseBody

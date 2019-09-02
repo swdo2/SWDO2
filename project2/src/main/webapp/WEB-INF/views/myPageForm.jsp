@@ -6,8 +6,8 @@
 <html lang="en" class="no-js">
 	<head>
 		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>마이페이지</title>
 		<meta name="description" content="Book Preview with BookBlock" />
 		<meta name="keywords" content="BookBlock, book preview, look inside, css, transforms, animations, css3, 3d, perspective, fullscreen" />
@@ -18,7 +18,20 @@
 		<link rel="stylesheet" type="text/css" href="viewbook/css/bookblock.css" />
 		<link rel="stylesheet" type="text/css" href="viewbook/css/component.css" />
 		<script src="viewbook/js/modernizr.custom.js"></script>
-		
+		<script src="./ebook/reader/js/libs/jquery-3.4.1.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('.purchasedbook').on("click",function() {
+					window.open('ebookPage?=${b.isbn}');
+
+				})
+			})
+		</script>
+		<style>
+			.purchasedbook {
+				cursor: pointer;
+			}
+		</style>
 	</head>
 	<body>
 
@@ -28,16 +41,17 @@
 					<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Tutorials/ShapeHoverEffectSVG/"><span>Previous Demo</span></a>
 					<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=18228"><span>Back to the Codrops Article</span></a></span>
 				</div>
-				<h1>Book Preview <span>with <a href="http://tympanus.net/codrops/2012/09/03/bookblock-a-content-flip-plugin/">BookBlock</a></span></h1>	
+				<h1>Book Preview <span>with <a href="http://tympanus.net/codrops/2012/09/03/bookblock-a-content-flip-plugin/">BookBlock</a></span></h1>
 			</header>
 			<div class="main">
 			안녕하세여 슈가 아유미 에요
+
 			<c:forEach items="${blist}" var="list">
 				<c:forEach items = "${list}" var = "b">
-				<img src="${b.image}">
+					<img src="${b.image}" class = "purchasedbook" id = "${b.isbn}">
 				</c:forEach>
 			</c:forEach>
-			
+
 			<!-- 여기는 내가 로그인했을경우 내가 구매한 책들을 E-BOOK으로 볼수 있게 나타내는 부분입니다. -->
 			</div><!-- /main -->
 			<div class="related">

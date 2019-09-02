@@ -58,7 +58,7 @@
 	"use strict";
 	document.onreadystatechange = function() {
 		if (document.readyState == "complete") {
-			window.reader = ePubReader("./ebook/alice.epub", {
+			window.reader = ePubReader("./ebook/8961556576 9788961556576.epub", {
 				restore : true
 			});
 		}

@@ -57,7 +57,10 @@
 <script>
 	"use strict";
 	document.onreadystatechange = function() {
+
 		if (document.readyState == "complete") {
+			var isbn1 = document.getElementById('bookisbn');
+			console.log(isbn1);
 			window.reader = ePubReader("ebookfiles/8961556576 9788961556576.epub", {
 				restore : true
 			});
@@ -810,6 +813,7 @@
 </script>
 </head>
 <body>
+
 	<div id="sidebar">
 		<div id="panels">
 <!-- 			<input id="searchBox" placeholder="search" type="search"> <a
@@ -871,6 +875,7 @@
 	<input type = "hidden" id = "tts">
 	<input type = "hidden" id = "nextsound">
 	<input type = "hidden" id = "current_chapter"  />
+	<input type = "hidden" id = "bookisbn" value = "${isbn}"/>
 
 	<div id = "audio"></div>
 	 <div class="modal md-effect-1" id="settings-modal">

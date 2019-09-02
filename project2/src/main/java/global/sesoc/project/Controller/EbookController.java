@@ -186,7 +186,10 @@ public class EbookController {
 	
 	@RequestMapping(value = "ebookPage", method = RequestMethod.GET) 
 	public String ebookPage(String isbn, Model model) {
+		logger.debug("ebook page로 넘어가는 관문");
+		logger.debug("isbn : {}", isbn);
 		model.addAttribute("isbn", isbn);
+		
 		return "ebook";
 	}
 

@@ -22,7 +22,9 @@
 		<script>
 			$(document).ready(function() {
 				$('.purchasedbook').on("click",function() {
-					window.open('ebookPage?=${b.isbn}');
+					var isbn = $(this).attr('id');
+					console.log(isbn);
+					window.open('ebookPage?isbn=' + isbn);
 
 				})
 			})

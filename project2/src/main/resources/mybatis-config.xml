@@ -10,6 +10,7 @@
  		<typeAlias type="global.sesoc.project.VO.Purchaseinfo" alias="Purchaseinfo" />
  		<typeAlias type="global.sesoc.project.VO.Bookmarks" alias="Bookmarks" />
 		<typeAlias type="global.sesoc.project.VO.BookInfo" alias="BookInfo" />
+		<typeAlias type="global.sesoc.project.VO.Reply" alias="Reply" />
 	</typeAliases>
 	
 	<mappers>
@@ -18,6 +19,7 @@
 	 	<mapper resource="MypageMapper.xml" />
 		<mapper resource="BookmarksMapper.xml" />
 		<mapper resource="BookInfoMapper.xml"/>
+		<mapper resource="ReplyMapper.xml" />
 	</mappers>
 	 
 </configuration>

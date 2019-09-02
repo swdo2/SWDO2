@@ -129,7 +129,7 @@ html {overflow:scroll}
 							      	<div class="slider-wrapper theme-default">
 							            <div id="slider" class="nivoSlider">
 							                <c:forEach var="list" items="${blist}">
-							                	 <a href="BookForm?isbn=${list.isbn}"><img src="${list.image}" ></a>
+							                	 <a href="BookForm?isbn=${list.isbn}"><img src="${list.image}" style="width:899.35px; height:450px;"></a>
 							                </c:forEach>
 							            </div>
 							        </div>

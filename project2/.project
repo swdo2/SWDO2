@@ -44,11 +44,4 @@
 		<nature>org.eclipse.wst.common.modulecore.ModuleCoreNature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/main/webapp/resources/ebook/8961556576 9788961556576.epub</name>
-			<type>1</type>
-			<location>E:/전자책/ebookfile/alice.epub</location>
-		</link>
-	</linkedResources>
 </projectDescription>

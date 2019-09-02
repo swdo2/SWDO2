@@ -15,6 +15,35 @@
 <link rel="shortcut icon" type="image/icon" href="./bootstrap/css/css.css"/>
 
 <title>BookForm</title>
+<script>
+	$(document).ready(function() {
+		$('.addCart').on("click",function() {
+	
+			var bisbn = $(this).attr('id');
+			
+			$.ajax({
+				url:'cart'
+				,data:{book_isbn:bisbn}
+				,type:'get'
+				,dataType:'text'
+				,success:function suc(e){
+					alert(e);
+				}
+				,error:function sss(x){
+					alert('실패 ㅠㅠ');
+				}
+			});
+			
+			
+			console.log(bisbn);
+			
+			var blist = new Array();
+			
+			
+		
+		})
+	})
+</script>	
 </head>
 <body>
 	<div class="header">
@@ -153,7 +182,9 @@
 					<div class="clear"></div>
 				</div>
 				 <div class="wish-list">
-			 		<div class="button"><span><a href="#">Add to Cart</a></span></div>
+				 	<c:forEach var="info" items="${bookInFo}">
+			 		<div class="button"><span class = "addCart" id = "${info.isbn}" ><a href="#">Add to Cart</a></span></div>
+			 		</c:forEach>
 					<div class="button"><span><a href="#" style="margin-right: 20px;">Purchase</a></span></div>
 				 </div>
 			</div>
@@ -179,7 +210,7 @@
 					 		   <div class="movie_desc">
 							    <h3><a href="BookForm?isbn=${book.isbn}">${book.title}</a></h3>
 								   <p><span>${book.price}</span> &nbsp; ${book.discount }</p>
-								     <span><a href="#">Add to Cart</a></span>
+								      <span id = "${book.isbn}" class = "addCart" ><a href="#">Add to Cart</a></span>
 								 </div>
 								<div class="clear"></div>
 					 		</div>	

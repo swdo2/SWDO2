@@ -42,22 +42,28 @@ public class CartController {
 
 	}
 
-
-	
-	
 	@RequestMapping(value = "cartForm", method = RequestMethod.GET)
-	public String bookCart(HttpSession session,Model model) {
-		String person_id= (String) session.getAttribute("loginId");
-		ArrayList<Cart> cartList  = dao.cartList(person_id);
+	public String bookCart(HttpSession session, Model model) {
+		String person_id = (String) session.getAttribute("loginId");
+		ArrayList<Cart> cartList = dao.cartList(person_id);
 		NaverBookService nb = new NaverBookService();
-		//		ArrayList<Purchaseinfo> purChaseList = dao.purChaseList(loginId);
+		// ArrayList<Purchaseinfo> purChaseList = dao.purChaseList(loginId);
 
-		ArrayList<ArrayList<Book>> blist = new ArrayList<ArrayList<Book>>(); 
-		
+		ArrayList<ArrayList<Book>> blist = new ArrayList<ArrayList<Book>>();
+
 		for (int i = 0; i < cartList.size(); i++) {
 			blist.add((ArrayList<Book>) nb.searchBook("d_isbn", cartList.get(i).getBook_isbn(), 1, 1));
-		};
-		
+		}
+		;
+		///////////////////////
+		String address = "type=m1";
+		// 자른 결과
+		String cutresult;
+		// 이미지 교체 작업
+		for (int i=0; i  < blist.size();i++){
+		cutresult = blist.get(i).get(0).getImage().replaceFirst(address, "");
+		blist.get(i).get(0).setImage(cutresult);
+		}
 		model.addAttribute("blist", blist);
 		return "bookCart";
 	}

@@ -14,10 +14,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link href="./searchBook/css/style.css" rel="stylesheet" type="text/css" media="all"/>
 	<link href="./searchBook/css/slider.css" rel="stylesheet" type="text/css" media="all"/>
-	<script type="text/javascript" src="./searchBook/js/jquery-1.9.0.min.js"></script> 
+	<script type="text/javascript" src="./searchBook/js/jquery-1.9.0.min.js"></script>
 	<script type="text/javascript" src="./searchBook/js/move-top.js"></script>
 	<script type="text/javascript" src="./searchBook/js/easing.js"></script>
 	<script type="text/javascript" src="./searchBook/js/jquery.nivo.slider.js"></script>
+    <script href="./ebook/js/libs/jquery-3.4.1.js"></script>
 <style>
 html {overflow:scroll}
 </style>
@@ -34,6 +35,29 @@ html {overflow:scroll}
 		page.value = currentPage;
 		form.submit();
 	}
+    $(document).ready(function() {
+        $('.clickku1').on("click",function() {
+            var isbn = $(this).attr('id');
+            $.ajax({
+            	url : 'purchase'
+            	,data : {isbn : isbn}
+            	,dataType : 'text'
+                ,type : "get"
+            	,success : function(cnt) {
+                    if(cnt == 0 ) {
+                        if(confirm("책을 구매 하였습니다. 마이페이지로 가시겠습니까?")) {
+                            window.location.href = "myPageForm";
+                        }
+                    } else {
+                        alert('이미 구매한 책입니다.');
+                    }
+            	}
+            	,error : function() {
+            		console.log('dup_purchase error');
+            	}
+            })
+        })
+    })
 </script>
 <body>
 	<div class="header">
@@ -68,8 +92,8 @@ html {overflow:scroll}
 						  </div>
 							  <div class="search_box">
 							  <form action="searchBook" >   <!-- <<<<<<<<<<<<<<<<여기 가 검색 부분 액션 이름 단 입니다. -->
-									<b><input type="text" name="bookTitle" placeholder="Search..." required="검색어를 입력하세요...." maxlength="25"></b>	
-									<input type="submit" value="">					
+									<b><input type="text" name="bookTitle" placeholder="Search..." required="검색어를 입력하세요...." maxlength="25"></b>
+									<input type="submit" value="">
 							  </form>
 					      </div>
 						 <div class="clear"></div>
@@ -82,29 +106,29 @@ html {overflow:scroll}
 								DropDown.prototype = {
 									initEvents : function() {
 										var obj = this;
-					
+
 										obj.dd.on('click', function(event){
 											$(this).toggleClass('active');
 											event.stopPropagation();
-										});	
+										});
 									}
 								}
-					
+
 								$(function() {
-					
+
 									var dd = new DropDown( $('#dd') );
-					
+
 									$(document).click(function() {
 										// all dropdowns
 										$('.wrapper-dropdown-2').removeClass('active');
 									});
-					
+
 								});
 					    </script>
 			 <div class="clear"></div>
-  		</div>     
+  		</div>
 				<div class="header_bottom">
-					<div class="header_bottom_left">				
+					<div class="header_bottom_left">
 						<div class="categories">
 						   <ul>
 						  	   <h3>Categories</h3>
@@ -121,9 +145,9 @@ html {overflow:scroll}
 							       <li><a href="#">Animation</a></li>
 							       <li><a href="#">Games</a></li>
 						  	 </ul>
-						</div>					
+						</div>
 		  	         </div>
-						    <div class="header_bottom_right">					 
+						    <div class="header_bottom_right">
 						 	    <!------ Slider ------------>
 								  <div class="slider">
 							      	<div class="slider-wrapper theme-default">
@@ -149,7 +173,7 @@ html {overflow:scroll}
     		<h3 style="font-weight:600;">Search Result : <font style="font-weight:900;font-size:27px; color:#1000ff;">${total}個</font></h3>
     		</div>
     	</div>
-<!-- ------------------------------------------------------ 1번째줄 start------------------------------------------------   --->    	
+<!-- ------------------------------------------------------ 1번째줄 start------------------------------------------------   --->
 	      <div class="section group">
 <!-- --------------------------------------------한개씩 보여주는 부분 start------------------------------------- -->
    			<div class="listDiv">
@@ -159,15 +183,16 @@ html {overflow:scroll}
 						 <h2><a href="BookForm?isbn=${list.isbn}" class="searchBookLiskTitle">${list.title}</a></h2>
 						<div class="price-details">
 					       <div class="price-number">
-								<span class="rupees1" >&#8361;${list.price}</span><font style="font-size:20px; font-weight:700;"> > </font>				       
+								<span class="rupees1" >&#8361;${list.price}</span><font style="font-size:20px; font-weight:700;"> > </font>
 								<font style="font-size:21px;">&#8361;</font><span class="rupees2">${list.discount}</span>
 						    </div>
-					       		<div class="add-cart1">								
+					       		<div class="add-cart1">
 									<div class="clickku"><a href="#" style="color:aliceblue;">Add to Cart</a></div>
-									<div class="clickku1"><a href="#" style="color:aliceblue;">E-Book</a></div>
+									<div class="clickku1" id = "${list.isbn}"><a style="color:aliceblue;">E-Book</a></div>
+
 						        </div>
 								<div class="clear"></div>
-						</div>					 
+						</div>
 					</div>
 				</c:forEach>
 			</div>
@@ -175,8 +200,8 @@ html {overflow:scroll}
 	<div class="pagingForm">
 		<a href="javascript:pagingFormSubmit(${pagenaviga.currentPage - pagenaviga.pagePerGroup})">◁◁ </a> &nbsp;&nbsp;
 		<a href="javascript:pagingFormSubmit(${pagenaviga.currentPage - 1})">◀</a> &nbsp;&nbsp;
-	
-		<c:forEach var="counter" begin="${pagenaviga.startPageGroup}" end="${pagenaviga.endPageGroup}"> 
+
+		<c:forEach var="counter" begin="${pagenaviga.startPageGroup}" end="${pagenaviga.endPageGroup}">
 			<c:if test="${counter == pagenaviga.currentPage}"><b></c:if>
 				<a href="javascript:pagingFormSubmit(${counter})">${counter}</a>&nbsp;
 			<c:if test="${counter == pagenaviga.currentPage}"></b></c:if>
@@ -197,7 +222,7 @@ html {overflow:scroll}
 		 <input type="text"  name="bookTitle" placeholder="검색하시오"  value="${searchText}"/>
 		<input type="button" onclick="pagingFormSubmit(1);" value="검색">
 		</form>
-	</div>	
+	</div>
 <!-- ----------------------------------------------------------검색폼 end-------------------------------------------------- -->
 		</div>
 		</div>
@@ -205,7 +230,7 @@ html {overflow:scroll}
 </div>
 <!-- ----------------------------------------------맨밑에 정보 start------------------------------------------ -->
    <div class="footer">
-   	  <div class="wrap">	
+   	  <div class="wrap">
 	     <div class="section group">
 				<div class="col_1_of_4 span_1_of_4">
 						<h4>Information</h4>
@@ -250,24 +275,24 @@ html {overflow:scroll}
 			</div>
 			 <div class="copy_right">
 				<p>Company Name © All rights Reseverd | Design by  <font style="color:#ff8600">Jeon Jae Hyoung</font></p>
-		   </div>			
+		   </div>
         </div>
     </div>
    <script type="text/javascript">
-		$(document).ready(function() {			
+		$(document).ready(function() {
 			$().UItoTop({ easingType: 'easeOutQuart' });
-			
+
 		});
 	</script>
     <a href="#" id="toTop"><span id="toTopHover"> </span></a>
-    
+
 <!-- ----------------------------------------------맨밑에 정보 end------------------------------------------ -->
-<!------------------------------------------------ 검색 결과 Form Start-------------------------------------- --> 
+<!------------------------------------------------ 검색 결과 Form Start-------------------------------------- -->
 검색 결과 ${total}개가 검색 되었습니다.
- 
+
 <!-- 	//페이징 찍어보기 -->
 	현재페이지${pagenaviga.currentPage}<br>
 	${pagenaviga.currentPage - pagenaviga.pagePerGroup}<br>
-	현재데피이지 그룹${pagenaviga.startPageGroup}<br>	
+	현재데피이지 그룹${pagenaviga.startPageGroup}<br>
 </body>
 </html>

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import global.sesoc.project.DAO.MypageDAO;
+import global.sesoc.project.DAO.PurchaseDAO;
 import global.sesoc.project.VO.Book;
 import global.sesoc.project.VO.Purchaseinfo;
 import global.sesoc.project.service.NaverBookService;
@@ -27,7 +28,9 @@ import global.sesoc.project.service.Searchbook;
  */
 @Controller
 public class MypageController {
-
+	@Autowired
+	PurchaseDAO pd;
+	
 	@Autowired
 	MypageDAO dao;
 	@Autowired
@@ -50,10 +53,13 @@ public class MypageController {
 	 */
 
 	@RequestMapping(value = "myPageForm", method = RequestMethod.GET)
-	public String myPage(HttpSession session, Model model) {
+	public String myPage(HttpSession session, Model model, String isbn) {
+		
+		
 		String loginId = (String) session.getAttribute("loginId");
-		ArrayList<Purchaseinfo> purChaseList = dao.purChaseList(loginId);
 
+		
+		ArrayList<Purchaseinfo> purChaseList = dao.purChaseList(loginId);
 		ArrayList<ArrayList<Book>> blist = new ArrayList<ArrayList<Book>>();
 		for (int i = 0; i < purChaseList.size(); ++i) {
 			blist.add((ArrayList<Book>) nb.searchBook("d_isbn", purChaseList.get(i).getPURCHASE_ISBN(), 1, 1));

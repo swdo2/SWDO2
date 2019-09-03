@@ -20,23 +20,23 @@
    <!--  Bootstrap -->
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
    <!--  Slick slider -->
-    <link href="./assets/css/slick.css" rel="stylesheet">	
-    
+    <link href="./assets/css/slick.css" rel="stylesheet">
+
     <!-- Theme color -->
     <link id="switcher" href="./assets/css/theme-color/default-theme.css" rel="stylesheet">
 
    <!--  Main Style -->
     <link href="./assets/css/style.css" rel="stylesheet">
-    
+
   <!--   Fonts
     Open Sans for body font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800" rel="stylesheet">
     <!-- Lato for Title -->
-  	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> 
- 
+  	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    
+
     <link rel="stylesheet" type="text/css" href="./loginresources/css/style.css?ver=1" />
     <link rel="stylesheet" type="text/css" href="./loginresources/css/demo.css?ver=1" />
     <!--[if lte IE 7]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
@@ -47,14 +47,55 @@
 	<link rel="stylesheet" href="./gwangGoPan/css/menu.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="./gwangGoPan/css/popuo-box.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="./gwangGoPan/css/style.css" type="text/css" media="screen" />
-<!-- -------------------------------------------------광고판 포더 Resources 링크 end ------------------------------------------------------------------------------------- -->		
+<!-- -------------------------------------------------광고판 포더 Resources 링크 end ------------------------------------------------------------------------------------- -->
 <style>
 html {overflow:scroll}
 </style>
 
 				<!-- jQuery if needed -->
+
+    <%-- <script src = "./ebook/reader/js/libs/jquery-3.4.1.js"></script> --%>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script type="text/javascript">
+        $(document).ready(function() {
+            $('#loginForm').on("submit",function() {
+                console.log('check function');
+                var id = $('#person_id').val();
+                var password = $('#person_password').val();
+                console.log(id);
+                console.log(password);
+
+                var flag;
+                $.ajax({
+                    url : 'logIncheck'
+                    ,data : {id : id, password : password }
+                    ,dataType : 'text'
+                    ,type : 'post'
+                    ,async : false
+                    ,success : function(cnt) {
+                        console.log(cnt);
+                        if(cnt == 1 ){
+                            flag = true;
+                            //return true;
+                        } else {
+                            alert('아이디 및 비밀번호를 제대로 입력해 주세요.');
+                            flag = false;
+
+                        }
+                    }, error : function() {
+                        console.log('login ajax error');
+                    }
+                })
+                console.log(flag);
+
+                if(flag == true) {
+                    window.location.href = "logIn";
+                } else {
+                    return false;
+                }
+            })
+        });
+
 		 	$(function(){
 			    $(".showpassword").each(function(index,input) {
 			        var $input = $(input);
@@ -75,15 +116,17 @@ html {overflow:scroll}
 			    $('#showPassword').click(function(){
 					if($("#showPassword").is(":checked")) {
 						$('.icon-lock').addClass('icon-unlock');
-						$('.icon-unlock').removeClass('icon-lock');    
+						$('.icon-unlock').removeClass('icon-lock');
 					} else {
 						$('.icon-unlock').addClass('icon-lock');
 						$('.icon-lock').removeClass('icon-unlock');
 					}
 			    });
-			}); 
+			});
+
+
 		</script>
-		
+
 	<!-- 스크롤 막는 방법  추후에 로그인을 하게 되면 허용을 해야한다. -->
 	<!-- 	<script>
 		$('html, body').css({'overflow': 'hidden', 'height': '100%'});
@@ -150,26 +193,26 @@ html {overflow:scroll}
 				<div class="col-md-6 col-sm-6 col-sm-pull-6">
 					<div class="mu-hero-left" style="margin-left: 64%;">
 						<section class="main">
-							<form class="form-2" action="logIn" method="post">
+							<form id = "loginForm" class="form-2" action="logIn" method="post">
 								<h1><span class="log-in">Log in</span> or <span class="sign-up">sign up</span></h1>
 								<p class="float">
 									<label for="login"><i class="icon-user"></i>Username</label>
 									<!-- 로그인 아이디 입력하는곳 -->
-									<input type="text" name="person_id" placeholder="Username or email">
+									<input type="text" name="person_id" id = "person_id" placeholder="Username or email">
 								</p>
 								<p class="float">
 									<label for="password"><i class="icon-lock"></i>Password</label>
 									<!-- 로그인 패스워드 입력하는곳 -->
-									<input type="password" name="person_password" placeholder="Password" class="showpassword">
+									<input type="password" name="person_password" id = "person_password" placeholder="Password" class="showpassword">
 								</p>
-								<p class="clearfix"> 
-									<a href="Join" class="log-twitter">Join</a>    
+								<p class="clearfix">
+									<a href="Join" class="log-twitter">Join</a>
 									<input type="submit" name="submit" value="Log in">
 								</p>
 							</form>​​
 						</section>
 					</div>
-				</div>	
+				</div>
 			</div>
 		</div>
 	</c:if>
@@ -215,31 +258,31 @@ html {overflow:scroll}
 
 <!-- ----------------------------------------------검색 바 시작부분 입니다. start-------------------------------------------------------- -->
 			<div class="mu-hero-left" style="text-align:center;">
-				<div class="w3layouts-left">							
+				<div class="w3layouts-left">
 					<!--search-box-->
 						<div class="w3-search-box">
 							<form action="searchBook" >   <!-- <<<<<<<<<<<<<<<<여기 가 검색 부분 액션 이름 단 입니다. -->
-								<b><input type="text" name="bookTitle" placeholder="Search..." required="required" maxlength="25"></b>	
-								<input type="submit" value="">					
+								<b><input type="text" name="bookTitle" placeholder="Search..." required="required" maxlength="25"></b>
+								<input type="submit" value="">
 							</form>
 						</div><!--//end-search-box-->
 						<div class="clearfix"> </div>
 				</div>
 <!-- ----------------------------------------------검색 바 끝부분 입니다. end----------------------------------------------------------- -->
-				<div style="width:100%;">				
+				<div style="width:100%;">
 					<a href="#" class="mu-primary-btn">VIEW-BOOK</a>
 					<a href="boardForm" class="mu-primary-btn">BOARD</a>
 					<a href="myPageForm" class="mu-primary-btn">MY BOOK PAGE</a>
 					<a href="product" class="mu-primary-btn">테스트용 책구매가기 창</a>
-				</div>	
+				</div>
 			</div>
 	 </c:if>
 <!-- ------------------------------------로그인 했을경우 뜨게하는 부분  end ---------------------------------------------------------------- -->
 	</section>
-<!-- ------------------------------------로그인 폼 부분 end ------------------------------------------------------------------------ -->	
+<!-- ------------------------------------로그인 폼 부분 end ------------------------------------------------------------------------ -->
 
 <!-- Start main content -->
-	<main role="main">	
+	<main role="main">
 		<!-- Start Author -->
 		<section id="mu-author">
 			<div class="container">
@@ -320,16 +363,16 @@ html {overflow:scroll}
 
 		<!-- Start Google Map -->
 		<section id="mu-google-map">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d589888.4396405783!2d-82.41588603632052!3d32.866951223053896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f9f727a4ed30eb%3A0xf2139b0c5c7ae1ec!2sDooley+Branch+Rd%2C+Millen%2C+GA+30442%2C+USA!5e0!3m2!1sen!2sbd!4v1497376364225" 
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d589888.4396405783!2d-82.41588603632052!3d32.866951223053896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f9f727a4ed30eb%3A0xf2139b0c5c7ae1ec!2sDooley+Branch+Rd%2C+Millen%2C+GA+30442%2C+USA!5e0!3m2!1sen!2sbd!4v1497376364225"
 					width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
 		</section>
 		<!-- End Google Map -->
 
 	</main>
-	
-	<!-- End main content -->	
-			
-			
+
+	<!-- End main content -->
+
+
 	<!-- Start footer -->
 	<footer id="mu-footer" role="contentinfo">
 		<div class="container">
@@ -346,8 +389,8 @@ html {overflow:scroll}
 	</footer>
  	<!-- End footer -->
 
-	
-	
+
+
     <!-- jQuery library -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -359,12 +402,12 @@ html {overflow:scroll}
     <script type="text/javascript" src="./assets/js/counter.js"></script>
     <!-- Ajax contact form  -->
     <script type="text/javascript" src="./assets/js/app.js"></script>
-   
- 
-	
+
+
+
     <!-- Custom js -->
 	<script type="text/javascript" src="./assets/js/custom.js"></script>
-	
-    
+
+
   </body>
 </html>

@@ -12,6 +12,7 @@
 		<typeAlias type="global.sesoc.project.VO.BookInfo" alias="BookInfo" />
 		<typeAlias type="global.sesoc.project.VO.Reply" alias="Reply" />
 		<typeAlias type="global.sesoc.project.VO.Cart" alias="Cart" />
+		<typeAlias type="global.sesoc.project.VO.Purchaseinfo" alias="Purchaseinfo"/>
 	</typeAliases>
 	
 	<mappers>
@@ -22,6 +23,7 @@
 		<mapper resource="BookInfoMapper.xml"/>
 		<mapper resource="ReplyMapper.xml" />
 		<mapper resource="CartMapper.xml" />
+		<mapper resource="PurchaseMapper.xml"/>
 	</mappers>
 	 
 </configuration>

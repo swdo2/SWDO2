@@ -61,7 +61,7 @@
 		if (document.readyState == "complete") {
 			var isbn1 = document.getElementById('bookisbn');
 			console.log(isbn1);
-			window.reader = ePubReader("ebookfiles/" + isbn + ".epub", {
+			window.reader = ePubReader("ebookfiles/" + isbn1 + ".epub", {
 				restore : true
 			});
 		}

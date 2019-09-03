@@ -59,7 +59,7 @@
 	document.onreadystatechange = function() {
 
 		if (document.readyState == "complete") {
-			var isbn1 = document.getElementById('bookisbn');
+			var isbn1 = document.getElementById('bookisbn').value;
 			console.log(isbn1);
 			window.reader = ePubReader("ebookfiles/" + isbn1 + ".epub", {
 				restore : true

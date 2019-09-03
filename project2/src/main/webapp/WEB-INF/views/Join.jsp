@@ -231,9 +231,15 @@
 			                        	</div><br><br><br>
 								</div>
 								<div>					
-										<label for="login"><i class="icon-phone"></i>Phone</label>
-										<!-- 로그인 패스워드 입력하는곳 -->
-										<input type="text" name="person_phone" id="person_phone" placeholder="  -를 빼고 입력해 주세요."style="margin-bottom:25px;">
+										<label for="login"><i class="icon-phone"></i>Phone</label><br>
+										<select name="person_phone1" id="person_phone1" style="width:33.3%; float:left">
+											<option>010</option>
+											<option>011</option>
+											<option>012</option>
+											<option>016</option>
+										</select>
+										<input type="text" name="person_phone2" id="person_phone1" placeholder="Phone1" maxlength="4" style="float:left;margin-bottom:25px; width:33.3%;">
+										<input type="text" name="person_phone3" id="person_phone1" placeholder="Phone2" maxlength="4" style="float:left;margin-bottom:25px; width:33.3%;">
 								</div>
 								<div>
 									<p class="clearfix"> 

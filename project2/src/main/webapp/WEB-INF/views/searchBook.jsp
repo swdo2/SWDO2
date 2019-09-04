@@ -80,7 +80,8 @@ html {overflow:scroll}
   	  		<div class="wrap">
 				<div class="header_top">
 					<div class="logo">
-						<div class="titlenaranhi"><a href="homeButton"><img class="titleimage" src="./assets/images/main logo.jpg"></a></div>
+						<div class="titlenaranhi"><a href="homeButton"><img class="titleimage" src="./assets/images/main logo.jpg" 
+							style="padding-left: 55%;"></a></div>
 						<div class="titlenaranhi"><h1><a href="homeButton" class="mainTitle">本ーE</a></h1></div>
 					</div>
 						<div class="header_top_right">
@@ -187,8 +188,8 @@ html {overflow:scroll}
 								<font style="font-size:21px;">&#8361;</font><span class="rupees2">${list.discount}</span>
 						    </div>
 					       		<div class="add-cart1">
-									<div class="clickku"><a href="#" style="color:aliceblue;">Add to Cart</a></div>
-									<div class="clickku1" id = "${list.isbn}"><a style="color:aliceblue;">E-Book</a></div>
+									<div class="clickku" style="cursor:pointer;"><a href="#" style="color:aliceblue;">Add to Cart</a></div>
+									<div class="clickku1" style="cursor:pointer;" id = "${list.isbn}"><a style="color:aliceblue;cursor:pointer">E-Book</a></div>
 
 						        </div>
 								<div class="clear"></div>

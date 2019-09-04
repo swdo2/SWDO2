@@ -302,7 +302,7 @@ body {
 }
 .heading h3 {
 	font-family: 'ambleregular';
-	font-size:1.2em;
+	font-size:1.7em;
 	color:#FC7D01;
 	text-transform: uppercase;
 }
@@ -336,6 +336,7 @@ body {
 }
 .images_1_of_5  h2  a{
     color: #121d12;
+    padding-bottom: 35px;
     font-family: auto;
     font-size: 1.2em;
     padding-top: 10px;
@@ -412,7 +413,7 @@ body {
 	border-radius: 13px;
 	padding:8px 10px;
 	font-family: 'ambleregular';
-	background:#34a5cfc4;
+/* 	background:#34a5cfc4; */
 	color: #FFF;
 	text-decoration: none;
 	outline: 0;
@@ -424,7 +425,7 @@ body {
 }
 .clickku:hover{
 	 text-shadow: 0px 0px 1px #000;
-	 background:#0600ff;
+/* 	 background:#95E0C8; */
 }
 .clickku1{
 	width:70px;
@@ -433,7 +434,7 @@ body {
 	border-radius: 13px;
 	padding:8px 10px;
 	font-family: 'ambleregular';
-	background:#eaae04;
+/* 	background:#eaae04; */
 	color: #FFF;
 	text-decoration: none;
 	outline: 0;
@@ -453,7 +454,7 @@ body {
 
 .clickku1:hover{
 	 text-shadow: 0px 0px 1px #000;
-	 background:#ff0000;
+/* 	 background:#da350fd9; */
 }
 /*** Footer ***/
 .footer {

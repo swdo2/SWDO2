@@ -24,6 +24,7 @@
 	<resources mapping="/mp3/**" location = "file:///C:/tts/" />
 	<resources mapping="/ebook/**" location = "/resources/ebook/"/>
 	<resources mapping="/ebookfiles/**" location = "file:///C:/ebookfiles/" />
+	<resources mapping="/cart/**" location = "/resources/cart/" />
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	
 	

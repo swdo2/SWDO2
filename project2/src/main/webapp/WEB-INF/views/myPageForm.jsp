@@ -20,8 +20,8 @@
 		<link href="./searchBook/css/slider.css" rel="stylesheet" type="text/css" media="all"/>
 		
 		
-		<link href="./vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-		<link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- 		<link href="./vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
+<!-- 		<link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 		<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -48,7 +48,7 @@
 		<link rel="stylesheet" type="text/css" href="./button/css/default.css" />
 <!-- 		<link href="./searchBook/css/style.css" rel="stylesheet" type="text/css" media="all"/> -->
 		<link rel="stylesheet" type="text/css" href="./button/css/component.css" />
-		<script src="js/modernizr.custom.js"></script>
+<!-- 		<script src="js/modernizr.custom.js"></script> -->
 <!-- --------------------------------------버튼 css,js부분 end ----------------------------- -->
 		
 		<script>
@@ -83,7 +83,7 @@
 				<div class="logo">
 <!-- 						<div class="titlenaranhi"><a href="homeButton"><img class="titleimage" src="./assets/images/main logo.jpg"></a></div> -->
 				</div>
-				<h1>My Page<span>for <a href="#">You</a></span></h1>
+				<h1>My Page<span>for <font style="font-size:50px;">${sessionScope.loginId}</font></span></h1>
 			</header>
 		</div>
 <!-- ------------------------------------------------------------------ 헤드 단 end --------------------------------------------------------------- -->
@@ -92,11 +92,11 @@
 		<div class="content_top" style="width: 86%;margin-left: 7%;">
     		<div class="heading" >
     		<h3 style="font-weight:900;">Puasrchased List : 
-				 <c:forEach var="list" items="${blist}">
-					<c:forEach var = "b" items = "${list}">
-						</c:forEach>
-					</c:forEach>
-	   					<font>${total}個</font>
+<%-- 				 <c:forEach var="list" items="${blist}"> --%>
+<%-- 					<c:forEach var = "b" items = "${list}"> --%>
+<%-- 	   					<font>${total}個</font> --%>
+<%-- 						</c:forEach> --%>
+<%-- 					</c:forEach> --%>
 			</h3>						
     		</div>
     	</div>

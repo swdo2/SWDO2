@@ -18,7 +18,8 @@
    <!--  Font Awesome -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
    <!--  Bootstrap -->
-    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
    <!--  Slick slider -->
     <link href="./assets/css/slick.css" rel="stylesheet">
 
@@ -190,7 +191,7 @@ html {overflow:scroll}
 					<div class="mu-hero-right">
 					</div>
 				</div>
-				<div class="col-md-6 col-sm-6 col-sm-pull-6">
+				<div class="col-md-6 col-sm-6 col-sm-pull-6" style="width:90%;">
 					<div class="mu-hero-left" style="margin-left: 64%;">
 						<section class="main">
 							<form id = "loginForm" class="form-2" action="logIn" method="post">
@@ -274,6 +275,7 @@ html {overflow:scroll}
 					<a href="boardForm" class="mu-primary-btn">BOARD</a>
 					<a href="myPageForm" class="mu-primary-btn">MY BOOK PAGE</a>
 					<a href="product" class="mu-primary-btn">테스트용 책구매가기 창</a>
+					<a href="#"> ${sessionScope.loginId}</a>
 				</div>
 			</div>
 	 </c:if>
@@ -290,7 +292,7 @@ html {overflow:scroll}
 					<div class="col-md-12">
 						<div class="mu-author-area">
 							<div class="mu-heading-area">
-								<h2 class="mu-heading-title">이 사이트 대해서</h2>
+								<h2 class="mu-heading-title">고객센터</h2>
 								<span class="mu-header-dot"></span>
 							</div>
 
@@ -304,8 +306,11 @@ html {overflow:scroll}
 									</div>
 									<div class="col-md-6">
 										<div class="mu-author-info">
-											<h3>완벽한 E_BOOK을 제공해드립니다.</h3>
-											<p>이 사이트는 E-BOOK뷰어를 제공해드립니다.</p>
+											<h3>훌륭한 E_BOOK을 제공해드리겠습니다.</h3>
+											<p>SWDO 광주 2기 이동근</p>
+											<p>SWDO 광주 2기 장우서</p>
+											<p>SWDO 광주 2기 나홍윤</p>
+											<p>SWDO 광주 2기 전재형</p>
 										</div>
 									</div>
 								</div>

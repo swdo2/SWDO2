@@ -670,6 +670,7 @@
 
 /* Button 5 */
 .btn-5 {
+	padding-top: 6px;
 	background: #2260c7db;
 	color: #fff;
 	border-radius:12px;
@@ -716,6 +717,7 @@
 
 /* button 51 */
 .btn-51 {
+	padding-top: 6px;
 	background: #ff9400cc;
 	color: #fff;
 	border-radius:12px;

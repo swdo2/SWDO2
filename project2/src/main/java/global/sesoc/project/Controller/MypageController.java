@@ -2,6 +2,7 @@ package global.sesoc.project.Controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.SynchronousQueue;
 
 import javax.servlet.http.HttpSession;
 
@@ -52,9 +53,11 @@ public class MypageController {
 	 * 리스트형식으로 myPageForm jsp 에 보내준다
 	 */
 
+	
+	
 	@RequestMapping(value = "myPageForm", method = RequestMethod.GET)
 	public String myPage(HttpSession session, Model model, String isbn) {
-		
+		logger.debug("isbn값은 : {}", isbn);
 		
 		String loginId = (String) session.getAttribute("loginId");
 
@@ -62,7 +65,7 @@ public class MypageController {
 		ArrayList<Purchaseinfo> purChaseList = dao.purChaseList(loginId);
 		ArrayList<ArrayList<Book>> blist = new ArrayList<ArrayList<Book>>();
 		for (int i = 0; i < purChaseList.size(); ++i) {
-			blist.add((ArrayList<Book>) nb.searchBook("d_isbn", purChaseList.get(i).getPURCHASE_ISBN(), 1, 1));
+			blist.add((ArrayList<Book>) nb.searchBook("d_isbn", purChaseList.get(i).getPURCHASE_ISBN(), 100, 1));
 		}
 		///////////////////////
 		String address = "type=m1";
@@ -70,10 +73,18 @@ public class MypageController {
 		String cutresult;
 		// 이미지 교체 작업
 		
+		for (int x =0;x<blist.size();x++){
+			System.out.println(x);
+		}
+		//여기부분 알수없는 문제!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		//체력이약함 
 		for (int i =0;i<blist.size();i++){
 			cutresult = blist.get(i).get(0).getImage().replaceFirst(address, "");
 			blist.get(i).get(0).setImage(cutresult);
+			System.out.println(i);
+			System.out.println(blist.size());
 		}
+		System.out.println("왔냐??");
 ///////////////
 		model.addAttribute("blist", blist);
 

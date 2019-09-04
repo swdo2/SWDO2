@@ -1,10 +1,13 @@
 package global.sesoc.project.DAO;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import global.sesoc.project.VO.Book;
 
 @Repository
 public class PurchaseDAO {
@@ -34,4 +37,5 @@ public class PurchaseDAO {
 		
 		return cnt;
 	}
+	
 }

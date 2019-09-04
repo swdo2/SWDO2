@@ -13,4 +13,5 @@
 	<select id = "purchaseDup" parameterType = "map" resultType = "int">
 		select count(*) from purchaseinfo where person_id = #{loginId} and purchase_isbn = #{isbn}
 	</select>
+	
 </mapper>

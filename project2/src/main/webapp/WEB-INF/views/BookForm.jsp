@@ -159,7 +159,7 @@
 <!-- ----------------------------------상세 페이지 이미지 보여주는 부분 start------------------------------------------ -->
 					<div class="grid images_3_of_2">
 						<c:forEach var="info" items="${bookInFo}">
-							<img src="${info.image}" style="width:90%; height:50%;">
+							<img src="${info.image}" alt = "이미지 준비중 " style="width:90%; height:50%;">
 						</c:forEach>
 				    </div>
 <!-- ----------------------------------상세 페이지 이미지 보여주는 부분 end------------------------------------------ -->

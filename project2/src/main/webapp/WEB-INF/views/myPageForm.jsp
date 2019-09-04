@@ -19,9 +19,32 @@
 		<link rel="stylesheet" type="text/css" href="./viewbook/css/component.css" />
 		<link href="./searchBook/css/style.css" rel="stylesheet" type="text/css" media="all"/>
 		<link href="./searchBook/css/slider.css" rel="stylesheet" type="text/css" media="all"/>
+		
+		
+		<link href="./vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+		<link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+		<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+		<!-- Custom styles for this template -->
+		<link href="./vendor/agency.min.css" rel="stylesheet">
+		 <!-- Bootstrap core JavaScript -->
+		  <script src="./vendor/jquery/jquery.min.js"></script>
+		  <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		
+		  <!-- Plugin JavaScript -->
+		  <script src="./vendor/jquery"></script>
+		  <!-- Contact form JavaScript -->
+		  <script src="./vendor/js/jqBootstrapValidation.js"></script>
+		  <script src="./vendor/js/contact_me.js"></script>
+		
+		  <!-- Custom scripts for this template -->
+		  <script src="./vendor/js/agency.min.js"></script>
+		
+		
 		<script src="./viewbook/js/modernizr.custom.js"></script>
 		<script src="./ebook/reader/js/libs/jquery-3.4.1.js"></script>
-		
 		<script>
 			$(document).ready(function() {
 				$('.purchasedbook').on("click",function() {
@@ -62,15 +85,15 @@
 			<div class="main">
 				<div id="bookshelf" class="bookshelf">
 					<figure>
-							<c:forEach var="list" items="${blist}">
-								<c:forEach var = "b" items = "${list}">
-									<img src="${b.image}" class = "purchasedbook" id = "${b.isbn}" style="width:55%;">
-								</c:forEach>
+						<c:forEach var="list" items="${blist}">
+							<c:forEach var = "b" items = "${list}">
+								<img src="${b.image}" class = "purchasedbook" id = "${b.isbn}" style="width:55%;">
 							</c:forEach>
-						<div class="buttons">
-							<font class = "purchasedbook" id = "${b.isbn}">Look inside</font>
-							<a href="">Details</a>
-						</div>
+						</c:forEach>
+							<div class="buttons">
+								<font class = "purchasedbook" id = "${b.isbn}">Look inside</font>
+								<a href="">Details</a>
+							</div>
 						<figcaption>
 							<h2>
 								<c:forEach var="list" items="${blist}">
@@ -128,7 +151,24 @@
 			</div>
 		</div><!-- /container -->
 
-
+<div>
+	<div class="row">
+       <div class="col-md-4 col-sm-6 portfolio-item">
+         <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+           <div class="portfolio-hover">
+             <div class="portfolio-hover-content">
+               <i class="fas fa-plus fa-3x"></i>
+             </div>
+           </div>
+           <img class="img-fluid" src="./vendor/img/portfolio/01-thumbnail.jpg" alt="">
+         </a>
+         <div class="portfolio-caption">
+           <h4>Threads</h4>
+           <p class="text-muted">Illustration</p>
+         </div>
+       </div>
+     </div>
+</div>
 
 
 

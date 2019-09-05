@@ -15,7 +15,6 @@ import global.sesoc.project.DAO.CartDAO;
 import global.sesoc.project.VO.Book;
 import global.sesoc.project.VO.Cart;
 import global.sesoc.project.service.NaverBookService;
-import global.sesoc.project.service.NaverBookService2;
 
 @Controller
 public class CartController {
@@ -68,4 +67,22 @@ public class CartController {
 		return "bookCart";
 	}
 
+	@ResponseBody
+	@RequestMapping(value = "savecart", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
+	public int purchaseAjax(String isbn, Model model, HttpSession session) {
+		String person_id = (String) session.getAttribute("loginId");
+	
+		
+		// 중복인지 아닌지 체크하는 부분 0이면 중복아님 1이면 중복
+		System.out.println(isbn+"데이터체크");
+		int cartcount = dao.cartCount(isbn, person_id);
+		if(cartcount == 0) {
+			dao.insertCart(isbn, person_id);
+		
+		}
+
+		return cartcount;
+
+	}
+	
 }

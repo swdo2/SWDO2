@@ -57,6 +57,27 @@ html {overflow:scroll}
             	}
             })
         })
+        $('.clickku').on("click",function() {
+            var isbn = $(this).attr('id');
+            $.ajax({
+                url : 'savecart'
+                ,data : {isbn : isbn}
+                ,dataType : 'text'
+                ,type : "get"
+                ,success : function(cnt) {
+                    if(cnt == 0 ) {
+                        if(confirm("책을 장바구니에 담았습니다. 장바구니로 가시겠습니까?")) {
+                            window.location.href = "cartForm";
+                        }
+                    } else {
+                        alert('이미 장바구니에 있는 책입니다..');
+                    }
+                }
+                ,error : function() {
+                    alert('.clickku에러')
+                }
+            })
+        })
     })
 </script>
 <body>
@@ -188,7 +209,7 @@ html {overflow:scroll}
 								<font style="font-size:21px;">&#8361;</font><span class="rupees2">${list.discount}</span>
 						    </div>
 					       		<div class="add-cart1">
-									<div class="clickku" style="cursor:pointer;"><a href="#" style="color:aliceblue;">Add to Cart</a></div>
+									<div class="clickku" style="cursor:pointer;" id = "${list.isbn}"><a href="#" style="color:aliceblue;">Add to Cart</a></div>
 									<div class="clickku1" style="cursor:pointer;" id = "${list.isbn}"><a style="color:aliceblue;cursor:pointer">E-Book</a></div>
 
 						        </div>

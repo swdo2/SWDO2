@@ -59,9 +59,9 @@
 	document.onreadystatechange = function() {
 
 		if (document.readyState == "complete") {
-			var isbn1 = document.getElementById('bookisbn');
+			var isbn1 = document.getElementById('bookisbn').value;
 			console.log(isbn1);
-			window.reader = ePubReader("ebookfiles/8961556576 9788961556576.epub", {
+			window.reader = ePubReader("ebookfiles/" + isbn1 + ".epub", {
 				restore : true
 			});
 		}

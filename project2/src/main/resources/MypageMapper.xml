@@ -5,6 +5,6 @@
 
 <mapper namespace="global.sesoc.project.DAO.MypageMapper">
 	<select id="purChaseList" parameterType="string" resultType="Purchaseinfo">
-		select * from purchaseinfo where person_id = #{loginId} 
+		select * from purchaseinfo where person_id = #{loginId} order by PURCHASE_ISBN
 	</select>
 </mapper>

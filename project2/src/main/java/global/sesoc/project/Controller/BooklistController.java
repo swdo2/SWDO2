@@ -61,6 +61,8 @@ public class BooklistController {
 	 *            isbn값
 	 * @return model bookInFo BookForm(결제페이지,책개인정보)
 	 */
+	
+
 	@RequestMapping(value = "BookForm", method = RequestMethod.GET)
 	public String bookInFo(String isbn, Model model, HttpSession session) {
 		List<Book> bookInFo = nb.searchBook("d_isbn", isbn, 1, 1);
@@ -118,7 +120,7 @@ public class BooklistController {
 				slist.add(tlqkf);*/
 			}
 		};
-
+		model.addAttribute("selectedIsbn", isbn);
 		// 클릭한 책에 정보를 보내준다.....
 		session.setAttribute("booklist",booklist);
 		System.out.println(session.getAttribute("booklist"));

@@ -1,6 +1,8 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
@@ -17,10 +19,39 @@
 		<link rel="stylesheet" type="text/css" href="./viewbook/css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="./viewbook/css/bookblock.css" />
 		<link rel="stylesheet" type="text/css" href="./viewbook/css/component.css" />
-		<link href="./searchBook/css/style.css" rel="stylesheet" type="text/css" media="all"/>
 		<link href="./searchBook/css/slider.css" rel="stylesheet" type="text/css" media="all"/>
-		<script src="./viewbook/js/modernizr.custom.js"></script>
+		
+		
+<!-- 		<link href="./vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
+<!-- 		<link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+		<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+		<!-- Custom styles for this template -->
+<!-- 		<link href="./vendor/agency.min.css" rel="stylesheet"> -->
+		 <!-- Bootstrap core JavaScript -->
+<!-- 	 	<script src="./vendor/jquery/jquery.min.js"></script> -->
+<!-- 	  	<script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+	
+	  	<!-- Plugin JavaScript -->
+<!-- 	  	<script src="./vendor/jquery"></script> -->
+	  	<!-- Contact form JavaScript -->
+<!-- 	  	<script src="./vendor/js/jqBootstrapValidation.js"></script> -->
+<!-- 	  	<script src="./vendor/js/contact_me.js"></script> -->
+	  	<!-- Custom scripts for this template -->	
+<!-- 	  	<script src="./vendor/js/agency.min.js"></script> -->
+<!-- 		<script src="./viewbook/js/modernizr.custom.js"></script> -->
 		<script src="./ebook/reader/js/libs/jquery-3.4.1.js"></script>
+		
+<!-- --------------------------------------버튼 css,js부분 start ----------------------------- -->
+<!-- 		<link rel="shortcut icon" href="../favicon.ico">  -->
+		<link href="./button/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+		<link rel="stylesheet" type="text/css" href="./button/css/default.css" />
+<!-- 		<link href="./searchBook/css/style.css" rel="stylesheet" type="text/css" media="all"/> -->
+		<link rel="stylesheet" type="text/css" href="./button/css/component.css" />
+<!-- 		<script src="js/modernizr.custom.js"></script> -->
+<!-- --------------------------------------버튼 css,js부분 end ----------------------------- -->
 		
 		<script>
 			$(document).ready(function() {
@@ -41,7 +72,7 @@
 	<body>
 
 <!-- ------------------------------------------------------------------ 헤드 단 start ------------------------------------------------------- -->
-		<div id="scroll-wrap">
+		<div id="scroll-wrap" style="padding-bottom: 2.5%;">
 			<header class="codrops-header">
 				<div class="codrops-top clearfix">
 <!-- 					<a class="codrops-icon codrops-icon-prev" href="homebutton"><span style="font-size:15px;">HOME</span></a> -->
@@ -54,39 +85,73 @@
 				<div class="logo">
 <!-- 						<div class="titlenaranhi"><a href="homeButton"><img class="titleimage" src="./assets/images/main logo.jpg"></a></div> -->
 				</div>
-				<h1>My Page<span>for <a href="#">You</a></span></h1>
+				<h1>My Page<span>for <font style="font-size:25px;color:#FC7D01">${loginId}様</font></span></h1>
+									
+				
 			</header>
 		</div>
 <!-- ------------------------------------------------------------------ 헤드 단 end --------------------------------------------------------------- -->
 <!-- ------------------------------------------------------------------ mybooklist start ------------------------------------------------------- -->
-			<div class="main">
-				<div id="bookshelf" class="bookshelf">
-					<figure>
-							<c:forEach var="list" items="${blist}">
-								<c:forEach var = "b" items = "${list}">
-									<img src="${b.image}" class = "purchasedbook" id = "${b.isbn}" style="width:55%;">
-								</c:forEach>
-							</c:forEach>
-						<div class="buttons">
-							<font class = "purchasedbook" id = "${b.isbn}">Look inside</font>
-							<a href="">Details</a>
-						</div>
-						<figcaption>
-							<h2>
-								<c:forEach var="list" items="${blist}">
-									<c:forEach var = "b" items = "${list}">
-										${b.title}
-									</c:forEach>	
-								</c:forEach>
-								<span>
-									<c:forEach var="list" items="${blist}">
-										<c:forEach var = "b" items = "${list}">
-											${b.author}
-										</c:forEach>	
-									</c:forEach>
-								</span>
-							</h2>
-						</figcaption>
+		<!-- ----------------------------list 제목 start ------------------------------------------ -->
+		<div class="content_top" style="width: 86%;margin-left: 7%;">
+    		<div class="heading" >
+    		<h3 style="font-weight:900;">Puasrchased List : 
+<%-- 				 <c:forEach var="list" items="${blist}"> --%>
+<%-- 					<c:forEach var = "b" items = "${list}"> --%>
+<%-- 	   					<font>${total}個</font> --%>
+<%-- 						</c:forEach> --%>
+<%-- 					</c:forEach> --%>
+			</h3>						
+    		</div>
+    	</div>
+    	<!-- ----------------------------list 제목 end------------------------------------------ -->
+			<div class="main" style="margin-left:9%;margin-bottom: 40%;">
+  				<div class="listDiv" style="margin-bottom:10px;">
+		   			<c:forEach var="list" items="${blist}">
+						<c:forEach var = "b" items = "${list}">
+							<div class="grid_1_of_5 images_1_of_5">
+								 <a href="BookForm?isbn=${b.isbn}"><img src="${b.image}"></a>
+								 <h2><a href="BookForm?isbn=${b.isbn}" class="searchBookLiskTitle">${b.title}</a></h2>
+								<div class="price-details">
+							       		<div class="add-cart1">
+											<div class="clickku2"><a href="#" style="color:aliceblue;"><button class="btn btn-51 btn-5a icon-plus"><span>Details</span></button></a></div>
+											<div class="clickku3" id = "${b.isbn}"><a style="color:aliceblue;"><button class="btn btn-5 btn-5a icon-arrow-right" ><span>E-BOOK</span></button></a></div>
+		
+								        </div>
+										<div class="clear"></div>
+								</div>
+							</div>
+						</c:forEach>
+					</c:forEach>
+				</div>
+<!-- 				<div id="bookshelf" class="bookshelf"> -->
+<!-- 					<figure> -->
+<%-- 						<c:forEach var="list" items="${blist}"> --%>
+<%-- 							<c:forEach var = "b" items = "${list}"> --%>
+<%-- 								<img src="${b.image}" class = "purchasedbook" id = "${b.isbn}" style="width:55%;"> --%>
+<%-- 							</c:forEach> --%>
+<%-- 						</c:forEach> --%>
+<!-- 							<div class="buttons"> -->
+<%-- 								<font class = "purchasedbook" id = "${b.isbn}">Look inside</font> --%>
+<!-- 								<a href="">Details</a> -->
+<!-- 							</div> -->
+<!-- 						<figcaption> -->
+<!-- 							<h2> -->
+<%-- 								<c:forEach var="list" items="${blist}"> --%>
+<%-- 									<c:forEach var = "b" items = "${list}"> --%>
+<%-- 										${b.title} --%>
+<%-- 									</c:forEach>	 --%>
+<%-- 								</c:forEach> --%>
+<!-- 								<span> -->
+<%-- 									<c:forEach var="list" items="${blist}"> --%>
+<%-- 										<c:forEach var = "b" items = "${list}"> --%>
+<%-- 											${b.author} --%>
+<%-- 										</c:forEach>	 --%>
+<%-- 									</c:forEach> --%>
+<!-- 								</span> -->
+<!-- 							</h2> -->
+<!-- 						</figcaption> -->
+					<figure>	
 						<div class="details">
 							<ul>
 								<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -97,41 +162,7 @@
 							</ul>
 						</div>
 					</figure>
-					
-					<figure>
-						<div class="book" data-book="book-1"></div>
-						<div class="buttons"><a href="#">Look inside</a><a href="#">Details</a></div>
-						<figcaption><h2>9 Lives <span>Andrew Hudson</span></h2></figcaption>
-						<div class="details">
-							<ul>
-								<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua.</li>
-								<li>Graham Press</li>
-								<li>12.09.2010</li>
-								<li>397 pages</li>
-							</ul>
-						</div>
-					</figure>
-
-			<!-- 여기는 내가 로그인했을경우 내가 구매한 책들을 E-BOOK으로 볼수 있게 나타내는 부분입니다. -->
-			</div><!-- /main -->
-			<div class="related">
-				<h3>If you enjoyed this demo you might also like:</h3>
-				<a href="http://tympanus.net/Development/AnimatedBooks/">
-					<img src="http://tympanus.net/codrops/wp-content/uploads/2013/07/AnimatedBooks1-300x162.png" />
-					<h3>Animated Books</h3>
-				</a>
-				<a href="http://tympanus.net/Development/3DBookShowcase/">
-					<img src="http://tympanus.net/codrops/wp-content/uploads/2013/01/3DBookShowcase_Main-300x162.jpg" />
-					<h3>3D Book Showcase</h3>
-				</a>
-			</div>
-		</div><!-- /container -->
-
-
-
-
-
+			</div><!-- /main -->		
 <!-- ------------------------------------------------------------------ mybooklist end --------------------------------------------------------- -->
 <!-- ---------------------------------------------view inside눌렀을떄 나타나는 부분 start---------------------------------------------------------------- -->
 		<!-- Fullscreen BookBlock -->
@@ -189,7 +220,24 @@
 		</div><!-- /bb-custom-wrapper -->
 <!-- -------------------------------------------------------------bookview클릭스나타나는 폼 end-------------------------------------------------- -->
 
-		
+<div>
+	<div class="row">
+       <div class="col-md-4 col-sm-6 portfolio-item">
+         <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+           <div class="portfolio-hover">
+             <div class="portfolio-hover-content">
+               <i class="fas fa-plus fa-3x"></i>
+             </div>
+           </div>
+           <img class="img-fluid" src="./vendor/img/portfolio/01-thumbnail.jpg" alt="">
+         </a>
+         <div class="portfolio-caption">
+           <h4>Threads</h4>
+           <p class="text-muted">Illustration</p>
+         </div>
+       </div>
+     </div>
+</div>
 <!-- -------------------------------------------------------------맨밑에 정보 start-------------------------------------------------------------- -->
    <div class="footer">
    	  <div class="wrap">	
@@ -241,8 +289,8 @@
         </div>
     </div>	
 <!-- ----------------------------------------------------------------------- 맨밑에 정보 end ------------------------------------------------------- -->
-		<script src="./viewbook/js/bookblock.min.js"></script>
-		<script src="./viewbook/js/classie.js"></script>
-		<script src="./viewbook/js/bookshelf.js"></script>
+<!-- 		<script src="./viewbook/js/bookblock.min.js"></script> -->
+<!-- 		<script src="./viewbook/js/classie.js"></script> -->
+<!-- 		<script src="./viewbook/js/bookshelf.js"></script> -->
 	</body>
 </html>

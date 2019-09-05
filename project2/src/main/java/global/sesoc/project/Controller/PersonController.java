@@ -65,13 +65,36 @@ public class PersonController {
 	@RequestMapping(value = "logIn", method = RequestMethod.POST)
 	public String logIn(Person searchperson, HttpSession session) {
 		Person person = dao.loginId(searchperson);
+		session.setAttribute("loginId", person.getPerson_id());
 
-		if (person.getPerson_id() != null) {
-			session.setAttribute("loginId", person.getPerson_id());
-
-		}
+		
 
 		return "redirect:/";
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "logIncheck", method = RequestMethod.POST)
+	public int logincheck(String id, String password, HttpSession session) {
+		logger.debug("id check 부분");
+		logger.debug("id : {}", id);
+		logger.debug("password : {}", password);
+		
+		Person searchperson = new Person();
+		searchperson.setPerson_id(id);
+		searchperson.setPerson_password(password);
+		int cnt = 1;
+		Person person = dao.loginId(searchperson);
+		if(person == null || password == "" || id == "") {
+			cnt = 0;	
+		} 
+		//Person person = dao.loginId(searchperson);
+//		logger.debug("person : {}", person);
+//		int cnt = 0;
+//		if (person != null) {
+//			cnt = 1;
+//		}
+
+		return cnt;
 	}
 	
 	

@@ -15,7 +15,9 @@
 	$('#btLike').on('click', like); 
 	$('#btDelete').on('click', deleteBoard);
 	$('#btUpdate').on('click', updateBoard); 
+
 });  
+  
   
   //추천하기
   function like (){
@@ -36,7 +38,7 @@
   function deleteBoard(){
 	  
 	  if(confirm('삭제하시겠습니꽈?')){
-		  location.href = 'delete?board_num=${board.board_num}';
+		  location.href = 'deleteBoard?board_num=${board.board_num}';
 		
 	  }
   }
@@ -46,7 +48,19 @@
 
 	  location.href = 'update?board_num=${board.board_num}';
   }
+  
+  
+  function reply(){
+	 var re = document.getElementById('reply_contents');
+	 	if(re.value == ''){
+	 		alert('댓글을 입력하시오.');
+	 		return false;
+	 	}
+	 	return true;
+  }
 </script> 
+
+
 
 </head>
 <body>
@@ -62,6 +76,21 @@
 			 <th>내용</th>
 			 <td>${board.board_contents}</td>
 		</tr>
+		<tr>
+				<th>파일첨부</th>
+				<td>
+					<c:if test = "${flist != null }">
+						<c:forEach var = "li" items = "${flist }">
+							<div>
+								<a href = "download?filenum=${li.filenum}">
+									${li.originalfile }
+								</a>
+							</div>
+						 </c:forEach>  
+					</c:if>
+				</td>
+			</tr>
+		
 		<tr>
 			<th colspan = "2">
 				추천수&nbsp;
@@ -79,5 +108,29 @@
 			<input id = "btDelete" type = "button" value = "삭제">
 		</tr>	
 	</c:if>
+	
+	<div onclick = "list()">Reply목록보기</div>
+	<br><br>
+	<div>
+		<form method = "POST" action = "write" id = "replyForm" onsubmit = "return reply();">
+			리플 내용 <input type = "text" name = "reply_contents" id = "reply_contents">
+				<input type = "submit" value = "확인">
+				<input type = "hidden" name = "board_num" value = ${board.board_num }>
+		</form>
+	</div>
+	
+	<table>
+		<c:forEach var = "Reply" items = "${list_rep }">
+			<tr>
+				<th>${Reply.person_id }</th>
+				<td>${Reply.reply_contents }</td>
+			</tr>
+		</c:forEach>
+	</table>
+	
+
+
+	
+	
 </body>
 </html>

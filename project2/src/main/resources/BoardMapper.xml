@@ -71,5 +71,63 @@
 		where
 			board_num = #{board_num}
 	</update>
+	
+	<!-- 전체 글 갯수 -->
+	<select id = "count" resultType = "int" parameterType = "map">
+		select count(*) 
+		from 
+			board
+		<!-- <if test = "select == null">
+			
+		</if>
+		<if test = "select == 'title'">
+			where
+			<foreach item = "item" collection="searchedtitle" separator = "and">
+				lower(${select}) like '%' || lower(#{item}) || '%'
+			</foreach>
+		</if>
+		<if test = "select == 'content'">
+			where
+			<foreach item = "item" collection="searchedtitle" separator = "and">
+				lower(${select}) like '%' || lower(#{item}) || '%'
+			</foreach>
+		</if>
+		<if test = "select == 'id'">
+			where
+			<foreach item = "item" collection="searchedtitle" separator = "and">
+				lower(${select}) like '%' || lower(#{item}) || '%'
+			</foreach>
+		</if> -->
+	</select>
+
+	<select id = "select" resultType = "Board" parameterType = "map">
+		select board_num
+			, board_title
+			, person_id
+			, board_hits
+			from
+				board
+			<!-- <if  test = "select == 'title'">
+			where
+				<foreach item = "item" collection="searchedtitle" separator = "and">
+					lower(${select}) like '%' || lower(#{item}) || '%'
+				</foreach>
+		</if>
+		  <if  test = "select == 'id'">
+			where	
+				<foreach item = "item" index = "index" collection="searchedtitle" separator = "and">
+					lower(${select}) like '%' || lower(#{item}) || '%'
+				</foreach>
+		</if>
+		
+		<if  test = "select == 'content'">
+			where
+				<foreach item = "item" index = "index" collection="searchedtitle" separator = "and">
+					lower(${select}) like '%' || lower(#{item}) || '%'
+				</foreach>
+		</if> -->
+		order by 
+			board_num desc
+	</select>
 
 </mapper>

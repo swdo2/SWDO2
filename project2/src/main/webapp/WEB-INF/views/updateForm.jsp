@@ -11,12 +11,26 @@ $(document).ready(function() {
 	
 	$('#btUpdate').on('click', updateBoard);
 });
+
+	function formCheck(){
+		var title = document.getElementById('board_title');
+		var contents = document.getElementById('board_contents');
+		
+		if(title.value == ''){
+			alert('제목은 필수 사항입니다.');
+			return false;
+		}
+		if(contents.value == ''){
+			alert('내용은 필수 사항입니다.');
+			return false;
+		}
+	}
 </script>
 </head>
 <body>
 		<h1>[board 수정]</h1>
 		
-			<form id = "updateForm" action="update" method = "post">
+			<form id = "updateForm" action="update" method = "post" onsubmit = "return formCheck();">
 				
 				<input type = "hidden" name = "board_num" value="${board.board_num }">
 				

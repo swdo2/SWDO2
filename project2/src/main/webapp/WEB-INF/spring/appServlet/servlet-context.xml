@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <beans:beans xmlns="http://www.springframework.org/schema/mvc"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
@@ -30,7 +29,9 @@
 		<resources mapping="/bootstrap/**" location = "/resources/bootstrap/"/>
 	
 
-	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+	<resources mapping="/ckeditor/**" location="/WEB-INF/views/ckeditor/" />
+	<!-- sousolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	
 	
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -43,5 +44,3 @@
 	
 	
 </beans:beans>
-
-

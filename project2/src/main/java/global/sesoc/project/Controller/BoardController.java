@@ -1,7 +1,10 @@
 package global.sesoc.project.Controller;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,13 +12,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
-
 import global.sesoc.project.DAO.BoardDAO;
+import global.sesoc.project.DAO.ReplyDAO;
 import global.sesoc.project.VO.Board;
-import global.sesoc.project.VO.Person;
+import global.sesoc.project.VO.Reply;
+import global.sesoc.project.service.PageNavigator;
 
 /*
  * 게시판 컨트롤러
@@ -23,10 +27,14 @@ import global.sesoc.project.VO.Person;
 @Controller
 public class BoardController {
 
+	public static final int countPerPage = 10;
+	public static final int countPerGroup = 5;
 	
 	
 	@Autowired
 	BoardDAO dao;
+	@Autowired
+	ReplyDAO dao_rep;
 	
 	@RequestMapping(value="homeButton", method = RequestMethod.GET)
 	public String homeButton(){
@@ -37,13 +45,39 @@ public class BoardController {
 	
 	//보드로 이동시켜주  메서드
 	@RequestMapping(value="/boardForm", method = RequestMethod.GET)
-	public String board(HttpSession session, Model model,String id){
+	public String board(HttpSession session, Model model,String id, HttpServletRequest request, HttpServletResponse response,
+			@RequestParam(value ="page", defaultValue = "1")int page, String searchedtitle, String select){
 		//아이디 
-		
 		ArrayList<Board> boardlist = dao.list();
 		//System.out.println("boardl list : " + boardlist);
-		model.addAttribute("boardlist", boardlist);
+/*		model.addAttribute("boardlist", boardlist);
 		model.addAttribute("boardId", id);
+		
+*/		int start = (page - 1) * countPerPage;
+		
+		String array[] = null;
+		if(searchedtitle !=null){
+			searchedtitle = searchedtitle.trim();
+			array = searchedtitle.split(" +");
+		}
+		
+		ArrayList<String> text = new ArrayList<String>();
+		if(array != null){
+			text = new ArrayList<String>(Arrays.asList(array));
+		}
+		ArrayList<Board> list = dao.select(start, countPerPage, text, select);
+		
+		int cnt = dao.count(text, select);
+	
+		
+		
+		PageNavigator navi = new PageNavigator(countPerPage, countPerGroup, page, cnt);
+		model.addAttribute("list", list);
+		model.addAttribute("cnt", cnt);
+		model.addAttribute("navi", navi);
+		model.addAttribute("searchedtitle", searchedtitle);
+		model.addAttribute("select", select);
+		
 		
 		//이동하는 폼태그jsp 이름 		
 		return "boardForm";
@@ -75,7 +109,8 @@ public class BoardController {
 	
 	//개시판의 해당 회원이 쓴 글 목록
 	@RequestMapping(value = "read", method=RequestMethod.GET)
-	public String list(String id, Model model,int board_num){
+	public String list(String id, Model model,int board_num, HttpServletRequest request,HttpServletResponse response,
+			@RequestParam(value = "page", defaultValue ="1")int page, String searchedtiltes, String select){
 /*		System.out.println("list controller");
 		
 		ArrayList<Board> boardlist = dao.list(id);
@@ -93,8 +128,13 @@ public class BoardController {
 		
 		model.addAttribute("board", board);
 		model.addAttribute("loginId", board.getPerson_id());
+		
+		Reply rep = new Reply();
+		rep.setBoard_num(board_num);
+		ArrayList<Reply> list_rep = dao_rep.list(rep);
+		model.addAttribute("list_rep", list_rep);		
 		return "read";
-
+		
 	}
 	
 	//글 삭제 메서드

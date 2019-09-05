@@ -1,7 +1,9 @@
 package global.sesoc.project.DAO;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -61,6 +63,30 @@ public class BoardDAO {
 		Board board = mapper.detail(board_num);
 		int likenum = board.getBoard_like();
 		return likenum;
+	}
+	
+	public int count(ArrayList<String> searchedtitle, String select){
+		BoardMapper mapper = sqlsession.getMapper(BoardMapper.class);
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("searchedtitle", searchedtitle);
+		map.put("select", select);
+		int cnt = mapper.count(map);
+		return cnt;
+	}
+
+	public ArrayList<Board> select(int start, int count, ArrayList<String> searchedtitle, String select)	{
+			BoardMapper mapper = sqlsession.getMapper(BoardMapper.class);
+			RowBounds row = new RowBounds(start, count);
+			System.out.println(start);
+			System.out.println(count);
+			HashMap<String, Object> map = new HashMap<>();
+			map.put("searchedtitle",searchedtitle );
+			map.put("select", select);
+			
+			ArrayList<Board> list = mapper.select(row,map);
+		
+		return list;
 	}
 	
 }

@@ -13,6 +13,7 @@
 		<typeAlias type="global.sesoc.project.VO.Reply" alias="Reply" />
 		<typeAlias type="global.sesoc.project.VO.Cart" alias="Cart" />
 		<typeAlias type="global.sesoc.project.VO.Purchaseinfo" alias="Purchaseinfo"/>
+		<typeAlias type="global.sesoc.project.VO.File" alias="File" />
 	</typeAliases>
 	
 	<mappers>
@@ -24,6 +25,7 @@
 		<mapper resource="ReplyMapper.xml" />
 		<mapper resource="CartMapper.xml" />
 		<mapper resource="PurchaseMapper.xml"/>
+		<mapper resource="FileMapper.xml" />
 	</mappers>
 	 
 </configuration>

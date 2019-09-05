@@ -75,9 +75,7 @@ public class PersonController {
 	@ResponseBody
 	@RequestMapping(value = "logIncheck", method = RequestMethod.POST)
 	public int logincheck(String id, String password, HttpSession session) {
-		logger.debug("id check 부분");
-		logger.debug("id : {}", id);
-		logger.debug("password : {}", password);
+		
 		
 		Person searchperson = new Person();
 		searchperson.setPerson_id(id);

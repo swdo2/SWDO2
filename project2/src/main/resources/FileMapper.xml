@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="global.sesoc.project.DAO.FileMapper">
+	 
+	<!-- interface의 경로와 같아야 한다. -->
+	<select id = "select" parameterType = "int" resultType = "File">
+		select * from files where board_num = #{board_num}
+	</select>
+	
+	<select id = "select_one" parameterType = "int" resultType = "File">
+		select * from files where file_num = #{file_num}
+	</select>
+	
+	<delete id = "delete" parameterType = "int" >
+		delete from files where boar_dnum = #{borad_num}
+	</delete>
+	
+	<delete id = "deleteOne" parameterType = "int">
+		delete from files where file_num = #{file_num}
+	</delete>
+
+</mapper>

@@ -8,7 +8,7 @@
 	<insert id="insert" parameterType = "Reply">
 	
 		insert into reply (reply_num, board_num, person_id, reply_contents)
-			values(reply_num_seq.nextval, #{board_num}, #{person_id},#{reply contents})
+			values(reply_number_sequence.nextval, #{board_num}, #{person_id},#{reply_contents})
 	
 	</insert>
 

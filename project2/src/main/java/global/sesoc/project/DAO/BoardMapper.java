@@ -1,6 +1,9 @@
 package global.sesoc.project.DAO;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import org.apache.ibatis.session.RowBounds;
 
 import global.sesoc.project.VO.Board;
 
@@ -27,4 +30,12 @@ public interface BoardMapper {
 	
 	//글번호 따봉
 	public int like(int board_num);
+	
+	//글 전체 갯수
+	public int count(HashMap<String, Object> map);
+
+	//글 페이징
+	public ArrayList<Board> select(RowBounds row, HashMap<String, Object> map);
+	
+	
 }

@@ -63,9 +63,16 @@ public class MypageController {
 
 		
 		ArrayList<Purchaseinfo> purChaseList = dao.purChaseList(loginId);
+		System.out.println(purChaseList);
+		
 		ArrayList<ArrayList<Book>> blist = new ArrayList<ArrayList<Book>>();
 		for (int i = 0; i < purChaseList.size(); ++i) {
 			blist.add((ArrayList<Book>) nb.searchBook("d_isbn", purChaseList.get(i).getPURCHASE_ISBN(), 100, 1));
+			try {
+				Thread.sleep(50);  //와이파이라서 속도가 느려서 네이버에서 책정보를 빨리 못가져와서 쓰레드속돌르 늦춰서 호출속도를 늦춘다 이말이야  50ms 느리게
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 		///////////////////////
 		String address = "type=m1";
@@ -79,10 +86,10 @@ public class MypageController {
 		//여기부분 알수없는 문제!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		//체력이약함 
 		for (int i =0;i<blist.size();i++){
+			System.out.println("************" + blist.get(i));
 			cutresult = blist.get(i).get(0).getImage().replaceFirst(address, "");
 			blist.get(i).get(0).setImage(cutresult);
 			System.out.println(i);
-			System.out.println(blist.size());
 		}
 		System.out.println("왔냐??");
 ///////////////

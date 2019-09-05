@@ -30,31 +30,39 @@
 	 		// id = "id_reg" / name = "userId"
 	});
 /* ----------------------------------아이디 체크 함수 start  ----------------------------------------*/
-	 	function idcheck() {	
-	 		var person_id = $('#person_id').val();
-	 		$.ajax({ 
-	 			url : 'idCheck',
-	 			type : 'get',
-	 			data : {'person_id' : person_id},
-	 			dataType : 'text',
-	 			success : function(data){
-	 				// 1일때 사용가능
-	 				// 0 사용 불가
-	 				console.log("0 = 이미 등록된 아이디 / 1 = 사용 가능한 ID : "+data);
-	 				console.log(data)
-					if(data == 1){
-					$(".id_check1").text("사용가능한 아이디입니다.");
-					$(".id_check1").css('color','blue');	
-					} else{
-						$(".id_Check1").text("이미 등록 된 아이디입니다.");   /* 이거 글자수 적은데 ajax에서 사용가능한아이디라고 입력됩니다. */
-						$(".id_check1").css('color','red');
-					}
-				}, error : function(){
-						console.log("실패");
-						alert('다시 시도 해 주세요')
-				}
-	 		});
-		}
+	 	function idcheck() {
+             var person_id = $('#person_id').val();
+
+             if(person_id.length < 5 || person_id.length > 20 ){
+                 $(".id_check1").text("아이디는 5글자 이상 20 이하로 입력해 주세요.");
+                 $(".id_check1").css('color','red');
+             return false;
+             }
+
+             $.ajax({ 
+                 url : 'idCheck',
+                 type : 'get',
+                 data : {'person_id' : person_id},
+                 dataType : 'text',
+                 success : function(data){
+                     // 1일때 사용가능
+                     // 0 사용 불가
+                     console.log("0 = 이미 등록된 아이디 / 1 = 사용 가능한 ID : "+data);
+                     console.log(data)
+                    if(data == 1){
+                    $(".id_check1").text("사용가능한 아이디입니다.");
+                    $(".id_check1").css('color','blue');
+
+                    } else{
+                        $(".id_check1").text("이미 등록된 아이디입니다.");
+                        $(".id_check1").css('color','red');
+                    }
+                }, error : function(){
+                        console.log("실패");
+                        alert('다시 시도 해 주세요')
+                }
+             });
+        }
 /* ----------------------------------아이디 체크 함수 end  ----------------------------------------*/		
 /* ----------------------------------cancel start  ----------------------------------------*/	 
 	 function cancel() {

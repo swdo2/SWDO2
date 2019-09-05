@@ -34,10 +34,13 @@ public class PersonController {
 	// POST방식으로 회원 정보를 보냅니다.
 
 	@RequestMapping(value = "Join", method = RequestMethod.POST)
-	public String Join(Person person) {
-
+	public String Join(Person person, String person_phone1, String person_phone2, String person_phone3) {
+		
+		String phone = (person_phone1  +"-"+ person_phone2 + "-" + person_phone3);
+		person.setPerson_phone(phone);
+		System.out.println(phone);
 		int result = dao.insertPerson(person);
-
+		
 		if (result != 1) {
 			// 만약 result(회원가입처리)가 1이아닐경우 즉, 가입 실패가 된다면 실패 후 가입 폼으로 이동합니다.
 			return "Join";

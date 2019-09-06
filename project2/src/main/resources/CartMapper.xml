@@ -15,4 +15,12 @@
 	<select id = "cartList" resultType="Cart" parameterType="string" >
 		SELECT * FROM cart WHERE person_id = #{person_id}		
 	</select>
+	
+	<delete id = "removeCart" parameterType = "map">
+		delete from cart where person_id = #{person_id} and book_isbn = #{book_isbn}
+	</delete>
+	
+	<delete id = "removeAll" parameterType = "string">
+		delete from cart where person_id = #{person_id}
+	</delete>
 </mapper>

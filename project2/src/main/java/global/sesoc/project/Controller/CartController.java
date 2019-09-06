@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,17 +13,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import global.sesoc.project.HomeController;
 import global.sesoc.project.DAO.CartDAO;
 import global.sesoc.project.VO.Book;
 import global.sesoc.project.VO.Cart;
 import global.sesoc.project.service.NaverBookService;
+import global.sesoc.project.service.NaverBookService2;
 
 @Controller
 public class CartController {
 
 	@Autowired
 	CartDAO dao;
-
+	private static final Logger logger = LoggerFactory.getLogger(CartController.class);
 	// 책을 카트에 저장하기 위한 ajax
 	@ResponseBody
 	@RequestMapping(value = "cart", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
@@ -39,6 +43,34 @@ public class CartController {
 		System.out.println(msg);
 		return msg;
 
+	}	
+	
+	@ResponseBody
+	@RequestMapping(value = "getPurchaseList", method = RequestMethod.GET) 
+	public ArrayList<ArrayList<Book>> getPurchaseList(HttpSession session){
+		String person_id = (String) session.getAttribute("loginId");
+		ArrayList<Cart> cartList = dao.cartList(person_id);
+		NaverBookService nb = new NaverBookService();
+		// ArrayList<Purchaseinfo> purChaseList = dao.purChaseList(loginId);
+
+		ArrayList<ArrayList<Book>> bblist = new ArrayList<ArrayList<Book>>();
+
+	
+		for (int i = 0; i < cartList.size(); i++) {
+			bblist.add((ArrayList<Book>) nb.searchBook("d_isbn", cartList.get(i).getBook_isbn(), 1, 1));
+		}
+		///////////////////////
+		String address = "type=m1";
+		// 자른 결과
+		String cutresult;
+		// 이미지 교체 작업
+		for (int i=0; i  < bblist.size();i++){
+			cutresult = bblist.get(i).get(0).getImage().replaceFirst(address, "");
+			bblist.get(i).get(0).setImage(cutresult);
+			logger.debug("cutresult : {}", cutresult);
+		}
+	
+		return bblist;
 	}
 
 	@RequestMapping(value = "cartForm", method = RequestMethod.GET)
@@ -60,11 +92,34 @@ public class CartController {
 		String cutresult;
 		// 이미지 교체 작업
 		for (int i=0; i  < blist.size();i++){
-		cutresult = blist.get(i).get(0).getImage().replaceFirst(address, "");
-		blist.get(i).get(0).setImage(cutresult);
+			cutresult = blist.get(i).get(0).getImage().replaceFirst(address, "");
+			blist.get(i).get(0).setImage(cutresult);
+			logger.debug("cutresult : {}", cutresult);
 		}
 		model.addAttribute("blist", blist);
 		return "bookCart";
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "removeCart", method = RequestMethod.GET)
+	public int removeCart(String isbn, HttpSession session) {
+		int cnt = 0;
+		
+		String person_id = (String)session.getAttribute("loginId");
+		cnt = dao.removeCart(isbn, person_id);
+		return cnt;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "removeAll", method = RequestMethod.GET)
+	public int removeAll(HttpSession session) {
+		int cnt = 0;
+		
+		String person_id = (String)session.getAttribute("loginId");
+		
+		cnt = dao.removeAll(person_id);
+		
+		return cnt;
 	}
 
 	@ResponseBody

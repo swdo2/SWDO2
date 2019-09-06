@@ -41,4 +41,27 @@ public class CartDAO {
 		
 		return cartList;
 	}
+	
+	public int removeCart(String book_isbn, String person_id) {
+		CartMapper mapper = sqlsession.getMapper(CartMapper.class);
+		System.out.println("book isbn : " + book_isbn);
+		int result = 0;
+		HashMap<String,Object> map = new HashMap<>();
+		map.put("book_isbn", book_isbn);
+		map.put("person_id", person_id);
+		
+		result = mapper.removeCart(map);
+		
+		return result;
+	}
+	
+	public int removeAll(String person_id) {
+		CartMapper mapper = sqlsession.getMapper(CartMapper.class);
+		
+		int result = 0;
+		
+		result = mapper.removeAll(person_id);
+		
+		return result;
+	}
 }

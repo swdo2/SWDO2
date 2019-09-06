@@ -175,7 +175,7 @@ html {overflow:scroll}
 							      	<div class="slider-wrapper theme-default">
 							            <div id="slider" class="nivoSlider">
 							                <c:forEach var="list" items="${blist}">
-							                	 <a href="BookForm?isbn=${list.isbn}"><img src="${list.image}" alt="이미지 준비중" style="width:520px; height:610px;"></a>
+							                	 <a href="BookForm?isbn=${list.isbn}"><img src="${list.image}" alt="すみませんが、準備しています。" style="width:520px; height:610px;"></a>
 							                </c:forEach>
 							            </div>
 							        </div> 
@@ -201,7 +201,7 @@ html {overflow:scroll}
    			<div class="listDiv">
 	   			<c:forEach var="list" items="${blist}">
 					<div class="grid_1_of_5 images_1_of_5">
-						 <a href="BookForm?isbn=${list.isbn}"><img src="${list.image}"  alt="すみませんが、準備しています。"></a>
+						 <a href="BookForm?isbn=${list.isbn}"><img src="${list.image}"  alt="すみませんが、準備しています。" style="height:260px;"></a>
 							 <div class="explain1">
 							 	<div class="explain2">
 <!-- 							 	<span class="explain3">sss</span> -->
@@ -289,16 +289,19 @@ html {overflow:scroll}
 							<li><span>010-8335-0698</span></li>
 							<li><span>010-8335-0698</span></li>
 						</ul>
-						<div class="social-icons">
-							<h4>SUPPORT</h4>
-					   		  <ul>
-							      <li><a href="https://www.aladin.co.kr/home/welcome.aspx" target="_blank"><img class="iconkugi" src="./BookForm/images/aladin.png" /></a></li>
-							      <li><a href="http://www.kyobobook.co.kr/index.laf?OV_REFFER" target="_blank"><img class="iconkugi" src="./BookForm/images/kyobo.jpg" /></a></li>
-							      <li><a href="https://book.naver.com" target="_blank"><img class="iconkugi" src="./BookForm/images/naver.ico" /></a></li>
-							      <li><a href="http://www.yes24.com/main/default.aspx" target="_blank"><img class="iconkugi" src="./BookForm/images/yes24.png" /></a></li>
-						     </ul>
-						     <div class="clear"></div>
-   	 					</div>
+						
+				</div>
+				<div class="col_1_of_4 span_1_of_4">
+					<div class="social-icons">
+						<h4>SUPPORT</h4>
+				   		  <ul>
+						      <li><a href="https://www.aladin.co.kr/home/welcome.aspx" target="_blank"><img class="iconkugi" src="./BookForm/images/aladin.png" /></a></li>
+						      <li><a href="http://www.kyobobook.co.kr/index.laf?OV_REFFER" target="_blank"><img class="iconkugi" src="./BookForm/images/kyobo.jpg" /></a></li>
+						      <li><a href="https://book.naver.com" target="_blank"><img class="iconkugi" src="./BookForm/images/naver.ico" /></a></li>
+						      <li><a href="http://www.yes24.com/main/default.aspx" target="_blank"><img class="iconkugi" src="./BookForm/images/yes24.png" /></a></li>
+					     </ul>
+					     <div class="clear"></div>
+	 				</div>
 				</div>
 			</div>
 			 <div class="copy_right">
@@ -315,12 +318,5 @@ html {overflow:scroll}
     <a href="#" id="toTop"><span id="toTopHover"> </span></a>
 
 <!-- ----------------------------------------------맨밑에 정보 end------------------------------------------ -->
-<!------------------------------------------------ 검색 결과 Form Start-------------------------------------- -->
-검색 결과 ${total}개가 검색 되었습니다.
-
-<!-- 	//페이징 찍어보기 -->
-	현재페이지${pagenaviga.currentPage}<br>
-	${pagenaviga.currentPage - pagenaviga.pagePerGroup}<br>
-	현재데피이지 그룹${pagenaviga.startPageGroup}<br>
 </body>
 </html>

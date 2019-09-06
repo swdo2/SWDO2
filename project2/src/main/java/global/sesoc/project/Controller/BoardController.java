@@ -36,7 +36,7 @@ public class BoardController {
 	@Autowired
 	ReplyDAO dao_rep;
 	
-	@RequestMapping(value="homeButton", method = RequestMethod.GET)
+	@RequestMapping(value="/homeButton", method = RequestMethod.GET)
 	public String homeButton(){
 		
 		return "redirect:/"; 

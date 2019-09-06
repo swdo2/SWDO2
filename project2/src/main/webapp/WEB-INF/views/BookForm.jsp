@@ -14,7 +14,14 @@
 <script src = "./ebook/reader/js/libs/jquery-3.4.1.js"></script>
 <link rel="shortcut icon" type="image/icon" href="./assets/images/favicon.ico"/>
 <link rel="shortcut icon" type="image/icon" href="./bootstrap/css/css.css"/>
-
+<style>
+    .button1 {
+        cursor: pointer;
+    }
+    .button2 {
+        cursor : pointer;
+    }
+</style>
 <title>BookForm</title>
 <script>
 	$(document).ready(function() {
@@ -212,11 +219,11 @@
 				</div>
 				 <div class="wish-list">
 				 	<c:forEach var="info" items="${bookInFo}">
-			 		<div class="button"><span class = "addCart" id = "${info.isbn}" ><a href="#" class="button1">Add to Cart</a></span></div>
+			 		<div class="button"><span class = "addCart" id = "${info.isbn}" ><a class="button1">Add to Cart</a></span></div>
 
 			 		</c:forEach>
 			 		<c:forEach var="info" items="${bookInFo}">
-					<div class="button"><span><a href="#" id = "${info.isbn}" class= "button2" style="margin-right: 20px;">Purchase</a></span></div>
+					<div class="button"><span><a id = "${info.isbn}" class= "button2" style="margin-right: 20px;">Purchase</a></span></div>
 				 	</c:forEach>
 				 </div>
 			</div>

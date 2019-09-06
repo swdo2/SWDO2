@@ -168,7 +168,7 @@ html {overflow:scroll}
 				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="width: 100%; padding-right: 0px;">
 				      	<ul class="nav navbar-nav mu-menu navbar-right">
 					        <li><a href="myPageForm">My Page</a></li>
-					        <li><a href="#mu-book-overview">My Product</a></li>
+					        <li><a href="cartForm">My Product</a></li>
 					        <li><a href="logOut">Log Out</a></li>
 					        <li><a href="#mu-author">고객센터</a></li>
 				      	</ul>

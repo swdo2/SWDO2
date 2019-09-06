@@ -242,7 +242,7 @@
         <div class="close-modal" data-dismiss="modal">
           <div class="lr">
             <div class="rl"></div>
-          </div>
+          </div>ㅌ
         </div>
         <div class="container">
           <div class="row">
@@ -252,7 +252,7 @@
                 <h2 class="text-uppercase">Project Name</h2>
                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                 <img class="img-fluid d-block mx-auto" src="./bookdetails/img/portfolio/01-full.jpg" alt="">
-                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                <p>세여아 그립니다.ㅠㅠ</p>
                 <ul class="list-inline">
                   <li>Date: January 2017</li>
                   <li>Client: Threads</li>

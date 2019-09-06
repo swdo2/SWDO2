@@ -26,7 +26,9 @@
 	<resources mapping="/cart/**" location = "/resources/cart/" />
 	<resources mapping="/vendor/**" location = "/resources/vendor/"/>
 	<resources mapping="/button/**" location = "/resources/button/"/>
-		<resources mapping="/bootstrap/**" location = "/resources/bootstrap/"/>
+	<resources mapping="/bootstrap/**" location = "/resources/bootstrap/"/>
+	<resources mapping="/bookdetails/**" location="/resources/bookdetails/" />
+		
 	
 
 	<resources mapping="/resources/**" location="/resources/" />

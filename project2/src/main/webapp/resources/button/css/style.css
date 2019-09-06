@@ -52,7 +52,7 @@ body {
 	background: #FFF;
 }
 .wrap {
-	width:80%;
+	width:85%;
 	margin: 0 auto;
 	transition:all .2s linear;
 	-moz-transition:all .2s linear;/* firefox */
@@ -334,6 +334,22 @@ body {
 	width:500px;
 	height:260px;
 }
+.imageshover1{
+	position:relative;
+    overflow:hidden;
+}
+.imageshover2{
+     border-radius: 12px;
+	 background-color:rgba(215, 203, 15, 0.7);
+     width:100%;
+     height:100%;
+     position:absolute;
+     opacity:0;
+     transition:opacity 0.3s;
+}
+.imageshover2:hover {
+     opacity:.8;
+}
 .images_1_of_5  h2  a{
     color: #121d12;
     padding-bottom: 35px;
@@ -342,6 +358,7 @@ body {
     padding-top: 10px;
     border-bottom: groove;
     border-bottom-color: gold;
+    text-decoration:none 
 }
 .images_1_of_5  p {
 	font-size: 0.8125em;
@@ -461,7 +478,7 @@ body {
 	position: relative;
 	background: #FCFCFC;
     border-top: 1px solid #CECECE;
-    margin:20px auto;
+    margin-top:115px;
 }
 .section {
 	clear: both;
@@ -487,7 +504,7 @@ body {
 	margin-left: 0;
 }/* all browsers except IE6 and lower */
 .span_1_of_4 {
-	width: 20.5%;
+	width: 16.5%;
 	padding:1.5% 1.5% 0 0;
 	border-left:1px solid #CECECE;
 }
@@ -1236,3 +1253,4 @@ body {
 .listDiv{
 	margin-bottom: 880px;
 }
+

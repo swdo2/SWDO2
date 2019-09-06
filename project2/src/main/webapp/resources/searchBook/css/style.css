@@ -117,7 +117,8 @@ body {
 	color:#FFF;
 }
 .header_top {
-	padding:20px 0;
+	padding-top: 1%;
+	padding-bottom: 1.5%;
 }
 .logo {
 	float: left;
@@ -335,6 +336,7 @@ body {
 	height:260px;
 }
 .images_1_of_5  h2  a{
+	float:left;
     color: #121d12;
     font-family: auto;
     font-size: 1.2em;
@@ -354,8 +356,12 @@ body {
 }
 .price-details{
 	margin-top:10px;
+	float:right;
 }
 .price-number{
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 /* 	float:left; */
 }
 .price-details p span.rupees1{
@@ -370,10 +376,10 @@ body {
     text-decoration-color: #ff0000;
 	font-family: 'ambleregular';
 	color:#383838;
-	font-size:15px;
+	font-size:20px;
 }
 .rupees2{
-	font-size:27px;
+	font-size:24px;
 	font-family: 'ambleregular';
 	color:#383838;
 }
@@ -443,6 +449,10 @@ body {
 	transition: all 0.5s ease-in-out;
 	
 }
+.clickku1:hover{
+	 text-shadow: 0px 0px 1px #000;
+	 background:#ff0000;
+}
 .clickku2{
 	float:left;	
 	margin-right:6px;
@@ -451,10 +461,7 @@ body {
 	float:left;
 }
 
-.clickku1:hover{
-	 text-shadow: 0px 0px 1px #000;
-	 background:#ff0000;
-}
+
 /*** Footer ***/
 .footer {
 	position: relative;
@@ -1021,6 +1028,47 @@ body {
 	.social-icons li {
     margin-top: 0.2em;
 	}
+}
+.explain1{
+
+}
+.explain2{
+	position: relative;
+}
+.explain3{
+	display: block;
+}
+
+.explain4{
+  display: none;
+  position: absolute;
+  width: 100px;
+  padding:5px;
+  margin-left: 50%;
+  margin-top:23%;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;  
+  border-radius: 8px;
+  background: #fffc00;
+  color: #fff;
+  font-size: 14px;
+}
+.explain4:after{
+ position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -10px;
+  border: solid transparent;
+  border-color: rgba(51, 51, 51, 0);
+  border-bottom-color:#fffc00;
+  border-width: 10px;
+  pointer-events: none;
+  content: " ";
+}
+h2.explain3:hover + p.explain4{
+	 display: block;
 }
 @media only screen and (max-width: 736px) {
 .span_1_of_4 {

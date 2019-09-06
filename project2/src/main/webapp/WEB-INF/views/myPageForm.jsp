@@ -14,43 +14,42 @@
 		<meta name="description" content="My Page Book"/>
 		<meta name="keywords" content="BookBlock, book preview, look inside, css, transforms, animations, css3, 3d, perspective, fullscreen" />
 		<meta name="author" content="Codrops" />
-		<link rel="shortcut icon" type="image/icon" href="./assets/images/favicon.ico"/>
-		<link rel="stylesheet" type="text/css" href="./viewbook/css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="./viewbook/css/demo.css" />
-		<link rel="stylesheet" type="text/css" href="./viewbook/css/bookblock.css" />
-		<link rel="stylesheet" type="text/css" href="./viewbook/css/component.css" />
-		<link href="./searchBook/css/slider.css" rel="stylesheet" type="text/css" media="all"/>
-		
-		
-<!-- 		<link href="./vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
-<!-- 		<link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+		<link href="./assets/images/favicon.ico" rel="shortcut icon" type="image/icon"/>  <!-- 홈피 아이콘 -->
+		<link href="./viewbook/css/normalize.css" rel="stylesheet" type="text/css" />
+		<link href="./viewbook/css/demo.css" rel="stylesheet" type="text/css" />
+		<link href="./viewbook/css/bookblock.css" rel="stylesheet" type="text/css" />
+		<link href="./viewbook/css/component.css"rel="stylesheet" type="text/css" />
+		<link href="./searchBook/css/slider.css" rel="stylesheet" type="text/css" media="all"/>			
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 		<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-		<!-- Custom styles for this template -->
-<!-- 		<link href="./vendor/agency.min.css" rel="stylesheet"> -->
-		 <!-- Bootstrap core JavaScript -->
-<!-- 	 	<script src="./vendor/jquery/jquery.min.js"></script> -->
-<!-- 	  	<script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
-	
-	  	<!-- Plugin JavaScript -->
-<!-- 	  	<script src="./vendor/jquery"></script> -->
-	  	<!-- Contact form JavaScript -->
-<!-- 	  	<script src="./vendor/js/jqBootstrapValidation.js"></script> -->
-<!-- 	  	<script src="./vendor/js/contact_me.js"></script> -->
-	  	<!-- Custom scripts for this template -->	
-<!-- 	  	<script src="./vendor/js/agency.min.js"></script> -->
-<!-- 		<script src="./viewbook/js/modernizr.custom.js"></script> -->
-		<script src="./ebook/reader/js/libs/jquery-3.4.1.js"></script>
+
+<!-- -----------------------------------------------details클릭하면 창뜨는 거 start---------------------------------------------- -->
+		<!-- Bootstrap core CSS -->
+		<link href="./bookdetails/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		
-<!-- --------------------------------------버튼 css,js부분 start ----------------------------- -->
-<!-- 		<link rel="shortcut icon" href="../favicon.ico">  -->
+		<!-- Custom fonts for this template -->
+		<link href="./bookdetails/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+		<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+		
+		<!-- Custom styles for this template -->
+		<link href="./bookdetails/css/agency.min.css" rel="stylesheet">
+		
+		  <!-- Bootstrap core JavaScript -->
+	
+<!-- -----------------------------------------------details클릭하면 창뜨는 거 end---------------------------------------------- -->
+
+<!-- ------------------------------------book보는 js start------------------------------------------------ -->
+		<script src="./ebook/reader/js/libs/jquery-3.4.1.js"></script>
+<!-- ------------------------------------book보는 js start------------------------------------------------ -->		
+<!-- --------------------------------------버튼 css,js부분 end ----------------------------- -->
 		<link href="./button/css/style.css" rel="stylesheet" type="text/css" media="all"/>
 		<link rel="stylesheet" type="text/css" href="./button/css/default.css" />
-<!-- 		<link href="./searchBook/css/style.css" rel="stylesheet" type="text/css" media="all"/> -->
 		<link rel="stylesheet" type="text/css" href="./button/css/component.css" />
-<!-- 		<script src="js/modernizr.custom.js"></script> -->
 <!-- --------------------------------------버튼 css,js부분 end ----------------------------- -->
 		
 		<script>
@@ -77,10 +76,10 @@
 				<div class="codrops-top clearfix">
 <!-- 					<a class="codrops-icon codrops-icon-prev" href="homebutton"><span style="font-size:15px;">HOME</span></a> -->
 						<div class="titlenaranhi" style="margin-right: -100px;">
-						<h1><a href="homeButton" class="mainTitle" style="color: aliceblue;font-size:30px;padding-left:20px;">本ーE</a></h1>
-						<span><a class="codrops-icon codrops-icon-prev" href="homebutton" style="font-size:10px;padding-left:20px;">Home</a></span>
+						<h1><a href="homeButton" class="mainTitle" style="color: aliceblue;font-size:30px;padding-left:20px; text-decoration: none;">本ーE</a></h1>
+						<span><a class="codrops-icon codrops-icon-prev" href="homebutton" style="font-size:10px;padding-left:20px;text-decoration: none;">Home</a></span>
 						</div>
-					<span class="right"><a class="codrops-icon codrops-icon-drop" href="logOut"><span style="font-size:17px;">Log Out</span></a></span>
+					<span class="right"><a class="codrops-icon codrops-icon-drop" href="logOut"><span style="font-size:17px;text-decoration: none;">Log Out</span></a></span>
 				</div>
 				<div class="logo">
 <!-- 						<div class="titlenaranhi"><a href="homeButton"><img class="titleimage" src="./assets/images/main logo.jpg"></a></div> -->
@@ -110,7 +109,10 @@
 		   			<c:forEach var="list" items="${blist}">
 						<c:forEach var = "b" items = "${list}">
 							<div class="grid_1_of_5 images_1_of_5">
-								 <a href="BookForm?isbn=${b.isbn}"><img src="${b.image}"></a>
+								 <div class="imageshover1">
+								 		<a href="BookForm?isbn=${b.isbn}" class="imageshover2"></a>
+								 		<img src="${b.image}">
+								 </div>
 								 <h2><a href="BookForm?isbn=${b.isbn}" class="searchBookLiskTitle">${b.title}</a></h2>
 								<div class="price-details">
 							       		<div class="add-cart1">
@@ -229,15 +231,45 @@
                <i class="fas fa-plus fa-3x"></i>
              </div>
            </div>
-           <img class="img-fluid" src="./vendor/img/portfolio/01-thumbnail.jpg" alt="">
+           <img class="img-fluid" src="./bookdetails/img/portfolio/01-thumbnail.jpg" alt="">
          </a>
-         <div class="portfolio-caption">
-           <h4>Threads</h4>
-           <p class="text-muted">Illustration</p>
-         </div>
        </div>
      </div>
 </div>
+ <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <h2 class="text-uppercase">Project Name</h2>
+                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                <img class="img-fluid d-block mx-auto" src="./bookdetails/img/portfolio/01-full.jpg" alt="">
+                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                <ul class="list-inline">
+                  <li>Date: January 2017</li>
+                  <li>Client: Threads</li>
+                  <li>Category: Illustration</li>
+                </ul>
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                  <i class="fas fa-times"></i>
+                  Close Project</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 <!-- -------------------------------------------------------------맨밑에 정보 start-------------------------------------------------------------- -->
    <div class="footer">
    	  <div class="wrap">	
@@ -271,7 +303,9 @@
 							<li><span>010-8335-0698</span></li>
 							<li><span>010-8335-0698</span></li>
 						</ul>
-						<div class="social-icons">
+				</div>
+				<div class="col_1_of_4 span_1_of_4">
+					<div class="social-icons">
 							<h4>SUPPORT</h4>
 					   		  <ul>
 							      <li><a href="https://www.aladin.co.kr/home/welcome.aspx" target="_blank"><img class="iconkugi" src="./BookForm/images/aladin.png" /></a></li>
@@ -280,8 +314,9 @@
 							      <li><a href="http://www.yes24.com/main/default.aspx" target="_blank"><img class="iconkugi" src="./BookForm/images/yes24.png" /></a></li>
 						     </ul>
 						     <div class="clear"></div>
-   	 					</div>
+	 				</div>
 				</div>
+				
 			</div>
 			 <div class="copy_right">
 				<p>Company Name © All rights Reseverd | Design by  <font style="color:#ff8600">Jeon Jae Hyoung</font></p>
@@ -289,8 +324,17 @@
         </div>
     </div>	
 <!-- ----------------------------------------------------------------------- 맨밑에 정보 end ------------------------------------------------------- -->
-<!-- 		<script src="./viewbook/js/bookblock.min.js"></script> -->
-<!-- 		<script src="./viewbook/js/classie.js"></script> -->
-<!-- 		<script src="./viewbook/js/bookshelf.js"></script> -->
+		<script src="./bookdetails/vendor/jquery/jquery.min.js"></script>
+		<script src="./bookdetails/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		
+		<!-- Plugin JavaScript -->
+		<script src="./bookdetails/vendor/jquery-easing/jquery.easing.min.js"></script>
+		
+		<!-- Contact form JavaScript -->
+		<script src="./bookdetails/js/jqBootstrapValidation.js"></script>
+		<script src="./bookdetails/js/contact_me.js"></script>
+		
+		<!-- Custom scripts for this template -->
+		<script src="./bookdetails/js/agency.min.js"></script>
 	</body>
 </html>

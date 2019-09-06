@@ -149,9 +149,9 @@ html {overflow:scroll}
 					    </script>
 			 <div class="clear"></div>
   		</div>
-				<div class="header_bottom">
+				<div class="header_bottom" style="width:180%;">
 					<div class="header_bottom_left">
-						<div class="categories">
+						<div class="categories" style="margin-left:27%;margin-right:30%;">
 						   <ul>
 						  	   <h3>Categories</h3>
 							      <li><a href="#">All</a></li>
@@ -175,7 +175,7 @@ html {overflow:scroll}
 							      	<div class="slider-wrapper theme-default">
 							            <div id="slider" class="nivoSlider">
 							                <c:forEach var="list" items="${blist}">
-							                	 <a href="BookForm?isbn=${list.isbn}"><img src="${list.image}" alt="이미지 준비중" style="width:899.35px; height:450px;"></a>
+							                	 <a href="BookForm?isbn=${list.isbn}"><img src="${list.image}" alt="이미지 준비중" style="width:520px; height:610px;"></a>
 							                </c:forEach>
 							            </div>
 							        </div> 
@@ -201,8 +201,14 @@ html {overflow:scroll}
    			<div class="listDiv">
 	   			<c:forEach var="list" items="${blist}">
 					<div class="grid_1_of_5 images_1_of_5">
-						 <a href="BookForm?isbn=${list.isbn}"><img src="${list.image}"></a>
-						 <h2><a href="BookForm?isbn=${list.isbn}" class="searchBookLiskTitle">${list.title}</a></h2>
+						 <a href="BookForm?isbn=${list.isbn}"><img src="${list.image}"  alt="すみませんが、準備しています。"></a>
+							 <div class="explain1">
+							 	<div class="explain2">
+<!-- 							 	<span class="explain3">sss</span> -->
+							 		<h2 class="explain3"><a href="BookForm?isbn=${list.isbn}" class="searchBookLiskTitle">${list.title}</a></h2>
+							 		<p class="explain4"><font style="color:black;font-weight:bold;">${list.title}</font></p>
+							 	</div>
+							 </div>
 						<div class="price-details">
 					       <div class="price-number">
 								<span class="rupees1" >&#8361;${list.price}</span><font style="font-size:20px; font-weight:700;"> > </font>

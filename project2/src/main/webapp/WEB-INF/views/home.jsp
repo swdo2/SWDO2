@@ -275,7 +275,6 @@ html {overflow:scroll}
 					<a href="boardForm" class="mu-primary-btn">BOARD</a>
 					<a href="myPageForm" class="mu-primary-btn">MY BOOK PAGE</a>
 					<a href="product" class="mu-primary-btn">테스트용 책구매가기 창</a>
-					<a href="#"> ${sessionScope.loginId}</a>
 				</div>
 			</div>
 	 </c:if>

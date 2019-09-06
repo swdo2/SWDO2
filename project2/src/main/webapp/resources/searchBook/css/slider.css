@@ -56,25 +56,25 @@
 	left:15px;
 }
 .theme-default .nivo-controlNav.nivo-thumbs-enabled {
-	width: 899.35px;
-	height: 450px;
+	width: 520px;
+	height: 610px;
 }
 .theme-default .nivo-controlNav.nivo-thumbs-enabled a {
-	width: 899.35px;
-	height: 450px;
+	width: 520px;
+	height: 610px;
 	background: none;
 	margin-bottom: 5px;
 }
 .theme-default .nivo-controlNav.nivo-thumbs-enabled img {
 	display: block;
 	width: 120px;
-	height: 450px;
+	height: 610px;
 }
 /* The Nivo Slider styles */
 .nivoSlider {
 	position:relative;
-	width:580px;
-	height:640px;
+	width:520px;
+	height:610px;
 	overflow: hidden;
 }
 .nivoSlider img {
@@ -82,14 +82,14 @@
 	top:0px;
 	left:0px;
 	max-width: none;
-	widht:450px;
-	height:450px;
+	widht:520px;
+	height:610px;
 }
 .nivo-main-image {
 	display: block !important;
 	position: relative !important; 
-	width: 899.35px !important;
-	height: 450px;
+	width: 520px !important;
+	height: 610px;
 }
 
 /* If an image is wrapped in a link */
@@ -97,8 +97,8 @@
 	position:absolute;
 	top:0px;
 	left:0px;
-	width:899.35px;
-	height:450px;
+	width:520px;
+	height:610px;
 	border:0;
 	padding:0;
 	margin:0;
@@ -113,7 +113,7 @@
 	display:block;
 	position:absolute;
 	z-index:5;
-	height:450px;
+	height:610px;
 	top:0;
 }
 .nivo-box {

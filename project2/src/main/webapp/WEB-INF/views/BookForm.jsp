@@ -292,7 +292,10 @@
 							<li><span>010-8335-0698</span></li>
 							<li><span>010-8335-0698</span></li>
 						</ul>
-						<div class="social-icons">
+						
+				</div>
+				<div class="col_1_of_4 span_1_of_4">
+					<div class="social-icons">
 							<h4>SUPPORT</h4>
 					   		  <ul>
 							      <li><a href="https://www.aladin.co.kr/home/welcome.aspx" target="_blank"><img class="iconkugi" src="./BookForm/images/aladin.png" /></a></li>
@@ -300,9 +303,11 @@
 							      <li><a href="https://book.naver.com" target="_blank"><img class="iconkugi" src="./BookForm/images/naver.ico" /></a></li>
 							      <li><a href="http://www.yes24.com/main/default.aspx" target="_blank"><img class="iconkugi" src="./BookForm/images/yes24.png" /></a></li>
 						     </ul>
-						     <div class="clear"></div>
-   	 					</div>
+				     	<div class="clear"></div>
+ 	 				</div>
 				</div>
+								
+				
 			</div>
 			 <div class="copy_right">
 				<p>Company Name © All rights Reseverd | Design by  <font style="color:#ff8600">Jeon Jae Hyoung</font></p>

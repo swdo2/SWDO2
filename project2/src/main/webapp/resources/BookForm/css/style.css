@@ -407,7 +407,7 @@ body {
 	margin-left: 0;
 }/* all browsers except IE6 and lower */
 .span_1_of_4 {
-	width: 20.5%;
+	width: 15.5%;
 	padding:1.5% 1.5% 0 0;
 	border-left:1px solid #CECECE;
 }
@@ -783,7 +783,8 @@ body {
 .sidebar h2{
 	font-weight: 900;
 	padding:10px 20px;
-	border: 1px solid #EBE8E8;
+	border: 1px solid #efc505;
+	border-radius:12px;
 	background: url(../images/strip-bg.gif) repeat-x #F6F6F6;
 	font-family: 'ambleregular';
 	font-size:1.2em;
@@ -791,7 +792,8 @@ body {
 	text-transform: uppercase;
 }
 .special_movies{
-	border: 1px solid #ECE9E9;
+	border: 1px solid #efc505;
+	border-radius:12px;
 	margin-top:20px;	
 }
 .movie_poster{

@@ -104,6 +104,7 @@
 						<span><a class="codrops-icon codrops-icon-prev" href="homeButton" style="font-size:10px;padding-left:20px;text-decoration: none;">Home</a></span>
 						</div>
 					<span class="right"><a class="codrops-icon codrops-icon-drop" href="logOut"><span style="font-size:17px;text-decoration: none;">Log Out</span></a></span>
+					<span class="right"><a class="codrops-icon codrops-icon-drop" href="cart"><span style="font-size:17px;text-decoration: none;">Cart</span></a></span>
 				</div>
 				<div class="logo">
 				</div>
@@ -132,15 +133,15 @@
 				<c:forEach var = "b" items = "${list}">
 					<div class="grid_1_of_5 images_1_of_5">
 						 <div class="imageshover1">
-					 		<a href="BookForm?isbn=${b.isbn}" class="imageshover2"></a>
+					 		<a href="BookForm?isbn=${b.isbn}" class="imageshover2" ></a>
 					 		<img src="${b.image}">
 						 </div>
-						 <h2><a href="BookForm?isbn=${b.isbn}" class="searchBookLiskTitle">${b.title}</a></h2>
+						 <h2><a href="BookForm?isbn=${b.isbn}" class="searchBookLiskTitle" style="width:100%;">${b.title}</a></h2>
 						<div class="price-details">
 				       		<div class="add-cart1">
-								<div class="clickku2" title = "${b.title}" isbn = "${b.isbn}" image = "${b.image}" author = "${b.author}" publisher = "${b.publisher}"
-									pubdate = "${b.pubdate}" description = "${b.description}"><a style="color:aliceblue;"><button class="btn btn-51 btn-5a icon-plus"><span>Details</span></button></a></div>
-								<div class="clickku3" id = "${b.isbn}"><a style="color:aliceblue;"><button class="btn btn-5 btn-5a icon-arrow-right" ><span>E-BOOK</span></button></a></div>
+								<div class="clickku2" style="width: 49%;" title = "${b.title}" isbn = "${b.isbn}" image = "${b.image}" author = "${b.author}" publisher = "${b.publisher}"
+									pubdate = "${b.pubdate}" description = "${b.description}"><a style="color:aliceblue;"><button class="btn btn-51 btn-5a icon-plus" style="width: 85%;"><span>Details</span></button></a></div>
+								<div class="clickku3" style="width: 48%;" id = "${b.isbn}"><a style="color:aliceblue;"><button class="btn btn-5 btn-5a icon-arrow-right" style="width:85%;"><span>E-BOOK</span></button></a></div>
 
 					        </div>
 							<div class="clear"></div>

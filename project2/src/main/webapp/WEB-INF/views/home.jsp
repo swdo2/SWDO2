@@ -220,7 +220,7 @@ html {overflow:scroll}
 <!-- -----------------------------------------로그인 했을경우 뜨게하는 부분  start ------------------------------------------------------- -->
 <!-- ----------------------------------------------광고판 시작 부분입니다. start--------------------------------------------------------- -->
 	<c:if test="${sessionScope.loginId != null}">
-		 <div class="banner col-md-8">
+		 <div class="banner col-md-8" style="width: 100%;margin-left: 43%;">
 			<div class="slider">
 				<div class="flexslider">
 					<ul class="slides" style="list-style:none;">

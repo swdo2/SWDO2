@@ -200,11 +200,13 @@ html {overflow:scroll}
    			<div class="listDiv">
 	   			<c:forEach var="list" items="${blist}">
 					<div class="grid_1_of_5 images_1_of_5" style="box-shadow: 4px 3px 3px rgba(189, 149, 4, 0.53);border: 1px solid #ff8e01;margin-right:10px;">
+					  <div style="height:260px;">
 						 <a href="BookForm?isbn=${list.isbn}"><img src="${list.image}"  alt="すみませんが、準備しています。" style="height:260px;"></a>
+					  </div>						 
 							 <div class="explain1">
 							 	<div class="explain2">
 <!-- 							 	<span class="explain3">sss</span> -->
-							 		<h2 class="explain3"><a href="BookForm?isbn=${list.isbn}" class="searchBookLiskTitle">${list.title}</a></h2>
+							 		<h2 class="explain3"><a href="BookForm?isbn=${list.isbn}" class="searchBookLiskTitle" style="width: 100%;">${list.title}</a></h2>
 							 		<p class="explain4"><font style="color:black;font-weight:bold;">${list.title}</font></p>
 							 	</div>
 							 </div>

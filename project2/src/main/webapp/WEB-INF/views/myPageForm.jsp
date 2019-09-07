@@ -60,8 +60,6 @@
 					window.open('ebookPage?isbn=' + isbn);
 
 				})
-
-
 // 터치무브 및 마우스휠 스크롤 가능
 
 
@@ -103,24 +101,21 @@
 <!-- 					<a class="codrops-icon codrops-icon-prev" href="homebutton"><span style="font-size:15px;">HOME</span></a> -->
 						<div class="titlenaranhi" style="margin-right: -100px;">
 						<h1><a href="homeButton" class="mainTitle" style="color: aliceblue;font-size:30px;padding-left:20px; text-decoration: none;">本ーE</a></h1>
-						<span><a class="codrops-icon codrops-icon-prev" href="homebutton" style="font-size:10px;padding-left:20px;text-decoration: none;">Home</a></span>
+						<span><a class="codrops-icon codrops-icon-prev" href="homeButton" style="font-size:10px;padding-left:20px;text-decoration: none;">Home</a></span>
 						</div>
 					<span class="right"><a class="codrops-icon codrops-icon-drop" href="logOut"><span style="font-size:17px;text-decoration: none;">Log Out</span></a></span>
 				</div>
 				<div class="logo">
-<!-- 						<div class="titlenaranhi"><a href="homeButton"><img class="titleimage" src="./assets/images/main logo.jpg"></a></div> -->
 				</div>
-				<h1>My Page<span>for <font style="font-size:25px;color:#FC7D01">${loginId}様</font></span></h1>
-
-
+				<h1>My Page<span>for <font style="font-size:30px;color:#FC7D01;font-weight:bold;">${loginId}</font><font style="font-size:30px;color:#fdff00;">様</font></span></h1>
 			</header>
 		</div>
 <!-- ------------------------------------------------------------------ 헤드 단 end --------------------------------------------------------------- -->
 <!-- ------------------------------------------------------------------ mybooklist start ------------------------------------------------------- -->
-		<!-- ----------------------------list 제목 start ------------------------------------------ -->
+<!-- --------------------------------------------------------------------list 제목 start ------------------------------------------ -->
 		<div class="content_top" style="width: 86%;margin-left: 7%;">
     		<div class="heading" >
-    		<h3 style="font-weight:900;">Puasrchased List :
+    		<h3 style="font-weight:900;">Puasrchased List
 <%-- 				 <c:forEach var="list" items="${blist}"> --%>
 <%-- 					<c:forEach var = "b" items = "${list}"> --%>
 <%-- 	   					<font>${total}個</font> --%>
@@ -129,144 +124,45 @@
 			</h3>
     		</div>
     	</div>
-    	<!-- ----------------------------list 제목 end------------------------------------------ -->
-			<div class="main" style="margin-left:9%;margin-bottom: 40%;">
-  				<div class="listDiv" style="margin-bottom:10px;">
-		   			<c:forEach var="list" items="${blist}">
-						<c:forEach var = "b" items = "${list}">
-							<div class="grid_1_of_5 images_1_of_5">
-								 <div class="imageshover1">
-								 		<a href="BookForm?isbn=${b.isbn}" class="imageshover2"></a>
-								 		<img src="${b.image}">
-								 </div>
-								 <h2><a href="BookForm?isbn=${b.isbn}" class="searchBookLiskTitle">${b.title}</a></h2>
-								<div class="price-details">
-							       		<div class="add-cart1">
-											<div class="clickku2" title = "${b.title}" isbn = "${b.isbn}" image = "${b.image}" author = "${b.author}" publisher = "${b.publisher}"
-												pubdate = "${b.pubdate}" description = "${b.description}"><a style="color:aliceblue;"><button class="btn btn-51 btn-5a icon-plus"><span>Details</span></button></a></div>
-											<div class="clickku3" id = "${b.isbn}"><a style="color:aliceblue;"><button class="btn btn-5 btn-5a icon-arrow-right" ><span>E-BOOK</span></button></a></div>
+<!-- ----------------------------------------------------------------------list 제목 end----------------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------------책출력되는 부분 start----------------------------------------------------------------------- -->			
+	<div class="main" style="margin-left:9%;margin-bottom: 40%;">
+		<div class="listDiv" style="margin-bottom:10px;">
+   			<c:forEach var="list" items="${blist}">
+				<c:forEach var = "b" items = "${list}">
+					<div class="grid_1_of_5 images_1_of_5">
+						 <div class="imageshover1">
+					 		<a href="BookForm?isbn=${b.isbn}" class="imageshover2"></a>
+					 		<img src="${b.image}">
+						 </div>
+						 <h2><a href="BookForm?isbn=${b.isbn}" class="searchBookLiskTitle">${b.title}</a></h2>
+						<div class="price-details">
+				       		<div class="add-cart1">
+								<div class="clickku2" title = "${b.title}" isbn = "${b.isbn}" image = "${b.image}" author = "${b.author}" publisher = "${b.publisher}"
+									pubdate = "${b.pubdate}" description = "${b.description}"><a style="color:aliceblue;"><button class="btn btn-51 btn-5a icon-plus"><span>Details</span></button></a></div>
+								<div class="clickku3" id = "${b.isbn}"><a style="color:aliceblue;"><button class="btn btn-5 btn-5a icon-arrow-right" ><span>E-BOOK</span></button></a></div>
 
-								        </div>
-										<div class="clear"></div>
-								</div>
-							</div>
-						</c:forEach>
-					</c:forEach>
-				</div>
-<!-- 				<div id="bookshelf" class="bookshelf"> -->
-<!-- 					<figure> -->
-<%-- 						<c:forEach var="list" items="${blist}"> --%>
-<%-- 							<c:forEach var = "b" items = "${list}"> --%>
-<%-- 								<img src="${b.image}" class = "purchasedbook" id = "${b.isbn}" style="width:55%;"> --%>
-<%-- 							</c:forEach> --%>
-<%-- 						</c:forEach> --%>
-<!-- 							<div class="buttons"> -->
-<%-- 								<font class = "purchasedbook" id = "${b.isbn}">Look inside</font> --%>
-<!-- 								<a href="">Details</a> -->
-<!-- 							</div> -->
-<!-- 						<figcaption> -->
-<!-- 							<h2> -->
-<%-- 								<c:forEach var="list" items="${blist}"> --%>
-<%-- 									<c:forEach var = "b" items = "${list}"> --%>
-<%-- 										${b.title} --%>
-<%-- 									</c:forEach>	 --%>
-<%-- 								</c:forEach> --%>
-<!-- 								<span> -->
-<%-- 									<c:forEach var="list" items="${blist}"> --%>
-<%-- 										<c:forEach var = "b" items = "${list}"> --%>
-<%-- 											${b.author} --%>
-<%-- 										</c:forEach>	 --%>
-<%-- 									</c:forEach> --%>
-<!-- 								</span> -->
-<!-- 							</h2> -->
-<!-- 						</figcaption> -->
-					<figure>
-						<div class="details">
-							<ul>
-								<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua.</li>
-								<li>Graham Press</li>
-								<li>12.09.2010</li>
-								<li>397 pages</li>
-							</ul>
-						</div>
-					</figure>
-			</div><!-- /main -->
-<!-- ------------------------------------------------------------------ mybooklist end --------------------------------------------------------- -->
-<!-- ---------------------------------------------view inside눌렀을떄 나타나는 부분 start---------------------------------------------------------------- -->
-		<!-- Fullscreen BookBlock -->
-		<!-- for demo purpose we repeat each bookblock -->
-		<div class="bb-custom-wrapper" id="book-1">
-			<div class="bb-bookblock">
-				<div class="bb-item">
-					<div class="bb-custom-side page-layout-3">
-						<div>
-							<h3>Portraits</h3>
-							<p>Photography (1999 &ndash; 2013)</p>
+					        </div>
+							<div class="clear"></div>
 						</div>
 					</div>
-					<div class="bb-custom-side page-layout-3">
-					</div>
-				</div>
-				<div class="bb-item">
-					<div class="bb-custom-side page-layout-1">
-						<h3>
-							Chapter 9 <span>Nomadic Lifestyle</span>
-						</h3>
-					</div>
-					<div class="bb-custom-side page-layout-1">
-						<p>Candy canes lollipop macaroon marshmallow gummi bears tiramisu. Dessert croissant cupcake candy canes. Bear claw faworki faworki lemon drops. Faworki marzipan sugar plum jelly-o marzipan cookie.</p>
-					</div>
-				</div>
-				<div class="bb-item">
-					<div class="bb-custom-side page-layout-2">
-						<div>
-							<h3>Aa</h3>
-							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
-						</div>
-						<div>
-							<h3>Bb</h3>
-							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
-						</div>
-					</div>
-					<div class="bb-custom-side page-layout-2">
-						<div>
-							<h3>Cc</h3>
-							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
-						</div>
-						<div>
-							<h3>Dd</h3>
-							<p>Faworki marzipan sugar plum jelly-o marzipan. Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
-						</div>
-					</div>
-				</div>
-			</div><!-- /bb-bookblock -->
-			<nav>
-				<a href="#" class="bb-nav-prev">Previous</a>
-				<a href="#" class="bb-nav-next">Next</a>
-				<a href="#" class="bb-nav-close">Close</a>
-			</nav>
-		</div><!-- /bb-custom-wrapper -->
-<!-- -------------------------------------------------------------bookview클릭스나타나는 폼 end-------------------------------------------------- -->
-
+				</c:forEach>
+			</c:forEach>
+		</div>
+	</div>
+<!-- ----------------------------------------------------------------------책출력되는 부분 end----------------------------------------------------------------------- -->				
+<!-- ----------------------------------------------------------------------details 클릭했을때 start ---------------------------------------------------- -->
 <div>
 	<div class="row">
        <div class="col-md-4 col-sm-6 portfolio-item">
-         <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-           <%-- <div class="portfolio-hover">
-             <%-- <div class="portfolio-hover-content">
-               <i class="fas fa-plus fa-3x"></i>c
-             </div> --%>
-           <%-- </div> --%>
-           <%-- <img class="img-fluid" src="./bookdetails/img/portfolio/01-thumbnail.jpg" alt=""> --%>
-         </a>
+         <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1"></a>
        </div>
      </div>
 </div>
-
-
+<!-- -------------------------------------------------------------details 클릭했을때 end ---------------------------------------------------- -->
+<!-- -----------------------------------details 클릭한후 row 에서 href로 이동해서 너머어오고 화면이 나옵니다 start ---------------------------------------------------- -->
  <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog" style="width:50%;margin-left: 25%;">
       <div class="modal-content">
         <div class="close-modal" data-dismiss="modal">
           <div class="lr">
@@ -292,7 +188,8 @@
 				</div>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
                   <i class="fas fa-times"></i>
-                  Close Project</button>
+                  Close Project
+                  </button>
               </div>
             </div>
           </div>
@@ -300,8 +197,7 @@
       </div>
     </div>
   </div>
-
-
+<!-- -----------------------------------details 클릭한후 row 에서 href로 이동해서 너머어오고 화면이 나옵니다 end ---------------------------------------------------- -->
 <!-- -------------------------------------------------------------맨밑에 정보 start-------------------------------------------------------------- -->
    <div class="footer">
    	  <div class="wrap">

@@ -101,9 +101,8 @@ html {overflow:scroll}
   	  		<div class="wrap">
 				<div class="header_top">
 					<div class="logo">
-						<div class="titlenaranhi"><a href="homeButton"><img class="titleimage" src="./assets/images/main logo.jpg" 
-							style="padding-left: 55%;"></a></div>
-						<div class="titlenaranhi"><h1><a href="homeButton" class="mainTitle">本ーE</a></h1></div>
+						<div class="titlenaranhi"><a href="homeButton"><img class="titleimage" src="./assets/images/main logo.jpg" ></a></div>
+						<div class="titlenaranhi"><h1><a href="homeButton" class="mainTitle" ">本ーE</a></h1></div>
 					</div>
 						<div class="header_top_right">
 						  <div class="cart">
@@ -200,7 +199,7 @@ html {overflow:scroll}
 <!-- --------------------------------------------한개씩 보여주는 부분 start------------------------------------- -->
    			<div class="listDiv">
 	   			<c:forEach var="list" items="${blist}">
-					<div class="grid_1_of_5 images_1_of_5">
+					<div class="grid_1_of_5 images_1_of_5" style="box-shadow: 4px 3px 3px rgba(189, 149, 4, 0.53);border: 1px solid #ff8e01;margin-right:10px;">
 						 <a href="BookForm?isbn=${list.isbn}"><img src="${list.image}"  alt="すみませんが、準備しています。" style="height:260px;"></a>
 							 <div class="explain1">
 							 	<div class="explain2">

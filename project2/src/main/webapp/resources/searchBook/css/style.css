@@ -122,6 +122,7 @@ body {
 }
 .logo {
 	float: left;
+	margin-left: 12%;
 }
 .header_top_right{
 	float:right;
@@ -321,13 +322,13 @@ body {
 }
 .grid_1_of_5:first-child {
 	margin-left: 0;
+	margin-right:20px;
 	border-radius: 12px;
 }
 .images_1_of_5 {
-	heigth
 	border-radius: 12px;
-	width: 15.72%;
-	padding:1.6%; 
+	width: 15.75%;
+	padding:1.1%; 
 	text-align: center;
 	position: relative;
 }

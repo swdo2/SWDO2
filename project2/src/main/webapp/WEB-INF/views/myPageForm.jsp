@@ -98,7 +98,6 @@
 		<div id="scroll-wrap" style="padding-bottom: 2.5%;">
 			<header class="codrops-header">
 				<div class="codrops-top clearfix">
-<!-- 					<a class="codrops-icon codrops-icon-prev" href="homebutton"><span style="font-size:15px;">HOME</span></a> -->
 						<div class="titlenaranhi" style="margin-right: -100px;">
 						<h1><a href="homeButton" class="mainTitle" style="color: aliceblue;font-size:30px;padding-left:20px; text-decoration: none;">本ーE</a></h1>
 						<span><a class="codrops-icon codrops-icon-prev" href="homeButton" style="font-size:10px;padding-left:20px;text-decoration: none;">Home</a></span>
@@ -141,8 +140,8 @@
 							<div class="price-details">
 					       		<div class="add-cart1">
 									<div class="clickku2" style="width: 49%;" title = "${b.title}" isbn = "${b.isbn}" image = "${b.image}" author = "${b.author}" publisher = "${b.publisher}"
-										pubdate = "${b.pubdate}" description = "${b.description}"><a style="color:aliceblue;"><button class="btn btn-51 btn-5a icon-plus" style="width: 85%;"><span>Details</span></button></a></div>
-									<div class="clickku3" style="width: 48%;" id = "${b.isbn}"><a style="color:aliceblue;"><button class="btn btn-5 btn-5a icon-arrow-right" style="width:85%;"><span>E-BOOK</span></button></a></div>
+										pubdate = "${b.pubdate}" description = "${b.description}"><a style="color:aliceblue;"><button class="btn btn-51 btn-5a icon-plus" style="width: 100%;"><span>Details</span></button></a></div>
+									<div class="clickku3" style="width: 48%;" id = "${b.isbn}"><a style="color:aliceblue;"><button class="btn btn-5 btn-5a icon-arrow-right" style="width:100%;"><span>E-BOOK</span></button></a></div>
 	
 						        </div>
 								<div class="clear"></div>

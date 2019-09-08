@@ -58,6 +58,11 @@ public class CartController {
 	
 		for (int i = 0; i < cartList.size(); i++) {
 			bblist.add((ArrayList<Book>) nb.searchBook("d_isbn", cartList.get(i).getBook_isbn(), 1, 1));
+			try {
+				Thread.sleep(50);  //와이파이라서 속도가 느려서 네이버에서 책정보를 빨리 못가져와서 쓰레드속돌르 늦춰서 호출속도를 늦춘다 이말이야  50ms 느리게
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 		///////////////////////
 		String address = "type=m1";

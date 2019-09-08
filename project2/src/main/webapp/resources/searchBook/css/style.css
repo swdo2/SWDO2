@@ -356,6 +356,7 @@ body {
 	color:#CC3636;
 }
 .price-details{
+	width: 100%;
 	margin-top:10px;
 	float:right;
 }
@@ -413,7 +414,7 @@ body {
 }
 
 .clickku{
-	width:70px;
+	width:40.5%;
 	float:left;
 	font-size:0.85em;
 	border-radius: 13px;
@@ -434,7 +435,7 @@ body {
 	 background:#0600ff;
 }
 .clickku1{
-	width:70px;
+	width:40.5%;
 	float:left;
 	font-size:0.85em;
 	border-radius: 13px;
@@ -1283,5 +1284,6 @@ h2.explain3:hover + p.explain4{
 	text-align: center;
 }
 .listDiv{
+	margin-left:3%;
 	margin-bottom: 880px;
 }

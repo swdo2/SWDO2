@@ -168,7 +168,7 @@ html {overflow:scroll}
 				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="width: 100%; padding-right: 0px;">
 				      	<ul class="nav navbar-nav mu-menu navbar-right">
 					        <li><a href="myPageForm">My Page</a></li>
-					        <li><a href="cartForm">My Product</a></li>
+					        <li><a href="cartForm">My Cart</a></li>
 					        <li><a href="logOut">Log Out</a></li>
 					        <li><a href="#mu-author">고객센터</a></li>
 				      	</ul>
@@ -185,7 +185,7 @@ html {overflow:scroll}
 	<!-- 로그인 폼 부분 start -->
 	<section id="mu-hero">
 	  <c:if test="${sessionScope.loginId == null}">
-		<div class="container">
+		<div class="container" style="margin-top: 5%;">
 			<div class="row">
 				<div class="col-md-6 col-sm-6 col-sm-push-6">
 					<div class="mu-hero-right">
@@ -220,7 +220,7 @@ html {overflow:scroll}
 <!-- -----------------------------------------로그인 했을경우 뜨게하는 부분  start ------------------------------------------------------- -->
 <!-- ----------------------------------------------광고판 시작 부분입니다. start--------------------------------------------------------- -->
 	<c:if test="${sessionScope.loginId != null}">
-		 <div class="banner col-md-8" style="width: 100%;margin-left: 43%;">
+		 <div class="banner col-md-8" style="width: 100%;margin-left: 41%;margin-top: 5%;">
 			<div class="slider">
 				<div class="flexslider">
 					<ul class="slides" style="list-style:none;">

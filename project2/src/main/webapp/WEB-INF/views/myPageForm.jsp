@@ -103,8 +103,8 @@
 						<h1><a href="homeButton" class="mainTitle" style="color: aliceblue;font-size:30px;padding-left:20px; text-decoration: none;">本ーE</a></h1>
 						<span><a class="codrops-icon codrops-icon-prev" href="homeButton" style="font-size:10px;padding-left:20px;text-decoration: none;">Home</a></span>
 						</div>
-					<span class="right"><a class="codrops-icon codrops-icon-drop" href="logOut"><span style="font-size:17px;text-decoration: none;">Log Out</span></a></span>
-					<span class="right"><a class="codrops-icon codrops-icon-drop" href="cart"><span style="font-size:17px;text-decoration: none;">Cart</span></a></span>
+					<span class="right"><a class="codrops-icon codrops-icon-prev" href="logOut" style="text-decoration: none;"><span style="font-size:17px;">Log Out</span></a></span>
+					<span class="right"><a class="codrops-icon codrops-icon-prev" href="cartForm" style="text-decoration: none;"><span style="font-size:17px;">My Cart</span></a></span>
 				</div>
 				<div class="logo">
 				</div>
@@ -127,82 +127,38 @@
     	</div>
 <!-- ----------------------------------------------------------------------list 제목 end----------------------------------------------------------------------- -->
 <!-- ----------------------------------------------------------------------책출력되는 부분 start----------------------------------------------------------------------- -->			
-	<div class="main" style="margin-left:9%;margin-bottom: 40%;">
-		<div class="listDiv" style="margin-bottom:10px;">
-   			<c:forEach var="list" items="${blist}">
-				<c:forEach var = "b" items = "${list}">
-					<div class="grid_1_of_5 images_1_of_5">
-						 <div class="imageshover1">
-					 		<a href="BookForm?isbn=${b.isbn}" class="imageshover2" ></a>
-					 		<img src="${b.image}">
-						 </div>
-						 <h2><a href="BookForm?isbn=${b.isbn}" class="searchBookLiskTitle" style="width:100%;">${b.title}</a></h2>
-						<div class="price-details">
-				       		<div class="add-cart1">
-								<div class="clickku2" style="width: 49%;" title = "${b.title}" isbn = "${b.isbn}" image = "${b.image}" author = "${b.author}" publisher = "${b.publisher}"
-									pubdate = "${b.pubdate}" description = "${b.description}"><a style="color:aliceblue;"><button class="btn btn-51 btn-5a icon-plus" style="width: 85%;"><span>Details</span></button></a></div>
-								<div class="clickku3" style="width: 48%;" id = "${b.isbn}"><a style="color:aliceblue;"><button class="btn btn-5 btn-5a icon-arrow-right" style="width:85%;"><span>E-BOOK</span></button></a></div>
-
-					        </div>
-							<div class="clear"></div>
+	<div style="position:absolute;">	
+		<div class="main" style="margin-left:9%;margin-bottom: 40%;height: 75%;">
+			<div class="listDiv" style="margin-bottom:10px;">
+	   			<c:forEach var="list" items="${blist}">
+					<c:forEach var = "b" items = "${list}">
+						<div class="grid_1_of_5 images_1_of_5" style="height: 414.7px;">
+							 <div class="imageshover1" style="height: 260px;">
+						 		<a href="BookForm?isbn=${b.isbn}" class="imageshover2" ></a>
+						 		<img src="${b.image}" alt="すみませんが、準備しています。" style="height:260px;">
+							 </div>
+							 <h2><a href="BookForm?isbn=${b.isbn}" class="searchBookLiskTitle" style="width:100%;">${b.title}</a></h2>
+							<div class="price-details">
+					       		<div class="add-cart1">
+									<div class="clickku2" style="width: 49%;" title = "${b.title}" isbn = "${b.isbn}" image = "${b.image}" author = "${b.author}" publisher = "${b.publisher}"
+										pubdate = "${b.pubdate}" description = "${b.description}"><a style="color:aliceblue;"><button class="btn btn-51 btn-5a icon-plus" style="width: 85%;"><span>Details</span></button></a></div>
+									<div class="clickku3" style="width: 48%;" id = "${b.isbn}"><a style="color:aliceblue;"><button class="btn btn-5 btn-5a icon-arrow-right" style="width:85%;"><span>E-BOOK</span></button></a></div>
+	
+						        </div>
+								<div class="clear"></div>
+							</div>
 						</div>
-					</div>
+					</c:forEach>
 				</c:forEach>
-			</c:forEach>
-		</div>
+			</div>
 	</div>
-<!-- ----------------------------------------------------------------------책출력되는 부분 end----------------------------------------------------------------------- -->				
-<!-- ----------------------------------------------------------------------details 클릭했을때 start ---------------------------------------------------- -->
-<div>
-	<div class="row">
-       <div class="col-md-4 col-sm-6 portfolio-item">
-         <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1"></a>
-       </div>
-     </div>
-</div>
-<!-- -------------------------------------------------------------details 클릭했을때 end ---------------------------------------------------- -->
-<!-- -----------------------------------details 클릭한후 row 에서 href로 이동해서 너머어오고 화면이 나옵니다 start ---------------------------------------------------- -->
- <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" style="width:50%;margin-left: 25%;">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-          <div class="lr">
-            <div class="rl"></div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <div class="modal-body">
-                <!-- Project Details Go Here -->
-                <h2 class="text-uppercase" id = "detailtitle"></h2>
-
-                <img id = "detailimage" class="img-fluid d-block mx-auto" src="" alt="">
-
-                <ul class="list-inline">
-                  <li id = "detailauthor"></li>
-                  <li id = "detailpubdate"></li>
-                  <li id = "detailpublisher"></li>
-                </ul>
-				<div id = "detaildescription">
-
-				</div>
-                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                  <i class="fas fa-times"></i>
-                  Close Project
-                  </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-<!-- -----------------------------------details 클릭한후 row 에서 href로 이동해서 너머어오고 화면이 나옵니다 end ---------------------------------------------------- -->
-<!-- -------------------------------------------------------------맨밑에 정보 start-------------------------------------------------------------- -->
-   <div class="footer">
-   	  <div class="wrap">
-	     <div class="section group">
+<!-- 			<div class="footer"> -->
+<!--    	  <div class="wrap"> -->
+	   
+<!--         </div> -->
+<!--     </div> -->
+	<div>
+		<div class="section group" style="position: relative;padding-left: 3%;padding-top: 2%;">
 				<div class="col_1_of_4 span_1_of_4">
 						<h4>Information</h4>
 						<ul>
@@ -246,12 +202,62 @@
 	 				</div>
 				</div>
 
-			</div>
-			 <div class="copy_right">
-				<p>Company Name © All rights Reseverd | Design by  <font style="color:#ff8600">Jeon Jae Hyoung</font></p>
-		   </div>
+		</div>
+				 <div class="copy_right">
+					<p>Company Name © All rights Reseverd | Design by  <font style="color:#ff8600">Jeon Jae Hyoung</font></p>
+			   </div>
+		</div>   
+</div>
+<!-- ----------------------------------------------------------------------책출력되는 부분 end----------------------------------------------------------------------- -->				
+<!-- ----------------------------------------------------------------------details 클릭했을때 start ---------------------------------------------------- -->
+<div>
+	<div class="row">
+       <div class="col-md-4 col-sm-6 portfolio-item">
+         <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1"></a>
+       </div>
+     </div>
+</div>
+<!-- -------------------------------------------------------------details 클릭했을때 end ---------------------------------------------------- -->
+<!-- -----------------------------------details 클릭한후 row 에서 href로 이동해서 너머어오고 화면이 나옵니다 start ---------------------------------------------------- -->
+ <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" style="width:50%;margin-left: 25%;">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
         </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <h2 class="text-uppercase" id = "detailtitle"></h2>
+
+                <img id = "detailimage" class="img-fluid d-block mx-auto" src="" alt="すみませんが、準備しています。">
+
+                <ul class="list-inline">
+                  <li id = "detailauthor"></li>
+                  <li id = "detailpubdate"></li>
+                  <li id = "detailpublisher"></li>
+                </ul>
+				<div id = "detaildescription">
+
+				</div>
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                  <i class="fas fa-times"></i>
+                  Close Project
+                  </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+<!-- -----------------------------------details 클릭한후 row 에서 href로 이동해서 너머어오고 화면이 나옵니다 end ---------------------------------------------------- -->
+<!-- -------------------------------------------------------------맨밑에 정보 start-------------------------------------------------------------- -->
+   
 <!-- ----------------------------------------------------------------------- 맨밑에 정보 end ------------------------------------------------------- -->
 		<script src="./bookdetails/vendor/jquery/jquery.min.js"></script>
 		<script src="./bookdetails/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

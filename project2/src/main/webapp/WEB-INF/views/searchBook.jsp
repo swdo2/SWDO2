@@ -149,8 +149,8 @@ html {overflow:scroll}
 					    </script>
 			 <div class="clear"></div>
   		</div>
-				<div class="header_bottom" style="width:180%;">
-					<div class="header_bottom_left">
+				<div class="header_bottom" style="width:100%;">
+					<div class="header_bottom_left" style="position: absolute; margin-left:6%;">
 						<div class="categories" style="margin-left:27%;margin-right:30%;">
 						   <ul>
 						  	   <h3>Categories</h3>
@@ -169,23 +169,27 @@ html {overflow:scroll}
 						  	 </ul>
 						</div>
 		  	         </div>
-						    <div class="header_bottom_right">
+						    <div class="header_bottom_right" style="margin-left: 48%;">
 						 	    <!------ Slider ------------>
 								  <div class="slider">
 							      	<div class="slider-wrapper theme-default">
-							            <div id="slider" class="nivoSlider">
+							            <div id="slider" class="nivoSlider" style="box-shadow: 5px 5px 7px rgba(230, 181, 4, 0.62);border: 1px solid #ff8e01;border-radius: 12px;"">
+													<!-- padding: 2em; -->
 							                <c:forEach var="list" items="${blist}">
-							                	 <a href="BookForm?isbn=${list.isbn}"><img src="${list.image}" alt="すみませんが、準備しています。" style="width:520px; height:610px;"></a>
+							                	 <a href="BookForm?isbn=${list.isbn}" >
+							                	 	<img src="${list.image}" alt="すみませんが、準備しています。" style="width:520px; height:610px;">
+							                	 </a>
 							                </c:forEach>
+							                
 							            </div>
-							        </div> 
-						   		</div>
+							         </div>
+							      </div> 
+					   		</div>
 						<!------End Slider ------------>
 			         </div>
 			     <div class="clear"></div>
 			</div>
    		</div>
-   </div>
    <!------------End Header ------------>
   <div class="main">
   	<div class="wrap" style="margin-left: 12%;">
@@ -200,7 +204,7 @@ html {overflow:scroll}
 <!-- --------------------------------------------한개씩 보여주는 부분 start------------------------------------- -->
    			<div class="listDiv" style="margin-right:-3%; margin-left: 2%;">
 	   			<c:forEach var="list" items="${blist}" >
-					<div class="grid_1_of_5 images_1_of_5" style="box-shadow: 4px 3px 3px rgba(189, 149, 4, 0.53);border: 1px solid #ff8e01;margin-right:10px;">
+					<div class="grid_1_of_5 images_1_of_5" style="height: 375px;box-shadow: 4px 3px 3px rgba(189, 149, 4, 0.53);border: 1px solid #ff8e01;margin-right:10px;">
 					  <div style="height:260px;">
 						 <a href="BookForm?isbn=${list.isbn}"><img src="${list.image}"  alt="すみませんが、準備しています。" style="height:260px;"></a>
 					  </div>						 
@@ -216,9 +220,9 @@ html {overflow:scroll}
 								<span class="rupees1" >&#8361;${list.price}</span><font style="font-size:20px; font-weight:700;"> > </font>
 								<font style="font-size:21px;">&#8361;</font><span class="rupees2">${list.discount}</span>
 						    </div>
-					       		<div class="add-cart1" style="margin-left: 3%;">
-									<div class="clickku" style="cursor:pointer;" id = "${list.isbn}"><a style="color:aliceblue;">Add to Cart</a></div>
-									<div class="clickku1" style="cursor:pointer;" id = "${list.isbn}"><a style="color:aliceblue;cursor:pointer">PurChase</a></div>
+					       		<div class="add-cart1" style="margin-left: 0%;">
+									<div class="clickku" style="cursor:pointer;position: absolute;width:35%;" id = "${list.isbn}"><a style="color:aliceblue;"><font style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">Add to Cart</font></a></div>
+									<div class="clickku1" style="cursor:pointer;position: absolute;width: 36%;margin-left: 46%;" id = "${list.isbn}"><a style="color:aliceblue;cursor:pointer"><font style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">PurChase</font></a></div>
 
 						        </div>
 								<div class="clear"></div>

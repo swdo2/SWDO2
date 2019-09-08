@@ -91,19 +91,19 @@ html {overflow:scroll}
 				</div>
 					<div class="account_desc">
 						<ul>
-							<li><a href="myPageForm">My Page</a></li> <!-- href식별자 작성해야합니다. -->
-					        <li><a href="logOut">LogOut</a></li><!-- href식별자 작성해야합니다. -->
+							<li><a href="cartForm">My Cart</a></li> 
+							<li><a href="myPageForm">My Page</a></li> 
+					        <li><a href="logOut">LogOut</a></li>
 						</ul>
 					</div>
 				<div class="clear"></div>
 			</div>
 	  	</div>
-  	  		<div class="wrap">
+  	  		<div class="wrap" style="margin-left: 12%;">
 				<div class="header_top">
 					<div class="logo">
-						<div class="titlenaranhi"><a href="homeButton"><img class="titleimage" src="./assets/images/main logo.jpg" 
-							style="padding-left: 55%;"></a></div>
-						<div class="titlenaranhi"><h1><a href="homeButton" class="mainTitle">本ーE</a></h1></div>
+						<div class="titlenaranhi"><a href="homeButton"><img class="titleimage" src="./assets/images/main logo.jpg" ></a></div>
+						<div class="titlenaranhi"><h1><a href="homeButton" class="mainTitle" ">本ーE</a></h1></div>
 					</div>
 						<div class="header_top_right">
 						  <div class="cart">
@@ -149,8 +149,8 @@ html {overflow:scroll}
 					    </script>
 			 <div class="clear"></div>
   		</div>
-				<div class="header_bottom" style="width:180%;">
-					<div class="header_bottom_left">
+				<div class="header_bottom" style="width:100%;">
+					<div class="header_bottom_left" style="position: absolute; margin-left:6%;">
 						<div class="categories" style="margin-left:27%;margin-right:30%;">
 						   <ul>
 						  	   <h3>Categories</h3>
@@ -169,26 +169,30 @@ html {overflow:scroll}
 						  	 </ul>
 						</div>
 		  	         </div>
-						    <div class="header_bottom_right">
+						    <div class="header_bottom_right" style="margin-left: 48%;">
 						 	    <!------ Slider ------------>
 								  <div class="slider">
 							      	<div class="slider-wrapper theme-default">
-							            <div id="slider" class="nivoSlider">
+							            <div id="slider" class="nivoSlider" style="box-shadow: 5px 5px 7px rgba(230, 181, 4, 0.62);border: 1px solid #ff8e01;border-radius: 12px;"">
+													<!-- padding: 2em; -->
 							                <c:forEach var="list" items="${blist}">
-							                	 <a href="BookForm?isbn=${list.isbn}"><img src="${list.image}" alt="이미지 준비중" style="width:520px; height:610px;"></a>
+							                	 <a href="BookForm?isbn=${list.isbn}" >
+							                	 	<img src="${list.image}" alt="すみませんが、準備しています。" style="width:520px; height:610px;">
+							                	 </a>
 							                </c:forEach>
+							                
 							            </div>
-							        </div> 
-						   		</div>
+							         </div>
+							      </div> 
+					   		</div>
 						<!------End Slider ------------>
 			         </div>
 			     <div class="clear"></div>
 			</div>
    		</div>
-   </div>
    <!------------End Header ------------>
   <div class="main">
-  	<div class="wrap">
+  	<div class="wrap" style="margin-left: 12%;">
       <div class="content">
     	<div class="content_top">
     		<div class="heading">
@@ -198,14 +202,16 @@ html {overflow:scroll}
 <!-- ------------------------------------------------------ 1번째줄 start------------------------------------------------   --->
 	      <div class="section group">
 <!-- --------------------------------------------한개씩 보여주는 부분 start------------------------------------- -->
-   			<div class="listDiv">
-	   			<c:forEach var="list" items="${blist}">
-					<div class="grid_1_of_5 images_1_of_5">
-						 <a href="BookForm?isbn=${list.isbn}"><img src="${list.image}"  alt="すみませんが、準備しています。"></a>
+   			<div class="listDiv" style="margin-right:-3%; margin-left: 2%;">
+	   			<c:forEach var="list" items="${blist}" >
+					<div class="grid_1_of_5 images_1_of_5" style="height: 375px;box-shadow: 4px 3px 3px rgba(189, 149, 4, 0.53);border: 1px solid #ff8e01;margin-right:10px;">
+					  <div style="height:260px;">
+						 <a href="BookForm?isbn=${list.isbn}"><img src="${list.image}"  alt="すみませんが、準備しています。" style="height:260px;"></a>
+					  </div>						 
 							 <div class="explain1">
 							 	<div class="explain2">
 <!-- 							 	<span class="explain3">sss</span> -->
-							 		<h2 class="explain3"><a href="BookForm?isbn=${list.isbn}" class="searchBookLiskTitle">${list.title}</a></h2>
+							 		<h2 class="explain3"><a href="BookForm?isbn=${list.isbn}" class="searchBookLiskTitle" style="width: 100%;">${list.title}</a></h2>
 							 		<p class="explain4"><font style="color:black;font-weight:bold;">${list.title}</font></p>
 							 	</div>
 							 </div>
@@ -214,9 +220,9 @@ html {overflow:scroll}
 								<span class="rupees1" >&#8361;${list.price}</span><font style="font-size:20px; font-weight:700;"> > </font>
 								<font style="font-size:21px;">&#8361;</font><span class="rupees2">${list.discount}</span>
 						    </div>
-					       		<div class="add-cart1">
-									<div class="clickku" style="cursor:pointer;" id = "${list.isbn}"><a href="#" style="color:aliceblue;">Add to Cart</a></div>
-									<div class="clickku1" style="cursor:pointer;" id = "${list.isbn}"><a style="color:aliceblue;cursor:pointer">E-Book</a></div>
+					       		<div class="add-cart1" style="margin-left: 0%;">
+									<div class="clickku" style="cursor:pointer;position: absolute;width:35%;" id = "${list.isbn}"><a style="color:aliceblue;"><font style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">Add to Cart</font></a></div>
+									<div class="clickku1" style="cursor:pointer;position: absolute;width: 36%;margin-left: 46%;" id = "${list.isbn}"><a style="color:aliceblue;cursor:pointer"><font style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">PurChase</font></a></div>
 
 						        </div>
 								<div class="clear"></div>
@@ -289,16 +295,19 @@ html {overflow:scroll}
 							<li><span>010-8335-0698</span></li>
 							<li><span>010-8335-0698</span></li>
 						</ul>
-						<div class="social-icons">
-							<h4>SUPPORT</h4>
-					   		  <ul>
-							      <li><a href="https://www.aladin.co.kr/home/welcome.aspx" target="_blank"><img class="iconkugi" src="./BookForm/images/aladin.png" /></a></li>
-							      <li><a href="http://www.kyobobook.co.kr/index.laf?OV_REFFER" target="_blank"><img class="iconkugi" src="./BookForm/images/kyobo.jpg" /></a></li>
-							      <li><a href="https://book.naver.com" target="_blank"><img class="iconkugi" src="./BookForm/images/naver.ico" /></a></li>
-							      <li><a href="http://www.yes24.com/main/default.aspx" target="_blank"><img class="iconkugi" src="./BookForm/images/yes24.png" /></a></li>
-						     </ul>
-						     <div class="clear"></div>
-   	 					</div>
+						
+				</div>
+				<div class="col_1_of_4 span_1_of_4">
+					<div class="social-icons">
+						<h4>SUPPORT</h4>
+				   		  <ul>
+						      <li><a href="https://www.aladin.co.kr/home/welcome.aspx" target="_blank"><img class="iconkugi" src="./BookForm/images/aladin.png" /></a></li>
+						      <li><a href="http://www.kyobobook.co.kr/index.laf?OV_REFFER" target="_blank"><img class="iconkugi" src="./BookForm/images/kyobo.jpg" /></a></li>
+						      <li><a href="https://book.naver.com" target="_blank"><img class="iconkugi" src="./BookForm/images/naver.ico" /></a></li>
+						      <li><a href="http://www.yes24.com/main/default.aspx" target="_blank"><img class="iconkugi" src="./BookForm/images/yes24.png" /></a></li>
+					     </ul>
+					     <div class="clear"></div>
+	 				</div>
 				</div>
 			</div>
 			 <div class="copy_right">
@@ -315,12 +324,5 @@ html {overflow:scroll}
     <a href="#" id="toTop"><span id="toTopHover"> </span></a>
 
 <!-- ----------------------------------------------맨밑에 정보 end------------------------------------------ -->
-<!------------------------------------------------ 검색 결과 Form Start-------------------------------------- -->
-검색 결과 ${total}개가 검색 되었습니다.
-
-<!-- 	//페이징 찍어보기 -->
-	현재페이지${pagenaviga.currentPage}<br>
-	${pagenaviga.currentPage - pagenaviga.pagePerGroup}<br>
-	현재데피이지 그룹${pagenaviga.startPageGroup}<br>
 </body>
 </html>

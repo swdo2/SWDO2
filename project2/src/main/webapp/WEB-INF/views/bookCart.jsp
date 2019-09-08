@@ -54,10 +54,7 @@ pageEncoding="UTF-8"%>
                               <div class="logo">
                                   <!-- <div class="titlenaranhi"><a href="homeButton"><img class="titleimage" src="./assets/images/main logo.jpg"></a></div> -->
                               </div>
-                              <h1>My Cart<span>for
-                                      <a href="#">You</a>
-                                  </span>
-                              </h1>
+								<h1>My Cart<span>for <font style="font-size:30px;color:#FC7D01;font-weight:bold;">${loginId}</font><font style="font-size:30px;color:#fdff00;">様</font></span></h1>                          
                           </header>
                       </div>
                       <div class="site-wrap">

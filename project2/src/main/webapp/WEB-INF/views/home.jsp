@@ -167,8 +167,9 @@ html {overflow:scroll}
 				    <!-- Collect the nav links, forms, and other content for toggling -->
 				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="width: 100%; padding-right: 0px;">
 				      	<ul class="nav navbar-nav mu-menu navbar-right">
+				      		<li><a href="boardForm">Board</a></li>
 					        <li><a href="myPageForm">My Page</a></li>
-					        <li><a href="cartForm">My Product</a></li>
+					        <li><a href="cartForm">My Cart</a></li>
 					        <li><a href="logOut">Log Out</a></li>
 					        <li><a href="#mu-author">고객센터</a></li>
 				      	</ul>
@@ -185,7 +186,7 @@ html {overflow:scroll}
 	<!-- 로그인 폼 부분 start -->
 	<section id="mu-hero">
 	  <c:if test="${sessionScope.loginId == null}">
-		<div class="container">
+		<div class="container" style="margin-top: 5%;">
 			<div class="row">
 				<div class="col-md-6 col-sm-6 col-sm-push-6">
 					<div class="mu-hero-right">
@@ -220,7 +221,7 @@ html {overflow:scroll}
 <!-- -----------------------------------------로그인 했을경우 뜨게하는 부분  start ------------------------------------------------------- -->
 <!-- ----------------------------------------------광고판 시작 부분입니다. start--------------------------------------------------------- -->
 	<c:if test="${sessionScope.loginId != null}">
-		 <div class="banner col-md-8">
+		 <div class="banner col-md-8" style="width: 100%;margin-left: 41%;margin-top: 5%;">
 			<div class="slider">
 				<div class="flexslider">
 					<ul class="slides" style="list-style:none;">
@@ -271,10 +272,9 @@ html {overflow:scroll}
 				</div>
 <!-- ----------------------------------------------검색 바 끝부분 입니다. end----------------------------------------------------------- -->
 				<div style="width:100%;">
-					<a href="#" class="mu-primary-btn">VIEW-BOOK</a>
-					<a href="boardForm" class="mu-primary-btn">BOARD</a>
+					<a href="boardForm" class="mu-primary-btn" style="width:10%">BOARD</a>
+					<a href="cartForm" class="mu-primary-btn" style="width:10%">MY CART</a>
 					<a href="myPageForm" class="mu-primary-btn">MY BOOK PAGE</a>
-					<a href="product" class="mu-primary-btn">테스트용 책구매가기 창</a>
 				</div>
 			</div>
 	 </c:if>
@@ -283,7 +283,7 @@ html {overflow:scroll}
 <!-- ------------------------------------로그인 폼 부분 end ------------------------------------------------------------------------ -->
 
 <!-- Start main content -->
-	<main role="main">
+	<main role="main"> 
 		<!-- Start Author -->
 		<section id="mu-author">
 			<div class="container">

@@ -91,6 +91,7 @@
 				<c:if test="${sessionScope.loginId != null}">
 					<div class="account_desc">
 						<ul>
+							<li><a href="cartForm">My Cart</a></li> <!-- href식별자 작성해야합니다. -->
 							<li><a href="myPageForm">My Page</a></li> <!-- href식별자 작성해야합니다. -->
 					        <li><a href="logOut">LogOut</a></li><!-- href식별자 작성해야합니다. -->
 						</ul>

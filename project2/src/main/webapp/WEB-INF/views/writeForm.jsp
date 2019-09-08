@@ -55,7 +55,7 @@
  <script>
     window.onload = function(){
        ck = CKEDITOR.replace("board_contents",{
-    	   filebrowserUploadUrl: "/project/imageUpload"
+    	   filebrowserUploadUrl: "${path}/imageUpload"
     	   
        });
     };

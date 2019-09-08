@@ -8,6 +8,8 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,10 +17,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import global.sesoc.project.HomeController;
+
 @Controller
 public class ImageUploadController {
    
-	
+	private static final Logger logger = LoggerFactory.getLogger(ImageUploadController.class);
 
 	
    @ResponseBody
@@ -43,8 +47,9 @@ public class ImageUploadController {
       //서버에 저장됨
       out.write(bytes);
       String callback= request.getParameter("CKEditorFuncNum");
+      logger.info("ck = " + "CKEditorFuncNum");
       PrintWriter printWriter = response.getWriter();
-      String fileUrl = request.getContextPath()+"/resources/img/upload/"+fileName;
+      String fileUrl = request.getContextPath()+"/src/main/webapp/resources/img/upload"+fileName;
 //      fileUrl = fileUrl.replace('\\', '/');
 //      fileUrl = "/project/resources/img/제목 없음.png";
       

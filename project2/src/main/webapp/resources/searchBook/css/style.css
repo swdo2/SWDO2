@@ -252,7 +252,7 @@ body {
     border: 2px solid #EEE;
 }
 .categories h3{
-	font-size:1.2em;
+	font-size:1.5em;
     border-radius: 13px;
 	color:#FFF;
 	padding:10px;
@@ -265,7 +265,8 @@ body {
 }
 .categories li a{
 	display:block;
-	font-size:0.85em;
+	font-size: 1em;
+    font-weight: bold;
 	padding:9px 15px;
     color: #9C9C9C;
     font-family: 'ambleregular';

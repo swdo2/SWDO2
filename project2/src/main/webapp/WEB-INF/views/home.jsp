@@ -186,6 +186,7 @@ html {overflow:scroll}
    <!-- 로그인 폼 부분 start -->
    <section id="mu-hero">
 <!-- ----------------------------------------로그인 안해도 검색 가능합니다 start----------------------------------------------------------------------------------------- -->
+     <c:if test="${sessionScope.loginId == null}">
    		<div class="w3layouts-left" style="width: 40%;background: #ffb827;padding:1.2em;margin-left: 30%;">
              <div class="w3-search-box" style="width: 100%;margin-top: 0em;position: relative;z-index: 1;display: inline-block;border: 2px solid #fff;">
                 <form action="searchBook" >   <!-- <<<<<<<<<<<<<<<<여기 가 검색 부분 액션 이름 단 입니다. -->
@@ -197,8 +198,8 @@ html {overflow:scroll}
              </div>
              <div class="clearfix"> </div>
        	</div>
+       
   <!-- ----------------------------------------로그인 안해도 검색 가능합니다 end----------------------------------------------------------------------------------------- -->
-     <c:if test="${sessionScope.loginId == null}">
       <div class="container">
          <div class="row">
             <div class="col-md-6 col-sm-6 col-sm-push-6">
@@ -234,7 +235,7 @@ html {overflow:scroll}
 <!-- -----------------------------------------로그인 했을경우 뜨게하는 부분  start ------------------------------------------------------- -->
 <!-- ----------------------------------------------광고판 시작 부분입니다. start--------------------------------------------------------- -->
    <c:if test="${sessionScope.loginId != null}">
-       <div class="banner col-md-8" style="width: 100%;margin-left: 38.5%;margin-top: 5%;">
+       <div class="banner col-md-8" style="width: 100%;margin-left: 38.5%;margin-top: -1%;">
          <div class="slider">
             <div class="flexslider">
                <ul class="slides" style="list-style:none;">

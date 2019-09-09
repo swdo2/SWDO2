@@ -151,7 +151,7 @@ html {overflow:scroll}
   		</div>
 				<div class="header_bottom" style="width:100%;">
 					<div class="header_bottom_left" style="position: absolute; margin-left:6%;">
-						<div class="categories" style="margin-left:27%;margin-right:30%;">
+						<div class="categories" style="margin-left:27%;margin-right:30%;width:70%;">
 						   <ul>
 						  	   <h3>Categories</h3>
 							      <li><a href="searchBook?bookTitle=${searchText}">All</a></li>

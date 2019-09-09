@@ -156,7 +156,7 @@ html {overflow:scroll}
 						  	   <h3>Categories</h3>
 							      <li><a href="searchBook?bookTitle=${searchText}">All</a></li>
 							      <li><a href="searchBook?bookTitle=${searchText}&d_catg=100">소설</a></li>
-							      <li><a href="searchBook?bookTitle=${searchText}&d_catg=110">시</a></li>
+							      <li><a href="searchBook?bookTitle=${searchText}&d_catg=110">시/에세이</a></li>
 							      <li><a href="searchBook?bookTitle=${searchText}&d_catg=120">인문</a></li>
 							      <li><a href="searchBook?bookTitle=${searchText}&d_catg=130">가정/생활/요리</a></li>
 							       <li><a href="searchBook?bookTitle=${searchText}&d_catg=140">건강</a></li>
@@ -166,6 +166,8 @@ html {overflow:scroll}
 							       <li><a href="searchBook?bookTitle=${searchText}&d_catg=180">사회</a></li>
 							       <li><a href="searchBook?bookTitle=${searchText}&d_catg=190">역사/문화</a></li>
 							       <li><a href="searchBook?bookTitle=${searchText}&d_catg=200">종교</a></li>
+							       <li><a href="searchBook?bookTitle=${searchText}&d_catg=210">예술/대중문화</a></li>
+							       <li><a href="searchBook?bookTitle=${searchText}&d_catg=220">학습/참고서</a></li>
 						  	 </ul>
 						</div>
 		  	         </div>
@@ -245,7 +247,7 @@ html {overflow:scroll}
 		<a href="javascript:pagingFormSubmit(${pagenaviga.currentPage + pagenaviga.pagePerGroup})">▷▷</a>
 	</div>
 <!-- ----------------------------------------------------------검색폼 start------------------------------------------------- -->
-	<div class="pagingSearchForm">
+	<%-- <div class="pagingSearchForm">
 		<form id="pagingForm" method="get" action="searchBook">
 		<input type="hidden" id="page" name="page" />
 			<select name="searchform">
@@ -256,7 +258,7 @@ html {overflow:scroll}
 		 <input type="text"  name="bookTitle" placeholder="검색하시오"  value="${searchText}"/>
 		<input type="button" onclick="pagingFormSubmit(1);" value="검색">
 		</form>
-	</div>
+	</div> --%>
 <!-- ----------------------------------------------------------검색폼 end-------------------------------------------------- -->
 		</div>
 		</div>

@@ -54,7 +54,19 @@ pageEncoding="UTF-8"%>
                               <div class="logo">
                                   <!-- <div class="titlenaranhi"><a href="homeButton"><img class="titleimage" src="./assets/images/main logo.jpg"></a></div> -->
                               </div>
-								<h1>My Cart<span>for <font style="font-size:30px;color:#FC7D01;font-weight:bold;">${loginId}</font><font style="font-size:30px;color:#fdff00;">様</font></span></h1>                          
+								<h1>My Cart<span>for <font style="font-size:30px;color:#FC7D01;font-weight:bold;">${loginId}</font><font style="font-size:30px;color:#fdff00;">様</font></span></h1>
+									<div class="w3layouts-left" style="width: 40%;background: #ffb827;padding:0.5em;margin-left: 30%;">
+					               		<!--search-box-->
+					                  <div class="w3-search-box" style="width: 100%;margin-top: 0em;position: relative;z-index: 1;display: inline-block;border: 2px solid #fff;">
+					                     <form action="searchBook" >   <!-- <<<<<<<<<<<<<<<<여기 가 검색 부분 액션 이름 단 입니다. -->
+					                        <b><input type="text" name="bookTitle" placeholder="Search..." required="required" maxlength="25"
+					                        	style="outline: none;background: #fff;width: 93%;margin: 0;z-index: 10;font-size: 0.9em;color: #7A7B78;padding: 0.5em 0.5em;border: none;-webkit-appearance: none;display: inline-block;text-align: center;font-size: 15px;"></b>
+					                        <input type="submit" value="" 
+					                        style="    background: url(resources/assets/images/search.png)no-repeat;width: 20px;height: 20px;display: inline-block;vertical-align: text-top;border: none;outline: none;">
+					                     </form>
+					                  </div><!--//end-search-box-->
+					                  <div class="clearfix"> </div>
+					            	</div>                          
                           </header>
                       </div>
                       <div class="site-wrap">
@@ -339,6 +351,58 @@ pageEncoding="UTF-8"%>
                   </div>
               </footer> --%>
           </div>
+           <div class="footer">
+   	  <div class="wrap">
+	     <div class="section group">
+				<div class="col_1_of_4 span_1_of_4">
+						<h4>Information</h4>
+						<ul>
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">Customer Service</a></li>
+						</ul>
+					</div>
+				<div class="col_1_of_4 span_1_of_4">
+					<h4>Why buy from us</h4>
+						<ul>
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">Customer Service</a></li>
+						</ul>
+				</div>
+				<div class="col_1_of_4 span_1_of_4">
+					<h4>My account</h4>
+						<ul>
+							<li><a href="contact.html">Sign In</a></li>    <!-- 링크 수정 해야함 -->
+							<li><a href="index.html">View Cart</a></li>
+						</ul>
+				</div>
+				<div class="col_1_of_4 span_1_of_4">
+					<h4>Contact</h4>
+						<ul>
+							<li><span>010-4320-7840</span></li>
+							<li><span>010-8335-0698</span></li>
+							<li><span>010-8335-0698</span></li>
+							<li><span>010-8335-0698</span></li>
+						</ul>
+						
+				</div>
+				<div class="col_1_of_4 span_1_of_4">
+					<div class="social-icons">
+						<h4>SUPPORT</h4>
+				   		  <ul>
+						      <li><a href="https://www.aladin.co.kr/home/welcome.aspx" target="_blank"><img class="iconkugi" src="./BookForm/images/aladin.png" /></a></li>
+						      <li><a href="http://www.kyobobook.co.kr/index.laf?OV_REFFER" target="_blank"><img class="iconkugi" src="./BookForm/images/kyobo.jpg" /></a></li>
+						      <li><a href="https://book.naver.com" target="_blank"><img class="iconkugi" src="./BookForm/images/naver.ico" /></a></li>
+						      <li><a href="http://www.yes24.com/main/default.aspx" target="_blank"><img class="iconkugi" src="./BookForm/images/yes24.png" /></a></li>
+					     </ul>
+					     <div class="clear"></div>
+	 				</div>
+				</div>
+			</div>
+			 <div class="copy_right">
+				<p>Company Name © All rights Reseverd | Design by  <font style="color:#ff8600">Jeon Jae Hyoung</font></p>
+		   </div>
+        </div>
+    </div>
 
           <script src="./cart/js/jquery-3.3.1.min.js"></script>
           <script src="./cart/js/jquery-ui.js"></script>

@@ -108,7 +108,22 @@
 				<div class="logo">
 				</div>
 				<h1>My Page<span>for <font style="font-size:30px;color:#FC7D01;font-weight:bold;">${loginId}</font><font style="font-size:30px;color:#fdff00;">様</font></span></h1>
+					<div class="mu-hero-left" style="text-align:center;">
+		            	<div class="w3layouts-left" style="width: 40%;background: #ffb827;padding:0.5em;margin-left: 30%;">
+		               		<!--search-box-->
+		                  <div class="w3-search-box" style="width: 100%;margin-top: 0em;position: relative;z-index: 1;display: inline-block;border: 2px solid #fff;">
+		                     <form action="searchBook" >   <!-- <<<<<<<<<<<<<<<<여기 가 검색 부분 액션 이름 단 입니다. -->
+		                        <b><input type="text" name="bookTitle" placeholder="Search..." required="required" maxlength="25"
+		                        	style="outline: none;background: #fff;width: 93%;margin: 0;z-index: 10;font-size: 0.9em;color: #7A7B78;padding: 0.5em 0.5em;border: none;-webkit-appearance: none;display: inline-block;text-align: center;font-size: 15px;"></b>
+		                        <input type="submit" value="" 
+		                        style="    background: url(resources/assets/images/search.png)no-repeat;width: 20px;height: 20px;display: inline-block;vertical-align: text-top;border: none;outline: none;">
+		                     </form>
+		                  </div><!--//end-search-box-->
+		                  <div class="clearfix"> </div>
+		            	</div>
+		            </div>
 			</header>
+			
 		</div>
 <!-- ------------------------------------------------------------------ 헤드 단 end --------------------------------------------------------------- -->
 <!-- ------------------------------------------------------------------ mybooklist start ------------------------------------------------------- -->
@@ -126,7 +141,7 @@
     	</div>
 <!-- ----------------------------------------------------------------------list 제목 end----------------------------------------------------------------------- -->
 <!-- ----------------------------------------------------------------------책출력되는 부분 start----------------------------------------------------------------------- -->			
-	<div style="position:absolute;">	
+	<div style="position:absolute;width:100%;">	
 		<div class="main" style="margin-left:9%;margin-bottom: 40%;height: 75%;">
 			<div class="listDiv" style="margin-bottom:10px;">
 	   			<c:forEach var="list" items="${blist}">

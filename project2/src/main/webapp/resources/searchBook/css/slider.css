@@ -104,6 +104,23 @@
 	position: relative !important; 
 	width: 520px !important;
 	height: 610px;
+	content:"すみませんが、準備しています";
+	
+}
+.nivo-main-image::outside {
+	display: block !important;
+	position: relative !important; 
+	width: 520px !important;
+	height: 610px;
+	content:"すみませんが、準備しています";
+	
+}
+.nivo-main-image::outside::after {
+	display: block !important;
+	position: relative 
+	width: 520px
+	height: 610px;
+	content:"すみませんが、準備しています。";
 	
 }
 
@@ -122,7 +139,7 @@
 	background:white; 
 	filter:alpha(opacity=0); 
 	opacity:0;
-	padding:2em;
+	
 }
 /* The slices and boxes in the Slider */
 .nivo-slice {
@@ -131,7 +148,6 @@
 	z-index:5;
 	height:610px;
 	top:0;
-	padding:2em;
 }
 .nivo-box {
 	display:block;
@@ -139,7 +155,7 @@
 	z-index:5;
 	overflow:hidden;
 }
-.nivo-box img { display:block;padding:2em; }
+.nivo-box img { display:block; }
 .nivo-html-caption {
     display:none;
     

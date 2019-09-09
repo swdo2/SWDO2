@@ -26,11 +26,11 @@
 	}
 	
 	
-	if(contents.value == ''){
+	/* if(contents.value == ''){
 		alert('내용은 필수 입력 사항입니다.')
 		return false;
 	}
-	
+	 */
 		return true;
 	
  }
@@ -86,10 +86,7 @@
 						<input type = "submit" value = "저장" />
 					</td>
 				</tr>
-				
-				
 			</table>
 		</form>
-		<%=application.getRealPath("/") %>
 </body>
 </html>

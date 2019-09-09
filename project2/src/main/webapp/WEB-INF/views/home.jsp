@@ -31,9 +31,9 @@
 
   <!--   Fonts
     Open Sans for body font -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800" rel="stylesheet">
     <!-- Lato for Title -->
-  	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -43,21 +43,21 @@
     <!--[if lte IE 7]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
 
 <!-- -------------------------------------------------광고판 포더 Resources 링크 start ------------------------------------------------------------------------------------- -->
-	<link rel="stylesheet" href="./gwangGoPan/css/flexslider.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="./gwangGoPan/css/font-awesome.min.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="./gwangGoPan/css/menu.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="./gwangGoPan/css/popuo-box.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="./gwangGoPan/css/style.css" type="text/css" media="screen" />
+   <link rel="stylesheet" href="./gwangGoPan/css/flexslider.css" type="text/css" media="screen" />
+   <link rel="stylesheet" href="./gwangGoPan/css/font-awesome.min.css" type="text/css" media="screen" />
+   <link rel="stylesheet" href="./gwangGoPan/css/menu.css" type="text/css" media="screen" />
+   <link rel="stylesheet" href="./gwangGoPan/css/popuo-box.css" type="text/css" media="screen" />
+   <link rel="stylesheet" href="./gwangGoPan/css/style.css" type="text/css" media="screen" />
 <!-- -------------------------------------------------광고판 포더 Resources 링크 end ------------------------------------------------------------------------------------- -->
 <style>
 html {overflow:scroll}
 </style>
 
-				<!-- jQuery if needed -->
+            <!-- jQuery if needed -->
 
     <%-- <script src = "./ebook/reader/js/libs/jquery-3.4.1.js"></script> --%>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	<script type="text/javascript">
+   <script type="text/javascript">
         $(document).ready(function() {
             $('#loginForm').on("submit",function() {
                 console.log('check function');
@@ -97,302 +97,321 @@ html {overflow:scroll}
             })
         });
 
-		 	$(function(){
-			    $(".showpassword").each(function(index,input) {
-			        var $input = $(input);
-			        $("<p class='opt'/>").append(
-			            $("<input type='checkbox' class='showpasswordcheckbox' id='showPassword' />").click(function() {
-			                var change = $(this).is(":checked") ? "text" : "password";
-			                var rep = $("<input placeholder='Password' type='" + change + "' />")
-			                    .attr("id", $input.attr("id"))
-			                    .attr("name", $input.attr("name"))
-			                    .attr('class', $input.attr('class'))
-			                    .val($input.val())
-			                    .insertBefore($input);
-			                $input.remove();
-			                $input = rep;
-			             })
-			        ).append($("<label for='showPassword'/>").text("Show password")).insertAfter($input.parent());
-			    });
-			    $('#showPassword').click(function(){
-					if($("#showPassword").is(":checked")) {
-						$('.icon-lock').addClass('icon-unlock');
-						$('.icon-unlock').removeClass('icon-lock');
-					} else {
-						$('.icon-unlock').addClass('icon-lock');
-						$('.icon-lock').removeClass('icon-unlock');
-					}
-			    });
-			});
+          $(function(){
+             $(".showpassword").each(function(index,input) {
+                 var $input = $(input);
+                 $("<p class='opt'/>").append(
+                     $("<input type='checkbox' class='showpasswordcheckbox' id='showPassword' />").click(function() {
+                         var change = $(this).is(":checked") ? "text" : "password";
+                         var rep = $("<input placeholder='Password' type='" + change + "' />")
+                             .attr("id", $input.attr("id"))
+                             .attr("name", $input.attr("name"))
+                             .attr('class', $input.attr('class'))
+                             .val($input.val())
+                             .insertBefore($input);
+                         $input.remove();
+                         $input = rep;
+                      })
+                 ).append($("<label for='showPassword'/>").text("Show password")).insertAfter($input.parent());
+             });
+             $('#showPassword').click(function(){
+               if($("#showPassword").is(":checked")) {
+                  $('.icon-lock').addClass('icon-unlock');
+                  $('.icon-unlock').removeClass('icon-lock');
+               } else {
+                  $('.icon-unlock').addClass('icon-lock');
+                  $('.icon-lock').removeClass('icon-unlock');
+               }
+             });
+         });
 
 
-		</script>
+      </script>
 
-	<!-- 스크롤 막는 방법  추후에 로그인을 하게 되면 허용을 해야한다. -->
-	<!-- 	<script>
-		$('html, body').css({'overflow': 'hidden', 'height': '100%'});
-		$('#element').on('scroll touchmove mousewheel', function(event) {
-		  event.preventDefault();
-		  event.stopPropagation();
-		  return false;
-		});
-		</script> -->
+   <!-- 스크롤 막는 방법  추후에 로그인을 하게 되면 허용을 해야한다. -->
+   <!--    <script>
+      $('html, body').css({'overflow': 'hidden', 'height': '100%'});
+      $('#element').on('scroll touchmove mousewheel', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        return false;
+      });
+      </script> -->
   </head>
 
   <body>
   <div>
   </div>
- 	<!-- Start Header -->
-	<header id="mu-header" class="" role="banner">
-		<div class="container" style="width:100%;">
-			<nav class="navbar navbar-default mu-navbar" style="width:100%;">
-			  	<div class="container-fluid" style="padding-right: 0px;">
-				    <!-- Brand and toggle get grouped for better mobile display -->
-				    <div class="navbar-header">
-				      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-				        <span class="sr-only">Toggle navigation</span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				      </button>
-				      <!-- Text Logo -->
+    <!-- Start Header -->
+   <header id="mu-header" class="" role="banner">
+      <div class="container" style="width:100%;">
+         <nav class="navbar navbar-default mu-navbar" style="width:100%;">
+              <div class="container-fluid" style="padding-right: 0px;">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <!-- Text Logo -->
 <!-- --------------------------------------------start 홈버튼 누르면 메인 페이지 갈수 있게 하는 겁니다.----------------------------------------------------->
-				      <a class="navbar-brand" href="homeButton"><i class="fa fa-book" aria-hidden="true"></i> 本ーE</a>
+                  <a class="navbar-brand" href="homeButton"><i class="fa fa-book" aria-hidden="true"></i> 本ーE</a>
 <!-- --------------------------------------------end 홈버튼 누르면 메인 페이지 갈수 있게 하는 겁니다.--------------------------------------------------- -->
-				      <!-- Image Logo -->
-				      <!-- <a class="navbar-brand" href="index.html"><img src="./assets/images/logo.png"></a> -->
-				    </div>
+                  <!-- Image Logo -->
+                  <!-- <a class="navbar-brand" href="index.html"><img src="./assets/images/logo.png"></a> -->
+                </div>
 <!-- ------------------------------------로그인 했을경우 뜨게하는 부분  start ------------------------------------------------- -->
-				<c:if test="${sessionScope.loginId != null}">
-				    <!-- Collect the nav links, forms, and other content for toggling -->
-				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="width: 100%; padding-right: 0px;">
-				      	<ul class="nav navbar-nav mu-menu navbar-right">
-				      		<li><a href="boardForm">Board</a></li>
-					        <li><a href="myPageForm">My Page</a></li>
-					        <li><a href="cartForm">My Cart</a></li>
-					        <li><a href="logOut">Log Out</a></li>
-					        <li><a href="#mu-author">고객센터</a></li>
-				      	</ul>
-				    </div><!-- /.navbar-collapse -->
-    			</c:if>
+            <c:if test="${sessionScope.loginId != null}">
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="width: 100%; padding-right: 0px;">
+                     <ul class="nav navbar-nav mu-menu navbar-right">
+                        <li><a href="boardForm">Board</a></li>
+                       <li><a href="myPageForm">My Page</a></li>
+                       <li><a href="cartForm">My Cart</a></li>
+                       <li><a href="logOut">Log Out</a></li>
+                       <li><a href="#mu-author">고객센터</a></li>
+                     </ul>
+                </div><!-- /.navbar-collapse -->
+             </c:if>
 <!-- ------------------------------------로그인 했을경우 뜨게하는 부분  end ------------------------------------------------------------------- -->
 
-			  	</div><!-- /.container-fluid -->
-			</nav>
-		</div>
-	</header>
-	<!-- End Header -->
+              </div><!-- /.container-fluid -->
+         </nav>
+      </div>
+   </header>
+   <!-- End Header -->
 
-	<!-- 로그인 폼 부분 start -->
-	<section id="mu-hero">
-	  <c:if test="${sessionScope.loginId == null}">
-		<div class="container" style="margin-top: 5%;">
-			<div class="row">
-				<div class="col-md-6 col-sm-6 col-sm-push-6">
-					<div class="mu-hero-right">
-					</div>
-				</div>
-				<div class="col-md-6 col-sm-6 col-sm-pull-6" style="width:90%;">
-					<div class="mu-hero-left" style="margin-left: 64%;">
-						<section class="main">
-							<form id = "loginForm" class="form-2" action="logIn" method="post">
-								<h1><span class="log-in">Log in</span> or <span class="sign-up">sign up</span></h1>
-								<p class="float">
-									<label for="login"><i class="icon-user"></i>Username</label>
-									<!-- 로그인 아이디 입력하는곳 -->
-									<input type="text" name="person_id" id = "person_id" placeholder="Username or email">
-								</p>
-								<p class="float">
-									<label for="password"><i class="icon-lock"></i>Password</label>
-									<!-- 로그인 패스워드 입력하는곳 -->
-									<input type="password" name="person_password" id = "person_password" placeholder="Password" class="showpassword">
-								</p>
-								<p class="clearfix">
-									<a href="Join" class="log-twitter">Join</a>
-									<input type="submit" name="submit" value="Log in">
-								</p>
-							</form>​​
-						</section>
-					</div>
-				</div>
-			</div>
-		</div>
-	</c:if>
+   <!-- 로그인 폼 부분 start -->
+   <section id="mu-hero">
+<!-- ----------------------------------------로그인 안해도 검색 가능합니다 start----------------------------------------------------------------------------------------- -->
+   		<div class="w3layouts-left" style="width: 40%;background: #ffb827;padding:1.2em;margin-left: 30%;">
+             <div class="w3-search-box" style="width: 100%;margin-top: 0em;position: relative;z-index: 1;display: inline-block;border: 2px solid #fff;">
+                <form action="searchBook" >   <!-- <<<<<<<<<<<<<<<<여기 가 검색 부분 액션 이름 단 입니다. -->
+                   <b><input type="text" name="bookTitle" placeholder="Search..." required="required" maxlength="25"
+                   	style="outline: none;background: #fff;width: 93%;margin: 0;z-index: 10;font-size: 0.9em;color: #7A7B78;padding: 0.5em 0.5em;border: none;-webkit-appearance: none;display: inline-block;text-align: center;font-size: 15px;"></b>
+                   <input type="submit" value="" 
+                   style="    background: url(resources/assets/images/search.png)no-repeat;width: 20px;height: 20px;display: inline-block;vertical-align: text-top;border: none;outline: none;margin-left: 5px;">
+                </form>
+             </div>
+             <div class="clearfix"> </div>
+       	</div>
+  <!-- ----------------------------------------로그인 안해도 검색 가능합니다 end----------------------------------------------------------------------------------------- -->
+     <c:if test="${sessionScope.loginId == null}">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-6 col-sm-6 col-sm-push-6">
+               <div class="mu-hero-right">
+               </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-sm-pull-6" style="width:90%;">
+               <div class="mu-hero-left" style="margin-left: 63%;">
+                  <section class="main">
+                     <form id = "loginForm" class="form-2" action="logIn" method="post">
+                        <h1><span class="log-in">Log in</span> or <span class="sign-up">sign up</span></h1>
+                        <p class="float">
+                           <label for="login"><i class="icon-user"></i>Username</label>
+                           <!-- 로그인 아이디 입력하는곳 -->
+                           <input type="text" name="person_id" id = "person_id" placeholder="Username or email">
+                        </p>
+                        <p class="float">
+                           <label for="password"><i class="icon-lock"></i>Password</label>
+                           <!-- 로그인 패스워드 입력하는곳 -->
+                           <input type="password" name="person_password" id = "person_password" placeholder="Password" class="showpassword">
+                        </p>
+                        <p class="clearfix">
+                           <a href="Join" class="log-twitter">Join</a>
+                           <input type="submit" name="submit" value="Log in">
+                        </p>
+                     </form>  
+                  </section>
+               </div>
+            </div>
+         </div>
+      </div>
+   </c:if>
 <!-- -----------------------------------------로그인 했을경우 뜨게하는 부분  start ------------------------------------------------------- -->
 <!-- ----------------------------------------------광고판 시작 부분입니다. start--------------------------------------------------------- -->
-	<c:if test="${sessionScope.loginId != null}">
-		 <div class="banner col-md-8" style="width: 100%;margin-left: 41%;margin-top: 5%;">
-			<div class="slider">
-				<div class="flexslider">
-					<ul class="slides" style="list-style:none;">
-						<li>
-							<img src="./gwangGoPan/images/book1 we are bye.jpg" class="img-responsive" alt="" />
-						</li>
-						<li>
-							<img src="./gwangGoPan/images/book2 we are bye.jpg" class="img-responsive" alt="" />
-						</li>
-						<li>
-							<img src="./gwangGoPan/images/book3 we are bye.jpg" class="img-responsive" alt="" />
-						</li>
-						<li>
-							<img src="./gwangGoPan/images/book4 we are bye.jpg" class="img-responsive" alt="" />
-						</li>
-				  	</ul>
-				</div>
-			</div>
-		</div>
-								 <!-- FlexSlider -->
-	    <script defer src="./gwangGoPan/js/jquery.flexslider.js"></script>
-					<script type="text/javascript">
-						$(function(){
-						 SyntaxHighlighter.all();
-						});
-						$(window).load(function(){
-						  $('.flexslider').flexslider({
-							animation: "slide",
-							start: function(slider){
-							  $('body').removeClass('loading');
-							}
-						 });
-						});
-					 </script>
+   <c:if test="${sessionScope.loginId != null}">
+       <div class="banner col-md-8" style="width: 100%;margin-left: 38.5%;margin-top: 5%;">
+         <div class="slider">
+            <div class="flexslider">
+               <ul class="slides" style="list-style:none;">
+                  <li>
+                     <img src="./gwangGoPan/images/book1 we are bye.jpg" class="img-responsive" alt="" />
+                  </li>
+                  <li>
+                     <img src="./gwangGoPan/images/book2 we are bye.jpg" class="img-responsive" alt="" />
+                  </li>
+                  <li>
+                     <img src="./gwangGoPan/images/book3 we are bye.jpg" class="img-responsive" alt="" />
+                  </li>
+                  <li>
+                     <img src="./gwangGoPan/images/book4 we are bye.jpg" class="img-responsive" alt="" />
+                  </li>
+                 </ul>
+            </div>
+         </div>
+      </div>
+                         <!-- FlexSlider -->
+       <script defer src="./gwangGoPan/js/jquery.flexslider.js"></script>
+               <script type="text/javascript">
+                  $(function(){
+                   SyntaxHighlighter.all();
+                  });
+                  $(window).load(function(){
+                    $('.flexslider').flexslider({
+                     animation: "slide",
+                     start: function(slider){
+                       $('body').removeClass('loading');
+                     }
+                   });
+                  });
+                </script>
 <!-- ----------------------------------------------광고판 끝 부분입니다. end--------------------------------------------------------- -->
 
 <!-- ----------------------------------------------검색 바 시작부분 입니다. start-------------------------------------------------------- -->
-			<div class="mu-hero-left" style="text-align:center;">
-				<div class="w3layouts-left">
-					<!--search-box-->
-						<div class="w3-search-box">
-							<form action="searchBook" >   <!-- <<<<<<<<<<<<<<<<여기 가 검색 부분 액션 이름 단 입니다. -->
-								<b><input type="text" name="bookTitle" placeholder="Search..." required="required" maxlength="25"></b>
-								<input type="submit" value="">
-							</form>
-						</div><!--//end-search-box-->
-						<div class="clearfix"> </div>
-				</div>
+         <div class="mu-hero-left" style="text-align:center;">
+            <div class="w3layouts-left">
+               <!--search-box-->
+                  <div class="w3-search-box">
+                     <form action="searchBook" >   <!-- <<<<<<<<<<<<<<<<여기 가 검색 부분 액션 이름 단 입니다. -->
+                        <b><input type="text" name="bookTitle" placeholder="Search..." required="required" maxlength="25"></b>
+                        <input type="submit" value="">
+                     </form>
+                  </div><!--//end-search-box-->
+                  <div class="clearfix"> </div>
+            </div>
 <!-- ----------------------------------------------검색 바 끝부분 입니다. end----------------------------------------------------------- -->
-				<div style="width:100%;">
-					<a href="boardForm" class="mu-primary-btn" style="width:10%">BOARD</a>
-					<a href="cartForm" class="mu-primary-btn" style="width:10%">MY CART</a>
-					<a href="myPageForm" class="mu-primary-btn">MY BOOK PAGE</a>
-				</div>
-			</div>
-	 </c:if>
+            <div style="width:100%;">
+               <a href="boardForm" class="mu-primary-btn" style="width:10%">BOARD</a>
+               <a href="cartForm" class="mu-primary-btn" style="width:10%">MY CART</a>
+               <a href="myPageForm" class="mu-primary-btn">MY BOOK PAGE</a>
+            </div>
+         </div>
+    </c:if>
 <!-- ------------------------------------로그인 했을경우 뜨게하는 부분  end ---------------------------------------------------------------- -->
-	</section>
+   </section>
 <!-- ------------------------------------로그인 폼 부분 end ------------------------------------------------------------------------ -->
 
 <!-- Start main content -->
-	<main role="main"> 
-		<!-- Start Author -->
-		<section id="mu-author">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="mu-author-area">
-							<div class="mu-heading-area">
-								<h2 class="mu-heading-title">고객센터</h2>
-								<span class="mu-header-dot"></span>
-							</div>
+   <main role="main"> 
+      <!-- Start Author -->
+      <section id="mu-author">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="mu-author-area">
+                     <div class="mu-heading-area">
+                        <h2 class="mu-heading-title">고객센터</h2>
+                        <span class="mu-header-dot"></span>
+                     </div>
 
-							<!-- Start Author Content -->
-							<div class="mu-author-content">
-								<div class="row">
-									<div class="col-md-6">
-										<div class="mu-author-image">
-											<img src="./assets/images/author.jpg" alt="Author Image">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="mu-author-info">
-											<h3>훌륭한 E_BOOK을 제공해드리겠습니다.</h3>
-											<p>SWDO 광주 2기 이동근</p>
-											<p>SWDO 광주 2기 장우서</p>
-											<p>SWDO 광주 2기 나홍윤</p>
-											<p>SWDO 광주 2기 전재형</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- End Author Content -->
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- End Author -->
+                     <!-- Start Author Content -->
+                     <div class="mu-author-content">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="mu-author-image">
+                                 <img src="./assets/images/author.jpg" alt="Author Image">
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="mu-author-info">
+                                 <h3>훌륭한 E_BOOK을 제공해드리겠습니다.</h3>
+                                 <p>SWDO 광주 2기 이동근</p>
+                                 <p>SWDO 광주 2기 장우서</p>
+                                 <p>SWDO 광주 2기 나홍윤</p>
+                                 <p>SWDO 광주 2기 전재형</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- End Author Content -->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- End Author -->
 
-<!-- 		Start Testimonials  -->
-		<section id="mu-testimonials">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="mu-testimonials-area">
-							<div class="mu-heading-area">
-								<h2 class="mu-heading-title">What Our Readers Says</h2>
-								<span class="mu-header-dot"></span>
-							</div>
+<!--       Start Testimonials  -->
+      <section id="mu-testimonials">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="mu-testimonials-area">
+                     <div class="mu-heading-area">
+                        <h2 class="mu-heading-title">What Our Readers Says</h2>
+                        <span class="mu-header-dot"></span>
+                     </div>
 
-							<div class="mu-testimonials-block">
-								<ul class="mu-testimonial-slide">
+                     <div class="mu-testimonials-block">
+                        <ul class="mu-testimonial-slide">
 
-									<li>
-										<p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever."</p>
-										<img class="mu-rt-img" src="./assets/images/reader-1.jpg" alt="img">
-										<h5 class="mu-rt-name"> - Alice Boga</h5>
-										<span class="mu-rt-title">CEO, Apple Inc.</span>
-									</li>
+                           <li>
+                              <p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever."</p>
+                              <img class="mu-rt-img" src="./assets/images/reader-1.jpg" alt="img">
+                              <h5 class="mu-rt-name"> - Alice Boga</h5>
+                              <span class="mu-rt-title">CEO, Apple Inc.</span>
+                           </li>
 
-									<li>
-										<p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever."</p>
-										<img class="mu-rt-img" src="./assets/images/reader-2.jpg" alt="img">
-										<h5 class="mu-rt-name"> - Jhon Doe</h5>
-										<span class="mu-rt-title">Director, Google Inc.</span>
-									</li>
+                           <li>
+                              <p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever."</p>
+                              <img class="mu-rt-img" src="./assets/images/reader-2.jpg" alt="img">
+                              <h5 class="mu-rt-name"> - Jhon Doe</h5>
+                              <span class="mu-rt-title">Director, Google Inc.</span>
+                           </li>
 
-									<li>
-										<p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever."</p>
-										<img class="mu-rt-img" src="./assets/images/reader-3.jpg" alt="img">
-										<h5 class="mu-rt-name"> - Jessica Doe</h5>
-										<span class="mu-rt-title">Web Developer</span>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-<!-- 		End Testimonials -->
+                           <li>
+                              <p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever."</p>
+                              <img class="mu-rt-img" src="./assets/images/reader-3.jpg" alt="img">
+                              <h5 class="mu-rt-name"> - Jessica Doe</h5>
+                              <span class="mu-rt-title">Web Developer</span>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+<!--       End Testimonials -->
 
-		<!-- Start Google Map -->
-		<section id="mu-google-map">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d589888.4396405783!2d-82.41588603632052!3d32.866951223053896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f9f727a4ed30eb%3A0xf2139b0c5c7ae1ec!2sDooley+Branch+Rd%2C+Millen%2C+GA+30442%2C+USA!5e0!3m2!1sen!2sbd!4v1497376364225"
-					width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
-		</section>
-		<!-- End Google Map -->
+      <!-- Start Google Map -->
+      <section id="mu-google-map">
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d589888.4396405783!2d-82.41588603632052!3d32.866951223053896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f9f727a4ed30eb%3A0xf2139b0c5c7ae1ec!2sDooley+Branch+Rd%2C+Millen%2C+GA+30442%2C+USA!5e0!3m2!1sen!2sbd!4v1497376364225"
+               width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </section>
+      <!-- End Google Map -->
 
-	</main>
+   </main>
 
-	<!-- End main content -->
+   <!-- End main content -->
 
 
-	<!-- Start footer -->
-	<footer id="mu-footer" role="contentinfo">
-		<div class="container">
-			<div class="mu-footer-area">
-				<div class="mu-social-media">
-					<a href="#"><i class="fa fa-facebook"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-					<a href="#"><i class="fa fa-google-plus"></i></a>
-					<a href="#"><i class="fa fa-linkedin"></i></a>
-				</div>
-				<p class="mu-copyright">&copy; Copyright <a rel="nofollow" href="http://markups.io">markups.io</a>. All right reserved.</p>
-			</div>
-		</div>
-	</footer>
- 	<!-- End footer -->
+   <!-- Start footer -->
+   <footer id="mu-footer" role="contentinfo">
+      <div class="container">
+         <div class="mu-footer-area">
+            <div class="mu-social-media">
+               <a href="#"><i class="fa fa-facebook"></i></a>
+               <a href="#"><i class="fa fa-twitter"></i></a>
+               <a href="#"><i class="fa fa-google-plus"></i></a>
+               <a href="#"><i class="fa fa-linkedin"></i></a>
+            </div>
+            <p class="mu-copyright">&copy; Copyright <a rel="nofollow" href="http://markups.io">markups.io</a>. All right reserved.</p>
+         </div>
+      </div>
+   </footer>
+    <!-- End footer -->
+   <script type="text/javascript">
+		$(document).ready(function() {
+			$().UItoTop({ easingType: 'easeOutQuart' });
 
+		});
+	</script>
+	<a href="#" id="toTop"><span id="toTopHover"> </span></a>
 
 
     <!-- jQuery library -->
@@ -400,7 +419,7 @@ html {overflow:scroll}
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <!-- Bootstrap -->
     <script src="./assets/js/bootstrap.min.js"></script>
-	<!-- Slick slider -->
+   <!-- Slick slider -->
     <script type="text/javascript" src="./assets/js/slick.min.js"></script>
     <!-- Counter js -->
     <script type="text/javascript" src="./assets/js/counter.js"></script>
@@ -410,7 +429,7 @@ html {overflow:scroll}
 
 
     <!-- Custom js -->
-	<script type="text/javascript" src="./assets/js/custom.js"></script>
+   <script type="text/javascript" src="./assets/js/custom.js"></script>
 
 
   </body>

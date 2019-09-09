@@ -32,9 +32,14 @@ public class PurchaseController {
 		logger.debug("purchase ajax");
 		String person_id = (String) session.getAttribute("loginId");
 	
+		int cnt = 0;
+		if (person_id == null) {
+			return cnt = 2;
+		}
+		
 		// 중복인지 아닌지 체크하는 부분 0이면 중복아님 1이면 중복
 		
-		int cnt = pd.purchaseDup(isbn, person_id);
+		cnt = pd.purchaseDup(isbn, person_id);
 		logger.debug("cnt : {}", cnt);
 		if(cnt == 0) {
 			pd.purchaseBook(isbn,person_id);

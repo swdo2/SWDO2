@@ -56,7 +56,6 @@
 			<mapping path="/boardForm" />
 			<mapping path="/writeForm" />
 			<mapping path="/cartForm" />
-			<mapping path="/searchBook" />
 			<mapping path="/BookForm" />
 			
 	

@@ -48,7 +48,12 @@ html {overflow:scroll}
                         if(confirm("책을 구매 하였습니다. 마이페이지로 가시겠습니까?")) {
                             window.location.href = "myPageForm";
                         }
-                    } else {
+                    } else if (cnt == 2){
+                    	alert('로그인후 이용해주세요');
+                    	window.location.href = "homeButton";
+                    } 
+                    
+                    else {
                         alert('이미 구매한 책입니다.');
                     }
             	}
@@ -69,7 +74,12 @@ html {overflow:scroll}
                         if(confirm("책을 장바구니에 담았습니다. 장바구니로 가시겠습니까?")) {
                             window.location.href = "cartForm";
                         }
-                    } else {
+                    }else if (cnt == 2){
+                    	alert('로그인후 이용해주세요');
+                    	window.location.href = "homeButton";
+                    } 
+                    
+                    else {
                         alert('이미 장바구니에 있는 책입니다..');
                     }
                 }

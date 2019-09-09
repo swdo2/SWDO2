@@ -106,12 +106,28 @@ public class MypageController {
 	 * @return model blist 책검색시 뿌려주는거
 	 * @return model total 책검색시 타이틀 검색 결과
 	 */
+	
+	private String BT = null;
 	@RequestMapping(value = "searchBook", method = RequestMethod.GET)
-	public String searchBook(HttpSession session, Model model, String bookTitle,
-			@RequestParam(value = "page", defaultValue = "1") int page// start
-			, @RequestParam(value = "searchText", defaultValue = "") String searchText) {
+	public String searchBook(HttpSession session, Model model
+			,@RequestParam (value = "bookTitle", defaultValue = "")String bookTitle
+			, @RequestParam(value = "page", defaultValue = "1") int page// start
+			, @RequestParam(value = "d_catg", defaultValue = "") String d_catg ){
 
-		List<Book> blist = nb2.searchBook("query", bookTitle, 10, page);
+		if(bookTitle!=""){
+			BT=bookTitle;
+		}
+		if(bookTitle==""){
+			bookTitle=BT;
+		}
+		
+		
+
+
+		
+		System.out.println("카테고리값은?"+d_catg);
+		List<Book> blist = nb2.searchBook("d_titl", bookTitle, 10, page,d_catg);
+		System.out.println("blist 를 받았는지 확인!");
 		String address = "type=m1";
 		// 자른 결과
 		String cutresult;
@@ -123,7 +139,7 @@ public class MypageController {
 		}
 
 		// title을 검색해 total에전체 문자열을 담는다
-		String total = sb.booksearch(bookTitle);
+		String total = sb.booksearch(bookTitle,d_catg);
 		// searchTotal을 사용해 검색한 값의 total값을 String 형으로 쪼개서 다시 total에넣어줌
 		total = searchTotal(total);
 		// 총 검샛 갯수를 스트링형에서 인트형으로

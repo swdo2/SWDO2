@@ -26,13 +26,13 @@ public class NaverBookService2 {
  
     //display ==> 몇개 출력
     //start==>몇번쨰부터 (item)
-    public List<Book> searchBook(String type,String keyword, int display, int start){
+    public List<Book> searchBook(String type,String keyword, int display, int start,String catg){
     	start= 1+10*(start-1);
         List<Book> list = null;
         try {
         	URL url;
-            url =new URL("https://openapi.naver.com/v1/search/book.xml?"
-            		+type+"="+ URLEncoder.encode(keyword, "UTF-8")
+            url =new URL("https://openapi.naver.com/v1/search/book_adv.xml?"
+            		+type+"="+ URLEncoder.encode(keyword, "UTF-8")+"&d_catg="+catg
             		+ (display !=0 ? "&display=" +display :10)
                     + (start !=0 ? "&start=" +start :0));
             /*URL url;

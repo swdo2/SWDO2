@@ -154,18 +154,18 @@ html {overflow:scroll}
 						<div class="categories" style="margin-left:27%;margin-right:30%;">
 						   <ul>
 						  	   <h3>Categories</h3>
-							      <li><a href="#">All</a></li>
-							      <li><a href="#">Hindi</a></li>
-							      <li><a href="#">Telugu</a></li>
-							      <li><a href="#">English</a></li>
-							      <li><a href="#">Tamil</a></li>
-							       <li><a href="#">Malayalam</a></li>
-							       <li><a href="#">Kannada</a></li>
-							       <li><a href="#">Bengali</a></li>
-							       <li><a href="#">Assami</a></li>
-							       <li><a href="#">Kids</a></li>
-							       <li><a href="#">Animation</a></li>
-							       <li><a href="#">Games</a></li>
+							      <li><a href="searchBook?bookTitle=${searchText}">All</a></li>
+							      <li><a href="searchBook?bookTitle=${searchText}&d_catg=100">소설</a></li>
+							      <li><a href="searchBook?bookTitle=${searchText}&d_catg=110">시</a></li>
+							      <li><a href="searchBook?bookTitle=${searchText}&d_catg=120">인문</a></li>
+							      <li><a href="searchBook?bookTitle=${searchText}&d_catg=130">가정/생활/요리</a></li>
+							       <li><a href="searchBook?bookTitle=${searchText}&d_catg=140">건강</a></li>
+							       <li><a href="searchBook?bookTitle=${searchText}&d_catg=150">취미/레저</a></li>
+							       <li><a href="searchBook?bookTitle=${searchText}&d_catg=160">경제/경영</a></li>
+							       <li><a href="searchBook?bookTitle=${searchText}&d_catg=170">자기개발</a></li>
+							       <li><a href="searchBook?bookTitle=${searchText}&d_catg=180">사회</a></li>
+							       <li><a href="searchBook?bookTitle=${searchText}&d_catg=190">역사/문화</a></li>
+							       <li><a href="searchBook?bookTitle=${searchText}&d_catg=200">종교</a></li>
 						  	 </ul>
 						</div>
 		  	         </div>

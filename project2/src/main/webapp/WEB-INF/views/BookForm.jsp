@@ -53,20 +53,26 @@
         })
 		$('.addCart').on("click",function() {
 
-			var bisbn = $(this).attr('id');
+			var isbn = $(this).attr('id');
 
 			$.ajax({
-				url:'cart'
-				,data:{book_isbn:bisbn}
-				,type:'get'
-				,dataType:'text'
-				,success:function suc(e){
-					alert(e);
-				}
-				,error:function sss(x){
-					alert('실패 ㅠㅠ');
-				}
-			});
+                url : 'savecart'
+                ,data : {isbn : isbn}
+                ,dataType : 'text'
+                ,type : "get"
+                ,success : function(cnt) {
+                    if(cnt == 0 ) {
+                        if(confirm("책을 장바구니에 담았습니다. 장바구니로 가시겠습니까?")) {
+                            window.location.href = "cartForm";
+                        }
+                    } else {
+                        alert('이미 장바구니에 있는 책입니다..');
+                    }
+                }
+                ,error : function() {
+                    alert('.clickku에러')
+                }
+            })
 
 
 			console.log(bisbn);
@@ -250,7 +256,7 @@
 					 		   <div class="movie_desc">
 							    <h3><a href="BookForm?isbn=${book.isbn}">${book.title}</a></h3>
 								   <p><span>&#8361;${book.price}</span> &nbsp; &#8361;${book.discount }</p>
-								      <span id = "${book.isbn}" class = "addCart" ><a href="#">Add to Cart</a></span>
+								      <span id = "${book.isbn}" class = "addCart" ><a style="color:aliceblue;cursor:pointer">Add to Cart</a></span>
 								 </div>
 								<div class="clear"></div>
 					 		</div>

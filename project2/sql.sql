@@ -95,6 +95,7 @@ CREATE TABLE Purchaseinfo
 	person_id varchar2(20) NOT NULL,
 	purchaseinfo_rentalperiod date,
 	purchase_isbn varchar2(50) NOT NULL,
+	purchaseinfo_first number DEFAULT 1,
 	PRIMARY KEY (person_id, purchase_isbn)
 );
 

@@ -12,13 +12,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class Searchbook {
 
-	public String booksearch(String title) {
+	public String booksearch(String title,String catg) {
 		String clientId = "7yWgylF_vyHPagLESoW_";// 애플리케이션 클라이언트 아이디값";
 		String clientSecret = "PD4CPtDuvU";// 애플리케이션 클라이언트 시크릿값";
 		String result = null;
 		try {
 			String text = URLEncoder.encode(title, "UTF-8");
-			String apiURL = "https://openapi.naver.com/v1/search/book.xml?query=" + text; // json
+			String apiURL = "https://openapi.naver.com/v1/search/book_adv.xml?d_titl=" + text+"&d_catg="+catg; // json
 																						// 결과
 			// String apiURL =
 			// "https://openapi.naver.com/v1/search/blog.xml?query="+ text; //

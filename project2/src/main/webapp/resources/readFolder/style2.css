@@ -1,0 +1,224 @@
+@CHARSET "UTF-8";
+/* html { */
+/*   background: linear-gradient(to bottom, #FDD692, #F17F42 ); */
+/*   height: auto !important; */
+/* } */
+/* body { */
+/* letter-spacing: -0.05em !important; */
+/*   background: transparent; */
+/*   font-family: 'Nanum Gothic', sans-serif; */
+/* } */
+
+/* 전체 쉐도우 */
+
+header #header-bar>.row,
+#main .menu-wrapper,
+#main #main-content>div.frame {
+  box-shadow: 3px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 로고밑 NAV bar */
+
+header #header-bar>.row {
+  border-top: 4px solid  #F17F42;
+  border-right: none;
+  border-bottom: none;
+}
+
+/* 헤더 배너 */
+
+header .row>div:nth-child(1)>a {
+  display: block;
+  width: 145px;
+  height: 50px;
+  background: url(https://upload.tgd.kr/20190521/93f0900191cf2808d62cfdea5d2d9908.png) no-repeat;
+  background-size: auto 50px;
+}
+
+header .row>div:nth-child(1)>a>img {
+  display: none;
+	
+	filter: grayscale(100%);
+  opacity: 0.8;
+}
+
+/* 검색폼 보더 */
+
+header #right-search-form>input[type='text'] {
+  border: 3px solid #FFEEE4;
+}
+
+/* 트게더 전체메뉴 / 유용한링크 / 트위치 스케쥴 */
+
+#main .menu-wrapper>.header {
+  background:  #F17F42;
+}
+
+.fa-navicon:before,
+.fa-reorder:before,
+.fa-bars:before {
+  color: white;
+}
+
+.fa-square:before {
+  color: #FFEEE4;
+}
+
+header #header-bar>.row,
+#main .menu-wrapper,
+#main #main-content>div.frame {
+  border-right: none;
+  border-bottom: none;
+}
+
+#main .menu-wrapper {
+  border: none;
+}
+
+/* 헤더 검색 버튼 */
+
+header #right-search-form>#right-search-btn {
+  color: #FFEEE4;
+}
+
+/* 헤더 [광고]배경색 */
+
+header #header-bar #header-top-notice strong.notice-badge {
+  background: #CE6D39;
+}
+
+/* fa색상 */
+
+header #header-bar .fa {
+  color: #FFEEE4;
+}
+
+/* 스트리머 게시판 상단 정보 글씨색상 */
+
+#board-info #board-info-bottom a {
+  color: #CE6D39;
+}
+
+/* 좌측메뉴 숏컷링크 글씨 색상 */
+
+#main .menu-wrapper>a>em {
+  color: #FFEEE4;
+}
+
+/* 좌측메뉴 메뉴사이의 공간 색상 */
+
+#main .menu-wrapper .spacer {
+  background: #FFEEE4;
+  height: 0.15em;
+}
+
+/* 게시글 관련부분 */
+
+#article-list>.article-list-row>.item>.list-title>.list-writer>span {
+  width: 120px !important;
+}
+
+#article-list #article-list-category {
+  border-top: 2px solid #CE6D39;
+  background: white;
+}
+
+#article-list #article-list-category>a {
+  background: white;
+}
+
+#article-list>.article-list-row>.item>.list-header>span {
+  background-color: #CE6D39;
+}
+
+#article-list>.article-list-row>.item>.list-title>small.comment-count {
+  color: #CE6D39;
+}
+
+#article-list>.article-list-row>.item>.list-title>.list-writer.logged>span {
+  color: #CE6D39;
+}
+
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover {
+  background-color: #CE6D39;
+  border-color: #CE6D39;
+}
+
+.pagination>li>a:focus,
+.pagination>li>a:hover,
+.pagination>li>span:focus,
+.pagination>li>span:hover {
+  color: #CE6D39;
+}
+
+.pagination>li>a,
+.pagination>li>span {
+  color: #CE6D39;
+}
+
+#article-content-wrapper>.header {
+  border-top: 2px solid #CE6D39;
+}
+
+#article-reply-area #reply-real-area .reply>.reply-header>.reply-writer.logged,
+#article-reply-area #reply-best-area .reply>.reply-header>.reply-writer.logged {
+  color: #CE6D39;
+}
+
+#article-info>h2 {
+  font-weight: bold;
+}
+
+#article-info>h2>span.category {
+  color: #CE6D39 !important;
+}
+
+#article-reply-area>.header h5 {
+  color: #CE6D39;
+}
+
+#main .menu-wrapper>a {
+  padding: 0.5em 1.4em 0.5em 0.7em !important;
+}
+
+a {
+  color: #CE6D39;
+}
+
+span.a-badge i.fa.fa-info-circle {
+  color:  #F17F42;
+}
+
+/* footer */
+
+#article-list>.article-list-row {
+  border-right: none;
+}
+
+#article-list #article-list-menu {
+  box-sizing: border-box;
+  width: unset;
+  margin: 20px;
+}
+
+#article-list #boardSearchForm {
+  padding-bottom: 20px;
+  height: unset;
+}
+
+.btn-primary {
+  background: #FFEEE4 !important;
+}</style>        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71349615-1', 'auto');
+  ga('send', 'pageview');
+    ga('set', 'userId', '141152954');

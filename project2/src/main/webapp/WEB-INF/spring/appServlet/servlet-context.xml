@@ -28,6 +28,8 @@
 	<resources mapping="/button/**" location = "/resources/button/"/>
 	<resources mapping="/bootstrap/**" location = "/resources/bootstrap/"/>
 	<resources mapping="/bookdetails/**" location="/resources/bookdetails/" />
+	<resources mapping="/readFolder/**" location="/resources/readFolder/" />
+	
 		
 	
 

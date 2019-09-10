@@ -314,7 +314,7 @@ html {overflow:scroll}
                         <div class="row">
                            <div class="col-md-6">
                               <div class="mu-author-image">
-                                 <img src="./assets/images/author.jpg" alt="Author Image">
+                                 <img src="./assets/images/이동근.jpg" alt="Author Image">
                               </div>
                            </div>
                            <div class="col-md-6">
@@ -355,15 +355,15 @@ html {overflow:scroll}
 
                            <li>
                               <p>"가능성은 언제나 무한하다. 다만 그 재료가 없을뿐."</p>
-                              <img class="mu-rt-img" src="./assets/images/reader-1.jpg" alt="img">
-                              <h5 class="mu-rt-name"> - 이 동근</h5>
+                              <img class="mu-rt-img" src="./assets/images/이동근.jpg" alt="img">
+                              <h5 class="mu-rt-name"> - イドングン</h5>
                               <span class="mu-rt-title">Reader, SWDO Inc.</span>
                            </li>
 
                            <li>
                               <p>"변명중에서도 가장 어리석은 변명은 "시간이 없어서"라는 변명이다."</p>
                               <img class="mu-rt-img" src="./assets/images/장우서.jpg" alt="img">
-                              <h5 class="mu-rt-name"> - 장 우서</h5>
+                              <h5 class="mu-rt-name"> - ジャンウソ</h5>
                               <span class="mu-rt-title">programmer, SWDO Inc.</span>
                            </li>
 
@@ -376,7 +376,7 @@ html {overflow:scroll}
                            <li>
                               <p>"난 아무것도 한게없네 "</p>
                               <img class="mu-rt-img" src="./assets/images/나홍윤.jpg" alt="img">
-                              <h5 class="mu-rt-name"> - ナsホンユン</h5>
+                              <h5 class="mu-rt-name"> - ナホンユン</h5>
                               <span class="mu-rt-title">programmer, SWDO Inc.</span>
                            </li>
                         </ul>

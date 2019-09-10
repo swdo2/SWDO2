@@ -105,7 +105,7 @@
 	<!-- jQuery if needed -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script type="text/javascript">
-		 	$(function(){
+		 	/* $(function(){
 			    $(".showpassword").each(function(index,input) {
 			        var $input = $(input);
 			        $("<p class='opt'/>").append(
@@ -159,7 +159,7 @@
 						$('.icon-lock').removeClass('icon-unlock');
 					}
 			    });
-			}); 
+			});  */
 		</script>
 </head>
 <body>

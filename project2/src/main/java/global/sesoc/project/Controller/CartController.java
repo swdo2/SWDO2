@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import global.sesoc.project.HomeController;
 import global.sesoc.project.DAO.CartDAO;
+import global.sesoc.project.DAO.PurchaseDAO;
 import global.sesoc.project.VO.Book;
 import global.sesoc.project.VO.Cart;
 import global.sesoc.project.service.NaverBookService;
@@ -23,6 +24,9 @@ import global.sesoc.project.service.NaverBookService2;
 @Controller
 public class CartController {
 
+	@Autowired
+	PurchaseDAO pd;
+	
 	@Autowired
 	CartDAO dao;
 	private static final Logger logger = LoggerFactory.getLogger(CartController.class);
@@ -136,6 +140,9 @@ public class CartController {
 		int cartcount = 0;
 		if (person_id == null) {
 			return cartcount = 2;
+		}
+		if(pd.purchaseDup(isbn, person_id) != 0){
+			return cartcount =3;
 		}
 
 		// 중복인지 아닌지 체크하는 부분 0이면 중복아님 1이면 중복

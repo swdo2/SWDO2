@@ -20,6 +20,10 @@
 		delete from cart where person_id = #{person_id} and book_isbn = #{book_isbn}
 	</delete>
 	
+	<delete id = "removeCart2" parameterType = "map">
+		delete from cart where person_id = #{loginId} and book_isbn = #{isbn}
+	</delete>
+	
 	<delete id = "removeAll" parameterType = "string">
 		delete from cart where person_id = #{person_id}
 	</delete>

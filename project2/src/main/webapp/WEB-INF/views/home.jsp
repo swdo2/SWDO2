@@ -319,10 +319,10 @@ html {overflow:scroll}
                            </div>
                            <div class="col-md-6">
                               <div class="mu-author-info">
-                                 <h3>SWDO e-book 10% 할인 프로모션</h3>
+                                 <h3>SWDO E-book 10% 할인 프로모션</h3>
                                <ul>
                                  <li>SWDO 의 모든도서(E-book)를 구매시, 10% 할인된 조건으로 제공합니다.</li>
-                                 <li>SWDO만의 Ebook Service 플랫폼 제공</li>
+                                 <li>SWDO만의 E-book Service 플랫폼 제공</li>
                                  <li>구매 총액의 10% 할인 된 가격</li>
                                  <li>본 할인 조건은 2019년 12월 31일 까지 유효</li>
                                  <li>최소 구매 금액 제한 없음</li>
@@ -362,21 +362,21 @@ html {overflow:scroll}
 
                            <li>
                               <p>"변명중에서도 가장 어리석은 변명은 "시간이 없어서"라는 변명이다."</p>
-                              <img class="mu-rt-img" src="./assets/images/reader-2.jpg" alt="img">
+                              <img class="mu-rt-img" src="./assets/images/장우서.jpg" alt="img">
                               <h5 class="mu-rt-name"> - 장 우서</h5>
                               <span class="mu-rt-title">programmer, SWDO Inc.</span>
                            </li>
 
                            <li>
                               <p>"CSS라는 미적 감각은 단지 이세계에만 지나지 않는 허위를 모사하는 거짓된 삼라만상이다"</p>
-                              <img class="mu-rt-img" src="./assets/images/reader-3.jpg" alt="img">
-                              <h5 class="mu-rt-name"> - 전 재형</h5>
+                              <img class="mu-rt-img" src="./assets/images/전재형.jpg" alt="img">
+                              <h5 class="mu-rt-name"> - ジョンジエヒョン</h5>
                               <span class="mu-rt-title">Web Designer</span>
                            </li>
                            <li>
                               <p>"난 아무것도 한게없네 "</p>
-                              <img class="mu-rt-img" src="./assets/images/reader-3.jpg" alt="img">
-                              <h5 class="mu-rt-name"> - 나 홍윤</h5>
+                              <img class="mu-rt-img" src="./assets/images/나홍윤.jpg" alt="img">
+                              <h5 class="mu-rt-name"> - ナsホンユン</h5>
                               <span class="mu-rt-title">programmer, SWDO Inc.</span>
                            </li>
                         </ul>
@@ -389,10 +389,10 @@ html {overflow:scroll}
 <!--       End Testimonials -->
 
       <!-- Start Google Map -->
-      <section id="mu-google-map">
+      <!-- <section id="mu-google-map">
          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d589888.4396405783!2d-82.41588603632052!3d32.866951223053896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f9f727a4ed30eb%3A0xf2139b0c5c7ae1ec!2sDooley+Branch+Rd%2C+Millen%2C+GA+30442%2C+USA!5e0!3m2!1sen!2sbd!4v1497376364225"
                width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
-      </section>
+      </section> -->
       <!-- End Google Map -->
 
    </main>

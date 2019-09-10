@@ -355,33 +355,45 @@ pageEncoding="UTF-8"%>
    	  <div class="wrap">
 	     <div class="section group">
 				<div class="col_1_of_4 span_1_of_4">
-						<h4>Information</h4>
+						<h4>Refresh</h4>
 						<ul>
-						<li><a href="#">About Us</a></li>
-						<li><a href="#">Customer Service</a></li>
+						<li><a href="javascript:location.reload()">Click here!</a></li>
+						<li><a href="homeButton">Home</a></li>
 						</ul>
 					</div>
 				<div class="col_1_of_4 span_1_of_4">
-					<h4>Why buy from us</h4>
+					<h4>Log in us!!</h4>
 						<ul>
-						<li><a href="#">About Us</a></li>
-						<li><a href="#">Customer Service</a></li>
+							<c:if test="${sessionScope.loginId == null }">
+								<li><a href="javascript:history.back()">Join us</a></li>
+							</c:if>
+								<c:if test="${sessionScope.loginId != null }">
+							<li><a href="logOut">LogOut</a></li>
+							</c:if>
 						</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
-					<h4>My account</h4>
+					<h4>Quick menu</h4>
 						<ul>
-							<li><a href="contact.html">Sign In</a></li>    <!-- 링크 수정 해야함 -->
-							<li><a href="index.html">View Cart</a></li>
+							<c:if test="${sessionScope.loginId == null }">
+								<li><a>Please sign in!</a></li>    
+							</c:if>
+							<c:if test="${sessionScope.loginId != null }">
+								<li><a href="myPageForm">My Page</a></li>
+								<li><a href="searchBook?bookTitle=1">SearchBook</a></li>
+								<li><a href="cartForm">My Cart</a></li>
+								<li><a href="boardForm">A Bulletin Board</a>
+							</c:if>
 						</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
 					<h4>Contact</h4>
 						<ul>
-							<li><span>010-4320-7840</span></li>
-							<li><span>010-8335-0698</span></li>
-							<li><span>010-8335-0698</span></li>
-							<li><span>010-8335-0698</span></li>
+							<li><a>평일 09:00 ~ 18:00</a></li>
+							<li><a>이동근 010-2808-3781</a></li>
+							<li><a>장우서 010-8234-0828</a></li>
+							<li><a>전재형 010-8335-0698</a></li>
+							<li><a>나홍윤 010-4320-7840</a></li>
 						</ul>
 						
 				</div>

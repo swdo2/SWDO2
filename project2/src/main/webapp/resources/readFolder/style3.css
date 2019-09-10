@@ -3922,6 +3922,15 @@ pre code {
     margin-right: -15px;
     margin-left: -15px
 }
+.boardblock{
+	margin-left:10%;
+	margin-right:10%;
+	margin-top: 3%;
+	background: #fff;
+    border-right: 2px solid #ebeae8;
+    border-bottom: 2px solid #ebeae8;
+    padding: 1em;
+}
 .col-lg-1,
 .col-lg-10,
 .col-lg-11,
@@ -3996,7 +4005,7 @@ pre code {
     width: 91.66666667%
 }
 .col-xs-10 {
-    width: 83.33333333%
+    width: 100%
 }
 .col-xs-9 {
     width: 75%
@@ -5515,7 +5524,7 @@ fieldset[disabled] .btn-default:hover {
 }
 .btn-primary {
     color: #fff;
-    background-color: #337ab7;
+    background-color: #FF9C00;
     border-color: #ffffff
 }
 .btn-primary.focus,

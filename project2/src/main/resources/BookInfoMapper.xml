@@ -6,10 +6,10 @@
 <!-- 회원정보 처리 SQL -->
 <mapper namespace="global.sesoc.project.DAO.BookInfoMapper">
 	<!-- interface의 경로와 같아야 한다. -->
-	<insert id="insert" parameterType="BookInfo">
-		insert into bookinfo(bookinfo_booknum, bookinfo_bookkey, bookinfo_setting)
-		values(sequence_book.nextval, #{bookinfo_bookkey},
-		#{bookinfo_setting})
+	<insert id="insert" parameterType="map">
+		insert into bookinfo(bookinfo_booknum, bookinfo_bookkey, bookinfo_setting, person_id)
+		values(sequence_book.nextval, #{info.bookinfo_bookkey},
+		#{info.bookinfo_setting}, #{person_id})
 	</insert>
 
 	<select id="select_setting" resultType="string">
@@ -24,15 +24,19 @@
 		where rownum = 1
 	</select>
 	
-	<select id = "select_bookinfo" parameterType = "string" resultType = "BookInfo">
+	<select id = "select_bookinfo" parameterType = "map" resultType = "BookInfo">
 		select *
-		from (select * from bookinfo where bookinfo_bookkey = #{bookKey} order by bookinfo_booknum desc)
+		from (select * from bookinfo where bookinfo_bookkey = #{bookKey} and person_id = #{person_id} order by bookinfo_booknum desc)
 		where rownum = 1
 	</select>
 	
 	<!-- 책 이름에 따라서 삭제되도록 해야함 -->
-	<delete id = "update_bookinfo" parameterType = "String">
+	<delete id = "update_bookinfo" parameterType = "string">
 		update bookinfo set bookinfo_setting
 			where bookinfo_bookkey = #{bookKey}
+	</delete>
+	
+	<delete id = "deleteBookInfo" parameterType = "string">
+		delete from bookinfo where person_id = #{person_id}
 	</delete>
 </mapper>

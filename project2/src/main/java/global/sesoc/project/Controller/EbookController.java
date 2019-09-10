@@ -52,12 +52,13 @@ public class EbookController {
 
 	@ResponseBody
 	@RequestMapping(value = "/ebook", method = RequestMethod.GET)
-	public int homeajax(String bookmark, String date, String book_title, String book_name) {
+	public int homeajax(String bookmark, String date, String book_title, String book_name, String loginId) {
 		Bookmarks bm = new Bookmarks();
 		bm.setBookmarks_title(book_title);
 		bm.setBookmarks_bookmark(bookmark);
 		bm.setBookmarks_date(date);
 		bm.setBookmarks_name(book_name);
+		bm.setPerson_id(loginId);
 
 		logger.debug("ebook");
 		logger.debug("bookmark :{} ", book_name);
@@ -72,10 +73,10 @@ public class EbookController {
 
 	@ResponseBody
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public ArrayList<String> list(String book_name) {
+	public ArrayList<String> list(String book_name, String loginId) {
 		logger.debug("list");
 		logger.debug("bookname : {}", book_name);
-		ArrayList<Bookmarks> list = dao.select(book_name);
+		ArrayList<Bookmarks> list = dao.select(book_name, loginId);
 		//ArrayList<HashMap<String,Object>> bList = new ArrayList<HashMap<String,Object>>();
 		ArrayList<String> bList = new ArrayList<String>();
 		
@@ -91,11 +92,11 @@ public class EbookController {
 
 	@ResponseBody
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
-	public ArrayList<String> remove(String bookmark, String book_name) {
+	public ArrayList<String> remove(String bookmark, String book_name, String loginId) {
 
 		logger.debug("delete");
-		int cnt = dao.delete(bookmark);
-		ArrayList<Bookmarks> list = dao.select(book_name);
+		int cnt = dao.delete(bookmark, loginId);
+		ArrayList<Bookmarks> list = dao.select(book_name, loginId);
 		ArrayList<String> bList = new ArrayList<String>();
 
 		for (Bookmarks book : list) {
@@ -107,8 +108,9 @@ public class EbookController {
 
 	@ResponseBody
 	@RequestMapping(value = "/mark", method = RequestMethod.GET)
-	public void mark(String setting, String bookKey) {
+	public void mark(String setting, String bookKey, String loginId) {
 
+		logger.debug("loginId : {}", loginId);
 		BookInfo info = new BookInfo();
 
 		info.setBookinfo_bookkey(bookKey);
@@ -116,35 +118,32 @@ public class EbookController {
 
 		logger.debug("setting : {}", setting);
 		logger.debug("bookKey : {}", bookKey);
-		infodao.insert(info);
+		infodao.insert(info, loginId);
 
 	}
 
-	@ResponseBody
-	@RequestMapping(value = "/marking", method = RequestMethod.GET)
-	public String marking() {
-		String result = infodao.select_setting();
-		logger.debug("marking");
-
-		return result;
-	}
-
-	@ResponseBody
-	@RequestMapping(value = "/bookkey", method = RequestMethod.GET)
-	public String bookkey() {
-		String result = infodao.select_bookkey();
-		logger.debug("bookkey");
-		return result;
-	}
+//	@ResponseBody
+//	@RequestMapping(value = "/marking", method = RequestMethod.GET)
+//	public String marking() {
+//		String result = infodao.select_setting();
+//		logger.debug("marking");
+//
+//		return result;
+//	}
+//
+//	@ResponseBody
+//	@RequestMapping(value = "/bookkey", method = RequestMethod.GET)
+//	public String bookkey() {
+//		String result = infodao.select_bookkey();
+//		logger.debug("bookkey");
+//		return result;
+//	}
 
 	@ResponseBody
 	@RequestMapping(value = "/bookinfo", method = RequestMethod.GET)
-	public BookInfo bookinfo(String book_title) {
-		BookInfo info = infodao.select_bookinfo(book_title);
-		logger.debug("bookinfo");
-		logger.debug(book_title);
-		logger.debug("ajax setting : {}", info.getBookinfo_setting());
-		logger.debug("ajax bookKey : {}", info.getBookinfo_bookkey());
+	public BookInfo bookinfo(String book_title, String loginId) {
+		logger.debug("loginId : {}", loginId);
+		BookInfo info = infodao.select_bookinfo(book_title, loginId);
 		return info;
 	}
 
@@ -171,10 +170,10 @@ public class EbookController {
 
 	@ResponseBody
 	@RequestMapping(value = "deleteAll", method = RequestMethod.GET)
-	public ArrayList<String> delete(String book_name) {
+	public ArrayList<String> delete(String book_name, String loginId) {
 
-		dao.deleteAll(book_name);
-		ArrayList<Bookmarks> blist = dao.select(book_name);
+		dao.deleteAll(book_name, loginId);
+		ArrayList<Bookmarks> blist = dao.select(book_name, loginId);
 		ArrayList<String> list = new ArrayList<String>();
 
 		for (Bookmarks book : blist) {
@@ -187,6 +186,7 @@ public class EbookController {
 	@RequestMapping(value = "ebookPage", method = RequestMethod.GET) 
 	public String ebookPage(String isbn, Model model) {
 		logger.debug("ebook page로 넘어가는 관문");
+		logger.debug("isbn : {}", isbn);
 		logger.debug("isbn : {}", isbn);
 		model.addAttribute("isbn", isbn);
 		

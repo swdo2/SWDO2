@@ -80,7 +80,12 @@
 
 					$('.portfolio-link').trigger("click");
 				})
-
+				$('.clickku3 button').on("click", function() {
+					console.log('ebook 보기 버튼');
+					var isbn = $(this).attr('isbn');
+					console.log(isbn);
+					window.open("ebookPage?isbn=" + isbn);
+				})
 
 			})
 

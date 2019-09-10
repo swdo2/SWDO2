@@ -6,8 +6,17 @@ public class Bookmarks {
 	private String bookmarks_title;
 	private String bookmarks_date;
 	private String bookmarks_name;
+	private String person_id;
 	
 	public Bookmarks() {}
+
+	public String getPerson_id() {
+		return person_id;
+	}
+
+	public void setPerson_id(String person_id) {
+		this.person_id = person_id;
+	}
 
 	public int getBookmarks_num() {
 		return bookmarks_num;

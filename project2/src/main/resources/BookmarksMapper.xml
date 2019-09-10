@@ -7,24 +7,24 @@
 <mapper namespace="global.sesoc.project.DAO.BookmarksMapper">
 <!-- interface의 경로와 같아야 한다. -->
 	<insert id = "insert" parameterType = "Bookmarks">
-		insert into bookmarks(bookmarks_num, bookmarks_title, bookmarks_bookmark, bookmarks_date, bookmarks_name )
-		 values(sequence_bookmarks.nextval, #{bookmarks_title}, #{bookmarks_bookmark}, #{bookmarks_date}, #{bookmarks_name})
+		insert into bookmarks(bookmarks_num, bookmarks_title, bookmarks_bookmark, bookmarks_date, bookmarks_name, person_id)
+		 values(sequence_bookmarks.nextval, #{bookmarks_title}, #{bookmarks_bookmark}, #{bookmarks_date}, #{bookmarks_name}, #{person_id})
 	</insert>
 	
-	<select id = "select" parameterType = "string" resultType = "Bookmarks">
-		select * from bookmarks where bookmarks_name = #{bookmarks_name} order by bookmarks_num 
+	<select id = "select" parameterType = "map" resultType = "Bookmarks">
+		select * from bookmarks where bookmarks_name = #{bookmarks_name} and person_id = #{person_id} order by bookmarks_num 
 	</select>
 	
-	<delete id = "delete" parameterType = "string">
-		delete from bookmarks where bookmarks_bookmark = #{bookmarks_bookmark}
+	<delete id = "delete" parameterType = "map">
+		delete from bookmarks where bookmarks_bookmark = #{bookmark} and person_id = #{person_id}
 	</delete>
 	
 	<select id = "select_date" parameterType = "string" resultType = "string">
 		select bookmarks_date from bookmarks where bookmarks_title = #{book_title}
 	</select>
 	
-	<delete id = "deleteAll" parameterType = "string">
-		delete from bookmarks where bookmarks_name = #{bookmarks_name}
+	<delete id = "deleteAll" parameterType = "map">
+		delete from bookmarks where bookmarks_name = #{bookmarks_name} and person_id = #{person_id}
 	</delete>
 	
 	<select id = "select_num" resultType = "int">

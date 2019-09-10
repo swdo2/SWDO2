@@ -2894,8 +2894,10 @@ EPUBJS.reader.plugins = {}; // -- Attach extra Controllers as plugins (like
 
 })(window, jQuery);
 
+
 EPUBJS.Reader = function(bookPath, _options) {
 	console.log("Reader");
+
 	var reader = this;
 	var book;
 	var plugin;
@@ -3067,10 +3069,11 @@ EPUBJS.Reader.prototype.removeAllBookmark = function(book_name) {
 	var $bookmark = $("#bookmark");
 	console.log('clear function 실행');
 	var bookmarklist = new Array();
+	var loginId = getloginId();
 	$.ajax({
 		url : 'list'
 		,type : 'get'
-		,data : {book_name : book_name}
+		,data : {book_name : book_name, loginId : loginId}
 		,dataType : 'json'
 		,async : false
 		,success : function bookmarkList(list) {
@@ -3153,6 +3156,7 @@ EPUBJS.Reader.prototype.bookinfo = function() {
 }
 function up_localstorage(bookKey,setting) {
 	console.log('localstorage setting');
+
 /*	$.ajax({
 		url : 'update_bookinfo'
 		,data : bookKey
@@ -3166,16 +3170,19 @@ function up_localstorage(bookKey,setting) {
 	})*/
 	localStorage.clear();
 	localStorage.setItem(bookKey, setting);
+	localStorage.setItem(loginId, getloginId());
+
 }
 
 EPUBJS.Reader.prototype.localStorage = function() {
 	console.log('localstorage');
 	var setting;
 	var bookKey;
+	var loginId = getloginId();
 	// 일단 ajax에서 값을 통합해서
 	$.ajax({
 		url : 'bookinfo'
-		,data : {book_title : book_title}
+		,data : {book_title : book_title, loginId : loginId}
 		,dataType : 'json'
 		,async : false
 		,success : function(info) {
@@ -3199,6 +3206,13 @@ EPUBJS.Reader.prototype.setBookKey = function(identifier){
 		console.log("setBookkey");
 		console.log("localstorage size " + localStorage.length);
 		book_title = this.settings.bookKey;
+		console.log("book title : " + book_title);
+
+		console.log(localStorage.getItem(loginId));
+		console.log(getloginId());
+
+		console.log(loginId == localStorage.getItem(loginId));
+
 		this.bookinfo();
 		//this.saveSettings();
 	};
@@ -3209,13 +3223,15 @@ EPUBJS.Reader.prototype.setBookKey = function(identifier){
 
 // -- Checks if the book setting can be retrieved from
 EPUBJS.Reader.prototype.isSaved = function(bookPath) {
+	var loginId = getloginId();
 	var storedSettings;
 
 	if(!localStorage) {
 		return false;
 	}
-
+	//console.log(localStorage.getItem(loginId));
 	//수정
+
 	if(flag == true) {
 		storedSettings = localStorage.getItem(this.settings.bookKey);
 	} else {
@@ -3241,11 +3257,9 @@ EPUBJS.Reader.prototype.removeSavedSettings = function() {
 EPUBJS.Reader.prototype.applySavedSettings = function() {
 		var stored;
 		console.log("applysavedSettings");
-
 		if(!localStorage) {
 			return false;
 		}
-
 	try {
 		 console.log('store');
 			//수정
@@ -3280,12 +3294,14 @@ EPUBJS.Reader.prototype.applySavedSettings = function() {
 EPUBJS.Reader.prototype.saveSettings = function(){
 	if(this.book) {
 		this.settings.previousLocationCfi = this.rendition.currentLocation().start.cfi;
-
+		var loginId = getloginId()
+		console.log(loginId);
 		$.ajax({
 			url : 'mark'
 			,type : 'get'
 			,data : {bookKey : this.settings.bookKey
 				,setting : JSON.stringify(this.settings)
+				,loginId : loginId
 			}
 			,success : function () {
 				console.log('mark is stored');
@@ -3393,7 +3409,7 @@ EPUBJS.reader.BookmarksController = function() {
 	var book = this.book;
 	console.log(book);
 	var rendition = this.rendition;
-
+	var loginId = getloginId();
 	var $bookmarks = $("#bookmarksView")
 			,$list = $bookmarks.find("#bookmarks");
 
@@ -3418,15 +3434,19 @@ EPUBJS.reader.BookmarksController = function() {
 		listitem.id = "bookmark-"+counter;
 		listitem.classList.add('list_item');
 
-		//var spineItem = book.spine.get(cfi);
-		var spineItem = book.spine.get(cfi);
-		var tocItem;
-		if (spineItem.index in book.navigation.toc) {
-			tocItem = book.navigation.toc[spineItem.index];
-			link.textContent = tocItem.label;
-		} else {
-			link.textContent = cfi;
-		}
+
+		//수정부분
+
+			var spineItem = book.spine.get(cfi);
+			var tocItem;
+			if (spineItem.index in book.navigation.toc) {
+				console.log(spineItem.index);
+				tocItem = book.navigation.toc[spineItem.index];
+				link.textContent = tocItem.label;
+			} else {
+				link.textContent = cfi;
+			}
+		
 
 		link.href = cfi;
 
@@ -3467,7 +3487,7 @@ EPUBJS.reader.BookmarksController = function() {
 	$.ajax({
 		url : 'list'
 		,type : 'get'
-		,data : {book_name : book_name}
+		,data : {book_name : book_name, loginId : loginId}
 		,dataType : 'json'
 		,async : false
 		,success : function bookmarkList(list) {
@@ -3486,13 +3506,13 @@ EPUBJS.reader.BookmarksController = function() {
 
 	this.on("reader:bookmarked", function(cfi) {
 		var date = new Date().format("yy-MM-dd a/p hh시 mm분");
-		console.log(date);
-		console.log('hello world!');
-		console.log(book_name);
+		var loginId = getloginId();
+		console.log(loginId);
+
 		$.ajax({
 			url : 'ebook'
 			,type : 'get'
-			,data : {bookmark : cfi, date : date, book_title : book_title, book_name : book_name}
+			,data : {bookmark : cfi, date : date, book_title : book_title, book_name : book_name, loginId : loginId}
 			,dataType : 'json'
 			,async : false
 			,success : function(num) {
@@ -3510,11 +3530,11 @@ EPUBJS.reader.BookmarksController = function() {
 
 	this.on("reader:unbookmarked", function(index, cfi) {
 		console.log("delete bookmark");
-
+		var loginId = getloginId();
 		$.ajax({
 			url : 'delete'
 			,type : 'get'
-			,data : {bookmark : cfi, book_name : book_name}
+			,data : {bookmark : cfi, book_name : book_name, loginId : loginId}
 			,async : 'false'
 			,dataType : 'json'
 			,success : function(list) {
@@ -3533,9 +3553,10 @@ EPUBJS.reader.BookmarksController = function() {
 
 	this.on("reader:unallbookmarked", function(book_name){
 		console.log('delete All');
+		var loginId = getloginId();
 		$.ajax({
 			url : 'deleteAll'
-			,data : {book_name : book_name}
+			,data : {book_name : book_name, loginId : loginId}
 			,dataType : 'json'
 			,async : false
 			,success : function bookmarkList(list) {
@@ -4032,7 +4053,8 @@ EPUBJS.reader.ReaderController = function(book) {
 	var arrowKeys = function(e) {
 
 		if(e.keyCode == 37) {
-			$("#nextsound").html('<audio autoplay src = "mp3/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
+			$("#nextsound").html('<audio autoplay src = "./ebook/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
+			//$("#nextsound").html('<audio autoplay src = "mp3/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
 			if(book.package.metadata.direction === "rtl") {
 				fontchangeclick($('#current_chapter').val());
 				if(colorflag=='black')
@@ -4041,7 +4063,8 @@ EPUBJS.reader.ReaderController = function(book) {
 					clickwhite($('#current_chapter').val());
 				if(colorflag=='sepia')
 					clicksepia($('#current_chapter').val());
-				$("#nextsound").html('<audio autoplay src = "mp3/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
+				//$("#nextsound").html('<audio autoplay src = "mp3/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
+				$("#nextsound").html('<audio autoplay src = "./ebook/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
 				rendition.next();
 			} else {
 				fontchangeclick($('#current_chapter').val());
@@ -4051,7 +4074,8 @@ EPUBJS.reader.ReaderController = function(book) {
 					clickwhite($('#current_chapter').val());
 				if(colorflag=='sepia')
 					clicksepia($('#current_chapter').val());
-				$("#nextsound").html('<audio autoplay src = "mp3/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
+				$("#nextsound").html('<audio autoplay src = "./ebook/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
+				//$("#nextsound").html('<audio autoplay src = "mp3/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
 				rendition.prev();
 			}
 
@@ -4066,8 +4090,8 @@ EPUBJS.reader.ReaderController = function(book) {
 			 e.preventDefault();
 		}
 		if(e.keyCode == 39) {
-
-			$("#nextsound").html('<audio autoplay src = "mp3/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
+			$("#nextsound").html('<audio autoplay src = "./ebook/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
+			//$("#nextsound").html('<audio autoplay src = "mp3/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
 			if(book.package.metadata.direction === "rtl") {
 				fontchangeclick($('#current_chapter').val());
 				if(colorflag=='black')
@@ -4076,7 +4100,8 @@ EPUBJS.reader.ReaderController = function(book) {
 					clickwhite($('#current_chapter').val());
 				if(colorflag=='sepia')
 					clicksepia($('#current_chapter').val());
-				$("#nextsound").html('<audio autoplay src = "mp3/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
+				$("#nextsound").html('<audio autoplay src = "./ebook/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
+				//$("#nextsound").html('<audio autoplay src = "mp3/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
 				rendition.prev();
 			} else {
 				fontchangeclick($('#current_chapter').val());
@@ -4086,7 +4111,8 @@ EPUBJS.reader.ReaderController = function(book) {
 					clickwhite($('#current_chapter').val());
 				if(colorflag=='sepia')
 					clicksepia($('#current_chapter').val());
-				$("#nextsound").html('<audio autoplay src = "mp3/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
+				$("#nextsound").html('<audio autoplay src = "./ebook/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
+				//$("#nextsound").html('<audio autoplay src = "mp3/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
 				rendition.next();
 			}
 
@@ -4105,8 +4131,8 @@ EPUBJS.reader.ReaderController = function(book) {
 	document.addEventListener('keydown', arrowKeys, false);
 
 	$next.on("click", function(e){
-
-		$("#nextsound").html('<audio autoplay src = "mp3/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
+		$("#nextsound").html('<audio autoplay src = "./ebook/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
+		//$("#nextsound").html('<audio autoplay src = "mp3/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
 		if(book.package.metadata.direction === "rtl") {
 			rendition.prev();
 		} else {
@@ -4117,7 +4143,8 @@ EPUBJS.reader.ReaderController = function(book) {
 	});
 
 	$prev.on("click", function(e){
-		$("#nextsound").html('<audio autoplay src = "mp3/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
+		$("#nextsound").html('<audio autoplay src = "./ebook/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
+		//$("#nextsound").html('<audio autoplay src = "mp3/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
 		if(book.package.metadata.direction === "rtl") {
 			rendition.next();
 		} else {

@@ -5,12 +5,20 @@ public class BookInfo {
 	private String bookinfo_bookkey;
 	private String bookinfo_setting;
 	private String bookinfo_title;
-
+	private String person_id;
 	
 	public BookInfo() {}
 
 	public int getBookinfo_booknum() {
 		return bookinfo_booknum;
+	}
+
+	public String getPerson_id() {
+		return person_id;
+	}
+
+	public void setPerson_id(String person_id) {
+		this.person_id = person_id;
 	}
 
 	public void setBookinfo_booknum(int bookinfo_booknum) {

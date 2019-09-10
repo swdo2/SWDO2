@@ -1,6 +1,7 @@
 package global.sesoc.project.DAO;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,18 +21,25 @@ public class BookmarksDAO {
 		return result;
 	}
 	
-	public ArrayList<Bookmarks> select(String bookmarks_name) {
+	public ArrayList<Bookmarks> select(String bookmarks_name, String person_id) {
 		BookmarksMapper mapper = sqlSession.getMapper(BookmarksMapper.class);
 		
-		ArrayList<Bookmarks> list = mapper.select(bookmarks_name);
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("bookmarks_name", bookmarks_name);
+		map.put("person_id", person_id);
+		
+		ArrayList<Bookmarks> list = mapper.select(map);
 		
 		return list;
 	}
 	
-	public int delete(String bookmark) {
+	public int delete(String bookmark, String person_id) {
 		BookmarksMapper mapper = sqlSession.getMapper(BookmarksMapper.class);
+		HashMap<String, Object> map = new HashMap<String, Object>();
 		
-		int cnt = mapper.delete(bookmark);
+		map.put("bookmark", bookmark);
+		map.put("person_id", person_id);
+		int cnt = mapper.delete(map);
 		return cnt;
 	}
 	
@@ -42,10 +50,13 @@ public class BookmarksDAO {
 		return result;
 	}
 	
-	public int deleteAll(String bookmarks_name) {
+	public int deleteAll(String bookmarks_name, String person_id) {
 		BookmarksMapper mapper = sqlSession.getMapper(BookmarksMapper.class);
+		HashMap<String ,Object> map = new HashMap<String, Object>();
 		
-		int cnt = mapper.deleteAll(bookmarks_name);
+		map.put("bookmarks_name", bookmarks_name);
+		map.put("person_id", person_id);
+		int cnt = mapper.deleteAll(map);
 		
 		return cnt;
 	}

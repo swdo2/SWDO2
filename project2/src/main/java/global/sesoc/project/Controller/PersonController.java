@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import global.sesoc.project.HomeController;
+import global.sesoc.project.DAO.BookInfoDAO;
 import global.sesoc.project.DAO.PersonDAO;
 import global.sesoc.project.VO.Person;
 
@@ -22,6 +23,9 @@ public class PersonController {
 
 	@Autowired
 	PersonDAO dao;
+	
+	@Autowired
+	BookInfoDAO infodao;
 
 	// 회원가입(Join)폼으로 이동하는 메소드
 	@RequestMapping(value = "Join", method = RequestMethod.GET)
@@ -98,7 +102,10 @@ public class PersonController {
 	
 	@RequestMapping(value="logOut", method = RequestMethod.GET)
 	public String LogOut(Model model, HttpSession session){
+			String person_id = (String)session.getAttribute("loginId");
+			infodao.deleteBookInfo(person_id);
 			session.invalidate();
+			
 	return "redirect:/";
 	}
 	

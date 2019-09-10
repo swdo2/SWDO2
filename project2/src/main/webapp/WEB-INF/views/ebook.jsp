@@ -53,17 +53,25 @@
 		color : black;
 		cursor: pointer;
 	}
+
 </style>
 <script>
 	"use strict";
 	document.onreadystatechange = function() {
 
 		if (document.readyState == "complete") {
+			// var loginId = document.getElementById('loginId').value;
+			// console.log("login id " + loginId);
 			var isbn1 = document.getElementById('bookisbn').value;
+
 			console.log(isbn1);
-			window.reader = ePubReader("ebookfiles/" + isbn1 + ".epub", {
+			window.reader = ePubReader("ebookfiles/a-christmas-carol.epub", {
 				restore : true
 			});
+
+			// window.reader = ePubReader("ebookfiles/" + isbn1 + ".epub", {
+			// 	restore : true
+			// });
 		}
 	};
 </script>
@@ -91,6 +99,11 @@
 <!-- <script src="./ebook/reader/js/hooks/extensions/highlight.js"></script> -->
 <script>
 	// 책 제목은 나중에 controller에서 값을 받아와서 사용해야함.
+
+	function getloginId() {
+		return document.getElementById('loginId').value;
+	}
+
 	function black() {
 		colorflag = 'black';
 		console.log('black');
@@ -110,6 +123,9 @@
 		iconright.attr("style", "color:white");
 
 		black.style.backgroundColor = "#262626";
+
+		//수정해볼려함
+		var para = $('')
 
 		var a = $('iframe').contents().find('head').html();
 
@@ -361,6 +377,7 @@
 				,data : {data : data}
 				,aysnc: false
 				,success : function(name) {
+
 					$('#audio').html('<audio src = "mp3/' + name + '.mp3" id = "mp3" onended="myFunction1(makemp3)"></audio>');
 					var x = document.getElementById("mp3");
 					x.play();
@@ -410,27 +427,28 @@
 			})
 
 		}
-		if($("#contentfont").val() == 'fontello') {
-			console.log('fontello');
+		if($("#contentfont").val() == 'Georgia') {
+			console.log('Georgia');
 
 			var a = $('iframe').contents().find('head').html();
-			var b = a + "<style> .fontchange { font-family : fontello; }</style>"
-			$('iframe').contents().find('head').html(b);
+			var b = a + "<style> .fontchange { font-family : Georgia, serif; }</style>"
+			//글꼴 수정
+			//$('iframe').contents().find('head').html(b);
 			$('iframe').contents().find('p').each(function(index,item) {
 				$(item).addClass('fontchange');
 			});
-			$('iframe').contents().find('h1').each(function(index, item) {
-				$(item).addClass('fontchange');
-			})
-			$('iframe').contents().find('h2').each(function(index, item) {
-				$(item).addClass('fontchange');
-			})
-			$('iframe').contents().find('h3').each(function(index, item) {
-				$(item).addClass('fontchange');
-			})
-			$('iframe').contents().find('h4').each(function(index, item) {
-				$(item).addClass('fontchange');
-			})
+			// $('iframe').contents().find('h1').each(function(index, item) {
+			// 	$(item).addClass('fontchange');
+			// })
+			// $('iframe').contents().find('h2').each(function(index, item) {
+			// 	$(item).addClass('fontchange');
+			// })
+			// $('iframe').contents().find('h3').each(function(index, item) {
+			// 	$(item).addClass('fontchange');
+			// })
+			// $('iframe').contents().find('h4').each(function(index, item) {
+			// 	$(item).addClass('fontchange');
+			// })
 			$('iframe').contents().find('span').each(function(index,item) {
 				$(item).addClass('fontchange');
 			})
@@ -524,11 +542,11 @@
 					})
 
 				}
-				if($("#contentfont").val() == 'fontello') {
-					console.log('fontello');
+				if($("#contentfont").val() == 'Georgia') {
+					console.log('Georgia');
 
 					var a = $('iframe').contents().find('head').html();
-					var b = a + "<style> .fontchange { font-family : fontello; }</style>"
+					var b = a + "<style> .fontchange { font-family : Georgia, serif; }</style>"
 					$('iframe').contents().find('head').html(b);
 					$('iframe').contents().find('p').each(function(index,item) {
 						$(item).addClass('fontchange');
@@ -876,6 +894,7 @@
 	<input type = "hidden" id = "nextsound">
 	<input type = "hidden" id = "current_chapter"  />
 	<input type = "hidden" id = "bookisbn" value = "${isbn}"/>
+	<input type = "hidden" id = "loginId" value = "${sessionScope.loginId}" />
 
 	<div id = "audio"></div>
 	 <div class="modal md-effect-1" id="settings-modal">
@@ -889,8 +908,8 @@
 						<option value = "serif">
 							serif
 						</option>
-						<option value = "fontello" selected = "selected">
-							fontello
+						<option value = "Georgia" selected = "selected">
+							Georgia
 						</option>
 						<option value = "cursive">
 							cursive

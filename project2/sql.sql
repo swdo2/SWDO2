@@ -7,13 +7,43 @@ DROP TABLE Board CASCADE CONSTRAINTS;
 DROP TABLE Book CASCADE CONSTRAINTS;
 DROP TABLE Purchaseinfo CASCADE CONSTRAINTS;
 DROP TABLE Person CASCADE CONSTRAINTS;
+DROP TABLE bookmarks CASCADE CONSTRAINTS;
+DROP TABLE bookinfo CASCADE CONSTRAINTS;
+
 
 
 
 /* Drop Sequences */
 DROP SEQUENCE board_number_sequence;
 DROP SEQUENCE reply_number_sequence;
+DROP SEQUENCE sequence_bookmarks;
+DROP SEQUENCE sequence_book;
+----------------동근이꺼-------------------------------------------------------------
+create table bookmarks (
+    bookmarks_num number primary key,
+    bookmarks_title varchar2(100),
+    bookmarks_bookmark varchar2(1000),
+    bookmarks_date varchar2(100),
+    bookmarks_name varchar2(100)
+);
 
+create sequence sequence_bookmarks;
+
+create table bookinfo (
+    bookinfo_booknum number primary key,
+    bookinfo_title varchar2(100),
+    bookinfo_bookkey varchar2(1000),
+    bookinfo_setting varchar2(1000)
+);
+
+create sequence sequence_book;
+
+alter table bookmarks add(person_id varchar2(20));
+alter table bookinfo add(person_id varchar2(20));
+
+
+
+-----------------------------------------------------------------
 
 
 

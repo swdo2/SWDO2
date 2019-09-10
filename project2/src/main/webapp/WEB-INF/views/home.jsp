@@ -319,11 +319,14 @@ html {overflow:scroll}
                            </div>
                            <div class="col-md-6">
                               <div class="mu-author-info">
-                                 <h3>훌륭한 E_BOOK을 제공해드리겠습니다.</h3>
-                                 <p>SWDO 광주 2기 이동근</p>
-                                 <p>SWDO 광주 2기 장우서</p>
-                                 <p>SWDO 광주 2기 나홍윤</p>
-                                 <p>SWDO 광주 2기 전재형</p>
+                                 <h3>SWDO e-book 10% 할인 프로모션</h3>
+                               <ul>
+                                 <li>SWDO 의 모든도서(E-book)를 구매시, 10% 할인된 조건으로 제공합니다.</li>
+                                 <li>SWDO만의 Ebook Service 플랫폼 제공</li>
+                                 <li>구매 총액의 10% 할인 된 가격</li>
+                                 <li>본 할인 조건은 2019년 12월 31일 까지 유효</li>
+                                 <li>최소 구매 금액 제한 없음</li>
+                               </ul>  
                               </div>
                            </div>
                         </div>
@@ -351,24 +354,30 @@ html {overflow:scroll}
                         <ul class="mu-testimonial-slide">
 
                            <li>
-                              <p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever."</p>
+                              <p>"가능성은 언제나 무한하다. 다만 그 재료가 없을뿐."</p>
                               <img class="mu-rt-img" src="./assets/images/reader-1.jpg" alt="img">
-                              <h5 class="mu-rt-name"> - Alice Boga</h5>
-                              <span class="mu-rt-title">CEO, Apple Inc.</span>
+                              <h5 class="mu-rt-name"> - 이 동근</h5>
+                              <span class="mu-rt-title">Reader, SWDO Inc.</span>
                            </li>
 
                            <li>
-                              <p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever."</p>
+                              <p>"변명중에서도 가장 어리석은 변명은 "시간이 없어서"라는 변명이다."</p>
                               <img class="mu-rt-img" src="./assets/images/reader-2.jpg" alt="img">
-                              <h5 class="mu-rt-name"> - Jhon Doe</h5>
-                              <span class="mu-rt-title">Director, Google Inc.</span>
+                              <h5 class="mu-rt-name"> - 장 우서</h5>
+                              <span class="mu-rt-title">programmer, SWDO Inc.</span>
                            </li>
 
                            <li>
-                              <p>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever."</p>
+                              <p>"CSS라는 미적 감각은 단지 이세계에만 지나지 않는 허위를 모사하는 거짓된 삼라만상이다"</p>
                               <img class="mu-rt-img" src="./assets/images/reader-3.jpg" alt="img">
-                              <h5 class="mu-rt-name"> - Jessica Doe</h5>
-                              <span class="mu-rt-title">Web Developer</span>
+                              <h5 class="mu-rt-name"> - 전 재형</h5>
+                              <span class="mu-rt-title">Web Designer</span>
+                           </li>
+                           <li>
+                              <p>"난 아무것도 한게없네 "</p>
+                              <img class="mu-rt-img" src="./assets/images/reader-3.jpg" alt="img">
+                              <h5 class="mu-rt-name"> - 나 홍윤</h5>
+                              <span class="mu-rt-title">programmer, SWDO Inc.</span>
                            </li>
                         </ul>
                      </div>
@@ -396,12 +405,12 @@ html {overflow:scroll}
       <div class="container">
          <div class="mu-footer-area">
             <div class="mu-social-media">
-               <a href="#"><i class="fa fa-facebook"></i></a>
-               <a href="#"><i class="fa fa-twitter"></i></a>
-               <a href="#"><i class="fa fa-google-plus"></i></a>
+               <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+               <a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+               <a href="https://google.com"><i class="fa fa-google-plus"></i></a>
                <a href="#"><i class="fa fa-linkedin"></i></a>
             </div>
-            <p class="mu-copyright">&copy; Copyright <a rel="nofollow" href="http://markups.io">markups.io</a>. All right reserved.</p>
+            <p class="mu-copyright">&copy; Copyright <a rel="nofollow" href="http://localhost:8888/project/">本-E</a>. All right reserved.</p>
          </div>
       </div>
    </footer>

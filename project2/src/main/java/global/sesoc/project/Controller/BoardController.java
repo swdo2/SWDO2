@@ -3,6 +3,7 @@ package global.sesoc.project.Controller;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -117,6 +118,27 @@ public class BoardController {
 		System.out.println("boardl list : " + boardlist);
 		model.addAttribute("boardlist", boardlist);
 		model.addAttribute("loginId", id);*/
+		Cookie[] cookies = request.getCookies();
+		Cookie viewCookie = null;
+		
+		if(cookies != null && cookies.length > 0){
+			for(int i = 0; i < cookies.length; ++i){
+				if(cookies[i].getName().equals("cookie" + board_num)){
+					viewCookie = cookies[i];
+				}
+			}
+		}
+		
+		if(viewCookie == null){
+			Cookie newCookie = new Cookie("cookie" + board_num, "board_num");
+			response.addCookie(newCookie);
+			dao.updateHits(board_num);
+		}
+		
+		if(board_num == 0){
+			System.out.println("글이 없습니다.");
+			return "redirect:/boardForm";
+		}
 		
 		//글 번호에 따라 값을 넘겨줌
 		Board board =  dao.detail(board_num);
@@ -198,5 +220,13 @@ public class BoardController {
 		int likenum = dao.like(board_num);
 		
 		return Integer.toString(likenum);
+	}
+	
+	@RequestMapping(value = "updateHits", method = RequestMethod.GET)
+	public String updatehits(HttpSession session, Board board){
+		String id = (String) session.getAttribute("loginId");
+		board.setPerson_id(id);
+		dao.update(board);
+		return "redirect:/board/boardForm";
 	}
 }

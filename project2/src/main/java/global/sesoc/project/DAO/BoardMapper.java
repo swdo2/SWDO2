@@ -37,5 +37,8 @@ public interface BoardMapper {
 	//글 페이징
 	public ArrayList<Board> select(RowBounds row, HashMap<String, Object> map);
 	
+	//글 조회수
+	public int updateHits(int board_num);
+	
 	
 }

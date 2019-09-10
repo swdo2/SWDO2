@@ -88,5 +88,14 @@ public class BoardDAO {
 		
 		return list;
 	}
+
+	public int updateHits(int board_num) 	{
+		BoardMapper mapper = sqlsession.getMapper(BoardMapper.class);
+		
+		int cnt = mapper.updateHits(board_num);
+		
+		return cnt;
+		
+	}
 	
 }

@@ -56,23 +56,30 @@
 			var isbn = $(this).attr('id');
 
 			$.ajax({
-                url : 'savecart'
-                ,data : {isbn : isbn}
-                ,dataType : 'text'
-                ,type : "get"
-                ,success : function(cnt) {
-                    if(cnt == 0 ) {
-                        if(confirm("책을 장바구니에 담았습니다. 장바구니로 가시겠습니까?")) {
-                            window.location.href = "cartForm";
-                        }
+				url : 'savecart',
+				data : {
+					isbn : isbn
+				},
+				dataType : 'text',
+				type : "get",
+				success : function(cnt) {
+					if (cnt == 0) {
+						if (confirm("책을 장바구니에 담았습니다. 장바구니로 가시겠습니까?")) {
+							window.location.href = "cartForm";
+						}
+					} else if (cnt == 2) {
+						alert('로그인후 이용해주세요');
+						window.location.href = "homeButton";
+					} else if (cnt == 3){
+                    		alert('이미 구매한 책입니다')
                     } else {
-                        alert('이미 장바구니에 있는 책입니다..');
-                    }
-                }
-                ,error : function() {
-                    alert('.clickku에러')
-                }
-            })
+						alert('이미 장바구니에 있는 책입니다..');
+					}
+				},
+				error : function() {
+					alert('.clickku에러')
+				}
+			})
 
 
 			console.log(bisbn);

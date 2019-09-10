@@ -103,7 +103,9 @@ html {overflow:scroll}
 						<ul>
 							<li><a href="cartForm">My Cart</a></li> 
 							<li><a href="myPageForm">My Page</a></li> 
+					        <c:if test="${sessionScope.loginId != null }">
 					        <li><a href="logOut">LogOut</a></li>
+					        </c:if>
 						</ul>
 					</div>
 				<div class="clear"></div>
@@ -248,27 +250,27 @@ html {overflow:scroll}
 		<a href="javascript:pagingFormSubmit(${pagenaviga.currentPage - 1})">◀</a> &nbsp;&nbsp;
 
 		<c:forEach var="counter" begin="${pagenaviga.startPageGroup}" end="${pagenaviga.endPageGroup}">
-			<c:if test="${counter == pagenaviga.currentPage}"><b></c:if>
-				<a href="javascript:pagingFormSubmit(${counter})">${counter}</a>&nbsp;
-			<c:if test="${counter == pagenaviga.currentPage}"></b></c:if>
+			<c:if test="${counter == pagenaviga.currentPage}"><u></c:if>
+				<a href="javascript:pagingFormSubmit(${counter})">${counter}</u></a>&nbsp;
+			<c:if test="${counter == pagenaviga.currentPage}"></c:if>
 		</c:forEach>
 		&nbsp;&nbsp;
 		<a href="javascript:pagingFormSubmit(${pagenaviga.currentPage + 1})">▶</a> &nbsp;&nbsp;
 		<a href="javascript:pagingFormSubmit(${pagenaviga.currentPage + pagenaviga.pagePerGroup})">▷▷</a>
 	</div>
 <!-- ----------------------------------------------------------검색폼 start------------------------------------------------- -->
-	<%-- <div class="pagingSearchForm">
-		<form id="pagingForm" method="get" action="searchBook">
-		<input type="hidden" id="page" name="page" />
-			<select name="searchform">
-				<option>제목</option>
-				<option>작가</option>
-				<option>출판사</option>
-			</select>
-		 <input type="text"  name="bookTitle" placeholder="검색하시오"  value="${searchText}"/>
-		<input type="button" onclick="pagingFormSubmit(1);" value="검색">
-		</form>
-	</div> --%>
+	<div class="pagingSearchForm">
+      <form id="pagingForm" method="get" action="searchBook">
+      <input type="hidden" id="page" name="page" />
+      <!--    <select name="searchform">
+            <option>제목</option>
+            <option>작가</option>
+            <option>출판사</option>
+         </select> -->
+       <input type="hidden"  name="bookTitle" placeholder="검색하시오"  value="${searchText}"/>
+      <input type="hidden" onclick="pagingFormSubmit(1);" value="검색">
+      </form>
+   </div>
 <!-- ----------------------------------------------------------검색폼 end-------------------------------------------------- -->
 		</div>
 		</div>
@@ -279,33 +281,44 @@ html {overflow:scroll}
    	  <div class="wrap">
 	     <div class="section group">
 				<div class="col_1_of_4 span_1_of_4">
-						<h4>Information</h4>
+						<h4>Refresh</h4>
 						<ul>
-						<li><a href="#">About Us</a></li>
-						<li><a href="#">Customer Service</a></li>
+						<li><a href="javascript:location.reload()">Click here!</a></li>
+						
 						</ul>
 					</div>
 				<div class="col_1_of_4 span_1_of_4">
-					<h4>Why buy from us</h4>
+					<h4>Login us!!</h4>
 						<ul>
-						<li><a href="#">About Us</a></li>
-						<li><a href="#">Customer Service</a></li>
+							<c:if test="${sessionScope.loginId == null }">
+								<li><a href="javascript:history.back()">Join us</a></li>
+							</c:if>
+								<c:if test="${sessionScope.loginId != null }">
+							<li><a href="logOut">LogOut</a></li>
+							</c:if>
 						</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
-					<h4>My account</h4>
+					<h4>Quick menu</h4>
 						<ul>
-							<li><a href="contact.html">Sign In</a></li>    <!-- 링크 수정 해야함 -->
-							<li><a href="index.html">View Cart</a></li>
+							<c:if test="${sessionScope.loginId == null }">
+								<li>Please sign in!</li>    
+							</c:if>
+							<c:if test="${sessionScope.loginId != null }">
+								<li><a href="myPageForm">My Page</a></li>
+								<li><a href="searchBook?bookTitle=1">SearchBook</a></li>
+								<li><a href="cartForm">My Cart</a></li>
+							</c:if>
 						</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
 					<h4>Contact</h4>
 						<ul>
-							<li><span>010-4320-7840</span></li>
-							<li><span>010-8335-0698</span></li>
-							<li><span>010-8335-0698</span></li>
-							<li><span>010-8335-0698</span></li>
+							<li>평일 09:00 ~ 18:00</li>
+							<li><span>이동근 010-2808-3781</span></li>
+							<li><span>장우서 010-8234-0828</span></li>
+							<li><span>전재형 010-8335-0698</span></li>
+							<li><span>나홍윤 010-4320-7840</span></li>
 						</ul>
 						
 				</div>

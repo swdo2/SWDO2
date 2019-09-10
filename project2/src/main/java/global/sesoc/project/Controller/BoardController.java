@@ -129,11 +129,11 @@ public class BoardController {
 			}
 		}
 		
-		if(viewCookie == null){
+		
 			Cookie newCookie = new Cookie("cookie" + board_num, "board_num");
 			response.addCookie(newCookie);
 			dao.updateHits(board_num);
-		}
+		
 		
 		if(board_num == 0){
 			System.out.println("글이 없습니다.");
@@ -222,6 +222,7 @@ public class BoardController {
 		return Integer.toString(likenum);
 	}
 	
+	//조회수 증가 업데이트
 	@RequestMapping(value = "updateHits", method = RequestMethod.GET)
 	public String updatehits(HttpSession session, Board board){
 		String id = (String) session.getAttribute("loginId");

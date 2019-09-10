@@ -135,7 +135,7 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2019-08-16 17:02:17</creation_date>
-			<updated_date>2019-09-09 13:49:26</updated_date>
+			<updated_date>2019-09-10 14:38:30</updated_date>
 			<model_property>
 				<name>프로젝트명</name>
 				<value></value>
@@ -485,7 +485,7 @@
 			<char_semantics>false</char_semantics>
 			<description></description>
 			<logical_name>책 처음보는거냐????</logical_name>
-			<physical_name>purchaseinfo_first</physical_name>
+			<physical_name>purchaseinfo_check</physical_name>
 			<type>decimal</type>
 		</word>
 		<word>
@@ -1087,7 +1087,7 @@
 			<connections>
 				<relation>
 					<id>3</id>
-					<source>1</source>
+					<source>5</source>
 					<target>2</target>
 						<source_xp>-1</source_xp>
 						<source_yp>-1</source_yp>
@@ -1109,7 +1109,7 @@
 				</relation>
 				<relation>
 					<id>4</id>
-					<source>5</source>
+					<source>1</source>
 					<target>2</target>
 						<source_xp>-1</source_xp>
 						<source_yp>-1</source_yp>
@@ -1173,7 +1173,7 @@
 				<normal_column>
 					<id>12</id>
 					<referenced_column>22</referenced_column>
-					<relation>4</relation>
+					<relation>3</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>
@@ -1207,7 +1207,7 @@
 				<normal_column>
 					<id>13</id>
 					<referenced_column>5</referenced_column>
-					<relation>3</relation>
+					<relation>4</relation>
 					<description></description>
 					<unique_key_name></unique_key_name>
 					<logical_name></logical_name>

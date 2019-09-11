@@ -11,4 +11,8 @@ public interface PersonMapper {
 	
 	// ID 유효성 검사
 	public Person CheckOverId(String person_id);
+	
+	public Person searchPerson(String id);
+	
+	public int updatePerson(Person person);
 }

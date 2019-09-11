@@ -201,33 +201,33 @@
 				<div class="col-md-6 col-sm-6 col-sm-pull-6">
 					<div class="mu-hero-left" style="margin-left: 64%;">
 						<section class="main">
-							<form class="form-2"  id = "joinform" action="Join" method = "post" onsubmit="return formCheck();">
-								<h1><span class="sign-up">sign up</span></h1>
+							<form class="form-2"  id = "joinform" action="personupdate" method = "post" onsubmit="return formCheck();">
+								<h1><span class="sign-up">개인 정보 수정</span></h1>
 								<div>
 									    <!-- 로그인 아이디 입력하는곳 -->	
 										<label for="login"><i class="icon-user"></i>User ID</label>
-										<input type="text" name="person_id" id= "person_id" placeholder="Username">
+										<input type="text" name="person_id" id= "person_id" placeholder="Username" value="${person.person_id}" readonly >
 										<div class = "id_check1"></div>																												
 								</div>
 								<div>
 										<label for="password"><i class="icon-lock"></i>Password</label>
 										<!-- 로그인 패스워드 입력하는곳 -->
-										<input type="password" name="person_password" id="person_password" placeholder="Password">
+										<input type="password" name="person_password" id="person_password" placeholder="Password" value="${person.person_password}">
 								</div>
 								<div>					
 										<label for="password"><i class="icon-lock"></i>Password Check</label>
 										<!-- 로그인 패스워드 입력하는곳 -->
-										<input type="password" name="person_passwordcheck" id="person_passwordcheck" placeholder="Password Check" class="showpassword1">
+										<input type="password" name="person_passwordcheck" id="person_passwordcheck" placeholder="Password Check" class="showpassword1" value="${person.person_password}">
 								</div>
 								<div>					
 										<label for="login"><i class="icon-user"></i>Name</label>
 										<!-- 로그인 패스워드 입력하는곳 -->
-										<input type="text" name="person_name" id="person_name" placeholder="Name">
+										<input type="text" name="person_name" id="person_name" placeholder="Name" value="${person.person_password}">
 								</div>
 								<div>					
 										<label for="login"><i class="icon-user"></i>E-Mail</label><br>
 										<!-- 로그인 패스워드 입력하는곳 -->
-										<div style="float:left;"><input type="text" style="width:350px;" name="person_email" id="person_email" placeholder="Email"></div>
+										<div style="float:left;"><input type="text" style="width:350px;" name="person_email" id="person_email" value="${person.person_email}" placeholder="Email"></div>
 										<div style="float:left; padding-top:5px;"><font style="font-size:30px;">@</font></div>
 										<div style="float:left;">
 										 <select name="email" style="width:350px;">
@@ -246,12 +246,12 @@
 											<option>012</option>
 											<option>016</option>
 										</select>
-										<input type="text" name="person_phone2" id="person_phone1" placeholder="Phone1" maxlength="4" style="float:left;margin-bottom:25px; width:33.3%;">
-										<input type="text" name="person_phone3" id="person_phone1" placeholder="Phone2" maxlength="4" style="float:left;margin-bottom:25px; width:33.3%;">
+										<input type="text" name="person_phone2" id="person_phone1" placeholder="Phone1" value="${phone1}" maxlength="4" style="float:left;margin-bottom:25px; width:33.3%;">
+										<input type="text" name="person_phone3" id="person_phone1" placeholder="Phone2" value="${phone2}" maxlength="4" style="float:left;margin-bottom:25px; width:33.3%;">
 								</div>
 								<div>
 									<p class="clearfix"> 
-										<input type ="submit" value="Join">
+										<input type ="submit" value="Update">
 										<input type ="button" id="cancel" class="log-twitter" value="Cancel">    
 									</p>
 								</div>

@@ -53,6 +53,25 @@ public class PersonController {
 
 		return "redirect:/";
 	}
+
+	@RequestMapping(value = "personupdate", method = RequestMethod.POST)
+	public String updatePerson(Person person, String person_phone1, String person_phone2, String person_phone3) {
+		
+		String phone = (person_phone1  +"-"+ person_phone2 + "-" + person_phone3);
+		person.setPerson_phone(phone);
+		System.out.println(phone);
+		int result = dao.updatePerson(person);
+		
+		if (result != 1) {
+			// 만약 result(회원가입처리)가 1이아닐경우 즉, 가입 실패가 된다면 실패 후 가입 폼으로 이동합니다.
+			return "Join";
+		}
+		// 회원정보가 DB저장에 성공하면 홈으로 다시 redirect합니다.
+		
+		return "redirect:/";
+	}
+	
+	
 	
 	// ID유효성 검사 0822 다시 수정 NA
 	@RequestMapping(value = "idCheck", method = RequestMethod.GET)
@@ -107,6 +126,28 @@ public class PersonController {
 			session.invalidate();
 			
 	return "redirect:/";
+	}
+
+	@RequestMapping(value="updatePersonForm", method = RequestMethod.GET)
+	public String update(Model model, HttpSession session){
+		String person_id = (String)session.getAttribute("loginId");
+		
+		//아이디를 이용해 찾아야지
+		Person person = dao.searchPerson(person_id);
+		System.out.println(person);
+		String phone = person.getPerson_phone();
+		int mphoneidx= phone.indexOf("-");
+		String phoneresult = phone.substring(mphoneidx+1);
+		System.out.println(phoneresult);
+		
+		int phoneresultidx = phoneresult.indexOf("-");
+		String phoneresult2 = phoneresult.substring(0,phoneresultidx);
+		String phoneresult3 = phoneresult.substring(phoneresultidx+1);
+		
+		model.addAttribute("phone1", phoneresult2);
+		model.addAttribute("phone2", phoneresult3);
+		model.addAttribute("person", person);
+		return "updatePersonForm";
 	}
 	
 	

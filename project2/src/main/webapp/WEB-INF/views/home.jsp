@@ -171,6 +171,7 @@ html {overflow:scroll}
                        <li><a href="myPageForm">My Page</a></li>
                        <li><a href="cartForm">My Cart</a></li>
                        <li><a href="logOut">Log Out</a></li>
+                       <li><a href="updatePersonForm">개인 정보수정</a></li>
                        <li><a href="#mu-author">고객센터</a></li>
                      </ul>
                 </div><!-- /.navbar-collapse -->

@@ -28,6 +28,20 @@ public class PersonDAO	{
 			return result;
 					
 		}
+
+		//회원정보 업데이트용 //회원정보를 넣는 DAO - insert 관련 DAO
+		public int updatePerson(Person person){
+			PersonMapper mapper = sqlSession.getMapper(PersonMapper.class);
+			int result = 0;
+			try {
+				result = mapper.updatePerson(person);
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+			}
+			return result;
+			
+		}
 		
 		//아이디 중복 확인 0821 NA
 		public Person idCheck(String person_id){
@@ -44,4 +58,11 @@ public class PersonDAO	{
 			
 			return person; 
 		}
+		
+		public Person searchPerson(String id){
+			PersonMapper mapper = sqlSession.getMapper(PersonMapper.class);
+			Person person = mapper.searchPerson(id);
+			return person;
+		}
+		
 }

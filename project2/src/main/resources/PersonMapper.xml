@@ -33,4 +33,12 @@
 	<select id = "loginId" resultType="Person" parameterType="Person">
 		select * from person where person_id = #{person_id} and person_password = #{person_password} 
 	</select>
+	
+	<select id = "searchPerson" resultType="Person" parameterType="string">
+		select * from person where person_id = #{id}
+	</select>
+	
+	<update id = "updatePerson" parameterType="Person">
+		update person set person_name = #{person_name}, person_password = #{person_password}, person_email = #{person_email},person_phone = #{person_phone} where person_id = #{person_id} 
+	</update>
 </mapper>

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>READ</title>
 
 <meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -543,14 +543,14 @@ span.a-badge i.fa.fa-info-circle {
      style="display:block;width:870px;height:90px;margin:0 auto;"
      data-ad-client="ca-pub-5807968391783575"
      data-ad-slot="2366847732"></ins>
-<div style="border: 1px solid #f69f00;margin-top:5%;margin-left: 11%;margin-right: 11%;">
-	<div id="article-info" style="border-top: 4px solid #F3BA6F;">
+<div style="border: 1px solid #f69f00;margin-top:5%;margin-left: 11%;margin-right: 11%;background-color: white;">
+	<div id="article-info" style="border-top: 4px solid #F3BA6F;margin-bottom:10px;">
 	    <h2>
-			<span class="category" style="color:#62ad64"><font style="color:#f69f00">FORUM</font></span></h2>
+			<span class="category" style="color:#62ad64"><font style="color:#f69f00">FORUM</font><strong id="article-info-writer">      ${loginId}様</strong></span></h2>
 	    <img src="https://static-cdn.jtvnw.net/user-default-pictures/4cbf10f1-bb9f-4f57-90e1-15bf06cfe6f5-profile_image-300x300.jpg" alt="" class="img-rounded article-profile-img">
-	    <div id="article-info-writer">
-	         <strong>${loginId}</strong>様
-	    </div>
+<!-- 	    <div id="article-info-writer"> -->
+<%-- 	         <strong id="article-info-writer">${loginId}</strong>様 --%>
+<!-- 	    </div> -->
 	</div>
 
 <div id="article-content-wrapper">
@@ -588,11 +588,11 @@ span.a-badge i.fa.fa-info-circle {
 		<div id="reply-real-area" style="margin-right: 3%;margin-left: 3%;margin-bottom: 2%;">
 		<c:forEach var = "Reply" items = "${list_rep}">
 		<div class="reply d-0" id="comment-29955264" data-id="29955264">
-			<div class="reply-header" style="background: #f7f7f7;border-bottom: 1px solid #efefef;padding: 0.5em 0.5em;">
+			<div class="reply-header" style="/* background: #f7f7f7 */;border-bottom: 1px solid #efefef;padding: 0.1em 0.1em;">
 				<img class="reply-writer-image img-circle loaded" src="./assets/images/favicon.ico" 
 					width="48" height="48" data-was-processed="true" style="width: 2.2em;height: 2.2em;margin-right: 0.44em;float: left;">
 					<div class="reply-writer logged" style="color: #BE8D4C;"> 
-							<div style="float:left;">
+							<div style="float:left;background-color:#F6F6F6">
 								<font style="color:#BE8D4C; font-size:18px; padding:7px 0px 0px;font-weight:900;">${Reply.person_id}</font>
 							</div>
 							<div style="float:right;">
@@ -611,8 +611,10 @@ span.a-badge i.fa.fa-info-circle {
 									<span class="time" title="2019-09-05 오전 01:11:13"></span>
 									<span class="middot"></span>
 							</div>
-				<div class="clearfix" style="margin-bottom: 20px;"></div>
-					<p>${Reply.reply_contents}</p>
+				<div style="background: #f7f7f7;">
+				<div class="clearfix" style="margin-bottom: 20px; padding-top:3.5%;"></div>
+				</div>
+					<div style="background-color:white;padding-left:3%;"><p>${Reply.reply_contents}</p></div>
 			</div>
 		</div>
 		</c:forEach>
@@ -629,7 +631,7 @@ span.a-badge i.fa.fa-info-circle {
     border-right: 1px solid #f69f00;
     border-bottom: 1px solid #f69f00;">
         <h5>
-            <img src="./readFolder/images/bloodtrail.png" style="width:25px;height:25px;"> 댓글 <span id="totalCommentCount"></span> &nbsp;
+            <img src="./readFolder/images/bloodtrail.png" style="width:25px;height:25px;"> Reply <span id="totalCommentCount"></span> &nbsp;
         </h5>
     </div>
 
@@ -642,7 +644,7 @@ span.a-badge i.fa.fa-info-circle {
     <a name="lastc"></a>
 
     <a href="#" id="loadNewCommentsBtn" class="btn btn-sm btn-info invisible" style="margin: 0 15px;">
-        <i class="fa fa-refresh"></i> <span>새 댓글</span>
+        <i class="fa fa-refresh"></i> <span>New Reply</span>
     </a>
 
       <div id="comment-write-form-area" style="border-bottom: 4px solid #F3BA6F; padding-left:3%;">
@@ -655,7 +657,7 @@ span.a-badge i.fa.fa-info-circle {
                 <input type="password" class="form-control" id="commentPassword" maxlength="20" name="password" value="" placeholder="비밀번호"></div>
             </div>
             <textarea name="reply_contents" id="reply_contents" rows="4" class="form-control" placeholder="내용을 입력해주세요." 
-			            style="border: 1px solid #f69f00; min-width: 1235.81px;max-width: 1235.81px;"></textarea>
+			            style="border: 1px solid #f69f00; min-width: 1112.2px;max-width: 1112.2px;"></textarea>
 			<input type = "hidden" name = "board_num" value = ${board.board_num }>
             <div id="comment-write-button-area">
 <!-- 				<button class="btn btn-default pull-left hide btn-sm" tabindex="-1" type="submit" id="btnRereplyCancelBtn">취소</button> -->
@@ -664,7 +666,7 @@ span.a-badge i.fa.fa-info-circle {
                 	<font style="font-size:18px;">WRITE</font>
                 </button>
 				<button class="btn btn-primary pull-right btn-sm replywrite buttononclick" type="button" 
-					 onclick="listreturn()" style="margin: 0.5em; border-radius:12px;width:102px;margin-right: 80%;" >
+					 onclick="listreturn()" style="margin: 0.5em; border-radius:12px;width:102px;margin-right: 77%;" >
                 <font style="font-size:18px;">LIST</font>
                 </button>
                 <script>
@@ -695,7 +697,7 @@ span.a-badge i.fa.fa-info-circle {
 <!--             <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5807968391783575" data-ad-slot="5331132449" data-ad-format="auto"></ins> -->
 <!--         </div> -->
 <!--     </div> -->
-<!-- </div> --> -->
+<!-- </div> --> 
 
 <script type="text/javascript">
   window._taboola = window._taboola || [];

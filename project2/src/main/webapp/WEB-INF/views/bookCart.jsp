@@ -45,10 +45,10 @@ pageEncoding="UTF-8"%>
                                           <a class="codrops-icon codrops-icon-prev" href="/project" style="font-size:10px;padding-left:20px;">Home</a>
                                       </span>
                                   </div>
-                                  <span class="right">
-                                      <a class="codrops-icon codrops-icon-drop" href="logOut">
-                                          <span style="font-size:17px;">Log Out</span>
-                                      </a>
+                                  <span class="right">                                  		
+				                	<span class="right"><a class="codrops-icon codrops-icon-prev" href="logOut" style="text-decoration: none;"><span style="font-size:17px;">Log Out</span></a></span>
+									<span class="right"><a class="codrops-icon codrops-icon-prev" href="myPageForm" style="text-decoration: none;"><span style="font-size:17px;">My Page</span></a></span>
+									<span class="right"><a class="codrops-icon codrops-icon-prev" href="boardForm" style="text-decoration: none;"><span style="font-size:17px;">Board</span></a></span>
                                   </span>
                               </div>
                               <div class="logo">

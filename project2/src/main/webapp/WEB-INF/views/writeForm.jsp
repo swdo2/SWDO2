@@ -14,6 +14,8 @@
 	<link rel="stylesheet" type="text/css" href="./viewbook/css/bookblock.css" />
 	<link rel="stylesheet" type="text/css" href="./viewbook/css/component.css" />
 	<link rel="stylesheet" type="text/css" href="./readFolder/style3.css" />
+	<link href="./searchBook/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+	<link href="./searchBook/css/slider.css" rel="stylesheet" type="text/css" media="all"/>
 <title>Write</title>
  	<script src="resources/js/jquery-3.3.1.min.js"></script>
  	
@@ -268,7 +270,7 @@ span.a-badge i.fa.fa-info-circle {
     
     
 </head>
-<body>
+<body style="background: #f3f2f0;">
 	<div>
 		<header class="codrops-header">
 				<div class="codrops-top clearfix">
@@ -284,13 +286,25 @@ span.a-badge i.fa.fa-info-circle {
 				</div>
 				<div class="logo"></div>
 				<h1>BOARD<span>for <font style="font-size:30px;color:#FC7D01;font-weight:bold;">${loginId}</font><font style="font-size:30px;color:#fdff00;">様</font></span></h1>
+					<div class="w3layouts-left" style="width: 40%;background: #ffb827;padding:0.5em;margin-left: 30%;">
+	               		<!--search-box-->
+	                  <div class="w3-search-box" style="width: 100%;margin-top: 0em;position: relative;z-index: 1;display: inline-block;border: 2px solid #fff;">
+	                     <form action="searchBook" >   <!-- <<<<<<<<<<<<<<<<여기 가 검색 부분 액션 이름 단 입니다. -->
+	                        <b><input type="text" name="bookTitle" placeholder="Search..." required="required" maxlength="25"
+	                        	style="outline: none;background: #fff;width: 93%;margin: 0;z-index: 10;font-size: 0.9em;color: #7A7B78;padding: 0.5em 0.5em;border: none;-webkit-appearance: none;display: inline-block;text-align: center;font-size: 15px;"></b>
+	                        <input type="submit" value="" 
+	                        style="    background: url(resources/assets/images/search.png)no-repeat;width: 20px;height: 20px;display: inline-block;vertical-align: text-top;border: none;outline: none;">
+	                     </form>
+	                  </div><!--//end-search-box-->
+	                  <div class="clearfix"> </div>
+	            	</div>      
 		</header>
 	</div>
 <!-- -------------------------------------------------------------- 글쓰기 start---------------------------------------------------------------------------------------------------- -->
+	<h3 style="margin-top: 2%;font-size: 25px;margin-left: 10%;">New Write - ${loginId}</h3>
 	<div class="boardblock"> 	
 		<div class="frame">
-		    <h3>${loginId} - New Write</h3>
-		
+		    
 				<form id = "writeForm" action = "writeForm" method = "post" onsubmit = "return formCheck();">
 			        <div class="row mt-2">
 			            <div class="col-xs-10 right">
@@ -300,9 +314,10 @@ span.a-badge i.fa.fa-info-circle {
 			        <div class="mt-2">
 			            <textarea name="board_contents" id="board_contents" rows="5" class="form-control" placeholder="내용"></textarea>
 			        </div>
-				        <div class="mt-2 clearfix">
-				            <a href="/sinick0907" class="btn btn-default" tabindex="-1">CANCEL</a>
-				            <button id="article-write-button" class="btn btn-primary pull-right" type="submit" accesskey="s"> WRITE</button>
+				        <div class="mt-2 clearfix" style="margin-top: 1%;">
+				            <a href="boardForm" class="btn btn-default" tabindex="-1" style="width: 9%;height: 6%;padding-top: 9.2px;"><font style="font-size:1.2em;">CANCEL</font></a>
+				            <button id="article-write-button" class="btn btn-primary pull-right" type="submit" accesskey="s" style="width: 9%;height: 6%;"> 
+							<font style="font-size:1.2em">WRITE</font></button>
 				        </div>
 		<!-- 				<input type = "submit" value = "저장" /> -->
 				</form>
@@ -310,7 +325,7 @@ span.a-badge i.fa.fa-info-circle {
 	</div>
 <!-- -------------------------------------------------------------------글쓰기 end---------------------------------------------------------------------------------------------------------------------------------------------------- -->
 <!-- ----------------------------------------------맨밑에 정보 start------------------------------------------ -->
-   <div class="footer">
+   <div class="footer" style="margin: 5% auto; margin-bottom:0%;">
    	  <div class="wrap">
 	     <div class="section group">
 				<div class="col_1_of_4 span_1_of_4">
@@ -355,10 +370,10 @@ span.a-badge i.fa.fa-info-circle {
 						</ul>
 						
 				</div>
-				<div class="col_1_of_4 span_1_of_4">
+				<div class="col_1_of_4 span_1_of_4" style="padding-top:1px;">
 					<div class="social-icons">
 						<h4>SUPPORT</h4>
-				   		  <ul>
+				   		  <ul style="padding-left:17px;">
 						      <li><a href="https://www.aladin.co.kr/home/welcome.aspx" target="_blank"><img class="iconkugi" src="./BookForm/images/aladin.png" /></a></li>
 						      <li><a href="http://www.kyobobook.co.kr/index.laf?OV_REFFER" target="_blank"><img class="iconkugi" src="./BookForm/images/kyobo.jpg" /></a></li>
 						      <li><a href="https://book.naver.com" target="_blank"><img class="iconkugi" src="./BookForm/images/naver.ico" /></a></li>

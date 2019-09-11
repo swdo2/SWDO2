@@ -76,7 +76,7 @@ body {
 	border-left: 2px ridge #3D3B3B;
 }
 .nav_list li a{
-	font-size:0.823em;
+	font-size:1.123em;
 	color:#9C9C9C;
 	padding:0 10px;
 	font-family: 'ambleregular';
@@ -497,6 +497,7 @@ body {
 }/* all browsers except IE6 and lower */
 .span_1_of_4 {
 	width: 17.5%;
+	margin-right: 0.90%;
 	padding:1.5% 1.5% 0 0;
 	border-left:1px solid #CECECE;
 }
@@ -518,7 +519,7 @@ body {
 	padding-left:20px;
 }
 .span_1_of_4  li a {
-	font-size: 0.8125em;
+	font-size: 1.025em;
 	padding: 0.4em 0;
 	color:#9C9C9C;
 	font-family: 'ambleregular';

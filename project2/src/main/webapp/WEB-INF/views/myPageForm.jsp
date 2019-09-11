@@ -40,7 +40,7 @@
 		<link href="./bookdetails/css/agency.min.css" rel="stylesheet">
 
 		  <!-- Bootstrap core JavaScript -->
-
+		
 <!-- -----------------------------------------------details클릭하면 창뜨는 거 end---------------------------------------------- -->
 
 <!-- ------------------------------------book보는 js start------------------------------------------------ -->
@@ -109,6 +109,7 @@
 						</div>
 					<span class="right"><a class="codrops-icon codrops-icon-prev" href="logOut" style="text-decoration: none;"><span style="font-size:17px;">Log Out</span></a></span>
 					<span class="right"><a class="codrops-icon codrops-icon-prev" href="cartForm" style="text-decoration: none;"><span style="font-size:17px;">My Cart</span></a></span>
+					<span class="right"><a class="codrops-icon codrops-icon-prev" href="boardForm" style="text-decoration: none;"><span style="font-size:17px;">Board</span></a></span>
 				</div>
 				<div class="logo">
 				</div>
@@ -154,15 +155,16 @@
 						<div class="grid_1_of_5 images_1_of_5" style="height: 414.7px;">
 							 <div class="imageshover1" style="height: 260px;">
 						 		<a href="BookForm?isbn=${b.isbn}" class="imageshover2" ></a>
-						 		<img src="${b.image}" alt="すみませんが、準備しています。" style="height:260px;">
+						 		<img src="${b.image}" alt="すみませんが、準備しています。" style="height:260px;border-radius:12px;">
 							 </div>
-							 <h2><a href="BookForm?isbn=${b.isbn}" class="searchBookLiskTitle" style="width:100%;">${b.title}</a></h2>
+							 <h2><a href="BookForm?isbn=${b.isbn}" class="searchBookLiskTitle" style="width:100%;padding-bottom: 30px;font-size: 20px;width:100%;">${b.title}</a></h2>
 							<div class="price-details">
 					       		<div class="add-cart1">
 									<div class="clickku2" style="position: absolute;width: 38%;" title = "${b.title}" isbn = "${b.isbn}" image = "${b.image}" author = "${b.author}" publisher = "${b.publisher}"
-										pubdate = "${b.pubdate}" description = "${b.description}"><a style="color:aliceblue;"><button class="btn btn-51 btn-5a icon-plus" style="width: 100%;"><span style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">Details</span></button></a></div>
-									<div class="clickku3" style="width: 38%;position: absolute;margin-left: 41%;" id = "${b.isbn}"><a style="color:aliceblue;"><button class="btn btn-5 btn-5a icon-arrow-right" style="width:100%;"><span style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">E-BOOK</span></button></a></div>
-	
+										pubdate = "${b.pubdate}" description = "${b.description}"><a style="color:aliceblue;"><button class="btn btn-51 btn-5a icon-plus" style="width: 100%;">
+										<span style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">Details</span></button></a></div>
+									<div class="clickku3" style="width: 38%;position: absolute;margin-left: 41%;" id = "${b.isbn}"><a style="color:aliceblue;"><button class="btn btn-5 btn-5a icon-arrow-right" style="width:100%;">
+										<span style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">E-BOOK</span></button></a></div>
 						        </div>
 								<div class="clear"></div>
 							</div>
@@ -176,8 +178,9 @@
 	   
 <!--         </div> -->
 <!--     </div> -->
-	<div>
+	
 		<div class="section group" style="position: relative;padding-left: 3%;padding-top: 2%;">
+			<div>
 				<div class="col_1_of_4 span_1_of_4">
 					<h4>Refresh</h4>
 						<ul>
@@ -238,8 +241,9 @@
 				 <div class="copy_right">
 					<p>Company Name © All rights Reseverd | Design by  <font style="color:#ff8600">Jeon Jae Hyoung</font></p>
 			   </div>
+			 </div>
 		</div>   
-</div>
+
 <!-- ----------------------------------------------------------------------책출력되는 부분 end----------------------------------------------------------------------- -->				
 <!-- ----------------------------------------------------------------------details 클릭했을때 start ---------------------------------------------------- -->
 <div>

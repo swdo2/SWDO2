@@ -112,6 +112,7 @@ html {
 				</div>
 				<div class="account_desc">
 					<ul>
+						<li><a href="boardForm">Board</a></li>
 						<li><a href="cartForm">My Cart</a></li>
 						<li><a href="myPageForm">My Page</a></li>
 						<c:if test="${sessionScope.loginId != null }">
@@ -341,7 +342,7 @@ html {
 	<!-- ----------------------------------------------맨밑에 정보 start------------------------------------------ -->
 	<div class="footer">
 		<div class="wrap">
-			<div class="section group">
+			<div class="section group" style="margin-bottom:2%;">
 				<div class="col_1_of_4 span_1_of_4">
 					<h4>Refresh</h4>
 					<ul>
@@ -384,7 +385,7 @@ html {
 					</ul>
 
 				</div>
-				<div class="col_1_of_4 span_1_of_4">
+				<div class="col_1_of_4 span_1_of_4" style="padding-top:0%;">
 					<div class="social-icons">
 						<h4>SUPPORT</h4>
 						<ul>

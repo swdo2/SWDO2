@@ -13380,7 +13380,7 @@ span.a-badge i.fa.fa-commenting-o {
     right: 1em;
     top: 1em;
     width: 3em;
-    height: auto
+    height: 2.5em;
 }
 #article-info #article-info-writer {
     font-size: 15px;
@@ -13426,7 +13426,7 @@ span.a-badge i.fa.fa-commenting-o {
     margin: 0.3em
 }
 #article-content-wrapper > .footer {
-    background: #f6f6f6;
+/*     background: #f6f6f6; */
     padding: 0.5em 0.8em
 }
 #article-content-wrapper > .footer .mr-1 {

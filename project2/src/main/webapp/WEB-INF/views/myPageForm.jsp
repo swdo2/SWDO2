@@ -5,7 +5,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -147,8 +147,8 @@
     	</div>
 <!-- ----------------------------------------------------------------------list 제목 end----------------------------------------------------------------------- -->
 <!-- ----------------------------------------------------------------------책출력되는 부분 start----------------------------------------------------------------------- -->			
-	<div style="position:absolute;width:100%;">	
-		<div class="main" style="margin-left:9%;margin-bottom: 40%;height: 75%;">
+		
+		<div class="main" style="margin-left:9%;height: 100%;margin-bottom: 40%;">
 			<div class="listDiv" style="margin-bottom:10px;">
 	   			<c:forEach var="list" items="${blist}">
 					<c:forEach var = "b" items = "${list}">
@@ -173,13 +173,16 @@
 				</c:forEach>
 			</div>
 	</div>
+
+	
 <!-- 			<div class="footer"> -->
 <!--    	  <div class="wrap"> -->
 	   
 <!--         </div> -->
 <!--     </div> -->
 	
-		<div class="section group" style="position: relative;padding-left: 3%;padding-top: 2%;">
+<div style="margin-bottom:70%;"></div>
+<div class="section group" style="position: relative;padding-left: 4%;border-top: 1px solid #b9b8b8;padding-top: 0%;">
 			<div>
 				<div class="col_1_of_4 span_1_of_4">
 					<h4>Refresh</h4>
@@ -238,12 +241,11 @@
 				</div>
 
 		</div>
-				 <div class="copy_right">
-					<p>Company Name © All rights Reseverd | Design by  <font style="color:#ff8600">Jeon Jae Hyoung</font></p>
-			   </div>
-			 </div>
-		</div>   
-
+</div>
+	<div class="copy_right">
+		<p>Company Name © All rights Reseverd | Design by  <font style="color:#ff8600">Jeon Jae Hyoung</font></p>
+	</div>
+		
 <!-- ----------------------------------------------------------------------책출력되는 부분 end----------------------------------------------------------------------- -->				
 <!-- ----------------------------------------------------------------------details 클릭했을때 start ---------------------------------------------------- -->
 <div>

@@ -335,13 +335,14 @@ span.a-badge i.fa.fa-info-circle {
         
       </a>
       <a href="/sinick0907/profile">
-      	<i class="fa fa-info-circle"></i> BOOK
+      	<img src="./BookForm/images/bookicon1.png" style="width:22px;height:22px" >BOOK
       </a>
       <a target="_blank" href="//twitch.tv/sinick0907">
-        <i class="fa fa-twitch"></i> 
-           Life
-              </a><a href="/clips?streamer_id=191603590" id="goClipBtn"><i class="fa fa-film"></i> 클립</a>    </div>
+         <img src="./BookForm/images/lifeicon.jpeg" style="width:22px;height:22px">Life
+              </a><a href="/clips?streamer_id=191603590" id="goClipBtn"></a>   
+     </div>
 </div>
+
 
 <!-- tgd_board_list -->
 <ins class="adsbygoogle"

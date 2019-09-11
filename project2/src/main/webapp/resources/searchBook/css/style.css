@@ -337,6 +337,9 @@ body {
 	width:500px;
 	height:260px;
 }
+.grid_1_of_5.images_1_of_5:nth-child(9) > div:nth-child(1) > a:nth-child(1) > img:nth-child(1) {
+ margin-top: 105px;
+}
 .images_1_of_5  h2  a{
 	float:left;
     color: #121d12;

@@ -335,11 +335,11 @@ span.a-badge i.fa.fa-info-circle {
         
       </a>
       <a href="/sinick0907/profile">
-      	<i class="fa fa-info-circle"></i> 소개
+      	<i class="fa fa-info-circle"></i> BOOK
       </a>
       <a target="_blank" href="//twitch.tv/sinick0907">
         <i class="fa fa-twitch"></i> 
-                 채널
+           Life
               </a><a href="/clips?streamer_id=191603590" id="goClipBtn"><i class="fa fa-film"></i> 클립</a>    </div>
 </div>
 

@@ -375,7 +375,7 @@ html {overflow:scroll}
                               <span class="mu-rt-title">Web Designer</span>
                            </li>
                            <li>
-                              <p>"자바는 마약과같다 따라서 자바교육은 범죄행위로 간주해야한다. "</p>
+                              <p>"그치만.. 오니상의 자바는 마약과같다 따라서 자바교육은 범죄행위로 간주해야한다. "</p>
                               <img class="mu-rt-img" src="./assets/images/나홍윤.jpg" alt="img">
                               <h5 class="mu-rt-name"> - ナホンユン</h5>
                               <span class="mu-rt-title">programmer, SWDO Inc.</span>

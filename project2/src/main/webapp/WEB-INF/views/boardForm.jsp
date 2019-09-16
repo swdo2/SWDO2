@@ -248,7 +248,6 @@ span.a-badge i.fa.fa-info-circle {
 /* } */
 </style>        
 <script>
-	<script>
 		function pagingFormSubmit(currentPage) {
 			var form = document.getElementById('pagingForm');
 			var page = document.getElementById('page');
@@ -369,7 +368,7 @@ span.a-badge i.fa.fa-info-circle {
 	<div class="article-list-row has-category   " id="article-list-row-30071395">
 		<div class="item">        
 <!--번호 start -->
-	        <div class="list-header v3" style="padding: 2px 24px;">
+	        <div class="list-header v3" style="padding: 2px 24px;width:71.2px;">
 	            <span>
 					<a href="read?board_num=${Board.board_num}">${Board.board_num}</a>
 				</span>        
@@ -377,7 +376,7 @@ span.a-badge i.fa.fa-info-circle {
 <!--번호 end -->
 			<div class="list-title">           
 			<div class="list-category">
-				<span class="category" style="color:#ff5000">
+				<span class="category" style="color:#ff5000;width:71.2px;">
 					${Board.board_hits}
 				</span>
 			</div>            
@@ -402,10 +401,26 @@ span.a-badge i.fa.fa-info-circle {
 </c:forEach>
 <!-- ------------------------------------------------------------------페이지페이징 start--------------------------------------------------------------------		 -->
     <div id="article-list-menu">
-        
-                <ul class='pagination'><li class='disabled'><li class='active'><a href='#'>1<span class='sr-only'></span></a></li><li
-                ><a href="/sinick0907/page/2" data-ci-pagination-page="2">2</a></li><li><a href="/sinick0907/page/3" data-ci-pagination-page="3">3</a></li><li>
-                <a href="/sinick0907/page/4" data-ci-pagination-page="4">4</a></li><li><a href="/sinick0907/page/2" data-ci-pagination-page="2" rel="next">&gt;</a></ul> 
+                <ul class='pagination'>
+                	<li class='disabled'>
+                	<li class='active'>
+                		<a href='#'>1
+                			<span class='sr-only'></span>
+                		</a>
+                	</li>
+                	<li>
+                		<a href="/sinick0907/page/2" data-ci-pagination-page="2">2
+                		</a>
+                	</li>
+                	<li>
+                		<a href="/sinick0907/page/3" data-ci-pagination-page="3">3</a>
+                	</li>
+                	<li>
+                		<a href="/sinick0907/page/4" data-ci-pagination-page="4">4</a>
+                	</li>
+                	<li>
+                		<a href="/sinick0907/page/2" data-ci-pagination-page="2" rel="next">&gt;</a>
+                </ul> 
                 <c:if test="${sessionScope.loginId != null }">
                 <a href="writeForm" class="btn square btn-primary write">
                 	<img src="./BookForm/images/write.png" style="width:22px;height:22px;"> 글 쓰기
@@ -442,33 +457,53 @@ span.a-badge i.fa.fa-info-circle {
  </div>        	
 <!-- ------------------------------------------------------------------페이지페이징 end--------------------------------------------------------------------		 -->
 	<div style="margin-left:43%; position: absolute; ">
-		<a href="javascript:pagingFormSubmit(${1})">◁◁ </a> &nbsp;&nbsp;
+		<ul class='pagination'>
+                	<li class='disabled'>
+                	<li class='active'>
+                		<a href='#'>1
+                			<span class='sr-only'></span>
+                		</a>
+                	</li>
+                	<li>
+                		<a href="/sinick0907/page/2" data-ci-pagination-page="2">2
+                		</a>
+                	</li>
+                	<li>
+                		<a href="/sinick0907/page/3" data-ci-pagination-page="3">3</a>
+                	</li>
+                	<li>
+                		<a href="/sinick0907/page/4" data-ci-pagination-page="4">4</a>
+                	</li>
+                	<li>
+                		<a href="/sinick0907/page/2" data-ci-pagination-page="2" rel="next">&gt;</a>
+                </ul> 		
+		<a href="javascript:pagingFormSubmit(${1})">&lt;&lt;</a>
 		<c:if test="${navi.startPageGroup - 1 < 1 }">
-			<a href="javascript:pagingFormSubmit(${1})">◀</a> &nbsp;&nbsp;
+			<a href="javascript:pagingFormSubmit(${1})">&lt;</a> 
 		</c:if>
 		<c:if test="${navi.startPageGroup -1 >= 1 }">
-			<a href="javascript:pagingFormSubmit(${navi.startPageGroup - 1})">◀</a> &nbsp;&nbsp;
+			<a href="javascript:pagingFormSubmit(${navi.startPageGroup - 1})">&lt;</a> 
 		</c:if>
 		<c:forEach var="counter" begin="${navi.startPageGroup}"
 			end="${navi.endPageGroup}">
 			<c:if test="${counter == navi.currentPage}">
 			</c:if>
-				<a href="javascript:pagingFormSubmit(${counter})">${counter}</a>&nbsp;
+				<a href="javascript:pagingFormSubmit(${counter})" style="padding: 6px 12px;background: #CE6D39;line-heigth:1.7;">${counter}</a>
 			<c:if test="${counter == navi.currentPage}">
 			</c:if>
 		</c:forEach>
-		&nbsp;&nbsp;
+		
 		<c:if test="${navi.endPageGroup + 1 >= navi.totalPageCount }">
-			<a href="javascript:pagingFormSubmit(${navi.totalPageCount})">▶</a> &nbsp;&nbsp;
+			<a href="javascript:pagingFormSubmit(${navi.totalPageCount})">&gt;</a> 
 		</c:if>
 		<c:if test="${navi.endPageGroup + 1 < navi.totalPageCount }">
-			<a href="javascript:pagingFormSubmit(${navi.endPageGroup + 1})">▶</a> &nbsp;&nbsp;
+			<a href="javascript:pagingFormSubmit(${navi.endPageGroup + 1})">&gt;</a> 
 		</c:if>
-		<a href="javascript:pagingFormSubmit(${navi.totalPageCount})">▷▷</a> <br>
+		<a href="javascript:pagingFormSubmit(${navi.totalPageCount})">&gt;&gt;</a> <br>
 		<div>
 		<form id="pagingForm" method="get" action="boardForm">
 			<input type="hidden" name="page" id="page"> 
-				<select id="select" name="select">
+				<select id="select" name="select" >
 					<option value="board_title" ${select eq "title" ? "selected" : ""}>
 						제목
 					</option>

@@ -168,9 +168,9 @@ public class BoardController {
 		Board board = new Board();
 		board.setBoard_num(board_num);
 		board.setPerson_id(id);
-		
+		System.out.println(board+"2");
 		dao.delete(board);
-		
+		System.out.println(board+"1");	
 		return "redirect:boardForm?id=" + id;
 			
 	}

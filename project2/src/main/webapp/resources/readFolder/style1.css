@@ -70,9 +70,9 @@
 .fa.fa-pull-right {
     margin-left: 0.3em
 }
-.pull-right {
+/* .pull-right {
     float: right
-}
+} */
 .pull-left {
     float: left
 }
@@ -13659,21 +13659,23 @@ a.gif-thumbnail.clicked::before {
 .replystyle1{
 	color: #fff;
 	width: 65px;
+	border-radius:10px;
     background-color: #FF9C00;
     border-color: #FF9C00;
     text-decoration: none;
-    padding: 5px 10px;
-    font-size: 12px;
+    padding: 1px 10px;
+    font-size: 18px;
     line-height: 1.5;
     border-radius:7px;
 }
 .replystyle1:hover{
 	color: #fff;
+	border-radius:10px;
     background-color: #FF0084	;
     border-color: #FF0084	;
     text-decoration: none;
-    padding: 5px 10px;
-    font-size: 12px;
+    padding: 1px 10px;
+    font-size: 18px;
     line-height: 1.5;
     border-radius: 7px;
 }
@@ -13681,21 +13683,23 @@ a.gif-thumbnail.clicked::before {
 .replystyle2{
 	color: #000;
 	width: 65px;
+	border-radius:10px;
     background-color: #dddddd82;
     border-color: white;
     text-decoration: none;
-    padding: 5px 10px;
-    font-size: 12px;
+    padding: 1px 10px;
+    font-size: 18px;
     line-height: 1.5;
     border-radius: 7px;
 }
 .replystyle2:hover{
 	color: #fff;
+	border-radius:10px;
     background-color: #E00546;
     border-color: #E00546;
     text-decoration: none;
-    padding: 5px 10px;
-    font-size: 12px;
+    padding: 1px 10px;
+    font-size: 18px;
     line-height: 1.5;
     border-radius: 7px;
 }

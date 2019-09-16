@@ -33,9 +33,4 @@ public class ReplyDAO	{
 		
 	}
 	
-	public int replydelete(Reply reply){
-		ReplyMapper mapper = sqlsession.getMapper(ReplyMapper.class);
-		int result = mapper.replydelete(reply);
-		return result;
-	}
 }

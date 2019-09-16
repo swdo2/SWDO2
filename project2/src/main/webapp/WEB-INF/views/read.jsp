@@ -408,33 +408,18 @@ span.a-badge i.fa.fa-info-circle {
 	  });
   	}
   
-//   //삭제하기
-//   function deleteBoard(){	  
-// 	  if(confirm('ARE YOU SURE YOU WANT TO DELETE IT?')){
-// 		  location.href = 'deleteBoard?board_num=${board.board_num}';	
-// 	  }
-//   }
-//   //수정
-//   function updateBoard(){
-// 	  location.href = 'update?board_num=${board.board_num}';
-//   }
-  
   //삭제하기
   function deleteBoard(){	  
 	  if(confirm('ARE YOU SURE YOU WANT TO DELETE IT?')){
-// 		  location.href = 'replydelete?board_num=${board.board_num}';
-		  var reply_contents = $('#reply_contents').val(); 
-		  location.href = 'replydelete?reply_contents='+reply_contents;	
+		  location.href = 'deleteBoard?board_num=${board.board_num}';	
 	  }
   }
   //수정
   function updateBoard(){
 	  location.href = 'update?board_num=${board.board_num}';
   }
-  
-  
-  
-  
+ 
+
   //댓글을 입력해주세요.
   function reply(){
 	 var re = document.getElementById('reply_contents');
@@ -518,12 +503,6 @@ span.a-badge i.fa.fa-info-circle {
 							<div style="float:left;background-color:#F6F6F6">
 								<font style="color:#BE8D4C; font-size:18px; padding:7px 0px 0px;font-weight:900;">${Reply.person_id}</font>
 							</div>
-							<div style="float:right;">
-								<c:if test = "${sessionScope.loginId == Reply.person_id}">
-									<input  class="replystyle1" id ="btUpdate" type = "button" value = "수정">
-									<input class="replystyle2" id = "btDelete" type = "button" value = "삭제">
-								</c:if>
-							</div>
 					</div>
 				<div style="background: #f7f7f7;">
 				<div class="clearfix" style="margin-bottom: 10px; padding-top:3.5%;"></div>
@@ -575,15 +554,20 @@ span.a-badge i.fa.fa-info-circle {
             <textarea name="reply_contents" id="reply_contents" rows="4" class="form-control" placeholder="Please Enter Comments." 
 			            style="border: 1px solid #f69f00; min-width: 1112.2px;max-width: 1112.2px;"></textarea>
 			<input type = "hidden" name = "board_num" value = ${board.board_num }>
-            <div id="comment-write-button-area">
-                <button class="btn btn-primary pull-right btn-sm replywrite" style="margin: 0.5em; border-radius:12px;margin-right: 2%;" type="submit" >
-                	<img src="./readFolder/images/pencil3.png" style="width:24px;height:24px;">
+            <div id="comment-write-button-area" style="margin-top:0.7em;margin-bottom:0.7em;">
+                <button class="btn btn-primary pull-right btn-sm replywrite" style="height:38.4px;border-radius:12px;margin-right: 2%;" type="submit" >
+                	<img src="./readFolder/images/pencil3.png" style="width:22px;height:22px;margin-bottom:8px;">
                 	<font style="font-size:18px;">WRITE</font>
                 </button>
+                <c:if test = "${sessionScope.loginId == board.person_id}">
+					<input  class="replystyle1" style="width:102px;height:38.4px;" id ="btUpdate" type = "button" value = "Update">
+					<input class="replystyle2" style="width:102px;height:38.4px;" id = "btDelete" type = "button" value = "Delete">
+				</c:if>
 				<button class="btn btn-primary pull-right btn-sm replywrite buttononclick" type="button" 
-					 onclick="listreturn()" style="margin: 0.5em; border-radius:12px;width:102px;margin-right: 77%;" >
+					 onclick="listreturn()" style="border-radius:12px;width:102px;height:38.4px;margin-right:7px;" >
                		 <font style="font-size:18px;">LIST</font>
                 </button>
+                				
                 <script>
                 	function listreturn() {
                 		location.href="boardForm";

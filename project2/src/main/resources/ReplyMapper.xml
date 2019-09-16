@@ -14,16 +14,4 @@
 		select * from reply where board_num = #{board_num}
 	</select>
  	
-<!-- 	댓글 수정  -->
-	<update id="replyupdate" parameterType="Reply">
-		UPDATE reply SET reply_contents = #{reply_contents}
-		 where person_id=#{loginId} 
-		and reply_contents=#{reply_contents};
-	</update>
-	
-<!-- 	댓글 삭제   -->
-	<delete id="replydelete" parameterType="Reply">
-		delete from reply where reply_contents = #{reply_contents} 
-		and person_id = #{loginId}
-	</delete>
 </mapper>

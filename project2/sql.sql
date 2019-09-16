@@ -67,16 +67,16 @@ CREATE TABLE Cart
 
 CREATE TABLE Board
 (
-	board_num number NOT NULL,
+	board_num number NOT NULL PRIMARY KEY,
 	board_contents clob NOT NULL,
 	board_title varchar2(30) NOT NULL,
 	-- 기본값 0
 	board_hits number default 0 NOT NULL,
 	board_like number default 0 NOT NULL,
 	-- 회원 아이디
-	person_id varchar2(20) NOT NULL,
-	PRIMARY KEY (board_num)
-);
+	person_id varchar2(20) NOT NULL)
+;
+
 
 
 CREATE TABLE Book
@@ -154,7 +154,7 @@ ALTER TABLE CheckBoard
 
 ALTER TABLE Reply
 	ADD FOREIGN KEY (board_num)
-	REFERENCES Board (board_num)
+	REFERENCES Board (board_num) on delete cascade
 ;
 
 
@@ -166,7 +166,7 @@ ALTER TABLE Cart
 
 ALTER TABLE Board
 	ADD FOREIGN KEY (person_id)
-	REFERENCES Person (person_id)
+	REFERENCES Person (person_id) 
 ;
 
 
@@ -186,6 +186,8 @@ ALTER TABLE Reply
 	ADD FOREIGN KEY (person_id)
 	REFERENCES Person (person_id)
 ;
+
+
 
 
 

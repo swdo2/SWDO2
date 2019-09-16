@@ -52,7 +52,8 @@ body {
 	background: #FFF;
 }
 .wrap {
-	width:85%;
+	width:100%;
+	margin-left:3%;
 	margin: 0 auto;
 	transition:all .2s linear;
 	-moz-transition:all .2s linear;/* firefox */
@@ -474,11 +475,11 @@ body {
 /* 	 background:#da350fd9; */
 }
 /*** Footer ***/
-.footer {
-	position: relative;
-	background: #FCFCFC;
-    border-top: 1px solid #CECECE;
-    margin-top:5%;
+/* .footer { */
+/* 	position: relative; */
+/* 	background: #FCFCFC; */
+/*     border-top: 1px solid #CECECE; */
+/*     margin-top:0.5%; */
     
 }
 .section {

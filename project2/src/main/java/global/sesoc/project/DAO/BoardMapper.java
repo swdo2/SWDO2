@@ -6,6 +6,7 @@ import java.util.HashMap;
 import org.apache.ibatis.session.RowBounds;
 
 import global.sesoc.project.VO.Board;
+import global.sesoc.project.VO.Reply;
 
 public interface BoardMapper {
 
@@ -39,6 +40,8 @@ public interface BoardMapper {
 	
 	//글 조회수
 	public int updateHits(int board_num);
+
+	
 	
 	
 }

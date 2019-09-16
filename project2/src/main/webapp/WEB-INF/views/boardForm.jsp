@@ -219,7 +219,7 @@ header #header-bar .fa {
 }
 
 a {
-  color: #CE6D39;
+  color: white;
 }
 
 span.a-badge i.fa.fa-info-circle {
@@ -243,9 +243,9 @@ span.a-badge i.fa.fa-info-circle {
   height: unset;
 }
 
-.btn-primary {
-  background: #FFEEE4 !important;
-}
+/* .btn-primary { */
+/*   background: #FFEEE4 !important; */
+/* } */
 </style>        
 <script>
 	<script>
@@ -320,7 +320,7 @@ span.a-badge i.fa.fa-info-circle {
 <!------------------------------------------------------------------------ 수정할 보드폼 start ----------------------------------------------------------------------->
 
 <!------------------------------------------------------------------------ 수정할 보드폼 end ----------------------------------------------------------------------->
-<div class="col-xs-10" id="main-content">
+<div class="col-xs-10" id="main-content" style="padding-top: 2%;">
   <div class="frame">
     <div id="board-info" data-owner-id="191603590" data-type="streamer" data-alias="sinick0907" data-name="2시니">
       <img src="./readFolder/images/cyworld icon.jpg" alt="" id="board-info-profile-img" class="pull-right img-rounded" style="width:64px;height:64px;">
@@ -330,21 +330,24 @@ span.a-badge i.fa.fa-info-circle {
 <!--            <span id="viewers-area" class="hide"><i class="fa fa-user"></i> <span id="viewers">0</span></span> -->
     	</h1>
     <div id="board-info-bottom">
-      <a data-id="19642728" id="addFavoriteBtn" title="즐겨찾기에 추가" style="cursor:auto;">
-        <img src="./readFolder/images/cyworld icon.jpg" style="width:24px;geight:24px;">
-        
-      </a>
-      <a href="/sinick0907/profile">
-      	<img src="./BookForm/images/bookicon1.png" style="width:22px;height:22px" >BOOK
-      </a>
-      <a target="_blank" href="//twitch.tv/sinick0907">
+      <a href="homeButton">
+         <img src="./BookForm/images/home-xxl.png" style="width:22px;height:22px">
+	  </a>
+	  <a href="myPageForm">
+         <img src="./BookForm/images/lifeicon.jpeg" style="width:22px;height:22px">My Page
+	  </a>
+	  <a href="cartForm">
+         <img src="./BookForm/images/lifeicon.jpeg" style="width:22px;height:22px">My Cart
+	  </a>
+	  <a style="cursor: unset;">
+	      	<img src="./BookForm/images/bookicon1.png" style="width:22px;height:22px" >BOOK
+	      </a>
+      <a style="cursor: unset;">
          <img src="./BookForm/images/lifeicon.jpeg" style="width:22px;height:22px">Life
-              </a><a href="/clips?streamer_id=191603590" id="goClipBtn"></a>   
+	  </a>
      </div>
 </div>
-
-
-<!-- tgd_board_list -->
+<!-- List -->
 <ins class="adsbygoogle"
      style="display:block;width:870px;height:90px;margin:0 auto;"
      data-ad-client="ca-pub-5807968391783575"
@@ -352,787 +355,71 @@ span.a-badge i.fa.fa-info-circle {
 <div id="article-list">
 <div id="article-option-area">
     <input type="checkbox" id="hide_notice" class="hide">
-    <button id="article-option-area-toggle-btn"><i class="fa fa-eye"></i></button>
 </div>
-<div id="article-list-category">
-    <a class="nav-link active" href="/sinick0907"><i class="fa fa-home"></i></a><a style="color:#ffcd00" class="nav-link " href="/sinick0907?category=20209758">공지</a><a style="color:#002fff" class="nav-link " href="/sinick0907?category=20209359">게임&컨텐츠 추천</a><a style="color:#ff0000" class="nav-link " href="/sinick0907?category=20209347">방송 클립(다 좋아~)</a><a style="color:#ff5000" class="nav-link " href="/sinick0907?category=20209371">자유게시판(친목금지)</a><a style="color:#00b352" class="nav-link " href="/sinick0907?category=20209363">팬아트</a></div>
-
-            <div class="article-list-row has-category notice  " id="article-list-row-22307328"><div class="item">
-        
-        <div class="list-header v4">
-            <strong>공지</strong>        </div>
-
-        <div class="list-title">
-            
-            
-                        <span class="a-badge"><i class="fa fa-info-circle"></i></span><a title="이번주 방송 공지!" href="/22307328" style="color:#000000">
-                                이번주 방송 공지!            </a>
-
-                        <small class="comment-count">[6]</small>
-            
-            
-            
-            <div class="list-writer  logged">
-                                <span>
-                    <img src="https://static-cdn.jtvnw.net/chat-badges/broadcaster.png" alt="Broadcaster" title="Broadcaster" align="absmiddle" />                     2시니                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            05-07        </div>
-    </div></div>
-
-            <div class="article-list-row has-category notice  " id="article-list-row-20209975"><div class="item">
-        
-        <div class="list-header v2">
-            <strong>공지</strong>        </div>
-
-        <div class="list-title">
-            
-            
-                        <span class="a-badge"><i class="fa fa-info-circle"></i></span><a title="★시하~ 시게더 기본규칙 공지사항(필독)★" href="/20209975" style="color:#000000">
-                                ★시하~ 시게더 기본규칙 공지사항(필독)★            </a>
-
-                        <small class="comment-count">[3]</small>
-            
-            
-            
-            <div class="list-writer  logged">
-                                <span>
-                    <img src="https://static-cdn.jtvnw.net/chat-badges/broadcaster.png" alt="Broadcaster" title="Broadcaster" align="absmiddle" />                     2시니                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            03-29        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-30071395"><div class="item">
-        
-        <div class="list-header v0">
-            <span>0</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#ff5000">자유게시판(친목금지)</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-picture-o"></i></span><a title="9월7일이 왜 국가 공휴일이 아닌가요?!?!" href="/30071395" style="">
-                                9월7일이 왜 국가 공휴일이 아닌가요?!?!            </a>
-
-            
-            
-            
-            <div class="list-writer  logged">
-                                <span>
-                                        필립스군                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            09-07        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-30056508"><div class="item">
-        
-        <div class="list-header v0">
-            <span>0</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#ff5000">자유게시판(친목금지)</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-picture-o"></i></span><a title="올만이유~~~" href="/30056508" style="">
-                                올만이유~~~            </a>
-
-            
-            
-            
-            <div class="list-writer  logged">
-                                <span>
-                                        시니누나땜에사는갈비                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            09-06        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-28984179"><div class="item">
-        
-        <div class="list-header v0">
-            <span>0</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#ff5000">자유게시판(친목금지)</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-picture-o"></i></span><a title="시이이하아아!!!!" href="/28984179" style="">
-                 <i class="fa fa-lock"></i>                시이이하아아!!!!            </a>
-
-            
-            
-            
-            <div class="list-writer  logged">
-                                <span>
-                                        필립스군                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            08-15        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-28951545"><div class="item">
-        
-        <div class="list-header v0">
-            <span>0</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#002fff">게임&컨텐츠 추천</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-commenting-o"></i></span><a title="Korea patriotic song ; Korea independence song" href="/28951545" style="">
-                                Korea patriotic song ; Korea independence song            </a>
-
-            
-            
-            
-            <div class="list-writer  logged">
-                                <span>
-                    <img src="https://static-cdn.jtvnw.net/badges/v1/c106999d-eca8-4f22-aa73-3ead6944bd14/1" align="absmiddle">                     파일럿0425                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            08-14        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-27904849"><div class="item">
-        
-        <div class="list-header v3">
-            <span>3</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#ff5000">자유게시판(친목금지)</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-commenting-o"></i></span><a title="구독쓰 냐미쓰~~" href="/27904849" style="">
-                                구독쓰 냐미쓰~~            </a>
-
-                        <small class="comment-count">[1]</small>
-            
-            
-            
-            <div class="list-writer  logged">
-                                <span>
-                                        시니누나땜에사는갈비                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            07-26        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-26842034"><div class="item">
-        
-        <div class="list-header v3">
-            <span>3</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#ff5000">자유게시판(친목금지)</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-picture-o"></i></span><a title="세계에서 가장 큰 수영장" href="/26842034" style="">
-                                세계에서 가장 큰 수영장            </a>
-
-                        <small class="comment-count">[2]</small>
-            
-            
-            
-            <div class="list-writer  logged">
-                                <span>
-                    <img src="https://static-cdn.jtvnw.net/badges/v1/c106999d-eca8-4f22-aa73-3ead6944bd14/1" align="absmiddle">                     파일럿0425                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            07-08        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-26675158"><div class="item">
-        
-        <div class="list-header v0">
-            <span>0</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#002fff">게임&컨텐츠 추천</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-picture-o"></i></span><a title="[1인개발 자작게임 추천]어렵지만 재미있는게임 "Bring it on"" href="/26675158" style="">
-                                [1인개발 자작게임 추천]어렵지만 재미있는게임 "Bring it on"            </a>
-
-            
-            
-            
-            <div class="list-writer  logged">
-                                <span>
-                                        daeburu                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            07-06        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-26303009"><div class="item">
-        
-        <div class="list-header v0">
-            <span>0</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#002fff">게임&컨텐츠 추천</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-commenting-o"></i></span><a title="오뱅있?" href="/26303009" style="">
-                                오뱅있?            </a>
-
-                        <small class="comment-count">[1]</small>
-            
-            
-            
-            <div class="list-writer ">
-                                <span>
-                                        Twosunnys                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            06-29        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-26286773"><div class="item">
-        
-        <div class="list-header v3">
-            <span>3</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#ff5000">자유게시판(친목금지)</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-picture-o"></i></span><a title="오늘은 오늘은 오늘은~~" href="/26286773" style="">
-                                오늘은 오늘은 오늘은~~            </a>
-
-                        <small class="comment-count">[4]</small>
-            
-            
-            
-            <div class="list-writer  logged">
-                                <span>
-                                        시니누나땜에사는갈비                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            06-29        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-25919816"><div class="item">
-        
-        <div class="list-header v3">
-            <span>3</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#ff5000">자유게시판(친목금지)</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-commenting-o"></i></span><a title="흐어어어어어엉 ㅜㅜ" href="/25919816" style="">
-                                흐어어어어어엉 ㅜㅜ            </a>
-
-                        <small class="comment-count">[3]</small>
-            
-            
-            
-            <div class="list-writer  logged">
-                                <span>
-                                        좀알려줘                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            06-23        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-25865004"><div class="item">
-        
-        <div class="list-header v3">
-            <span>3</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#ff5000">자유게시판(친목금지)</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-commenting-o"></i></span><a title="누님...방송은 잊으신건가요....?" href="/25865004" style="">
-                                누님...방송은 잊으신건가요....?            </a>
-
-                        <small class="comment-count">[1]</small>
-            
-            
-            
-            <div class="list-writer ">
-                                <span>
-                                        구기구깃                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            06-22        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-25694739"><div class="item">
-        
-        <div class="list-header v4">
-            <span>4</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#ff5000">자유게시판(친목금지)</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-commenting-o"></i></span><a title="시니님...큰일입니다..." href="/25694739" style="">
-                                시니님...큰일입니다...            </a>
-
-                        <small class="comment-count">[3]</small>
-            
-            
-            
-            <div class="list-writer  logged">
-                                <span>
-                    <img src="https://static-cdn.jtvnw.net/badges/v1/46328f4b-393a-4aa9-ba60-89d8ac948830/1" align="absmiddle">                     곧군대감_쇼쿠판                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            06-20        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-25581890"><div class="item">
-        
-        <div class="list-header v0">
-            <span>0</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#ff5000">자유게시판(친목금지)</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-commenting-o"></i></span><a title="팻두형님 저좀 도와주세유..." href="/25581890" style="">
-                                팻두형님 저좀 도와주세유...            </a>
-
-                        <small class="comment-count">[2]</small>
-            
-            
-            
-            <div class="list-writer  logged">
-                                <span>
-                                        시니누나땜에사는갈비                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            06-18        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-25466371"><div class="item">
-        
-        <div class="list-header v0">
-            <span>0</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#ff5000">자유게시판(친목금지)</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-picture-o"></i></span><a title="아이고..." href="/25466371" style="">
-                                아이고...            </a>
-
-                        <small class="comment-count">[3]</small>
-            
-            
-            
-            <div class="list-writer  logged">
-                                <span>
-                    <img src="https://static-cdn.jtvnw.net/badges/v1/46328f4b-393a-4aa9-ba60-89d8ac948830/1" align="absmiddle">                     휴지맨                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            06-17        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-25398803"><div class="item">
-        
-        <div class="list-header v0">
-            <span>0</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#002fff">게임&컨텐츠 추천</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-commenting-o"></i></span><a title="아이콘테스트" href="/25398803" style="">
-                                아이콘테스트            </a>
-
-            
-            
-            
-            <div class="list-writer  logged">
-                                <span>
-                    <img src="https://static-cdn.jtvnw.net/badges/v1/46328f4b-393a-4aa9-ba60-89d8ac948830/1" align="absmiddle">                     곧군대감_쇼쿠판                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            06-16        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-25369101"><div class="item">
-        
-        <div class="list-header v0">
-            <span>0</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#ff5000">자유게시판(친목금지)</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-picture-o"></i></span><a title="오랜만이네유~~" href="/25369101" style="">
-                                오랜만이네유~~            </a>
-
-            
-            
-            
-            <div class="list-writer  logged">
-                                <span>
-                    <img src="https://static-cdn.jtvnw.net/badges/v1/46328f4b-393a-4aa9-ba60-89d8ac948830/1" align="absmiddle">                     1시니                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            06-15        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-25185896"><div class="item">
-        
-        <div class="list-header v3">
-            <span>3</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#ff5000">자유게시판(친목금지)</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-commenting-o"></i></span><a title="누님 많이바쁘신가봐요" href="/25185896" style="">
-                                누님 많이바쁘신가봐요            </a>
-
-                        <small class="comment-count">[2]</small>
-            
-            
-            
-            <div class="list-writer  logged">
-                                <span>
-                    <img src="https://static-cdn.jtvnw.net/badges/v1/5d77fbf6-36bb-4d64-8806-f7137f3ea335/1" align="absmiddle">                     곧군대감_쇼쿠판                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            06-13        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-25046752"><div class="item">
-        
-        <div class="list-header v4">
-            <span>4</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#ff5000">자유게시판(친목금지)</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-picture-o"></i></span><a title="기다리다 지쳐서 만들어봄~" href="/25046752" style="">
-                                기다리다 지쳐서 만들어봄~            </a>
-
-                        <small class="comment-count">[3]</small>
-            
-            
-            
-            <div class="list-writer ">
-                                <span>
-                                        미니이                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            06-11        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-25023301"><div class="item">
-        
-        <div class="list-header v2">
-            <span>2</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#ff5000">자유게시판(친목금지)</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-commenting-o"></i></span><a title="기다리다 지쳐..." href="/25023301" style="">
-                                기다리다 지쳐...            </a>
-
-                        <small class="comment-count">[1]</small>
-            
-            
-            
-            <div class="list-writer  logged">
-                                <span>
-                                        좀알려줘                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            06-10        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-24899238"><div class="item">
-        
-        <div class="list-header v1">
-            <span>1</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#ff5000">자유게시판(친목금지)</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-commenting-o"></i></span><a title="그립읍니다......" href="/24899238" style="">
-                                그립읍니다......            </a>
-
-                        <small class="comment-count">[2]</small>
-            
-            
-            
-            <div class="list-writer  logged">
-                                <span>
-                                        좀알려줘                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            06-09        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-24871428"><div class="item">
-        
-        <div class="list-header v1">
-            <span>1</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#ff5000">자유게시판(친목금지)</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-commenting-o"></i></span><a title="잉?" href="/24871428" style="">
-                                잉?            </a>
-
-                        <small class="comment-count">[2]</small>
-            
-            
-            
-            <div class="list-writer  logged">
-                                <span>
-                    <img src="https://static-cdn.jtvnw.net/badges/v1/46328f4b-393a-4aa9-ba60-89d8ac948830/1" align="absmiddle">                     휴지맨                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            06-08        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-24732586"><div class="item">
-        
-        <div class="list-header v0">
-            <span>0</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#ff5000">자유게시판(친목금지)</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-picture-o"></i></span><a title="도쿄 스테이크!" href="/24732586" style="">
-                                도쿄 스테이크!            </a>
-
-            
-            
-            
-            <div class="list-writer  logged">
-                                <span>
-                                        춤뱉지마                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            06-07        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-24722801"><div class="item">
-        
-        <div class="list-header v1">
-            <span>1</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#ff5000">자유게시판(친목금지)</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-commenting-o"></i></span><a title="배고파앱으로 시켜먹었어요" href="/24722801" style="">
-                                배고파앱으로 시켜먹었어요            </a>
-
-            
-            
-            
-            <div class="list-writer  logged">
-                                <span>
-                                        sol2550                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            06-07        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-24697810"><div class="item">
-        
-        <div class="list-header v0">
-            <span>0</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#ff5000">자유게시판(친목금지)</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-picture-o"></i></span><a title="배고파 앱으로 시켜먹었어요~!" href="/24697810" style="">
-                                배고파 앱으로 시켜먹었어요~!            </a>
-
-            
-            
-            
-            <div class="list-writer  logged">
-                                <span>
-                                        푸앤블                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            06-06        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-24516757"><div class="item">
-        
-        <div class="list-header v0">
-            <span>0</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#ff5000">자유게시판(친목금지)</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-picture-o"></i></span><a title="완전ㅈㅁㅌ!!!" href="/24516757" style="">
-                                완전ㅈㅁㅌ!!!            </a>
-
-                        <small class="comment-count">[1]</small>
-            
-            
-            
-            <div class="list-writer ">
-                                <span>
-                                        필립스군                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            06-04        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-24481168"><div class="item">
-        
-        <div class="list-header v0">
-            <span>0</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#ff5000">자유게시판(친목금지)</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-picture-o"></i></span><a title="밥하기 귀찮아ㅜ" href="/24481168" style="">
-                                밥하기 귀찮아ㅜ            </a>
-
-                        <small class="comment-count">[1]</small>
-            
-            
-            
-            <div class="list-writer  logged">
-                                <span>
-                    <img src="https://static-cdn.jtvnw.net/badges/v1/5d77fbf6-36bb-4d64-8806-f7137f3ea335/1" align="absmiddle">                     곧군대감_쇼쿠판                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            06-04        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-24316851"><div class="item">
-        
-        <div class="list-header v0">
-            <span>0</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#ff5000">자유게시판(친목금지)</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-commenting-o"></i></span><a title="컴퓨터에 유해한 보안 프로그램 삭제하는 법" href="/24316851" style="">
-                                컴퓨터에 유해한 보안 프로그램 삭제하는 법            </a>
-
-            
-            
-            
-            <div class="list-writer  logged">
-                                <span>
-                                        꼬망글3                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            06-02        </div>
-    </div></div>
-
-            <div class="article-list-row has-category   " id="article-list-row-24315954"><div class="item">
-        
-        <div class="list-header v0">
-            <span>0</span>        </div>
-
-        <div class="list-title">
-            
-                            <div class="list-category"><span class="category" style="color:#ff5000">자유게시판(친목금지)</span></div>
-            
-                        <span class="a-badge"><i class="fa fa-commenting-o"></i></span><a title="배고파 당첨자 푸앤블이에요! 시니님 감사해요!" href="/24315954" style="">
-                 <i class="fa fa-lock"></i>                배고파 당첨자 푸앤블이에요! 시니님 감사해요!            </a>
-
-            
-            
-            
-            <div class="list-writer  logged">
-                                <span>
-                                        푸앤블                </span>
-            </div>
-                    </div>
-
-        <div class="list-time">
-            06-02        </div>
-    </div></div>
-
-    
+<div id="article-list-category" style="border-top: none;">
+</div>
+<div id="article-list-category" style="border-top: none;padding-top: 2px;border-bottom: 2px solid #CE6D39;">
+    <a style="color:black; cursor:initial;" class="nav-link">Num</a>
+    <a style="color:black;cursor:initial;padding: 5px 29px;" class="nav-link">Hits</a>
+    <a style="color:black;cursor:initial;padding: 2px 342px;">Title</a>
+    <a style="color:#ff0000; cursor:initial;" class="nav-link">ID</a>
+</div>
+
+<c:forEach var="Board" items="${list}">
+	<div class="article-list-row has-category   " id="article-list-row-30071395">
+		<div class="item">        
+<!--번호 start -->
+	        <div class="list-header v3" style="padding: 2px 24px;">
+	            <span>
+					<a href="read?board_num=${Board.board_num}">${Board.board_num}</a>
+				</span>        
+			</div>
+<!--번호 end -->
+			<div class="list-title">           
+			<div class="list-category">
+				<span class="category" style="color:#ff5000">
+					${Board.board_hits}
+				</span>
+			</div>            
+			<span class="a-badge">
+				<img src="./BookForm/images/smile1.png" style="width:24px;height:20px;">
+			</span>
+<!--제목 start-->
+			<a title="${Board.board_title}" href="read?board_num=${Board.board_num}" style="">
+				${Board.board_title}          
+			</a>
+<!--제목 end -->
+<!--아이디 start -->
+		    <div class="list-writer  logged">
+				<span style="cursor:initial;">
+					<font style="cursor:initial;">${Board.person_id}</font>
+				</span>
+			</div>
+<!--아이디 end -->
+			</div>
+		</div>
+	</div>
+</c:forEach>
+<!-- ------------------------------------------------------------------페이지페이징 start--------------------------------------------------------------------		 -->
     <div id="article-list-menu">
-        <a href="/sinick0907?filter_mode=best" class="btn square btn-default best"><i class="fa fa-star"></i> 인기글</a>
-                <ul class='pagination'><li class='disabled'><li class='active'><a href='#'>1<span class='sr-only'></span></a></li><li><a href="/sinick0907/page/2" data-ci-pagination-page="2">2</a></li><li><a href="/sinick0907/page/3" data-ci-pagination-page="3">3</a></li><li><a href="/sinick0907/page/4" data-ci-pagination-page="4">4</a></li><li><a href="/sinick0907/page/2" data-ci-pagination-page="2" rel="next">&gt;</a></ul>                <a href="/board/write/sinick0907" class="btn square btn-primary write"><i class="fa fa-pencil"></i> 글 쓰기</a>
+        
+                <ul class='pagination'><li class='disabled'><li class='active'><a href='#'>1<span class='sr-only'></span></a></li><li
+                ><a href="/sinick0907/page/2" data-ci-pagination-page="2">2</a></li><li><a href="/sinick0907/page/3" data-ci-pagination-page="3">3</a></li><li>
+                <a href="/sinick0907/page/4" data-ci-pagination-page="4">4</a></li><li><a href="/sinick0907/page/2" data-ci-pagination-page="2" rel="next">&gt;</a></ul> 
+                <c:if test="${sessionScope.loginId != null }">
+                <a href="writeForm" class="btn square btn-primary write">
+                	<img src="./BookForm/images/write.png" style="width:22px;height:22px;"> 글 쓰기
+                </a>  
+                </c:if>
+		
             </div>
-
         <form class="input-group" method="get" action="/sinick0907" id="boardSearchForm">
                 <input type="hidden" name="search_type" value="title" />
         <span class="input-group-btn">
-            <button type="button" class="btn square btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="search-type-desc">제목</span> <span class="caret"></span></button>
+            <button type="button" class="btn square btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            	<span id="search-type-desc">제목
+            </span> 
+            	<span class="caret"></span></button>
             <div class="dropdown-menu">
                 <li><a href="#" data-value="title">제목</a></li>
                 <li><a href="#" data-value="titlecont">제목+내용</a></li>
@@ -1141,7 +428,7 @@ span.a-badge i.fa.fa-info-circle {
         </span>
         <input type="text" name="search_term" class="form-control" placeholder="검색어" value="">
         <span class="input-group-btn">
-            <button class="btn square btn-default" type="submit"><i class="fa fa-search"></i></button>
+            <button class="btn square btn-default" type="submit"><img src="./BookForm/images/dotbogi1.jpg" style="width: 36px;height: 29px;"></button>
         </span>
     </form>
     </div>
@@ -1152,58 +439,9 @@ span.a-badge i.fa.fa-info-circle {
     <li><a tabindex="-1" href="#">차단하기</a></li>
 </ul>  
 </div>         
- </div>        
-		
-<!-- -------------------------------------------------------------테스트 start-------------------------------------------------------------------- -->
-	<%-- <div class="content_top" style="margin-left: 16%;margin-right: 16%;margin-top: 3%;margin-bottom: 2%;">
-   		<div class="heading" >
-   			<h3 style="font-weight:900;font-size: 1.5em;">Puasrchased List</h3>
-   		</div>
-   	</div>	
-	<div>
-			<table class="sub_news" border="1" cellspacing="0" summary="게시판의 글제목 리스트"style="margin-bottom: 1%;">
-			<caption>게시판 리스트</caption>
-				<colgroup>
-					<col>
-					<col width="5%">
-					<col width="60%">
-					<col width="10%">
-					<col width="10%">
-				</colgroup>
-				<thead>
-					<tr>
-						<th scope="col"  style="width: 10%;">Number</th>
-						<th scope="col"  style="width: 60%;">Title</th>
-						<th scope="col"  style="width: 15%;">Author</th>
-						<th scope="col"  style="width: 15%;">Hits</th>
-					</tr>
-				</thead>
-				<c:forEach var="Board" items="${list}">
-					<tbody>
-						<tr>
-							<td class="date" style="font-size:15px;">
-								<a href="read?board_num=${Board.board_num}">${Board.board_num}</a>
-							</td>
-							<td class="title" style="font-size:15px;" >
-								<a href="read?board_num=${Board.board_num}">${Board.board_title}</a>
-							</td>
-							<td class="name" style="font-size:15px;">
-								${Board.person_id}	
-							</td>
-							<td  class="hit" style="font-size:15px;">
-								${Board.board_hits}
-							</td>
-						</tr>
-				</c:forEach>
-				</tbody>
-			</table>		
-		</div>	
- --%>
-<!-- ----------------------------s---------------------------------테스트 end-------------------------------------------------------------------- -->
-		
-		
-<!-- ------------------------------------------------------------------페이지페이징 start--------------------------------------------------------------------		 -->
-<%-- 	<div style="margin-left:43%; position: absolute; ">
+ </div>        	
+<!-- ------------------------------------------------------------------페이지페이징 end--------------------------------------------------------------------		 -->
+	<div style="margin-left:43%; position: absolute; ">
 		<a href="javascript:pagingFormSubmit(${1})">◁◁ </a> &nbsp;&nbsp;
 		<c:if test="${navi.startPageGroup - 1 < 1 }">
 			<a href="javascript:pagingFormSubmit(${1})">◀</a> &nbsp;&nbsp;
@@ -1248,16 +486,15 @@ span.a-badge i.fa.fa-info-circle {
 				
 	</div>
 		<div>
-						<c:if test="${sessionScope.loginId != null }">
-							<a href="writeForm" style="">
-								<img src="./assets/images/512x512bb.jpg" style="width:75px;height:44px;margin-left: 76.5%;border:1px solid red;
-										border-radius: 12px;">
-								</a>				
-						</c:if>
-					</div> --%>
-<!-- ------------------------------------------------------------------페이지페이징 end--------------------------------------------------------------------		 -->
+		<c:if test="${sessionScope.loginId != null }">
+			<a href="writeForm" style="">
+				<img src="./assets/images/512x512bb.jpg" style="width:75px;height:44px;margin-left: 76.5%;border:1px solid red;
+						border-radius: 12px;">
+				</a>				
+		</c:if>
+	</div>
 
-
+<!-- -------------------------------------------------------------------밑에부분start----------------------===================---------------------- -->
   <div class="footer">
    	  <div class="wrap">
 	     <div class="section group">
@@ -1321,6 +558,8 @@ span.a-badge i.fa.fa-info-circle {
 		   </div>
         </div>
     </div>
+<!-- -------------------------------------------------------------------밑에부분end----------------------===================---------------------- -->
+
 	<script src="viewbook/js/bookblock.min.js"></script>
 	<script src="viewbook/js/classie.js"></script>
 	<script src="viewbook/js/bookshelf.js"></script>

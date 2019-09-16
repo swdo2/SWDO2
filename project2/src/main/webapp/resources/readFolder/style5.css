@@ -5525,7 +5525,7 @@ fieldset[disabled] .btn-default:hover {
 }
 .btn-primary {
     color: #fff;
-    background-color: #337ab7;
+    background-color: #ff8d00b8;
     border-color: #2e6da4
 }
 .btn-primary.focus,
@@ -5536,7 +5536,7 @@ fieldset[disabled] .btn-default:hover {
 }
 .btn-primary:hover {
     color: #fff;
-    background-color: #286090;
+    background-color: #00fd71;
     border-color: #204d74
 }
 .btn-primary.active,
@@ -7130,7 +7130,7 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
     float: left;
     padding: 6px 12px;
     margin-left: -1px;
-    line-height: 1.42857143;
+    line-height: 1.7857143;;
     color: #337ab7;
     text-decoration: none;
     background-color: #fff;
@@ -12851,14 +12851,14 @@ textarea.fr-code {
 }
 #board-info {
     width: 100%;
-    height: 64px;
+    height: 72px;
     overflow: hidden;
     line-height: 1;
-    margin: 0 0 1em;
-    padding: 1em
+    margin: 0 0 0.9em;
+    padding: 1em;
 }
 #board-info h1 {
-    font-size: 24px;
+    font-size: 26px;
     vertical-align: top;
     padding-bottom: 3px;
     border-bottom: 1px solid #e2e2e2
@@ -12877,10 +12877,10 @@ textarea.fr-code {
     display: inline-block
 }
 #board-info #board-info-bottom {
-    padding-top: 3px
+    padding-top: 1px;
 }
 #board-info #board-info-bottom a {
-    font-size: 12px;
+    font-size: 16px;
     color: #1a62a0;
     display: inline-block;
     padding: 0 8px;
@@ -12939,11 +12939,11 @@ textarea.fr-code {
 }
 #article-list #article-list-category > a {
     display: inline-block;
-    padding: 11px 16px;
+    padding: 2px 16px;
     background: #f6f0ff;
     text-decoration: none;
-    font-size: 12px;
-    font-weight: bold
+    font-size: 1.05em;
+    font-weight: 600;
 }
 #article-list #article-list-category > a.active,
 #article-list #article-list-category>a:hover {
@@ -13028,7 +13028,7 @@ textarea.fr-code {
 #article-list > .article-list-row > .item > .list-title {
     text-align: left;
     padding: 8px 0;
-    font-size: 13px
+    font-size: 1.2em;
 }
 #article-list > .article-list-row > .item > .list-title > a {
     color: #000;
@@ -13044,7 +13044,7 @@ textarea.fr-code {
     float: left
 }
 #article-list>.article-list-row>.item>.list-title>a:visited {
-    color: #ccc !important
+    color: black !important
 }
 #article-list > .article-list-row > .item > .list-title > small.comment-count {
     font-size: 12px;
@@ -13085,7 +13085,8 @@ textarea.fr-code {
 }
 #article-list > .article-list-row > .item > .list-title > .list-category {
     float: left;
-    padding: 0 11px;
+    max-width: 8%;
+    width: 8%;
     border-left: 1px solid #e2e2e2;
     border-right: 1px solid #e2e2e2;
     text-align: center;

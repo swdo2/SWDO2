@@ -43,12 +43,8 @@
 
 	<!-- 글 삭제하는 쿼리문작성 -->
 	<delete id = "delete" parameterType="Board">
-	
-		delete
-			from 
-				Board
-		where board_num = #{board_num}
-		and person_id = #{person_id}
+		delete from Board where board_num = #{board_num}
+		 and person_id = #{person_id}
 	</delete>
 	
 	<!-- 글 수정하는 쿼리문작성 -->

@@ -11,5 +11,6 @@ public interface ReplyMapper	{
 
 	//출력문
 	public ArrayList<Reply> select(Reply reply);
+	public int replydelete(Reply reply);
 	
 }

@@ -315,7 +315,7 @@ html {overflow:scroll}
                         <div class="row">
                            <div class="col-md-6">
                               <div class="mu-author-image">
-                                 <img src="./assets/images/이동근.jpg" alt="Author Image">
+                                 <img src="./assets/images/조일상.jpg" alt="Author Image">
                               </div>
                            </div>
                            <div class="col-md-6">

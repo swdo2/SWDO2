@@ -301,7 +301,7 @@ span.a-badge i.fa.fa-info-circle {
 		</header>
 	</div>
 <!-- -------------------------------------------------------------- 글쓰기 start---------------------------------------------------------------------------------------------------- -->
-	<h3 style="margin-top: 2%;font-size: 25px;margin-left: 10%;">New Write - ${loginId}</h3>
+	<h3 style="margin-top: 2%;font-size: 25px;margin-left: 12%;">New Write - ${loginId}</h3>
 	<div class="boardblock"> 	
 		<div class="frame">
 		    

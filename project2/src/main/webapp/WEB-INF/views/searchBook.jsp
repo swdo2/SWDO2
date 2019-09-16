@@ -9,25 +9,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>searchBook</title>
 <!-- 탭 아이콘 이미지 -->
-<link rel="shortcut icon" type="image/icon"
-	href="./assets/images/favicon.ico" />
+<link rel="shortcut icon" type="image/icon"href="./assets/images/favicon.ico" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1">
-<link href="./searchBook/css/style.css" rel="stylesheet" type="text/css"
-	media="all" />
-<link href="./searchBook/css/slider.css" rel="stylesheet"
-	type="text/css" media="all" />
+<meta name="viewport"content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="./searchBook/css/style.css" rel="stylesheet" type="text/css"media="all" />
+<link href="./searchBook/css/slider.css" rel="stylesheet"type="text/css" media="all" />
 <script type="text/javascript" src="./searchBook/js/jquery-1.9.0.min.js"></script>
 <script type="text/javascript" src="./searchBook/js/move-top.js"></script>
 <script type="text/javascript" src="./searchBook/js/easing.js"></script>
-<script type="text/javascript"
-	src="./searchBook/js/jquery.nivo.slider.js"></script>
-<script href="./ebook/js/libs/jquery-3.4.1.js"></script>
+<script type="text/javascript" src="./searchBook/js/jquery.nivo.slider.js"></script>
+<script src="./ebook/js/libs/jquery-3.4.1.js"></script>
 <style>
 html {
 	overflow: scroll
 }
+
 </style>
 </head>
 <script type="text/javascript">
@@ -218,7 +214,7 @@ html {
 					<div class="slider">
 						<div class="slider-wrapper theme-default">
 							<div id="slider" class="nivoSlider"
-								style="box-shadow: 5px 5px 7px rgba(230, 181, 4, 0.62); border: 1px solid #ff8e01; border-radius: 12px;"">
+								style="box-shadow: 5px 5px 7px rgba(230, 181, 4, 0.62); border: 1px solid #ff8e01; border-radius: 12px;">
 								<!-- padding: 2em; -->
 								<c:forEach var="list" items="${blist}">
 									<a href="BookForm?isbn=${list.isbn}"> <img
@@ -310,7 +306,7 @@ html {
 						<c:forEach var="counter" begin="${pagenaviga.startPageGroup}"
 							end="${pagenaviga.endPageGroup}">
 							<c:if test="${counter == pagenaviga.currentPage}">
-								<u>
+								
 							</c:if>
 							<a href="javascript:pagingFormSubmit(${counter})">${counter}</u></a>&nbsp;
 			<c:if test="${counter == pagenaviga.currentPage}"></c:if>
@@ -320,6 +316,7 @@ html {
 						&nbsp;&nbsp; <a
 							href="javascript:pagingFormSubmit(${pagenaviga.currentPage + pagenaviga.pagePerGroup})">▷▷</a>
 					</div>
+	
 					<!-- ----------------------------------------------------------검색폼 start------------------------------------------------- -->
 					<div class="pagingSearchForm">
 						<form id="pagingForm" method="get" action="searchBook">

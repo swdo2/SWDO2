@@ -365,7 +365,7 @@ span.a-badge i.fa.fa-info-circle {
 </div>
 
 <c:forEach var="Board" items="${list}">
-	<div class="article-list-row has-category   " id="article-list-row-30071395">
+	<div class="article-list-row has-category" id="article-list-row-30071395">
 		<div class="item">        
 <!--번호 start -->
 	        <div class="list-header v3" style="padding: 2px 24px;width:71.2px;">
@@ -400,110 +400,60 @@ span.a-badge i.fa.fa-info-circle {
 	</div>
 </c:forEach>
 <!-- ------------------------------------------------------------------페이지페이징 start--------------------------------------------------------------------		 -->
-    <div id="article-list-menu">
-                <ul class='pagination'>
-                	<li class='disabled'>
-                	<li class='active'>
-                		<a href='#'>1
-                			<span class='sr-only'></span>
-                		</a>
-                	</li>
-                	<li>
-                		<a href="/sinick0907/page/2" data-ci-pagination-page="2">2
-                		</a>
-                	</li>
-                	<li>
-                		<a href="/sinick0907/page/3" data-ci-pagination-page="3">3</a>
-                	</li>
-                	<li>
-                		<a href="/sinick0907/page/4" data-ci-pagination-page="4">4</a>
-                	</li>
-                	<li>
-                		<a href="/sinick0907/page/2" data-ci-pagination-page="2" rel="next">&gt;</a>
-                </ul> 
-                <c:if test="${sessionScope.loginId != null }">
-                <a href="writeForm" class="btn square btn-primary write">
-                	<img src="./BookForm/images/write.png" style="width:22px;height:22px;"> 글 쓰기
-                </a>  
-                </c:if>
-		
-            </div>
-        <form class="input-group" method="get" action="/sinick0907" id="boardSearchForm">
-                <input type="hidden" name="search_type" value="title" />
-        <span class="input-group-btn">
-            <button type="button" class="btn square btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            	<span id="search-type-desc">제목
-            </span> 
-            	<span class="caret"></span></button>
-            <div class="dropdown-menu">
-                <li><a href="#" data-value="title">제목</a></li>
-                <li><a href="#" data-value="titlecont">제목+내용</a></li>
-                <li><a href="#" data-value="nickname">닉네임</a></li>
-            </div>
-        </span>
-        <input type="text" name="search_term" class="form-control" placeholder="검색어" value="">
-        <span class="input-group-btn">
-            <button class="btn square btn-default" type="submit"><img src="./BookForm/images/dotbogi1.jpg" style="width: 36px;height: 29px;"></button>
-        </span>
-    </form>
-    </div>
+	
 
-<ul id="writerContextMenu" class="dropdown-menu" role="menu" style="display: none;">
-    <li><a tabindex="-1" href="#">프로필</a></li>
-    <li><a tabindex="-1" href="#">작성 글 보기</a></li>
-    <li><a tabindex="-1" href="#">차단하기</a></li>
-</ul>  
-</div>         
- </div>        	
-<!-- ------------------------------------------------------------------페이지페이징 end--------------------------------------------------------------------		 -->
-	<div style="margin-left:43%; position: absolute; ">
+	<div style="margin-left:43%;margin-bottom: 4%;margin-top: 4%;">
+		<div style="float:left;">
 		<ul class='pagination'>
                 	<li class='disabled'>
                 	<li class='active'>
-                		<a href='#'>1
-                			<span class='sr-only'></span>
-                		</a>
+                		<a href="javascript:pagingFormSubmit(${1})" style="border-top-left-radius: 4px;border-bottom-left-radius: 4px;">&lt;&lt;</a>
                 	</li>
                 	<li>
-                		<a href="/sinick0907/page/2" data-ci-pagination-page="2">2
-                		</a>
+                		<c:if test="${navi.startPageGroup - 1 < 1 }">
+							<a href="javascript:pagingFormSubmit(${1})">&lt;</a> 
+						</c:if>
                 	</li>
                 	<li>
-                		<a href="/sinick0907/page/3" data-ci-pagination-page="3">3</a>
+                		<c:if test="${navi.startPageGroup -1 >= 1 }">
+							<a href="javascript:pagingFormSubmit(${navi.startPageGroup - 1})">&lt;</a> 
+						</c:if>
                 	</li>
                 	<li>
-                		<a href="/sinick0907/page/4" data-ci-pagination-page="4">4</a>
+                		<c:forEach var="counter" begin="${navi.startPageGroup}"
+							end="${navi.endPageGroup}">
+							<c:if test="${counter == navi.currentPage}">
+							</c:if>
+								<a href="javascript:pagingFormSubmit(${counter})" style="padding: 6px 12px;background: #CE6D39;line-height:1.8;color:white;">${counter}</a>
+							<c:if test="${counter == navi.currentPage}"></c:if>
+						</c:forEach>
                 	</li>
                 	<li>
-                		<a href="/sinick0907/page/2" data-ci-pagination-page="2" rel="next">&gt;</a>
-                </ul> 		
-		<a href="javascript:pagingFormSubmit(${1})">&lt;&lt;</a>
-		<c:if test="${navi.startPageGroup - 1 < 1 }">
-			<a href="javascript:pagingFormSubmit(${1})">&lt;</a> 
-		</c:if>
-		<c:if test="${navi.startPageGroup -1 >= 1 }">
-			<a href="javascript:pagingFormSubmit(${navi.startPageGroup - 1})">&lt;</a> 
-		</c:if>
-		<c:forEach var="counter" begin="${navi.startPageGroup}"
-			end="${navi.endPageGroup}">
-			<c:if test="${counter == navi.currentPage}">
-			</c:if>
-				<a href="javascript:pagingFormSubmit(${counter})" style="padding: 6px 12px;background: #CE6D39;line-heigth:1.7;">${counter}</a>
-			<c:if test="${counter == navi.currentPage}">
-			</c:if>
-		</c:forEach>
-		
-		<c:if test="${navi.endPageGroup + 1 >= navi.totalPageCount }">
-			<a href="javascript:pagingFormSubmit(${navi.totalPageCount})">&gt;</a> 
-		</c:if>
-		<c:if test="${navi.endPageGroup + 1 < navi.totalPageCount }">
-			<a href="javascript:pagingFormSubmit(${navi.endPageGroup + 1})">&gt;</a> 
-		</c:if>
-		<a href="javascript:pagingFormSubmit(${navi.totalPageCount})">&gt;&gt;</a> <br>
-		<div>
-		<form id="pagingForm" method="get" action="boardForm">
-			<input type="hidden" name="page" id="page"> 
-				<select id="select" name="select" >
+                		<c:if test="${navi.endPageGroup + 1 >= navi.totalPageCount }">
+							<a href="javascript:pagingFormSubmit(${navi.totalPageCount})">&gt;</a> 
+						</c:if>
+					</li>
+					<li>
+					<c:if test="${navi.endPageGroup + 1 < navi.totalPageCount }">
+						<a href="javascript:pagingFormSubmit(${navi.endPageGroup + 1})">&gt;</a> 
+					</c:if>
+					</li>
+					<li>
+						<a href="javascript:pagingFormSubmit(${navi.totalPageCount})" style="color: white;background: #CE6D39;">&gt;&gt;</a> <br>
+					</li>
+                </ul> 
+		</div>
+                 <div style="float:left; margin-left: 44%;">
+                 	<c:if test="${sessionScope.loginId != null }">
+		               	<a href="writeForm" class="btn square btn-primary write" style="margin-left: 52%;width: 100%;">
+		                	<img src="./BookForm/images/write.png" style="width:22px;height:22px;"> 글 쓰기
+		                </a>  
+	                </c:if>
+                </div><br><br><br><br>
+       <div >         
+        <form id="pagingForm" method="get" action="boardForm" style="margin-left: -15%;">
+			<input type="hidden" name="page" id="page"> 				
+				<select id="select" name="select" style="height:38px;">
 					<option value="board_title" ${select eq "title" ? "selected" : ""}>
 						제목
 					</option>
@@ -514,22 +464,13 @@ span.a-badge i.fa.fa-info-circle {
 						${select eq "contents" ? "selected" : ""}>본문
 					</option>
 				</select> 
-				<input type="text" id="searchedtitle" name="searchedtitle"value="${searchedtitle}"> 
-				<input type="button"onclick="pagingFormSubmit(1)" value="검색"> 
+				<input type="text" id="searchedtitle" name="searchedtitle"value="${searchedtitle}"style="width:200px;height:38px;"> 
+				<input type="button"onclick="pagingFormSubmit(1)" value="검색" style="width:70px;height:38px;"> 
 		</form>
-		</div>
-				
+       </div>         
 	</div>
-		<div>
-		<c:if test="${sessionScope.loginId != null }">
-			<a href="writeForm" style="">
-				<img src="./assets/images/512x512bb.jpg" style="width:75px;height:44px;margin-left: 76.5%;border:1px solid red;
-						border-radius: 12px;">
-				</a>				
-		</c:if>
-	</div>
-
-<!-- -------------------------------------------------------------------밑에부분start----------------------===================---------------------- -->
+<!-- ------------------------------------------------------------------페이지페이징 end-------------------------------------------------------------------------- -->
+<!-- -------------------------------------------------------------------밑에부분start-------------------------------------------------------------------------- -->
   <div class="footer">
    	  <div class="wrap">
 	     <div class="section group">

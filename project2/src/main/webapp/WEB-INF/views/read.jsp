@@ -350,6 +350,7 @@ span.a-badge i.fa.fa-info-circle {
 }
 .replywrite:hover{
 	background:#E00546;
+	box-shadow: 3px 3px 0px 0px rgb(234, 3, 99);
 }
 </style>        
 
@@ -485,7 +486,7 @@ span.a-badge i.fa.fa-info-circle {
 
     <div class="vote-area">
         <button type="button" id = "btLike" class="btn btn-outline-success vote-btn">
-        	<img src="./readFolder/images/like.png" style="width:20px;height:20px;padding-bottom: 3px;">추천<span id="likeDiv"></span>
+        	<img src="./readFolder/images/like.png" style="width:20px;height:20px;padding-bottom: 3px;">HITS<span id="likeDiv"></span>
         </button>    
     </div>
 
@@ -555,16 +556,20 @@ span.a-badge i.fa.fa-info-circle {
 			            style="border: 1px solid #f69f00; min-width: 1112.2px;max-width: 1112.2px;"></textarea>
 			<input type = "hidden" name = "board_num" value = ${board.board_num }>
             <div id="comment-write-button-area" style="margin-top:0.7em;margin-bottom:0.7em;">
-                <button class="btn btn-primary pull-right btn-sm replywrite" style="height:38.4px;border-radius:12px;margin-right: 2%;" type="submit" >
+                <button class="btn btn-primary pull-right btn-sm replywrite" 
+                style="height:38.4px;border-radius:12px;margin-right: 2%;
+                box-shadow: 3px 3px 0px 0px rgb(212, 209, 209);"
+                type="submit" >
                 	<img src="./readFolder/images/pencil3.png" style="width:22px;height:22px;margin-bottom:8px;">
                 	<font style="font-size:18px;">WRITE</font>
+                	
                 </button>
                 <c:if test = "${sessionScope.loginId == board.person_id}">
 					<input  class="replystyle1" style="width:102px;height:38.4px;" id ="btUpdate" type = "button" value = "Update">
 					<input class="replystyle2" style="width:102px;height:38.4px;" id = "btDelete" type = "button" value = "Delete">
 				</c:if>
 				<button class="btn btn-primary pull-right btn-sm replywrite buttononclick" type="button" 
-					 onclick="listreturn()" style="border-radius:12px;width:102px;height:38.4px;margin-right:7px;" >
+					 onclick="listreturn()" style="border-radius:12px;width:102px;height:38.4px;margin-right:7px;box-shadow: 3px 3px 0px 0px rgb(212, 209, 209);" >
                		 <font style="font-size:18px;">LIST</font>
                 </button>
                 				

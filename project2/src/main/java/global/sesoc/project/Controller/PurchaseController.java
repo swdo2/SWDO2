@@ -75,7 +75,23 @@ public class PurchaseController {
 //			
 //		}
 
-		
 		return 0;
 	}
+	
+//	@ResponseBody
+//	@RequestMapping(value = "first", method = RequestMethod.GET)
+//	public int first(HttpSession session, String isbn) {
+//		
+//		logger.debug("fisrt ajax : {}", isbn);
+//		String loginId = (String)session.getAttribute("loginId");
+//		int cnt = pd.getCheck(loginId, isbn);
+//		
+//		
+//		if(cnt == 0 ) {
+//			pd.checkChange(loginId, isbn);
+//		}
+//		return cnt;
+//		
+//	}
+	
 }

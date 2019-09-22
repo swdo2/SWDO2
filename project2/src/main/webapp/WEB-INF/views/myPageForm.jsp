@@ -5,7 +5,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -40,7 +40,7 @@
 		<link href="./bookdetails/css/agency.min.css" rel="stylesheet">
 
 		  <!-- Bootstrap core JavaScript -->
-		
+
 <!-- -----------------------------------------------details클릭하면 창뜨는 거 end---------------------------------------------- -->
 
 <!-- ------------------------------------book보는 js start------------------------------------------------ -->
@@ -57,7 +57,7 @@
 				$('.purchasedbook').on("click",function() {
 					var isbn = $(this).attr('id');
 					console.log(isbn);
-					window.open('ebookPage?isbn=' + isbn);
+					var ebookpage = window.open('ebookPage?isbn=' + isbn);
 
 				})
 // 터치무브 및 마우스휠 스크롤 가능
@@ -81,8 +81,11 @@
 					$('.portfolio-link').trigger("click");
 				})
 				$('.clickku3 button').on("click", function() {
-					console.log('ebook 보기 버튼');
+					var first;
 					var isbn = $(this).attr('isbn');
+
+					console.log('ebook 보기 버튼');
+
 					console.log(isbn);
 					window.open("ebookPage?isbn=" + isbn);
 				})
@@ -98,7 +101,7 @@
 		</style>
 	</head>
 	<body>
-
+		<input type = "hidden" id = "checkread" value = ""/>
 <!-- ------------------------------------------------------------------ 헤드 단 start ------------------------------------------------------- -->
 		<div id="scroll-wrap" style="padding-bottom: 2.5%;">
 			<header class="codrops-header">
@@ -121,7 +124,7 @@
 		                     <form action="searchBook" >   <!-- <<<<<<<<<<<<<<<<여기 가 검색 부분 액션 이름 단 입니다. -->
 		                        <b><input type="text" name="bookTitle" placeholder="Search..." required="required" maxlength="25"
 		                        	style="outline: none;background: #fff;width: 93%;margin: 0;z-index: 10;font-size: 0.9em;color: #7A7B78;padding: 0.5em 0.5em;border: none;-webkit-appearance: none;display: inline-block;text-align: center;font-size: 15px;"></b>
-		                        <input type="submit" value="" 
+		                        <input type="submit" value=""
 		                        style="    background: url(resources/assets/images/search.png)no-repeat;width: 20px;height: 20px;display: inline-block;vertical-align: text-top;border: none;outline: none;">
 		                     </form>
 		                  </div><!--//end-search-box-->
@@ -129,7 +132,7 @@
 		            	</div>
 		            </div>
 			</header>
-			
+
 		</div>
 <!-- ------------------------------------------------------------------ 헤드 단 end --------------------------------------------------------------- -->
 <!-- ------------------------------------------------------------------ mybooklist start ------------------------------------------------------- -->
@@ -146,43 +149,39 @@
     		</div>
     	</div>
 <!-- ----------------------------------------------------------------------list 제목 end----------------------------------------------------------------------- -->
-<!-- ----------------------------------------------------------------------책출력되는 부분 start----------------------------------------------------------------------- -->			
-		
-		<div class="main" style="margin-left:9%;height: 100%;margin-bottom: 40%;">
-			<div class="listDiv" style="margin-bottom:10px;">
-	   			<c:forEach var="list" items="${blist}">
-					<c:forEach var = "b" items = "${list}">
-						<div class="grid_1_of_5 images_1_of_5" style="height: 414.7px;">
-							 <div class="imageshover1" style="height: 260px;">
-						 		<a href="BookForm?isbn=${b.isbn}" class="imageshover2" ></a>
-						 		<img src="${b.image}" alt="すみませんが、準備しています。" style="height:260px;border-radius:12px;">
-							 </div>
-							 <h2><a href="BookForm?isbn=${b.isbn}" class="searchBookLiskTitle" style="width:100%;padding-bottom: 30px;font-size: 20px;width:100%;">${b.title}</a></h2>
-							<div class="price-details">
-					       		<div class="add-cart1">
-									<div class="clickku2" style="position: absolute;width: 38%;" title = "${b.title}" isbn = "${b.isbn}" image = "${b.image}" author = "${b.author}" publisher = "${b.publisher}"
-										pubdate = "${b.pubdate}" description = "${b.description}"><a style="color:aliceblue;"><button class="btn btn-51 btn-5a icon-plus" style="width: 100%;">
-										<span style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">Details</span></button></a></div>
-									<div class="clickku3" style="width: 38%;position: absolute;margin-left: 41%;" id = "${b.isbn}"><a style="color:aliceblue;"><button class="btn btn-5 btn-5a icon-arrow-right" style="width:100%;">
-										<span style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">E-BOOK</span></button></a></div>
-						        </div>
-								<div class="clear"></div>
-							</div>
-						</div>
-					</c:forEach>
-				</c:forEach>
-			</div>
-	</div>
-
-	
+<!-- ----------------------------------------------------------------------책출력되는 부분 start----------------------------------------------------------------------- -->
+	<div class="main" style="margin-left:9%;margin-bottom: 40%;height: 75%;">
+         <div class="listDiv" style="margin-bottom:10px;">
+               <c:forEach var="list" items="${blist}">
+               <c:forEach var = "b" items = "${list}">
+                  <div class="grid_1_of_5 images_1_of_5" style="height: 414.7px;">
+                      <div class="imageshover1" style="height: 260px;">
+                         <a href="BookForm?isbn=${b.isbn}" class="imageshover2" ></a>
+                         <img src="${b.image}" alt="すみませんが、準備しています。" style="height:260px;border-radius:12px;">
+                      </div>
+                      <h2><a href="BookForm?isbn=${b.isbn}" class="searchBookLiskTitle" style="width:100%;padding-bottom: 30px;font-size: 20px;width:100%;">${b.title}</a></h2>
+                     <div class="price-details">
+                            <div class="add-cart1">
+                           <div class="clickku2" style="position: absolute;width: 38%;" title = "${b.title}" isbn = "${b.isbn}" image = "${b.image}" author = "${b.author}" publisher = "${b.publisher}"
+                              pubdate = "${b.pubdate}" description = "${b.description}"><a style="color:aliceblue;"><button class="btn btn-51 btn-5a icon-plus" style="width: 100%;">
+                              <span style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">Details</span></button></a></div>
+                           <div class="clickku3" style="width: 38%;position: absolute;margin-left: 41%;" id = "${b.isbn}"><a style="color:aliceblue;"><button class="btn btn-5 btn-5a icon-arrow-right" style="width:100%;" isbn = "${b.isbn}">
+                              <span style="overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">E-BOOK</span></button></a></div>
+                          </div>
+                        <div class="clear"></div>
+                     </div>
+                  </div>
+               </c:forEach>
+            </c:forEach>
+         </div>
+   </div>
 <!-- 			<div class="footer"> -->
 <!--    	  <div class="wrap"> -->
-	   
+
 <!--         </div> -->
 <!--     </div> -->
-	
-<div style="margin-bottom:70%;"></div>
-<div class="section group" style="position: relative;padding-left: 4%;border-top: 1px solid #b9b8b8;padding-top: 0%;">
+
+		<div class="section group" style="position: relative;padding-left: 3%;padding-top: 2%;">
 			<div>
 				<div class="col_1_of_4 span_1_of_4">
 					<h4>Refresh</h4>
@@ -206,7 +205,7 @@
 					<h4>Quick menu</h4>
 						<ul>
 							<c:if test="${sessionScope.loginId == null }">
-								<li><a>Please sign in!</a></li>    
+								<li><a>Please sign in!</a></li>
 							</c:if>
 							<c:if test="${sessionScope.loginId != null }">
 								<li><a href="myPageForm">My Page</a></li>
@@ -225,7 +224,7 @@
 							<li><a>전재형 010-8335-0698</a></li>
 							<li><a>나홍윤 010-4320-7840</a></li>
 						</ul>
-						
+
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
 					<div class="social-icons">
@@ -241,12 +240,13 @@
 				</div>
 
 		</div>
-</div>
+				</div>
 	<div class="copy_right">
 		<p>Company Name © All rights Reseverd | Design by  <font style="color:#ff8600">Jeon Jae Hyoung</font></p>
 	</div>
 		
-<!-- ----------------------------------------------------------------------책출력되는 부분 end----------------------------------------------------------------------- -->				
+
+<!-- ----------------------------------------------------------------------책출력되는 부분 end----------------------------------------------------------------------- -->
 <!-- ----------------------------------------------------------------------details 클릭했을때 start ---------------------------------------------------- -->
 <div>
 	<div class="row">
@@ -295,7 +295,7 @@
   </div>
 <!-- -----------------------------------details 클릭한후 row 에서 href로 이동해서 너머어오고 화면이 나옵니다 end ---------------------------------------------------- -->
 <!-- -------------------------------------------------------------맨밑에 정보 start-------------------------------------------------------------- -->
-   
+
 <!-- ----------------------------------------------------------------------- 맨밑에 정보 end ------------------------------------------------------- -->
 		<script src="./bookdetails/vendor/jquery/jquery.min.js"></script>
 		<script src="./bookdetails/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

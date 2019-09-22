@@ -8492,6 +8492,16 @@ var IframeView = function () {
 		key: "load",
 		value: function load(contents) {
 			console.log("iframe : load");
+			// intervallinespace($('#current_chapter').val());
+			// intervalfontsize($('#current_chapter').val());
+			// fontchangeclick($('#current_chapter').val());
+			// if(colorflag=='black')
+			// 	clickblack($('#current_chapter').val());
+			// if(colorflag=='white')
+			// 	clickwhite($('#current_chapter').val());
+			// if(colorflag=='sepia')
+			// 	clicksepia($('#current_chapter').val());
+
 			var loading = new _core.defer();
 			var loaded = loading.promise;
 
@@ -8531,7 +8541,15 @@ var IframeView = function () {
 		value: function onLoad(event, promise) {
 			console.log("iframe : onload");
 			var _this2 = this;
-
+			myFunction2(changesfonts);
+			if(colorflag=='black')
+				myFunction2(black);
+			if(colorflag=='white')
+				myFunction2(white);
+			if(colorflag=='sepia')
+				myFunction2(sepia);
+			myFunction2(changefontsize);
+			myFunction2(linespace);
 			this.window = this.iframe.contentWindow;
 			this.document = this.iframe.contentDocument;
 

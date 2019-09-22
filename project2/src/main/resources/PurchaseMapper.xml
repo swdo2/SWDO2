@@ -14,4 +14,12 @@
 		select count(*) from purchaseinfo where person_id = #{loginId} and purchase_isbn = #{isbn}
 	</select>
 	
+	<select id = "getCheck" parameterType = "map" resultType = "int">
+		select purchaseinfo_check from purchaseinfo where person_id = #{person_id} and purchase_isbn = #{isbn}
+	</select>
+	
+	<update id = "checkChange" parameterType = "map">
+		update purchaseinfo set purchaseinfo_check = 1 where person_id = #{person_id} and purchase_isbn = #{isbn}
+	</update>
+	
 </mapper>

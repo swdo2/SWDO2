@@ -3146,32 +3146,23 @@ var flag = false;
 
 EPUBJS.Reader.prototype.bookinfo = function() {
 	console.log("bookinfo");
-	isCurrent = confirm("직전에 읽었던 페이지 부터 읽겠습니까?");
-	if(isCurrent) {
-		flag = true;
+	if(getReaded() == 1) {
+		isCurrent = confirm("직전에 읽었던 페이지 부터 읽겠습니까?");
+		if(isCurrent) {
+			flag = true;
+		} else {
+			flag = false;
+		}
 	} else {
-		flag = false;
+			flag = false;
 	}
 	console.log(flag);
 }
 function up_localstorage(bookKey,setting) {
 	console.log('localstorage setting');
-
-/*	$.ajax({
-		url : 'update_bookinfo'
-		,data : bookKey
-		,async: false
-		,success : function() {
-			console.log('delete_bookinfo success');
-		}
-		,error : function() {
-			console.log('delete_bookinfo error');
-		}
-	})*/
 	localStorage.clear();
 	localStorage.setItem(bookKey, setting);
 	localStorage.setItem(loginId, getloginId());
-
 }
 
 EPUBJS.Reader.prototype.localStorage = function() {
@@ -3179,7 +3170,7 @@ EPUBJS.Reader.prototype.localStorage = function() {
 	var setting;
 	var bookKey;
 	var loginId = getloginId();
-	// 일단 ajax에서 값을 통합해서
+	// 북마크 주소를 db에 저장하기 위한 ajax
 	$.ajax({
 		url : 'bookinfo'
 		,data : {book_title : book_title, loginId : loginId}
@@ -3195,9 +3186,6 @@ EPUBJS.Reader.prototype.localStorage = function() {
 			console.log('bookinfo error');
 		}
 	})
-	//수정
-	//up_localstorage(bookKey,setting);
-
 }
 
 EPUBJS.Reader.prototype.setBookKey = function(identifier){
@@ -3205,6 +3193,7 @@ EPUBJS.Reader.prototype.setBookKey = function(identifier){
 		this.settings.bookKey = "epubjsreader:" + EPUBJS.VERSION + ":" + window.location.host + ":" + identifier;
 		console.log("setBookkey");
 		console.log("localstorage size " + localStorage.length);
+		console.log("localStorage value " + localStorage.getItem(this.settings.bookKey));
 		book_title = this.settings.bookKey;
 		console.log("book title : " + book_title);
 
@@ -3363,6 +3352,15 @@ EPUBJS.Reader.prototype.selectedRange = function(cfiRange){
 	// Update the History Location
 	if(this.settings.history &&
 			window.location.hash != cfiFragment) {
+			// intervallinespace($('#current_chapter').val());
+			// intervalfontsize($('#current_chapter').val());
+			// fontchangeclick($('#current_chapter').val());
+			// if(colorflag=='black')
+			// 	clickblack($('#current_chapter').val());
+			// if(colorflag=='white')
+			// 	clickwhite($('#current_chapter').val());
+			// if(colorflag=='sepia')
+			// 	clicksepia($('#current_chapter').val());
 		// Add CFI fragment to the history
 		history.pushState({}, '', cfiFragment);
 		this.currentLocationCfi = cfiRange;
@@ -3446,7 +3444,7 @@ EPUBJS.reader.BookmarksController = function() {
 			} else {
 				link.textContent = cfi;
 			}
-		
+
 
 		link.href = cfi;
 
@@ -3500,19 +3498,13 @@ EPUBJS.reader.BookmarksController = function() {
 			console.log('bookmark error');
 		}
 	})
-
-
 	$list.append(docfrag);
-
 	this.on("reader:bookmarked", function(cfi) {
-		var date = new Date().format("yy-MM-dd a/p hh시 mm분");
-		var loginId = getloginId();
-		console.log(loginId);
-
 		$.ajax({
 			url : 'ebook'
 			,type : 'get'
-			,data : {bookmark : cfi, date : date, book_title : book_title, book_name : book_name, loginId : loginId}
+			,data : {bookmark : cfi, date : date, book_title : book_title,
+				book_name : book_name, loginId : loginId}
 			,dataType : 'json'
 			,async : false
 			,success : function(num) {
@@ -3659,6 +3651,17 @@ EPUBJS.reader.ControlsController = function(book) {
 
 
 	rendition.on('relocated', function(location){
+		//화면 바뀔 때 실행
+		console.log('relocated');
+		// myFunction2(changesfonts);
+		// if(colorflag=='black')
+		// 	myFunction2(black);
+		// if(colorflag=='white')
+		// 	myFunction2(white);
+		// if(colorflag=='sepia')
+		// 	myFunction2(sepia);
+		// myFunction2(changefontsize);
+		// myFunction2(linespace);
 		var cfi = location.start.cfi;
 		console.log(cfi);
 		var cfiFragment = "#" + cfi;
@@ -4056,25 +4059,25 @@ EPUBJS.reader.ReaderController = function(book) {
 			$("#nextsound").html('<audio autoplay src = "./ebook/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
 			//$("#nextsound").html('<audio autoplay src = "mp3/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
 			if(book.package.metadata.direction === "rtl") {
-				fontchangeclick($('#current_chapter').val());
-				if(colorflag=='black')
-					clickblack($('#current_chapter').val());
-				if(colorflag=='white')
-					clickwhite($('#current_chapter').val());
-				if(colorflag=='sepia')
-					clicksepia($('#current_chapter').val());
+				// fontchangeclick($('#current_chapter').val());
+				// if(colorflag=='black')
+				// 	clickblack($('#current_chapter').val());
+				// if(colorflag=='white')
+				// 	clickwhite($('#current_chapter').val());
+				// if(colorflag=='sepia')
+				// 	clicksepia($('#current_chapter').val());
 				//$("#nextsound").html('<audio autoplay src = "mp3/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
 				$("#nextsound").html('<audio autoplay src = "./ebook/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
 				rendition.next();
 			} else {
-				fontchangeclick($('#current_chapter').val());
-				if(colorflag=='black')
-					clickblack($('#current_chapter').val());
-				if(colorflag=='white')
-					clickwhite($('#current_chapter').val());
-				if(colorflag=='sepia')
-					clicksepia($('#current_chapter').val());
-				$("#nextsound").html('<audio autoplay src = "./ebook/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
+				// fontchangeclick($('#current_chapter').val());
+				// if(colorflag=='black')
+				// 	clickblack($('#current_chapter').val());
+				// if(colorflag=='white')
+				// 	clickwhite($('#current_chapter').val());
+				// if(colorflag=='sepia')
+				// 	clicksepia($('#current_chapter').val());
+				// $("#nextsound").html('<audio autoplay src = "./ebook/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
 				//$("#nextsound").html('<audio autoplay src = "mp3/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
 				rendition.prev();
 			}
@@ -4093,24 +4096,24 @@ EPUBJS.reader.ReaderController = function(book) {
 			$("#nextsound").html('<audio autoplay src = "./ebook/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
 			//$("#nextsound").html('<audio autoplay src = "mp3/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
 			if(book.package.metadata.direction === "rtl") {
-				fontchangeclick($('#current_chapter').val());
-				if(colorflag=='black')
-					clickblack($('#current_chapter').val());
-				if(colorflag=='white')
-					clickwhite($('#current_chapter').val());
-				if(colorflag=='sepia')
-					clicksepia($('#current_chapter').val());
+				// fontchangeclick($('#current_chapter').val());
+				// if(colorflag=='black')
+				// 	clickblack($('#current_chapter').val());
+				// if(colorflag=='white')
+				// 	clickwhite($('#current_chapter').val());
+				// if(colorflag=='sepia')
+				// 	clicksepia($('#current_chapter').val());
 				$("#nextsound").html('<audio autoplay src = "./ebook/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
 				//$("#nextsound").html('<audio autoplay src = "mp3/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
 				rendition.prev();
 			} else {
-				fontchangeclick($('#current_chapter').val());
-				if(colorflag=='black')
-					clickblack($('#current_chapter').val());
-				if(colorflag=='white')
-					clickwhite($('#current_chapter').val());
-				if(colorflag=='sepia')
-					clicksepia($('#current_chapter').val());
+				// fontchangeclick($('#current_chapter').val());
+				// if(colorflag=='black')
+				// 	clickblack($('#current_chapter').val());
+				// if(colorflag=='white')
+				// 	clickwhite($('#current_chapter').val());
+				// if(colorflag=='sepia')
+				// 	clicksepia($('#current_chapter').val());
 				$("#nextsound").html('<audio autoplay src = "./ebook/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
 				//$("#nextsound").html('<audio autoplay src = "mp3/booksori-sarasvatl.wav" type = "audio/wav"></audio>');
 				rendition.next();

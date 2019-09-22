@@ -13,6 +13,8 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +26,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import global.sesoc.project.DAO.BookInfoDAO;
 import global.sesoc.project.DAO.BookmarksDAO;
+import global.sesoc.project.DAO.PurchaseDAO;
 import global.sesoc.project.VO.BookInfo;
 import global.sesoc.project.VO.Bookmarks;
 
@@ -38,17 +41,21 @@ public class EbookController {
 	@Autowired
 	BookInfoDAO infodao;
 
+	@Autowired
+	PurchaseDAO pd;
+
 	private static final Logger logger = LoggerFactory.getLogger(EbookController.class);
 
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
 
-/*	@RequestMapping(value = "/ebookPage", method = RequestMethod.GET)
-	public String Start() {
-
-		return "/ebook";
-	}*/
+	/*
+	 * @RequestMapping(value = "/ebookPage", method = RequestMethod.GET) public
+	 * String Start() {
+	 * 
+	 * return "/ebook"; }
+	 */
 
 	@ResponseBody
 	@RequestMapping(value = "/ebook", method = RequestMethod.GET)
@@ -66,7 +73,6 @@ public class EbookController {
 		int num = dao.select_num();
 		logger.debug("bookmark_num : {}", num);
 
-		
 		return num;
 		// 여기서 실제 return은 우리가 알고 있는 진짜 값을 보내주는 역할을 하게 됨
 	}
@@ -77,15 +83,17 @@ public class EbookController {
 		logger.debug("list");
 		logger.debug("bookname : {}", book_name);
 		ArrayList<Bookmarks> list = dao.select(book_name, loginId);
-		//ArrayList<HashMap<String,Object>> bList = new ArrayList<HashMap<String,Object>>();
+		// ArrayList<HashMap<String,Object>> bList = new
+		// ArrayList<HashMap<String,Object>>();
 		ArrayList<String> bList = new ArrayList<String>();
-		
+
 		for (Bookmarks book : list) {
 			bList.add(book.getBookmarks_bookmark());
-			/*HashMap<String, Object> map = new HashMap<String,Object> ();
-			map.put("cfi", book.getBookmarks_bookmark());
-			map.put("date", book.getBookmarks_date());
-			bList.add(map);*/
+			/*
+			 * HashMap<String, Object> map = new HashMap<String,Object> ();
+			 * map.put("cfi", book.getBookmarks_bookmark()); map.put("date",
+			 * book.getBookmarks_date()); bList.add(map);
+			 */
 		}
 		return bList;
 	}
@@ -122,22 +130,22 @@ public class EbookController {
 
 	}
 
-//	@ResponseBody
-//	@RequestMapping(value = "/marking", method = RequestMethod.GET)
-//	public String marking() {
-//		String result = infodao.select_setting();
-//		logger.debug("marking");
-//
-//		return result;
-//	}
-//
-//	@ResponseBody
-//	@RequestMapping(value = "/bookkey", method = RequestMethod.GET)
-//	public String bookkey() {
-//		String result = infodao.select_bookkey();
-//		logger.debug("bookkey");
-//		return result;
-//	}
+	// @ResponseBody
+	// @RequestMapping(value = "/marking", method = RequestMethod.GET)
+	// public String marking() {
+	// String result = infodao.select_setting();
+	// logger.debug("marking");
+	//
+	// return result;
+	// }
+	//
+	// @ResponseBody
+	// @RequestMapping(value = "/bookkey", method = RequestMethod.GET)
+	// public String bookkey() {
+	// String result = infodao.select_bookkey();
+	// logger.debug("bookkey");
+	// return result;
+	// }
 
 	@ResponseBody
 	@RequestMapping(value = "/bookinfo", method = RequestMethod.GET)
@@ -148,15 +156,15 @@ public class EbookController {
 	}
 
 	@ResponseBody
-	@RequestMapping(value = "/date", method = RequestMethod.GET ,produces ="application/json;charset=UTF-8") 
+	@RequestMapping(value = "/date", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
 	public void date(String book_title) {
 		logger.debug("date : booktitle : {}", book_title);
-		//String date = dao.select_date(book_title);
-		
-		//logger.debug("result date : {}", date);
-		
-		//logger.debug("date : {}", date);
-		//return date; 
+		// String date = dao.select_date(book_title);
+
+		// logger.debug("result date : {}", date);
+
+		// logger.debug("date : {}", date);
+		// return date;
 	}
 
 	/*
@@ -182,16 +190,28 @@ public class EbookController {
 		}
 		return list;
 	}
-	
-	@RequestMapping(value = "ebookPage", method = RequestMethod.GET) 
-	public String ebookPage(String isbn, Model model) {
+
+	@RequestMapping(value = "ebookPage", method = RequestMethod.GET)
+	public String ebookPage(String isbn, Model model, HttpSession session) {
 		logger.debug("ebook page로 넘어가는 관문");
 		logger.debug("isbn : {}", isbn);
 		logger.debug("isbn : {}", isbn);
+
+		String loginId = (String) session.getAttribute("loginId");
+
+		int result = pd.getCheck(loginId, isbn);
+		int cnt = pd.getCheck(loginId, isbn);
 		model.addAttribute("isbn", isbn);
-		
+		model.addAttribute("cnt", cnt);
+
+		if (cnt == 0) {
+			pd.checkChange(loginId, isbn);
+		}
+
 		return "ebook";
 	}
+	
+
 
 	@ResponseBody
 	@RequestMapping(value = "tts", method = RequestMethod.GET)
@@ -265,4 +285,5 @@ public class EbookController {
 		}
 		return tempname;
 	}
+
 }

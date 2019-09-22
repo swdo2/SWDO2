@@ -10,18 +10,34 @@ public class Purchaseinfo
 	//책 고유번호
 	String PURCHASE_ISBN;
 	
+	String purchaseinfo_check;
+	
 	
 	
 	public Purchaseinfo() {
 		super();
 	}
 	
-	public Purchaseinfo(String pERSON_ID, String pURCHASEINFO_RENTALPERIOD, String pURCHASE_ISBN) {
-		super();
-		PERSON_ID = pERSON_ID;
-		PURCHASEINFO_RENTALPERIOD = pURCHASEINFO_RENTALPERIOD;
-		PURCHASE_ISBN = pURCHASE_ISBN;
+
+
+
+
+	public String getPurchaseinfo_check() {
+		return purchaseinfo_check;
 	}
+
+
+
+
+
+	public void setPurchaseinfo_check(String purchaseinfo_check) {
+		this.purchaseinfo_check = purchaseinfo_check;
+	}
+
+
+
+
+
 	public String getPERSON_ID() {
 		return PERSON_ID;
 	}

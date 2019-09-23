@@ -360,7 +360,7 @@ span.a-badge i.fa.fa-info-circle {
 <div id="article-list-category" style="border-top: none;padding-top: 2px;border-bottom: 2px solid #CE6D39;">
     <a style="color:black; cursor:initial;" class="nav-link">Num</a>
     <a style="color:black;cursor:initial;padding: 5px 29px;" class="nav-link">Hits</a>
-    <a style="color:black;cursor:initial;padding: 2px 342px;">Title</a>
+    <a style="color:black;cursor:initial;padding: 2px 391px;">Title</a>
     <a style="color:#ff0000; cursor:initial;" class="nav-link">ID</a>
 </div>
 

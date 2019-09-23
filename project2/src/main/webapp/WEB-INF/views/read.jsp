@@ -553,7 +553,7 @@ span.a-badge i.fa.fa-info-circle {
                 <input type="password" class="form-control" id="commentPassword" maxlength="20" name="password" value="" placeholder="비밀번호"></div>
             </div>
             <textarea name="reply_contents" id="reply_contents" rows="4" class="form-control" placeholder="Please Enter Comments." 
-			            style="border: 1px solid #f69f00; min-width: 1112.2px;max-width: 1112.2px;"></textarea>
+			            style="border: 1px solid #f69f00; min-width: 1224.2px;max-width: 1224.2px;"></textarea>
 			<input type = "hidden" name = "board_num" value = ${board.board_num }>
             <div id="comment-write-button-area" style="margin-top:0.7em;margin-bottom:0.7em;">
                 <button class="btn btn-primary pull-right btn-sm replywrite" 

@@ -32,13 +32,6 @@ public class NaverBookService {
         	URL url;
             url =new URL("https://openapi.naver.com/v1/search/book_adv.xml?"
             		+type+"="+ URLEncoder.encode(keyword, "UTF-8"));
-            /*URL url;
-            url = new URL("https://openapi.naver.com/v1/search/"
-                    + "book.xml?query="
-                    + URLEncoder.encode(keyword, "UTF-8")
-                    + (display !=0 ? "&display=" +display :111)
-                    + (start !=0 ? "&start=" +start :0));*/
- 
             URLConnection urlConn = url.openConnection();
             urlConn.setRequestProperty("X-Naver-Client-Id", clientID);
             urlConn.setRequestProperty("X-Naver-Client-Secret", clientSecret);
@@ -47,11 +40,6 @@ public class NaverBookService {
             XmlPullParser parser = factory.newPullParser();
             parser.setInput(
                     new InputStreamReader(urlConn.getInputStream()));
-            //Test에서 했던 방식은 DOM방식이기때문에? 
-            //그래서 이렇게 해도 된다?!??!??!? 
-            
-            
-            
             int eventType = parser.getEventType();
             Book b = null;
             while (eventType != XmlPullParser.END_DOCUMENT) {
@@ -121,11 +109,7 @@ public class NaverBookService {
                 	}
                 }
                 eventType = parser.next();
-            }
-            
-            
-            
-            
+            }          
         } catch (MalformedURLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

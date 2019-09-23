@@ -25,7 +25,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 	<link href="./button/css/style.css" rel="stylesheet" type="text/css" media="all"/>
 	<link rel="stylesheet" type="text/css" href="./readFolder/style5.css" />	
-
+,
 	<script src="viewbook/js/modernizr.custom.js"></script>
 	<script src="js/jquery-3.3.1.min.js"></script>
 	
@@ -347,10 +347,10 @@ span.a-badge i.fa.fa-info-circle {
      </div>
 </div>
 <!-- List -->
-<ins class="adsbygoogle"
-     style="display:block;width:870px;height:90px;margin:0 auto;"
-     data-ad-client="ca-pub-5807968391783575"
-     data-ad-slot="2366847732"></ins>
+<!-- <ins class="adsbygoogle" -->
+<!--      style="display:block;width:870px;height:90px;margin:0 auto;" -->
+<!--      data-ad-client="ca-pub-5807968391783575" -->
+<!--      data-ad-slot="2366847732"></ins> -->
 <div id="article-list">
 <div id="article-option-area">
     <input type="checkbox" id="hide_notice" class="hide">

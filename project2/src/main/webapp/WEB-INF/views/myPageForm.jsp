@@ -139,7 +139,7 @@
 <!-- --------------------------------------------------------------------list 제목 start ------------------------------------------ -->
 		<div class="content_top" style="width: 86%;margin-left: 7%;">
     		<div class="heading" >
-    		<h3 style="font-weight:900;">Puasrchased List
+    		<h3 style="font-weight:900;">Purchased List
 <%-- 				 <c:forEach var="list" items="${blist}"> --%>
 <%-- 					<c:forEach var = "b" items = "${list}"> --%>
 <%-- 	   					<font>${total}個</font> --%>

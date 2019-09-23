@@ -206,7 +206,7 @@
 								<div>
 									    <!-- 로그인 아이디 입력하는곳 -->	
 										<label for="login"><i class="icon-user"></i>User ID</label>
-										<input type="text" name="person_id" id= "person_id" placeholder="Username">
+										<input type="text" name="person_id" id= "person_id" placeholder="UserID">
 										<div class = "id_check1"></div>																												
 								</div>
 								<div>
